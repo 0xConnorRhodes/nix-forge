@@ -5,7 +5,10 @@
   outputs = { self, nixpkgs, ... }: {
     nixosConfigurations.testvm = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      modules = [ ./configuration.nix ];
+      modules = [ 
+        ./hosts/testvm/configuration.nix
+	./hosts/testvm/hardware-configuration.nix
+      ];
     };
   };
 }
