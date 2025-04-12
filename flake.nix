@@ -3,7 +3,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
   };
   outputs = { self, nixpkgs, ... }: {
-    nixConfigurations.testvm = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.testvm = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [ ./configuration.nix ];
     };
