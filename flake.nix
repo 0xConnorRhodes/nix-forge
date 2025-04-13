@@ -7,7 +7,6 @@
       system = "x86_64-linux";
       modules = [ 
         ./hosts/nixos/testvm/configuration.nix
-	./hosts/nixos/testvm/hardware-configuration.nix
       ];
     };
   };
