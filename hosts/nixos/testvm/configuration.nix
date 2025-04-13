@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../common/nixos-common.nix
       ../../common/packages.nix
     ];
 
