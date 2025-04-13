@@ -8,6 +8,7 @@
     neovim
     zsh
     fish
+    zoxide
     fzf
     fd
     bat
@@ -19,6 +20,5 @@
     screen
     lf
     magic-wormhole
-    unstable.go
   ];
 }
