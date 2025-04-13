@@ -7,7 +7,7 @@ in
     incus
   ];
 
-  virtualization.incus.enable = true;
+  virtualisation.incus.enable = true;
   users.users.${user}.extraGroups = ["incus-admin"];
 
   networking.firewall.trustedInterfaces = [ "incusbr0" ];
