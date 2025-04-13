@@ -1,6 +1,6 @@
 { inputs, pkgs, ... }:
 let
-  inherit (inputs) nixpkgs
+  inherit (inputs) nixpkgs;
 in
 {
   nixpkgs.config.allowUnfree = true;
