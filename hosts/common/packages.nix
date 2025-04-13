@@ -6,6 +6,7 @@
     # install from unstable by prefixing package with unstable, eg: unstable.go
     git
     neovim
+    chezmoi
     zsh
     fish
     zoxide
