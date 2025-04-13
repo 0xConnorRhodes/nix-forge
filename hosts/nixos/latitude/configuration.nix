@@ -8,6 +8,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ../../common/packages.nix
       ../../../modules/incus.nix
     ];
 
