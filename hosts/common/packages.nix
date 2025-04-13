@@ -13,6 +13,7 @@
     fd
     bat
     ripgrep
+    just
     tree
     zip
     unzip
