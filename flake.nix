@@ -6,8 +6,8 @@
     nixosConfigurations.testvm = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [ 
-        ./hosts/testvm/configuration.nix
-	./hosts/testvm/hardware-configuration.nix
+        ./hosts/nixos/testvm/configuration.nix
+	./hosts/nixos/testvm/hardware-configuration.nix
       ];
     };
   };
