@@ -6,8 +6,12 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, nixpkgs, ... }: {
-
+  outputs = { ... }@inputs: with inputs;
+  let
+    inherit (self) outputs;
+    stateVersion = "24.11";
+  in
+  {
     nixosConfigurations.latitude = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [ ./hosts/nixos/latitude/configuration.nix ];
@@ -17,6 +21,5 @@
       system = "x86_64-linux";
       modules = [ ./hosts/nixos/testvm/configuration.nix ];
     };
-
   };
 }
