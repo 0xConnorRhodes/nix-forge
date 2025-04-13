@@ -1,10 +1,11 @@
 { inputs, pkgs, ... }:
-let
-  inherit (inputs) nixpkgs;
-in
+
 {
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+    # install from unstable by prefixing package with unstable, eg: unstable.go
+    git
+    neovim
     zsh
     fish
     fzf
@@ -17,5 +18,7 @@ in
     htop
     screen
     lf
+    magic-wormhole
+    unstable.go
   ];
 }
