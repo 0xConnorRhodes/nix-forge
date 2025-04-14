@@ -10,10 +10,7 @@
     };
   };
 
-  outputs = { ... }@inputs: with inputs;
-  let
-    inherit (self) outputs;
-  in
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }:
   {
     nixosConfigurations = {
 
