@@ -5,6 +5,7 @@
     [
       ./hardware-configuration.nix
       ./gnome.nix
+      ./kiosk.nix
       ../../common/nixos-common.nix
       ../../common/packages.nix
       ../../../modules/nixos/incus.nix
