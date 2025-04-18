@@ -14,23 +14,24 @@
   {
     nixosConfigurations = {
 
-      latitude = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+      latitude = nixpkgs.lib.nixosSystem rec {
+        specialArgs = { inherit inputs; };
         system = "x86_64-linux";
         modules = [ 
           ({ pkgs, ... }: {
-            nixpkgs = { overlays = [(self: super: { unstable = import nixpkgs-unstable { system = "x86_64-linux"; }; }) ]; };
+            nixpkgs = { overlays = [(self: super: { unstable = import nixpkgs-unstable { system = system; }; }) ]; };
           })
           ./hosts/nixos/latitude/configuration.nix 
 	  inputs.home-manager.nixosModules.default
         ];
       };
 
-      testvm = nixpkgs.lib.nixosSystem {
+      testvm = nixpkgs.lib.nixosSystem rec {
+        specialArgs = { inherit inputs; };
         system = "x86_64-linux";
         modules = [ 
           ({ pkgs, ... }: {
-            nixpkgs = { overlays = [(self: super: { unstable = import nixpkgs-unstable { system = "x86_64-linux"; }; }) ]; };
+            nixpkgs = { overlays = [(self: super: { unstable = import nixpkgs-unstable { system = system; }; }) ]; };
           })
           ./hosts/nixos/testvm/configuration.nix 
         ];
