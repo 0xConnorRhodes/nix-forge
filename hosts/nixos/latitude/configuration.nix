@@ -5,7 +5,7 @@
     [
       ./hardware-configuration.nix
       ./gnome.nix
-      ./kiosk.nix
+      #./kiosk.nix
       ../../common/nixos-common.nix
       ../../common/packages.nix
       ../../../modules/nixos/incus.nix
@@ -79,6 +79,10 @@
     # networking.firewall.allowedUDPPorts = [ ... ];
     # Or disable the firewall altogether.
     # networking.firewall.enable = false;
+
+    environment.systemPackages = with pkgs; [
+      rpi-imager
+    ];
 
     system.stateVersion = "24.11";
   };
