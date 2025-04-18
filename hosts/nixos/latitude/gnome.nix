@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  user = "connor";
+  username = config.myConfig.username;
   enable_autologin = true;
 in
 {
@@ -29,7 +29,7 @@ in
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = enable_autologin;
-  services.displayManager.autoLogin.user = user;
+  services.displayManager.autoLogin.user = username;
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = enable_autologin;
