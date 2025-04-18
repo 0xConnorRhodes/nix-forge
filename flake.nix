@@ -10,17 +10,19 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
   {
     nixosConfigurations = {
 
       latitude = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
         system = "x86_64-linux";
         modules = [ 
           ({ pkgs, ... }: {
             nixpkgs = { overlays = [(self: super: { unstable = import nixpkgs-unstable { system = "x86_64-linux"; }; }) ]; };
           })
           ./hosts/nixos/latitude/configuration.nix 
+	  inputs.home-manager.nixosModules.default
         ];
       };
 

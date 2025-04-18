@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports =
@@ -9,6 +9,7 @@
       ../../common/nixos-common.nix
       ../../common/packages.nix
       ../../../modules/nixos/incus.nix
+      inputs.home-manager.nixosModules.default
     ];
 
   options = {
@@ -57,6 +58,13 @@
       description = "Connor Rhodes";
       extraGroups = [ "networkmanager" "wheel" ];
     };
+
+  home-manager.users.${config.myConfig.username} = { pkgs, ... }: {
+    home.stateVersion = "24.11";
+    imports = [
+     ../../common/gnome-common.nix
+    ]; 
+  };
 
     # Install firefox.
     programs.firefox.enable = true;
