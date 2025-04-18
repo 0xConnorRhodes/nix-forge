@@ -22,5 +22,10 @@
     screen
     lf
     magic-wormhole
+    powershell
+    dua
+    mosh
+    mediainfo
+    aria2
   ];
 }
