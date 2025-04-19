@@ -15,6 +15,7 @@
   environment.systemPackages = with pkgs; [
     # install from unstable by prefixing package with pkgsUnstable, eg: pkgsUnstable.go
     git
+    git-crypt
     neovim
     chezmoi
     zsh
