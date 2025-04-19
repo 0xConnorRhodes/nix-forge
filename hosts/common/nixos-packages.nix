@@ -22,9 +22,12 @@
     gpu-screen-recorder
     rclone-browser
     wev # xev-style key viewer for wayland
+    killall
+
     pkgsUnstable.vscode-fhs
     pkgsUnstable.warp
     pkgsUnstable.code-cursor
     pkgsUnstable.windsurf
+    pkgsUnstable.discord
   ];
 }
