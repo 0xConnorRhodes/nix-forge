@@ -29,6 +29,7 @@
     mediainfo
     aria2
     nh # https://github.com/nix-community/nh
+    nix-output-monitor
     tealdeer
     dua
     htop
