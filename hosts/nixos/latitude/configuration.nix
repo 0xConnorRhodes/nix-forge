@@ -45,6 +45,7 @@
 
     programs.firefox.enable = true;
 
+    # from: https://discourse.nixos.org/t/mixing-stable-and-unstable-packages-on-flake-based-nixos-system/50351/4
     # this allows you to access `pkgsUnstable` anywhere in your config
     _module.args.pkgsUnstable = import inputs.nixpkgs-unstable {
       inherit (pkgs.stdenv.hostPlatform) system;
