@@ -35,5 +35,15 @@
     epiphany
     geary
     gnome-terminal
+    gnome-console
+    gnome-calendar
+    gnome-weather
+    gnome-tour
+    gnome-contacts
+    gnome-clocks
+    gnome-maps
+    totem # video player
+    gnome-user-docs
+    gnome-calculator
   ]);
 }
