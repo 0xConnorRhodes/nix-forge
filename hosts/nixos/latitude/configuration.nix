@@ -31,8 +31,6 @@
 
     time.timeZone = "America/Chicago";
 
-    services.printing.enable = true;
-
     users.users.${config.myConfig.username} = {
       isNormalUser = true;
       description = "Connor Rhodes";
@@ -47,6 +45,8 @@
       ]; 
     };
 
+    services.printing.enable = true;
+    services.psd.enable = true;
     programs.firefox.enable = true;
    
     # from: https://discourse.nixos.org/t/mixing-stable-and-unstable-packages-on-flake-based-nixos-system/50351/4
@@ -58,6 +58,7 @@
 
     nixpkgs.config.allowUnfree = true;
     environment.systemPackages = with pkgs; [
+      profile-sync-daemon
       rpi-imager
     ];
 

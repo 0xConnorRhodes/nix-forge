@@ -17,7 +17,6 @@
     gparted
     obsidian
     nerdfonts
-    profile-sync-daemon
     distrobox
     gpu-screen-recorder
     rclone-browser
