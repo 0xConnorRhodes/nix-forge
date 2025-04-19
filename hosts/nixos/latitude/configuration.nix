@@ -9,6 +9,7 @@
       ../../common/packages.nix
       ../../common/nixos-common.nix
       ../../common/nixos-packages.nix
+      ../../common/gnome-common.nix
       ../../../modules/nixos/incus.nix
       ../../../modules/nixos/sync-notes.nix
       inputs.home-manager.nixosModules.default
@@ -41,7 +42,7 @@
       home.stateVersion = "24.11";
       imports = [
         ./home.nix
-        ../../common/gnome-common.nix
+        ../../common/gnome-dconf-common.nix
       ]; 
     };
 

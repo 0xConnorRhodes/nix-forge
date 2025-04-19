@@ -1,37 +1,39 @@
-{ lib, ... }:
-
-with lib.hm.gvariant;
+{ config, lib, pkgs, ... }:
 
 {
-  dconf.settings = {
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
 
-    # caps => control
-    "org/gnome/desktop/input-sources" = {
-      sources = [ (mkTuple [ "xkb" "us" ]) ];
-      xkb-options = [ "caps:ctrl_modifier" ];
-    };
+  # Enable the GNOME Desktop Environment.
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
-    # keyboard config
-    "org/gnome/desktop/peripherals/keyboard" = {
-      delay = mkUint32 200; # delay before keys repeat
-      numlock-state = false;
-    };
-
-    "org/gnome/desktop/interface" = {
-      clock-format = "12h";
-      enable-hot-corners = false;
-    };
-
-    # enable do not disturb
-    "org/gnome/desktop/notifications" = {
-      application-children = [ "org-gnome-console" "gnome-power-panel" "org-gnome-nautilus" ];
-      show-banners = false;
-    };
-
-    # enable window snapping
-    "org/gnome/mutter" = {
-      edge-tiling = true;
-    };
-
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
   };
+
+  # Enable sound with pipewire.
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
+
+  environment.systemPackages = with pkgs; [
+    #gsettings-desktop-schemas
+    dconf2nix
+    gnome-tweaks
+    gnome-themes-extra # provides adwaita dark theme in gnome tweaks for legacy applications
+  ];
+
+  environment.gnome.excludePackages = (with pkgs; [
+    epiphany
+    geary
+    gnome-terminal
+  ]);
 }
