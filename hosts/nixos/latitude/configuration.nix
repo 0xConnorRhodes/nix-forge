@@ -7,7 +7,7 @@
       ./gnome.nix
       #./kiosk.nix
       ../../common/nixos-common.nix
-     #../../common/packages.nix
+      ../../common/packages.nix
       ../../../modules/nixos/incus.nix
       inputs.home-manager.nixosModules.default
     ];
@@ -53,30 +53,6 @@
     nixpkgs.config.allowUnfree = true;
     environment.systemPackages = with pkgs; [
       rpi-imager
-      git
-      neovim
-      chezmoi
-      zsh
-      fish
-      zoxide
-      fzf
-      fd
-      bat
-      ripgrep
-      just
-      tree
-      zip
-      unzip
-      htop
-      screen
-      lf
-      magic-wormhole
-      powershell
-      dua
-      mosh
-      mediainfo
-      aria2
-      nh
       pkgsUnstable.vscode-fhs
     ];
 

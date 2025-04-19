@@ -22,7 +22,7 @@
             nixpkgs = { overlays = [(self: super: { unstable = import nixpkgs-unstable { system = system; }; }) ]; };
           })
           ./hosts/nixos/latitude/configuration.nix 
-	  inputs.home-manager.nixosModules.default
+	        inputs.home-manager.nixosModules.default
         ];
       };
 
