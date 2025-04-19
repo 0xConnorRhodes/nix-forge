@@ -39,7 +39,8 @@
   home-manager.users.${config.myConfig.username} = { pkgs, ... }: {
     home.stateVersion = "24.11";
     imports = [
-     ../../common/gnome-common.nix
+      ./home.nix
+      ../../common/gnome-common.nix
     ]; 
   };
 
