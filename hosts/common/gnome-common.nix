@@ -45,5 +45,6 @@
     totem # video player
     gnome-user-docs
     gnome-calculator
+    gnome-music
   ]);
 }
