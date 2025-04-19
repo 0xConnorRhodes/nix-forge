@@ -33,6 +33,7 @@
     dua
     htop
     gotop
+    btop-rocm # TODO: configure for smaller screen: https://github.com/aristocratos/btop?tab=readme-ov-file#configurability
     nnn
     rclone
 
