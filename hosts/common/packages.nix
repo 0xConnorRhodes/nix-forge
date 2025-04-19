@@ -48,6 +48,7 @@
     # ruby packages
     (ruby.withPackages (ruby-pkgs: with ruby-pkgs; [
       pry
+      dotenv
     ]))
   ];
 }
