@@ -2,6 +2,5 @@
 
 find . -type f -name "*.nix" -exec git add {} +
 #sudo nixos-rebuild switch --flake .
-#sudo nixos-rebuild switch --flake . 2>&1 | nom
-sudo nixos-rebuild switch --flake . |& nom
-#nh os switch .
+#sudo nixos-rebuild switch --flake . |& nom
+nh os switch .
