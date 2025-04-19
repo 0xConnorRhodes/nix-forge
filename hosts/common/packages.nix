@@ -1,6 +1,15 @@
 { inputs, pkgs, config, pkgsUnstable, ... }:
 
 {
+  imports = [
+    # prebuild nixpkgs database for comma
+    inputs.nix-index-database.nixosModules.nix-index
+  ];
+
+  config = {
+  # set comma to use prebuilt nixpkgs database from inputs
+	programs.nix-index-database.comma.enable = true;
+
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
@@ -50,4 +59,5 @@
       dotenv
     ]))
   ];
+};
 }

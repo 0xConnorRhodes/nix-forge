@@ -4,10 +4,17 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs"; # ensure package versions are the same as nixpkgs (eg. 24.11)
     };
+
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database"; 
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:

@@ -37,16 +37,16 @@
       extraGroups = [ "networkmanager" "wheel" ];
     };
 
-  home-manager.users.${config.myConfig.username} = { pkgs, ... }: {
-    home.stateVersion = "24.11";
-    imports = [
-      ./home.nix
-      ../../common/gnome-common.nix
-    ]; 
-  };
+    home-manager.users.${config.myConfig.username} = { pkgs, ... }: {
+      home.stateVersion = "24.11";
+      imports = [
+        ./home.nix
+        ../../common/gnome-common.nix
+      ]; 
+    };
 
     programs.firefox.enable = true;
-
+   
     # from: https://discourse.nixos.org/t/mixing-stable-and-unstable-packages-on-flake-based-nixos-system/50351/4
     # this allows you to access `pkgsUnstable` anywhere in your config
     _module.args.pkgsUnstable = import inputs.nixpkgs-unstable {
