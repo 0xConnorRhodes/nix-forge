@@ -15,6 +15,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
@@ -27,6 +29,7 @@
         modules = [ 
           ./hosts/nixos/latitude/configuration.nix 
 	        inputs.home-manager.nixosModules.default
+          inputs.nixos-hardware.nixosModules.dell-latitude-5490
         ];
       };
 
