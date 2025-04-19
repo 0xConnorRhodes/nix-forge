@@ -38,5 +38,7 @@ in
   environment.systemPackages = with pkgs; [
     #gsettings-desktop-schemas
     dconf2nix
+    gnome-tweaks
+    gnome-themes-extra # provides adwaita dark theme in gnome tweaks for legacy applications
   ];
 }

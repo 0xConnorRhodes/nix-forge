@@ -29,5 +29,22 @@
     mediainfo
     aria2
     nh # https://github.com/nix-community/nh
+    tealdeer
+    dua
+    htop
+    gotop
+    nnn
+    rclone
+
+    # python packages
+    (python3.withPackages (python-pkgs: with python-pkgs; [
+      requests
+      jinja2
+    ]))
+
+    # ruby packages
+    (ruby.withPackages (ruby-pkgs: with ruby-pkgs; [
+      pry
+    ]))
   ];
 }
