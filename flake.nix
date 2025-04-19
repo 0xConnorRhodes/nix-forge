@@ -18,9 +18,6 @@
         specialArgs = { inherit inputs; };
         system = "x86_64-linux";
         modules = [ 
-          ({ pkgs, ... }: {
-            nixpkgs = { overlays = [(self: super: { unstable = import nixpkgs-unstable { system = system; }; }) ]; };
-          })
           ./hosts/nixos/latitude/configuration.nix 
 	        inputs.home-manager.nixosModules.default
         ];
