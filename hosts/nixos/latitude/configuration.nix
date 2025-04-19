@@ -23,6 +23,8 @@
   config = {
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
+    #boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_stable;
+    boot.kernelPackages = pkgs.pkgs.linuxPackages_xanmod; # xanmod LTS kernel
 
     networking.hostName = "latitude";
     networking.networkmanager.enable = true;
