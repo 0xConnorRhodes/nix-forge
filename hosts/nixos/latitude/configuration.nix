@@ -10,6 +10,7 @@
       ../../common/nixos-common.nix
       ../../common/nixos-packages.nix
       ../../../modules/nixos/incus.nix
+      ../../../modules/nixos/sync-notes.nix
       inputs.home-manager.nixosModules.default
     ];
 
