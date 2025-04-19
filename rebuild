@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
 find . -type f -name "*.nix" -exec git add {} +
-nh os switch .
+sudo nixos-rebuild switch --flake .
+#nh os switch .
