@@ -4,7 +4,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    # install from unstable by prefixing package with unstable, eg: unstable.go
+    # install from unstable by prefixing package with pkgsUnstable, eg: pkgsUnstable.go
     git
     neovim
     chezmoi
@@ -29,6 +29,5 @@
     mediainfo
     aria2
     nh # https://github.com/nix-community/nh
-    pkgsUnstable.vscode-fhs
   ];
 }

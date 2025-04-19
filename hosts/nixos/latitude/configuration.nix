@@ -6,8 +6,9 @@
       ./hardware-configuration.nix
       ./gnome.nix
       #./kiosk.nix
-      ../../common/nixos-common.nix
       ../../common/packages.nix
+      ../../common/nixos-common.nix
+      ../../common/nixos-packages.nix
       ../../../modules/nixos/incus.nix
       inputs.home-manager.nixosModules.default
     ];
