@@ -27,5 +27,6 @@
     mosh
     mediainfo
     aria2
+    nh # https://github.com/nix-community/nh
   ];
 }
