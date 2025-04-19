@@ -30,6 +30,7 @@
     aria2
     nh # https://github.com/nix-community/nh
     nix-output-monitor # executable = nom
+    comma
     tealdeer
     dua
     htop
