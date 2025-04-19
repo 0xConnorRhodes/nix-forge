@@ -1,7 +1,8 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, config, pkgsUnstable, ... }:
 
 {
   nixpkgs.config.allowUnfree = true;
+
   environment.systemPackages = with pkgs; [
     # install from unstable by prefixing package with unstable, eg: unstable.go
     git
@@ -28,5 +29,6 @@
     mediainfo
     aria2
     nh # https://github.com/nix-community/nh
+    pkgsUnstable.vscode-fhs
   ];
 }

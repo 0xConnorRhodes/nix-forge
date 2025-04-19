@@ -44,16 +44,15 @@
 
     programs.firefox.enable = true;
 
-      # this allows you to access `pkgsUnstable` anywhere in your config
-  _module.args.pkgsUnstable = import inputs.nixpkgs-unstable {
-    inherit (pkgs.stdenv.hostPlatform) system;
-    inherit (config.nixpkgs) config;
-  };
+    # this allows you to access `pkgsUnstable` anywhere in your config
+    _module.args.pkgsUnstable = import inputs.nixpkgs-unstable {
+      inherit (pkgs.stdenv.hostPlatform) system;
+      inherit (config.nixpkgs) config;
+    };
 
     nixpkgs.config.allowUnfree = true;
     environment.systemPackages = with pkgs; [
       rpi-imager
-      pkgsUnstable.vscode-fhs
     ];
 
     system.stateVersion = "24.11";
