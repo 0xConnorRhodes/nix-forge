@@ -1,1 +1,1 @@
-hosts/nixos/latitude/secret.nix filter=git-crypt diff=git-crypt
+**/secret.nix filter=git-crypt diff=git-crypt
