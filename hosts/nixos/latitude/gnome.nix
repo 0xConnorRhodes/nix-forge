@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 let
   username = config.myConfig.username;
-  enable_autologin = true;
+  enable_autologin = false;
 in
 {
   # Enable automatic login for the user.
