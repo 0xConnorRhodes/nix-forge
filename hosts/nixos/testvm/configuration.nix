@@ -52,7 +52,7 @@
     };
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
-    users.users.config.myConfig.username = {
+    users.users.${config.myConfig.username} = {
       isNormalUser = true;
       description = "Connor Rhodes";
       extraGroups = [ "networkmanager" "wheel" ];
