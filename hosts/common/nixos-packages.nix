@@ -28,5 +28,6 @@
     pkgsUnstable.code-cursor
     pkgsUnstable.windsurf
     pkgsUnstable.discord
+    pkgsUnstable.slack
   ];
 }
