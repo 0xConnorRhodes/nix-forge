@@ -49,7 +49,9 @@
     };
 
     nixpkgs.config.allowUnfree = true;
-    environment.systemPackages = with pkgs; [ ];
+    environment.systemPackages = with pkgs; [ 
+      ghostty
+    ];
 
     services.printing.enable = true;
     services.openssh.enable = true;
