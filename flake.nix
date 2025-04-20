@@ -23,6 +23,15 @@
   {
     nixosConfigurations = {
 
+      mpro = nixpkgs.lib.nixosSystem rec {
+        specialArgs = { inherit inputs; };
+        system = "x86_64-linux";
+        modules = [ 
+          ./hosts/nixos/mpro/configuration.nix 
+	        inputs.home-manager.nixosModules.default
+        ];
+      };
+
       latitude = nixpkgs.lib.nixosSystem rec {
         specialArgs = { inherit inputs; };
         system = "x86_64-linux";
