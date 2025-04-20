@@ -51,15 +51,37 @@
     users.users.${config.myConfig.username} = {
       isNormalUser = true;
       description = "Connor Rhodes";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+      openssh = {
+        authorizedKeys.keys = [
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAHczZo2Xoo9jN7BGmtu2nabaSzFq9sW2Y4eh7UELReA connor@devct"
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHDPTeOGdCMgihUyRXEmpFdJeFSKoB6VGSou13+f8dI6 u0_a301@localhost" # termux
+        ];
+    };
     };
 
     home-manager.users.${config.myConfig.username} = { pkgs, ... }: {
       home.stateVersion = "24.11";
       imports = [
         ./home.nix
+        ./gnome-dconf.nix
+        ./gnome-always-on.nix
         ../../common/gnome-dconf-common.nix
       ]; 
+    };
+
+    # suspend
+    services.xserver.displayManager.gdm.autoSuspend = false;
+    services.logind.extraConfig = ''
+      HandleLidSwitchExternalPower=ignore
+    '';
+
+    # services
+    programs.mosh.enable = true;
+    services.openssh = {
+      enable = true;
+      ports = [ 31583 ];
+      settings.PasswordAuthentication = false;
     };
 
     services.printing.enable = true;
@@ -89,6 +111,18 @@
       profile-sync-daemon
       ffmpeg-full
     ];
+
+    # subsystems
+    virtualisation.podman = {
+      enable = true;
+      dockerCompat = true;
+    };
+
+    # kvm/virt-manager
+    programs.virt-manager.enable = true;
+    users.groups.libvirtd.members = [ config.myConfig.username ];
+    virtualisation.libvirtd.enable = true;
+    virtualisation.spiceUSBRedirection.enable = true;
 
     system.stateVersion = "24.11";
   };

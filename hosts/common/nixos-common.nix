@@ -27,4 +27,8 @@ in
       ];
     }
   ];
+
+  services.bpftune.enable = true;
+  programs.nix-ld.enable = true;
+
 }
