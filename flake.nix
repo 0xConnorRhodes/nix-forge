@@ -45,6 +45,7 @@
         system = "x86_64-linux";
         modules = [ 
           ./hosts/nixos/testvm/configuration.nix 
+	        inputs.home-manager.nixosModules.default
         ];
       };
 

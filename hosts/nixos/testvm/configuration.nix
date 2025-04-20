@@ -6,7 +6,6 @@
       ./hardware-configuration.nix
       ../../common/nixos-common.nix
       ../../common/gnome-common.nix
-      ../../common/gnome-dconf-common.nix
       ../../common/packages.nix
     ];
 
@@ -33,6 +32,13 @@
       isNormalUser = true;
       description = "Connor Rhodes";
       extraGroups = [ "networkmanager" "wheel" ];
+    };
+
+    home-manager.users.${config.myConfig.username} = { pkgs, ... }: {
+      home.stateVersion = "24.11";
+      imports = [
+        ../../common/gnome-dconf-common.nix
+      ]; 
     };
 
     # from: https://discourse.nixos.org/t/mixing-stable-and-unstable-packages-on-flake-based-nixos-system/50351/4
