@@ -36,7 +36,7 @@
     users.users.${config.myConfig.username} = {
       isNormalUser = true;
       description = "Connor Rhodes";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     };
 
     home-manager.users.${config.myConfig.username} = { pkgs, ... }: {
@@ -75,6 +75,18 @@
       rpi-imager
       ffmpeg-full
     ];
+
+    # subsystems
+    virtualisation.podman = {
+      enable = true;
+      dockerCompat = true;
+    };
+
+    # kvm/virt-manager
+    programs.virt-manager.enable = true;
+    users.groups.libvirtd.members = [ config.myConfig.username ];
+    virtualisation.libvirtd.enable = true;
+    virtualisation.spiceUSBRedirection.enable = true;
 
     system.stateVersion = "24.11";
   };
