@@ -11,7 +11,6 @@
     nodePackages.npm # mpv cut dependency
     audacity
     pavucontrol
-    ffmpeg
     podman-compose
     lazydocker
     gparted

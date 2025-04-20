@@ -5,6 +5,7 @@
     [
       ./hardware-configuration.nix
       ./gnome.nix
+      ./secret.nix
       #./kiosk.nix
       ../../common/packages.nix
       ../../common/nixos-common.nix
@@ -61,6 +62,7 @@
     environment.systemPackages = with pkgs; [
       profile-sync-daemon
       rpi-imager
+      ffmpeg-full
     ];
 
     system.stateVersion = "24.11";
