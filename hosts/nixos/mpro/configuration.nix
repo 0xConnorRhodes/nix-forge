@@ -5,6 +5,7 @@
     [
       ./hardware-configuration.nix
       ./gnome.nix
+      ./mounts.nix
       ./secret.nix
       ./backup-cron.nix
       ../../common/packages.nix
@@ -13,6 +14,8 @@
       ../../common/gnome-common.nix
       ../../../modules/nixos/incus.nix
       ../../../modules/nixos/sync-notes.nix
+      ../../../modules/nixos/jellyfin.nix
+      ../../../modules/nixos/zk-cron.nix
       inputs.home-manager.nixosModules.default
     ];
 
