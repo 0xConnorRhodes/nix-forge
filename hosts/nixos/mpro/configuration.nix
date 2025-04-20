@@ -4,9 +4,9 @@
   imports =
     [
       ./hardware-configuration.nix
-      # ./gnome.nix
+      ./gnome.nix
       ./secret.nix
-      # #./kiosk.nix
+      ./backup-cron.nix
       ../../common/packages.nix
       ../../common/nixos-common.nix
       ../../common/nixos-packages.nix
