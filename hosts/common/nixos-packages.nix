@@ -21,6 +21,7 @@
     rclone-browser
     wev # xev-style key viewer for wayland
     killall
+    bitwarden-desktop
 
     pkgsUnstable.vscode-fhs
     pkgsUnstable.warp
