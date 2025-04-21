@@ -2,8 +2,8 @@
 
 {
   imports =
-    [
-      /etc/nixos/hardware-configuration.nix
+    [ # must build with sudo nixos-rebuild switch --flake --impure .#testvm
+      /etc/nixos/hardware-configuration.nix 
       ../../common/nixos-common.nix
       ../../common/gnome-common.nix
       ../../common/packages.nix
