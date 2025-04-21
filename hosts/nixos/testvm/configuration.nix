@@ -3,7 +3,7 @@
 {
   imports =
     [
-      ./hardware-configuration.nix
+      /etc/nixos/hardware-configuration.nix
       ../../common/nixos-common.nix
       ../../common/gnome-common.nix
       ../../common/packages.nix
