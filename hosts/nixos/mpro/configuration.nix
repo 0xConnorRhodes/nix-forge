@@ -12,6 +12,7 @@
       ../../common/nixos-common.nix
       ../../common/nixos-packages.nix
       ../../common/gnome-common.nix
+      ../../../modules/nixos/kvm.nix
       ../../../modules/nixos/incus.nix
       ../../../modules/nixos/sync-notes.nix
       ../../../modules/nixos/jellyfin.nix
@@ -51,7 +52,7 @@
     users.users.${config.myConfig.username} = {
       isNormalUser = true;
       description = "Connor Rhodes";
-      extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+      extraGroups = [ "networkmanager" "wheel" ];
       openssh = {
         authorizedKeys.keys = [
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAHczZo2Xoo9jN7BGmtu2nabaSzFq9sW2Y4eh7UELReA connor@devct"
@@ -118,12 +119,6 @@
       enable = true;
       dockerCompat = true;
     };
-
-    # kvm/virt-manager
-    programs.virt-manager.enable = true;
-    users.groups.libvirtd.members = [ config.myConfig.username ];
-    virtualisation.libvirtd.enable = true;
-    virtualisation.spiceUSBRedirection.enable = true;
 
     system.stateVersion = "24.11";
   };
