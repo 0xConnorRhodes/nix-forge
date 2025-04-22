@@ -22,9 +22,10 @@
     wev # xev-style key viewer for wayland
     killall
     bitwarden-desktop
+    chromium
 
     pkgsUnstable.vscode-fhs
-    pkgsUnstable.warp
+    pkgsUnstable.warp-terminal
     pkgsUnstable.code-cursor
     pkgsUnstable.windsurf
     pkgsUnstable.discord
