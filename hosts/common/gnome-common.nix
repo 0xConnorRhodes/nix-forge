@@ -8,6 +8,9 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  # prevent password prompt on opening vscode
+  security.pam.services.gdm-password.enableGnomeKeyring = true;
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";

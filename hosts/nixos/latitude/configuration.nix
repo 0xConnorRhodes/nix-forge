@@ -26,8 +26,11 @@
   config = {
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
-    #boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_stable;
+    
+    # zfs
     boot.kernelPackages = pkgs.pkgs.linuxPackages_xanmod; # xanmod LTS kernel
+    boot.supportedFilesystems = [ "zfs" ];
+    networking.hostId = "4539c42d"; # needed by zfs to track unique machines for pool import
 
     networking.hostName = "latitude";
     networking.networkmanager.enable = true;
@@ -64,6 +67,7 @@
       profile-sync-daemon
       rpi-imager
       ffmpeg-full
+      zfs_2_3
     ];
 
     # subsystems
