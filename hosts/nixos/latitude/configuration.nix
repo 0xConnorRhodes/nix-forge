@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, pkgsUnstable, ... }:
+{ config, lib, pkgs, inputs, pkgsUnstable, secrets, ... }:
 
 {
   imports =
@@ -13,6 +13,7 @@
       ../../common/gnome-common.nix
       ../../../modules/nixos/kvm.nix
       ../../../modules/nixos/incus.nix
+      ../../../modules/nixos/tailscale.nix
       ../../../modules/nixos/sync-notes.nix
       inputs.home-manager.nixosModules.default
     ];

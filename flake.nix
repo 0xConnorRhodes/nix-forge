@@ -34,7 +34,7 @@
       };
 
       latitude = nixpkgs.lib.nixosSystem rec {
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs; inherit secrets; };
         system = "x86_64-linux";
         modules = [ 
           ./hosts/nixos/latitude/configuration.nix 
