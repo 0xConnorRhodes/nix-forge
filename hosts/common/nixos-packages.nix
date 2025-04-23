@@ -23,6 +23,7 @@
     killall
     bitwarden-desktop
     chromium
+    element-desktop
 
     pkgsUnstable.vscode-fhs
     pkgsUnstable.warp-terminal

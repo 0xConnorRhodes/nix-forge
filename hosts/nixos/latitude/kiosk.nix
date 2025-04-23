@@ -1,4 +1,5 @@
 { config, lib, pkgs, ... }:
+
 {
   # suspend
   services.xserver.displayManager.gdm.autoSuspend = false;

@@ -4,6 +4,9 @@
   # install and enable tailscale service
   services.tailscale.enable = true;
 
+  networking.firewall.trustedInterfaces = [ "incusbr0" ];
+  networking.nftables.enable = true;
+
   # create a oneshot job to authenticate to Tailscale
   systemd.services.tailscale-autoconnect = {
     description = "Automatic connection to Tailscale";

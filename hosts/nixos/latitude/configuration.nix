@@ -5,6 +5,7 @@
     [
       ./hardware-configuration.nix
       ./gnome.nix
+      ./ssh-mosh.nix
       ./secret.nix
       #./kiosk.nix
       ../../common/packages.nix
@@ -42,6 +43,13 @@
       isNormalUser = true;
       description = "Connor Rhodes";
       extraGroups = [ "networkmanager" "wheel" ];
+      openssh = {
+        authorizedKeys.keys = [
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAHczZo2Xoo9jN7BGmtu2nabaSzFq9sW2Y4eh7UELReA connor@devct"
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILvE1Dk8jXCzFOqyph0k8Lp/ynYMX5vqA/MZni2L/JE4 connor@rhodes.contact"
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHDPTeOGdCMgihUyRXEmpFdJeFSKoB6VGSou13+f8dI6 u0_a301@localhost" # termux
+        ];
+      };
     };
 
     home-manager.users.${config.myConfig.username} = { pkgs, ... }: {
@@ -52,6 +60,7 @@
       ]; 
     };
 
+    # services
     services.printing.enable = true;
     services.psd.enable = true;
     programs.firefox.enable = true;
