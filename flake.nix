@@ -18,11 +18,14 @@
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
+  let
+    secrets = builtins.fromJSON (builtins.readFile ./secrets.json);
+  in
   {
     nixosConfigurations = {
 
       mpro = nixpkgs.lib.nixosSystem rec {
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs; inherit secrets; };
         system = "x86_64-linux";
         modules = [ 
           ./hosts/nixos/mpro/configuration.nix 
