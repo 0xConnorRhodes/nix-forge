@@ -70,6 +70,9 @@
       zfs_2_3
     ];
 
+    # prevent password prompt on opening vscode
+    security.pam.services.gdm-password.enableGnomeKeyring = true;
+
     # subsystems
     virtualisation.podman = {
       enable = true;

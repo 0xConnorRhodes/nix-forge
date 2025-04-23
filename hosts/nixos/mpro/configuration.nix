@@ -30,8 +30,11 @@
   config = {
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
-    #boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_stable;
+
+    # zfs
     boot.kernelPackages = pkgs.pkgs.linuxPackages_xanmod; # xanmod LTS kernel
+    boot.supportedFilesystems = [ "zfs" ];
+    networking.hostId = "eca3fb4d";
 
     networking = {
       hostName = config.myConfig.hostname;
@@ -90,17 +93,6 @@
     services.psd.enable = true;
     programs.firefox.enable = true;
 
-    # bashrc to load fish if interactive
-    programs.bash = {
-      interactiveShellInit = ''
-        if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
-        then
-          shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
-          exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
-        fi
-      '';
-    };
-   
     # from: https://discourse.nixos.org/t/mixing-stable-and-unstable-packages-on-flake-based-nixos-system/50351/4
     # this allows you to access `pkgsUnstable` anywhere in your config
     _module.args.pkgsUnstable = import inputs.nixpkgs-unstable {
@@ -112,6 +104,7 @@
     environment.systemPackages = with pkgs; [
       profile-sync-daemon
       ffmpeg-full
+      zfs_2_3
     ];
 
     # subsystems
