@@ -14,6 +14,7 @@
         PermitRootLogin = "no";
       };
     };
+
     networking.firewall.enable = true;
     networking.firewall.interfaces.tailscale0 = {
       allowedTCPPorts = [ 22 ];
