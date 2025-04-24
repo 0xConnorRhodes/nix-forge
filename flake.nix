@@ -5,6 +5,10 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    # nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-24.11-darwin";
+
+    nix-darwin.url = "github:lnl7/nix-darwin/nix-darwin-24.11";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
@@ -53,5 +57,27 @@
       };
 
     }; # end nixosConfigurations
+  
+    darwinConfigurations = {
+      traveller = inputs.nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        pkgs = import inputs.nixpkgs { system = "aarch64-darwin"; };
+        modules = [
+          ({ pkgs, ... }: {
+            nix.extraOptions = ''
+              experimental-features = nix-command flakes
+            '';
+            system.stateVersion = 5; # from initial install, needed for backward compatibility
+            services.nix-daemon.enable = true; # allow nix-darwin to manage and update nix-daemon
+            system.defaults.finder.AppleShowAllExtensions = true; # show file extensions in finder
+            system.defaults.finder._FXShowPosixPathInTitle = true;
+            system.keyboard.enableKeyMapping = true;
+            system.keyboard.remapCapsLockToControl = true;
+            system.defaults.NSGlobalDomain.InitialKeyRepeat = 10;
+            system.defaults.NSGlobalDomain.KeyRepeat = 3;
+          })
+        ];
+      };
+    }; # end darwinConfigurations
   }; # end outputs
 }
