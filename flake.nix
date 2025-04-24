@@ -63,19 +63,7 @@
         system = "aarch64-darwin";
         pkgs = import inputs.nixpkgs {system = system;};
         modules = [
-          ({ pkgs, ... }: {
-            nix.extraOptions = ''
-              experimental-features = nix-command flakes
-            '';
-            system.stateVersion = 5; # from initial install, needed for backward compatibility
-            services.nix-daemon.enable = true; # allow nix-darwin to manage and update nix-daemon
-            system.defaults.finder.AppleShowAllExtensions = true; # show file extensions in finder
-            system.defaults.finder._FXShowPosixPathInTitle = true;
-            system.keyboard.enableKeyMapping = true;
-            system.keyboard.remapCapsLockToControl = true;
-            system.defaults.NSGlobalDomain.InitialKeyRepeat = 10;
-            system.defaults.NSGlobalDomain.KeyRepeat = 3;
-          })
+          ./hosts/darwin/traveller/darwin-config.nix 
         ];
       };
     }; # end darwinConfigurations
