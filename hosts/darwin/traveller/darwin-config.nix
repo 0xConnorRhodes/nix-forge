@@ -1,15 +1,10 @@
 { config, lib, pkgs, inputs, ... }: 
 
 {
-  # imports = [
-  #         inputs.home-manager.darwinModules.home-manager
-  # ];
-
   options = {
     myConfig = {
       username = lib.mkOption { type = lib.types.str; default = "connor.rhodes";};
       homeDir = lib.mkOption { type = lib.types.str; default = "/Users/connor.rhodes";};
-      # hostname = lib.mkOption { type = lib.types.str; default = "mpro";};
     };
   };
 
@@ -40,23 +35,16 @@
         ]; }) 
     ];
 
-    # home-manager.users.default = { pkgs, ... }: {
-    # home-manager.users.${config.myConfig.username} = { pkgs, ... }: {
-    #   home.stateVersion = "24.11";
-    #   imports = [
-    #     # ./home.nix
-    #   ]; 
-    # };
-            users.users.${config.myConfig.username}.home = config.myConfig.homeDir;
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              # # extraSpecialArgs = { inherit pwnvim; };
-              # users.default.imports = [ ./modules/home-manager ];
-              users."connor.rhodes".imports = [  ];
-              users."connor.rhodes".home.stateVersion = "24.11";
-              # users."connor.rhodes".home.homeDirectory = /Users/connor.rhodes;
-            };
+    users.users.${config.myConfig.username}.home = config.myConfig.homeDir;
+    home-manager = {
+      useGlobalPkgs = true;
+      useUserPackages = true;
+      # # extraSpecialArgs = { inherit pwnvim; };
+      # users.default.imports = [ ./modules/home-manager ];
+      users."connor.rhodes".imports = [  ];
+      users."connor.rhodes".home.stateVersion = "24.11";
+      # users."connor.rhodes".home.homeDirectory = /Users/connor.rhodes;
+    };
 
     nix.extraOptions = ''
       experimental-features = nix-command flakes
