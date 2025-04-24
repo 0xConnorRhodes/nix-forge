@@ -43,12 +43,13 @@
         home.stateVersion = "24.11";
         imports = [ ./home.nix ];
       };
-      
     };
 
     nix.extraOptions = ''
       experimental-features = nix-command flakes
     '';
+
+    security.pam.enableSudoTouchIdAuth = true;
 
     # allow nix-darwin to manage and update nix-daemon
     services.nix-daemon.enable = true;

@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    just
+    neovim
+  ];
+
   home.file.".config/ghostty/config".text = ''
     window-padding-color = background
     font-size = 17
