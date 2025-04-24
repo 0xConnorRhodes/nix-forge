@@ -64,14 +64,6 @@
         modules = [
           ./hosts/darwin/traveller/darwin-config.nix 
           inputs.home-manager.darwinModules.home-manager
-          # inputs.home-manager.darwinModules.home-manager {
-          #   home-manager = {
-          #     useGlobalPkgs = true;
-          #     useUserPackages = true;
-          #     # extraSpecialArgs = { inherit pwnvim; };
-          #     users.default.imports = [ ./modules/home-manager ];
-          #   };
-          # }
         ];
       };
     }; # end darwinConfigurations
