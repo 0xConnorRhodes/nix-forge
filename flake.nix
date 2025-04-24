@@ -59,9 +59,9 @@
     }; # end nixosConfigurations
   
     darwinConfigurations = {
-      traveller = inputs.nix-darwin.lib.darwinSystem {
+      traveller = inputs.nix-darwin.lib.darwinSystem rec {
         system = "aarch64-darwin";
-        pkgs = import inputs.nixpkgs { system = "aarch64-darwin"; };
+        pkgs = import inputs.nixpkgs {system = system;};
         modules = [
           ({ pkgs, ... }: {
             nix.extraOptions = ''
