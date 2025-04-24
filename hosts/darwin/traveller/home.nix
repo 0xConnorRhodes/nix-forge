@@ -52,7 +52,7 @@
 
   home.file.".config/ghostty/config".text = ''
     window-padding-color = background
-    font-size = 17
+    font-size = 21
     font-family = "Geist Mono"
     theme = Abernathy
     font-feature = -calt
