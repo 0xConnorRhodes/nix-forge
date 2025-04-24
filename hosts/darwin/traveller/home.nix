@@ -15,7 +15,6 @@ in
   programs.nix-index-database.comma.enable = true;
 
   home.packages = with pkgs; [
-    git
     git-crypt
     neovim
     chezmoi
@@ -60,6 +59,22 @@ in
     # nodejs
     # tesseract
   ];
+
+  programs.git = {
+    enable = true;
+    userName = "Connor Rhodes";
+    userEmail = "connor@rhodes.contact";
+
+    ignores = [
+      ".DS_Store"
+    ];
+
+    extraConfig = {
+      push = {
+        default = "current";
+      };
+    };
+  };
 
   home.file.".config/ghostty/config".text = ''
     window-padding-color = background
