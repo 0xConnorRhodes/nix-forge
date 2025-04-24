@@ -5,7 +5,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    # nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-24.11-darwin";
 
     nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-24.11";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -64,6 +63,15 @@
         pkgs = import inputs.nixpkgs {system = system;};
         modules = [
           ./hosts/darwin/traveller/darwin-config.nix 
+          inputs.home-manager.darwinModules.home-manager
+          # inputs.home-manager.darwinModules.home-manager {
+          #   home-manager = {
+          #     useGlobalPkgs = true;
+          #     useUserPackages = true;
+          #     # extraSpecialArgs = { inherit pwnvim; };
+          #     users.default.imports = [ ./modules/home-manager ];
+          #   };
+          # }
         ];
       };
     }; # end darwinConfigurations
