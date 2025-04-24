@@ -37,13 +37,13 @@
 
     users.users.${config.myConfig.username}.home = config.myConfig.homeDir;
     home-manager = {
-      useGlobalPkgs = true;
-      useUserPackages = true;
-      # # extraSpecialArgs = { inherit pwnvim; };
-      # users.default.imports = [ ./modules/home-manager ];
-      users."connor.rhodes".imports = [  ];
-      users."connor.rhodes".home.stateVersion = "24.11";
-      # users."connor.rhodes".home.homeDirectory = /Users/connor.rhodes;
+      # useGlobalPkgs = true;
+      # useUserPackages = true;
+      users.${config.myConfig.username} = {
+        home.stateVersion = "24.11";
+        imports = [ ./home.nix ];
+      };
+      
     };
 
     nix.extraOptions = ''
