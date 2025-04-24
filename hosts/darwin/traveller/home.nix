@@ -2,8 +2,52 @@
 
 {
   home.packages = with pkgs; [
-    just
+    git
+    git-crypt
     neovim
+    chezmoi
+    zsh
+    fish
+    zoxide
+    fzf
+    fd
+    bat
+    ripgrep
+    just
+    tree
+    zip
+    unzip
+    screen
+    lf
+    magic-wormhole
+    powershell
+    dua
+    mosh
+    mediainfo
+    aria2
+    # nh # TODO: install from unstable for darwin support?
+    # comma
+    tealdeer
+    htop
+    gotop
+    nnn
+    rclone
+
+    # mac-sepecific
+    blueutil
+    ffmpeg-full
+    imagemagick
+    iperf
+    darwin.iproute2mac
+    lazydocker
+    
+    # LATER
+    # skhd
+    # ruby
+    # lua
+    # mpv
+    # nodejs
+    # tesseract
   ];
 
   home.file.".config/ghostty/config".text = ''
