@@ -52,6 +52,7 @@
         modules = [ 
           ./hosts/nixos/testvm/configuration.nix 
 	        inputs.home-manager.nixosModules.default
+          inputs.nix-index-database.nixosModules.nix-index
         ];
       };
 
@@ -59,6 +60,7 @@
   
     darwinConfigurations = {
       traveller = inputs.nix-darwin.lib.darwinSystem rec {
+        specialArgs = { inherit inputs; inherit secrets; };
         system = "aarch64-darwin";
         pkgs = import inputs.nixpkgs {system = system;};
         modules = [

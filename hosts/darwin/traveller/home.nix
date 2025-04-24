@@ -1,6 +1,19 @@
-{ config, pkgs, ... }:
-
+{ config, pkgs, inputs, secrets, ... }:
+let
+  pkgsUnstable = import inputs.nixpkgs-unstable {
+    inherit (pkgs.stdenv.hostPlatform) system;
+    inherit (config.nixpkgs) config;
+  };
+in
 {
+  # comma config
+  imports = [ inputs.nix-index-database.hmModules.nix-index ];
+  nixpkgs.config.allowUnfree = true;
+  # NOTE: if comma produces warning:
+  # '/nix/var/nix/profiles/per-user/root/channels'
+  # can run `sudo mkdir /nix/var/nix/profiles/per-user/root/channels` to clear
+  programs.nix-index-database.comma.enable = true;
+
   home.packages = with pkgs; [
     git
     git-crypt
@@ -25,15 +38,13 @@
     mosh
     mediainfo
     aria2
-    # nh # TODO: install from unstable for darwin support?
-    # comma
     tealdeer
     htop
     gotop
     nnn
     rclone
 
-    # mac-sepecific
+    # mac-specific
     blueutil
     ffmpeg-full
     imagemagick

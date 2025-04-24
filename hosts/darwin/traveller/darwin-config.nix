@@ -1,6 +1,11 @@
-{ config, lib, pkgs, inputs, ... }: 
+{ config, lib, pkgs, inputs, secrets, ... }: 
 
 {
+  # imports = [
+  #   # prebuild nixpkgs database for comma
+  #   inputs.nix-index-database.nixosModules.nix-index
+  # ];
+
   options = {
     myConfig = {
       username = lib.mkOption { type = lib.types.str; default = "connor.rhodes";};
@@ -11,7 +16,7 @@
   config = {
     system.defaults.finder = {
       AppleShowAllExtensions = true; # show file extensions in finder
-      _FXShowPosixPathInTitle = true; # show full path in finder title
+      _FXShowPosixPathInTitle = false; # show full path in finder title
     };
 
     system.defaults.dock = {
@@ -39,11 +44,20 @@
     home-manager = {
       # useGlobalPkgs = true;
       # useUserPackages = true;
+      extraSpecialArgs = { inherit inputs; inherit secrets; };
       users.${config.myConfig.username} = {
         home.stateVersion = "24.11";
         imports = [ ./home.nix ];
       };
     };
+
+
+	  # programs.nix-index-database.comma.enable = true;
+  #   nixpkgs.config.allowUnfree = true;
+  # environment.systemPackages = with pkgs; [
+  #   # install from unstable by prefixing package with pkgsUnstable, eg: pkgsUnstable.go
+  #   comma
+  # ];
 
     nix.extraOptions = ''
       experimental-features = nix-command flakes
