@@ -6,13 +6,10 @@ let
   };
 in
 {
-  # comma config
-  imports = [ inputs.nix-index-database.hmModules.nix-index ];
-  nixpkgs.config.allowUnfree = true;
-  # NOTE: if comma produces warning:
-  # '/nix/var/nix/profiles/per-user/root/channels'
-  # can run `sudo mkdir /nix/var/nix/profiles/per-user/root/channels` to clear
-  programs.nix-index-database.comma.enable = true;
+  imports = [
+    ./comma.nix
+    ../../common/home/git.nix
+  ];
 
   home.packages = with pkgs; [
     git-crypt
@@ -59,22 +56,6 @@ in
     # nodejs
     # tesseract
   ];
-
-  programs.git = {
-    enable = true;
-    userName = "Connor Rhodes";
-    userEmail = "connor@rhodes.contact";
-
-    ignores = [
-      ".DS_Store"
-    ];
-
-    extraConfig = {
-      push = {
-        default = "current";
-      };
-    };
-  };
 
   home.file.".config/ghostty/config".text = ''
     window-padding-color = background
