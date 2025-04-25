@@ -49,7 +49,8 @@ in
     iperf
     darwin.iproute2mac
     lazydocker
-    
+    cloudflared
+
     # LATER
     # skhd
     # ruby
