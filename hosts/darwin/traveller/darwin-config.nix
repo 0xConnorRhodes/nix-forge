@@ -35,6 +35,26 @@
         ]; }) 
     ];
 
+    nix-homebrew = {
+      enable = true;
+      # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
+      enableRosetta = false;
+
+      # User owning the Homebrew prefix
+      user = config.myConfig.username;
+
+      # Optional: Declarative tap management
+      taps = {
+        "homebrew/homebrew-core" = inputs.homebrew-core;
+        "homebrew/homebrew-cask" = inputs.homebrew-cask;
+      };
+
+      # Optional: Enable fully-declarative tap management
+      #
+      # With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
+      mutableTaps = false;
+    };
+
     users.users.${config.myConfig.username}.home = config.myConfig.homeDir;
     home-manager = {
       # Some tutorials say these are required...
