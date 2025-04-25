@@ -66,7 +66,11 @@
       ];
     };
 
-    users.users.${config.myConfig.username}.home = config.myConfig.homeDir;
+    users.users.${config.myConfig.username} = {
+      home = config.myConfig.homeDir;
+      shell = pkgs.zsh;
+    }; 
+
     home-manager = {
       # Some tutorials say these are required...
       # useGlobalPkgs = true;
