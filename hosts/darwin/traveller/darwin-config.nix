@@ -1,6 +1,8 @@
 { config, lib, pkgs, inputs, secrets, ... }: 
 
 {
+  imports = [ ./darwin-secret.nix ];
+
   options = {
     myConfig = {
       username = lib.mkOption { type = lib.types.str; default = "connor.rhodes";};

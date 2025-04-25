@@ -11,7 +11,6 @@ cmd - o [
 ]
 
 alt - i [
-	"obsidian" : /opt/homebrew/bin/skhd -k "shift + cmd - a"
 	* : /usr/bin/open -a Obsidian.app
 ]
 
