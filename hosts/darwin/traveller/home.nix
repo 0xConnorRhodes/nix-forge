@@ -55,12 +55,24 @@ in
     # mpv
     # nodejs
     # tesseract
+
+    # python packages
+    (python3.withPackages (python-pkgs: with python-pkgs; [
+      requests
+      jinja2
+    ]))
+
+    # ruby packages
+    (ruby.withPackages (ruby-pkgs: with ruby-pkgs; [
+      pry
+      dotenv
+    ]))
   ];
 
   home.file.".config/ghostty/config".text = ''
     window-padding-color = background
     font-size = 21
-    font-family = "Geist Mono"
+    font-family = "GeistMono"
     theme = Abernathy
     font-feature = -calt
     font-feature = -liga

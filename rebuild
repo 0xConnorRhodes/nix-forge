@@ -1,6 +1,11 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 find . -type f -name "*.nix" -exec git add {} +
-#sudo nixos-rebuild switch --flake .
-#sudo nixos-rebuild switch --flake . |& nom
-nh os switch .
+
+if [ "$(uname)" = "Darwin" ]; then
+  darwin-rebuild switch --flake .#traveller
+else
+  #sudo nixos-rebuild switch --flake .
+  #sudo nixos-rebuild switch --flake . |& nom
+  nh os switch .
+fi

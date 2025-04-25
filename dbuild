@@ -1,4 +1,0 @@
-#!/usr/bin/env zsh
-
-find . -type f -name "*.nix" -exec git add {} +
-darwin-rebuild switch --flake .#traveller
