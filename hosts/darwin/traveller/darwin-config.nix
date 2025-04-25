@@ -16,6 +16,7 @@
       _FXShowPosixPathInTitle = false; # show full path in finder title
     };
 
+    environment.pathsToLink = [ "/share/zsh" ];
     system.defaults.dock = {
       autohide = true;
     };

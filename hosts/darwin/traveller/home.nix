@@ -56,8 +56,7 @@ in
       pry
       dotenv
     ]))
-  ] 
-  ++ (import ../../common/packages.nix { pkgs = pkgs; });
+  ] ++ (import ../../common/packages.nix { pkgs = pkgs; });
 
   xdg.configFile."skhd/skhdrc".source = ./config/skhdrc;
   home.file.".config/ghostty/config".source = ./config/ghostty;

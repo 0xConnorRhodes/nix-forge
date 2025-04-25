@@ -6,6 +6,9 @@
     ji = "__zoxide_zi";
     cm = "chezmoi";
     cmd = "chezmoi cd";
+    sn = "screen";
     vm = "vimv";
+    x = "exit";
+    rb = "ruby";
   };
 }
