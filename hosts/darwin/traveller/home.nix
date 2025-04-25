@@ -8,7 +8,7 @@ in
 {
   imports = [
     ./comma.nix
-    ./secret.nix
+    ./home-secret.nix
     ../../common/home/git.nix
     ../../common/home/zsh.nix
     ../../common/home/zoxide.nix
