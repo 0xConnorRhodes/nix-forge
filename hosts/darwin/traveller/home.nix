@@ -9,13 +9,14 @@ in
   imports = [
     ./comma.nix
     ../../common/home/git.nix
+    ../../common/home/zsh.nix
+    ../../common/home/zoxide.nix
   ];
 
   home.packages = with pkgs; [
     git-crypt
     neovim
     chezmoi
-    zsh
     fish
     zoxide
     fzf
