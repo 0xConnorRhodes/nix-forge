@@ -1,11 +1,11 @@
-cmd - j : /usr/bin/open -a Ghostty.app
+alt - j : /usr/bin/open -a Ghostty.app
 
 alt - y [
 	"Slack" : /opt/homebrew/bin/skhd -k "cmd - g"
 	* : /usr/bin/open -a Slack.app
 ]
 
-cmd - o [
+alt - o [
 	"code" : /opt/homebrew/bin/skhd -k "meh - d"
 	* : /usr/bin/open -a Visual\ Studio\ Code.app
 ]
