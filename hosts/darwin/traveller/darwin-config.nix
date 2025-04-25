@@ -77,6 +77,9 @@
       };
     };
 
+    # will use default config file at ~/skhd/skhdrc
+    services.skhd.enable = true;
+
     nix.extraOptions = ''
       experimental-features = nix-command flakes
     '';

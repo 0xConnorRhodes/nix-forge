@@ -72,6 +72,8 @@ in
     ]))
   ];
 
+  xdg.configFile."skhd/skhdrc".source = ./config/skhdrc;
+
   home.file.".config/ghostty/config".text = ''
     window-padding-color = background
     font-size = 22
