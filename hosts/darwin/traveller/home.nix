@@ -19,31 +19,13 @@ in
   };
 
   home.packages = with pkgs; [
-    git-crypt
-    neovim
-    chezmoi
-    fish
     zoxide
-    fzf
-    fd
-    bat
-    ripgrep
-    just
-    tree
-    zip
-    unzip
-    screen
-    lf
-    magic-wormhole
     powershell
-    dua
-    mosh
     mediainfo
     aria2
     tealdeer
     htop
     gotop
-    nnn
     rclone
 
     # mac-specific
@@ -74,8 +56,12 @@ in
       pry
       dotenv
     ]))
-  ];
+  ] 
+  ++ (import ../../common/packages.nix { pkgs = pkgs; });
 
   xdg.configFile."skhd/skhdrc".source = ./config/skhdrc;
   home.file.".config/ghostty/config".source = ./config/ghostty;
+
+  # Don't show the "Last login" message for every new terminal.
+  home.file.".hushlogin" = { text = ""; };
 }

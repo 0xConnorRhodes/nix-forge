@@ -6,5 +6,6 @@
     ji = "__zoxide_zi";
     cm = "chezmoi";
     cmd = "chezmoi cd";
+    vm = "vimv";
   };
 }
