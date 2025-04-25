@@ -62,6 +62,7 @@
 
       casks = [ 
         "ghostty" 
+        "visual-studio-code" # run install code command in PATH from VSCode command palate after install
       ];
     };
 

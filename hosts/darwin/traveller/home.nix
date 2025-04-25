@@ -14,6 +14,12 @@ in
     ../../common/home/zoxide.nix
   ];
 
+  home.sessionVariables = {
+    PAGER = "less";
+    CLICLOLOR = 1;
+    EDITOR = "nvim";
+  };
+
   home.packages = with pkgs; [
     git-crypt
     neovim
@@ -73,20 +79,5 @@ in
   ];
 
   xdg.configFile."skhd/skhdrc".source = ./config/skhdrc;
-
-  home.file.".config/ghostty/config".text = ''
-    window-padding-color = background
-    font-size = 22
-    font-family = "GeistMono Nerd Font Mono"
-    theme = Abernathy
-    font-feature = -calt
-    font-feature = -liga
-    font-feature = -dlig
-    window-height = 1000
-    window-width = 1000
-    window-padding-color = background
-    window-padding-x = 0
-    window-padding-y = 0
-    clipboard-paste-protection = false
-  '';
+  home.file.".config/ghostty/config".source = ./config/ghostty;
 }
