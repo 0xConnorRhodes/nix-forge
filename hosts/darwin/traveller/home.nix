@@ -72,7 +72,7 @@ in
   home.file.".config/ghostty/config".text = ''
     window-padding-color = background
     font-size = 22
-    font-family = "GeistMono Nerd Font"
+    font-family = "GeistMono Nerd Font Mono"
     theme = Abernathy
     font-feature = -calt
     font-feature = -liga
