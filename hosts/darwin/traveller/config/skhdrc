@@ -1,22 +1,11 @@
 alt - j : /usr/bin/open -a Ghostty.app
 
-alt - y [
-	"Slack" : /opt/homebrew/bin/skhd -k "cmd - g"
-	* : /usr/bin/open -a Slack.app
-]
+alt - y : /usr/bin/open -a Slack.app
 
-alt - o [
-	"code" : /opt/homebrew/bin/skhd -k "meh - d"
-	* : /usr/bin/open -a Visual\ Studio\ Code.app
-]
+alt - o : /usr/bin/open -a Visual\ Studio\ Code.app
 
-alt - i [
-	* : /usr/bin/open -a Obsidian.app
-]
+alt - i : /usr/bin/open -a Obsidian.app
 
-alt - k [
-    "Brave Browser" ~
-    * : open -a "Brave Browser"
-]
+alt - k : open -a "Brave Browser"
 
 alt - b : open -a Finder #~/Downloads
