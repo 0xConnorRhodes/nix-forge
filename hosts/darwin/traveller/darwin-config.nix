@@ -1,11 +1,6 @@
 { config, lib, pkgs, inputs, secrets, ... }: 
 
 {
-  # imports = [
-  #   # prebuild nixpkgs database for comma
-  #   inputs.nix-index-database.nixosModules.nix-index
-  # ];
-
   options = {
     myConfig = {
       username = lib.mkOption { type = lib.types.str; default = "connor.rhodes";};
@@ -42,6 +37,7 @@
 
     users.users.${config.myConfig.username}.home = config.myConfig.homeDir;
     home-manager = {
+      # Some tutorials say these are required...
       # useGlobalPkgs = true;
       # useUserPackages = true;
       extraSpecialArgs = { inherit inputs; inherit secrets; };
@@ -50,14 +46,6 @@
         imports = [ ./home.nix ];
       };
     };
-
-
-	  # programs.nix-index-database.comma.enable = true;
-  #   nixpkgs.config.allowUnfree = true;
-  # environment.systemPackages = with pkgs; [
-  #   # install from unstable by prefixing package with pkgsUnstable, eg: pkgsUnstable.go
-  #   comma
-  # ];
 
     nix.extraOptions = ''
       experimental-features = nix-command flakes
