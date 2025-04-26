@@ -6,7 +6,7 @@
     ji = "__zoxide_zi";
     cm = "chezmoi";
     cmd = "chezmoi cd";
-    sn = "screen";
+    sn = "screen -c $HOME/.config/screen/screenrc";
     vm = "vimv";
     x = "exit";
     rb = "ruby";
