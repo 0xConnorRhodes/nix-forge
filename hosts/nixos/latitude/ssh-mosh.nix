@@ -16,8 +16,10 @@
     };
 
     networking.firewall.enable = true;
-    networking.firewall.interfaces.tailscale0 = {
-      allowedTCPPorts = [ 22 ];
-      allowedUDPPortRanges = [{from=60000; to=61000;}];
-    };
+    networking.firewall.trustedInterfaces = ["tailscale0"];
+
+    # networking.firewall.interfaces.tailscale0 = {
+    #   allowedTCPPorts = [ 22 ];
+    #   allowedUDPPortRanges = [{from=60000; to=61000;}];
+    # };
 }
