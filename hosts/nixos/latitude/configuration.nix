@@ -39,10 +39,15 @@
 
     time.timeZone = "America/Chicago";
 
+    programs.zsh = {
+      enable = true;
+    };
+
     users.users.${config.myConfig.username} = {
       isNormalUser = true;
       description = "Connor Rhodes";
       extraGroups = [ "networkmanager" "wheel" ];
+      shell = pkgs.zsh;
       openssh = {
         authorizedKeys.keys = [
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAHczZo2Xoo9jN7BGmtu2nabaSzFq9sW2Y4eh7UELReA connor@devct"
@@ -52,6 +57,7 @@
       };
     };
 
+    home-manager.backupFileExtension = "bak"; # append existing non hm files with this on rebuild
     home-manager.users.${config.myConfig.username} = { pkgs, ... }: {
       home.stateVersion = "24.11";
       imports = [
