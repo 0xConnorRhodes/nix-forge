@@ -8,7 +8,6 @@
       ./ssh-mosh.nix
       ./secret.nix
       #./kiosk.nix
-      ../../common/packages.nix
       ../../common/nixos-common.nix
       ../../common/nixos-packages.nix
       ../../common/gnome-common.nix
@@ -17,6 +16,7 @@
       ../../../modules/nixos/tailscale.nix
       ../../../modules/nixos/sync-notes.nix
       inputs.home-manager.nixosModules.default
+      inputs.nix-index-database.nixosModules.nix-index
     ];
 
   options = {
@@ -73,12 +73,38 @@
     };
 
     nixpkgs.config.allowUnfree = true;
+    # set comma to use prebuilt nixpkgs database from inputs
+	  programs.nix-index-database.comma.enable = true;
     environment.systemPackages = with pkgs; [
+      git
+      git-crypt
       profile-sync-daemon
       rpi-imager
       ffmpeg-full
       zfs_2_3
-    ];
+      htop
+      gotop
+      btop-rocm # TODO: configure for smaller screen: https://github.com/aristocratos/btop?tab=readme-ov-file#configurability
+      powershell
+      mediainfo
+      aria2
+      nh # https://github.com/nix-community/nh
+      comma
+      tealdeer
+      rclone
+
+      # python packages
+      (python3.withPackages (python-pkgs: with python-pkgs; [
+        requests
+        jinja2
+      ]))
+
+      # ruby packages
+      (ruby.withPackages (ruby-pkgs: with ruby-pkgs; [
+        pry
+        dotenv
+      ]))
+    ]++ (import ../../common/packages.nix { pkgs = pkgs; });
 
     # prevent password prompt on opening vscode
     security.pam.services.gdm-password.enableGnomeKeyring = true;
