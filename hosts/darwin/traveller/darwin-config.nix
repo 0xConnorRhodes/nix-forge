@@ -60,8 +60,10 @@
     };
 
     homebrew = {
+      enable = true;
       caskArgs.no_quarantine = true;
       global.brewfile = true;
+      onActivation.cleanup = "uninstall"; # uninstall brew packages not listed in nix
 
       casks = [ 
         "ghostty" 
