@@ -16,10 +16,6 @@
     };
 
     networking.firewall.enable = true;
+    # trust tailscale0 to allow ssh etc over that interface only
     networking.firewall.trustedInterfaces = ["tailscale0"];
-
-    # networking.firewall.interfaces.tailscale0 = {
-    #   allowedTCPPorts = [ 22 ];
-    #   allowedUDPPortRanges = [{from=60000; to=61000;}];
-    # };
 }
