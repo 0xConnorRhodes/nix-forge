@@ -27,6 +27,7 @@ in
     htop
     gotop
     rclone
+    android-tools # provides adb
 
     # mac-specific
     blueutil
@@ -36,10 +37,14 @@ in
     darwin.iproute2mac
     lazydocker
     cloudflared
+    podman
+    podman-compose
+    
+    # GUI
+    utm
+    rectangle
 
     # LATER
-    # skhd
-    # ruby
     # lua
     # mpv
     # nodejs

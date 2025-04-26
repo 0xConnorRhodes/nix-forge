@@ -66,7 +66,20 @@
       casks = [ 
         "ghostty" 
         "visual-studio-code" # run install code command in PATH from VSCode command palate after install
+        "balenaetcher"
+        "hammerspoon"
+        "pine" # mac native markdown editor
+        "macs-fan-control"
+        "jupyterlab"
+        "kdenlive"
+        "vlc"
+        "wireshark"
+        "zed"
+        # "docker"
       ];
+
+      masApps = { };
+
     };
 
     users.users.${config.myConfig.username} = {
