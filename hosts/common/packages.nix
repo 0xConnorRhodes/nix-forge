@@ -19,5 +19,7 @@ with pkgs; [
   mosh
   nnn
   vimv-rs
+  zoxide
+  tree
 ]
 

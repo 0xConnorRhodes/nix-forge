@@ -8,7 +8,6 @@
       ./mounts.nix
       ./secret.nix
       ./backup-cron.nix
-      ../../common/packages.nix
       ../../common/nixos-common.nix
       ../../common/nixos-packages.nix
       ../../common/gnome-common.nix
@@ -19,6 +18,7 @@
       ../../../modules/nixos/jellyfin.nix
       ../../../modules/nixos/zk-cron.nix
       inputs.home-manager.nixosModules.default
+      inputs.nix-index-database.nixosModules.nix-index
     ];
 
   options = {
@@ -53,10 +53,15 @@
 
     time.timeZone = "America/Chicago";
 
+    programs.zsh = {
+      enable = true;
+    };
+
     users.users.${config.myConfig.username} = {
       isNormalUser = true;
       description = "Connor Rhodes";
       extraGroups = [ "networkmanager" "wheel" ];
+      shell = pkgs.zsh;
       openssh = {
         authorizedKeys.keys = [
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAHczZo2Xoo9jN7BGmtu2nabaSzFq9sW2Y4eh7UELReA connor@devct"
@@ -66,6 +71,7 @@
       };
     };
 
+    home-manager.backupFileExtension = "bak"; # append existing non hm files with this on rebuild
     home-manager.users.${config.myConfig.username} = { pkgs, ... }: {
       home.stateVersion = "24.11";
       imports = [
@@ -102,11 +108,37 @@
     };
 
     nixpkgs.config.allowUnfree = true;
+    # set comma to use prebuilt nixpkgs database from inputs
+	  programs.nix-index-database.comma.enable = true;
     environment.systemPackages = with pkgs; [
+      git
+      git-crypt
       profile-sync-daemon
       ffmpeg-full
       zfs_2_3
-    ];
+      htop
+      gotop
+      btop-rocm # TODO: configure for smaller screen: https://github.com/aristocratos/btop?tab=readme-ov-file#configurability
+      powershell
+      mediainfo
+      aria2
+      nh # https://github.com/nix-community/nh
+      comma
+      tealdeer
+      rclone
+
+      # python packages
+      (python3.withPackages (python-pkgs: with python-pkgs; [
+        requests
+        jinja2
+      ]))
+
+      # ruby packages
+      (ruby.withPackages (ruby-pkgs: with ruby-pkgs; [
+        pry
+        dotenv
+      ]))
+    ]++ (import ../../common/packages.nix { pkgs = pkgs; });
 
     # subsystems
     virtualisation.podman = {
