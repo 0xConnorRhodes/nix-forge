@@ -75,7 +75,6 @@
         "vlc"
         "wireshark"
         "zed"
-        # "docker"
       ];
 
       masApps = { };

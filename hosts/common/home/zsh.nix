@@ -22,4 +22,9 @@ in
     + # concatenate case-insensitive matching string since it contains '' which breaks the multiline string.
     "\nzstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'";
   };
+
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 }
