@@ -17,6 +17,7 @@
     };
 
     environment.pathsToLink = [ "/share/zsh" ];
+
     system.defaults.dock = {
       autohide = true;
     };
@@ -29,6 +30,7 @@
     system.defaults.NSGlobalDomain = {
       InitialKeyRepeat = 10;
       KeyRepeat = 3;
+      ApplePressAndHoldEnabled = false;
     };
 
     fonts.packages = [ (pkgs.nerdfonts.override { fonts = [
