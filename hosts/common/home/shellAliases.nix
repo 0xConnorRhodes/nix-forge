@@ -11,5 +11,6 @@
     x = "exit";
     rb = "ruby";
     cat = "bat --style=plain";
+    tk = "ruby $HOME/code/notes-scripts/tasks-menu-pc.rb";
   };
 }

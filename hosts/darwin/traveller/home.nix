@@ -26,9 +26,8 @@ in
     fi
   '';
 
-  programs.ghostty.settings = {
-    font-size = 22;
-    font-family = "GeistMono Nerd Font Mono";
+  programs.zsh.shellAliases = {
+    yo = "open -a yoink";
   };
 
   home.packages = with pkgs; [
@@ -73,6 +72,7 @@ in
     (ruby.withPackages (ruby-pkgs: with ruby-pkgs; [
       pry
       dotenv
+      highline
     ]))
   ] ++ (import ../../common/packages.nix { pkgs = pkgs; });
 
