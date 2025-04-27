@@ -1,7 +1,5 @@
 { inputs, config, ... }:
-let
-  username = config.myConfig.username;
-in
+
 {
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
@@ -20,11 +18,10 @@ in
 
   security.sudo.extraRules = [
     { users = [ username ];
-      commands = [
-        { command = "ALL" ;
-	  options = [ "NOPASSWD" ];
-	}
-      ];
+      commands = [{ 
+        command = "ALL" ;
+	      options = [ "NOPASSWD" ]; 
+      }];
     }
   ];
 
