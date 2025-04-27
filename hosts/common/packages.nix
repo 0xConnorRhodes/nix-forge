@@ -19,5 +19,6 @@ with pkgs; [
   nnn
   vimv-rs
   tree
+  timer
 ]
 
