@@ -19,5 +19,6 @@
     tk = "ruby $HOME/code/notes-scripts/tasks-menu-pc.rb";
     mt = "ruby $HOME/code/notes-scripts/new-meeting.rb";
     cb = "ruby $HOME/code/food-log/add_entry.rb";
+    reb = "$HOME/code/nix-forge/rebuild";
   };
 }

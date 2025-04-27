@@ -12,6 +12,7 @@ in
     ../../common/home/git.nix
     ../../common/home/zsh.nix
     ../../common/home/zoxide.nix
+    ../../common/home/vscode.nix
   ];
 
   home.sessionVariables = {
@@ -31,7 +32,11 @@ in
   };
 
   programs.vscode = {
-      enable = true;
+    userSettings = {
+      editor.fontSize = 17;
+      terminal.integrated.fontSize = 17;
+      chat.editor.fontSize = 16;
+    };
   };
 
   programs.zsh.initExtra = ''
@@ -91,8 +96,11 @@ in
     ]))
   ] ++ (import ../../common/packages.nix { pkgs = pkgs; });
 
-  xdg.configFile."skhd/skhdrc".source = ./config/skhdrc;
-  home.file.".config/ghostty/config".source = ./config/ghostty;
+  xdg.configFile = {
+    "skhd/skhdrc".source = ./config/skhdrc;
+    "ghostty/config".source = ./config/ghostty;
+    "screen/screenrc".source = ../../common/home/config/screenrc;
+  };
 
   # Don't show the "Last login" message for every new terminal.
   home.file.".hushlogin" = { text = ""; };

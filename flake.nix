@@ -21,6 +21,8 @@
       url = "github:nix-community/nix-index-database"; 
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
