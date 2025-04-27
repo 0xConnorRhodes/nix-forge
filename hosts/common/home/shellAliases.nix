@@ -2,6 +2,10 @@
   myAliases = {
     e = "nvim";
     gs = "git status";
+    gc = "git checkout";
+    gb = "git branch";
+    gcm = "git commit -m";
+    gmm = "git add . && git commit -m 'u' && git rebase --continue && git push";
     j = "__zoxide_z";
     ji = "__zoxide_zi";
     cm = "chezmoi";
@@ -11,7 +15,9 @@
     x = "exit";
     rb = "ruby";
     cat = "bat --style=plain";
+    ipy = "ipython";
     tk = "ruby $HOME/code/notes-scripts/tasks-menu-pc.rb";
     mt = "ruby $HOME/code/notes-scripts/new-meeting.rb";
+    cb = "ruby $HOME/code/food-log/add_entry.rb";
   };
 }

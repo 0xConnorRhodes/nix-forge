@@ -30,6 +30,16 @@ in
     yo = "open -a yoink";
   };
 
+  programs.zsh.initExtra = ''
+    nf() {
+      ls -At1 . | sed '/\.DS_Store/d' | sed '/\.git/d' | sed -n '1p'
+    }
+
+    lnf() {
+      ls -At1 . | sed '/\.DS_Store/d' | sed '/\.git/d' | sed -n '2p'
+    }
+  '';
+
   home.packages = with pkgs; [
     zoxide
     powershell
@@ -66,6 +76,7 @@ in
     (python3.withPackages (python-pkgs: with python-pkgs; [
       requests
       jinja2
+      ipython
     ]))
 
     # ruby packages

@@ -8,6 +8,7 @@ in
     enable = true;
     shellAliases = shellAliases.myAliases;
     dotDir = ".config/zsh"; # relative to the users home directory.
+    history.path = "$ZDOTDIR/.zsh_history";
     envExtra = ''
       export PATH="${lib.concatStringsSep ":" myPaths.extraPaths}:$PATH"
     '';
