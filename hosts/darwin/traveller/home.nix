@@ -18,6 +18,11 @@ in
     EDITOR = "nvim";
   };
 
+  programs.ghostty.settings = {
+    font-size = 22;
+    font-family = "GeistMono Nerd Font Mono";
+  };
+
   home.packages = with pkgs; [
     zoxide
     powershell

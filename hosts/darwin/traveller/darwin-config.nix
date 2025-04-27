@@ -83,6 +83,8 @@
 
     };
 
+    # shells that will be accessible from chsh
+    environment.shells = [ pkgs.zsh ];
     users.users.${config.myConfig.username} = {
       home = config.myConfig.homeDir;
       shell = pkgs.zsh;

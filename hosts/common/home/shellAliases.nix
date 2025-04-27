@@ -10,5 +10,6 @@
     vm = "vimv";
     x = "exit";
     rb = "ruby";
+    cat = "bat --style=plain";
   };
 }
