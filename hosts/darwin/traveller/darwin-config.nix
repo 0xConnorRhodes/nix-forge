@@ -91,9 +91,8 @@
     }; 
 
     home-manager = {
-      # Some tutorials say these are required...
-      # useGlobalPkgs = true;
-      # useUserPackages = true;
+      useGlobalPkgs = true; # use system level nixpkgs (shortens eval time) instead of an independent copy
+      # useUserPackages = true; # if true install home-manager packages in /etc/profiles. Needed for nixos-rebuild build-vm.
       extraSpecialArgs = { inherit inputs; inherit secrets; };
       users.${config.myConfig.username} = {
         home.stateVersion = "24.11";
@@ -113,7 +112,8 @@
     # allow nix-darwin to manage and update nix-daemon
     services.nix-daemon.enable = true;
 
-    # from initial install, needed for backward compatibility
+    # Used for backwards compatibility, please read the changelog before changing.
+    # $ darwin-rebuild changelog
     system.stateVersion = 5;
   };
 }

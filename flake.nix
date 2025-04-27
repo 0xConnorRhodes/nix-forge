@@ -65,7 +65,8 @@
       traveller = inputs.nix-darwin.lib.darwinSystem rec {
         specialArgs = { inherit inputs; inherit secrets; };
         system = "aarch64-darwin";
-        pkgs = import inputs.nixpkgs {system = system;};
+        # needed to install nonfree licensed software with home-manager
+        pkgs = import inputs.nixpkgs { system = system; config.allowUnfree = true;};
         modules = [
           ./hosts/darwin/traveller/darwin-config.nix 
           inputs.home-manager.darwinModules.home-manager
