@@ -14,6 +14,7 @@ in
     # zsh prompt
     # initExtra will change in future: https://nix-community.github.io/home-manager/options.xhtml#opt-programs.zsh.initContent
     enableCompletion = true;
+    completionInit = "autoload -Uz compinit && compinit";
     initExtra = ''
       autoload -U colors && colors
       setopt prompt_subst
