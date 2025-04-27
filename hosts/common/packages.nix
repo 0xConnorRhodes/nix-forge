@@ -8,7 +8,7 @@ with pkgs; [
   fzf
   fd
   bat
-  ripgrep
+  # ripgrep
   just
   screen
   lf
