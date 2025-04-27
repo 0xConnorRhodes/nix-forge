@@ -12,5 +12,6 @@
     rb = "ruby";
     cat = "bat --style=plain";
     tk = "ruby $HOME/code/notes-scripts/tasks-menu-pc.rb";
+    mt = "ruby $HOME/code/notes-scripts/new-meeting.rb";
   };
 }
