@@ -30,6 +30,10 @@ in
     yo = "open -a yoink";
   };
 
+  programs.vscode = {
+      enable = true;
+  };
+
   programs.zsh.initExtra = ''
     nf() {
       ls -At1 . | sed '/\.DS_Store/d' | sed '/\.git/d' | sed -n '1p'
