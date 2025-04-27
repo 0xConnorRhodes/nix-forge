@@ -8,7 +8,10 @@
       editor = {
         tabSize = 2;
       };
-      explorer.confirmDragAndDrop = false;
+      explorer = {
+        confirmDragAndDrop = false;
+        confirmDelete = false;
+      };
       github.copilot.enable."*" = false;
     };
   };
