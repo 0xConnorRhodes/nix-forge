@@ -9,6 +9,7 @@ in
     shellAliases = shellAliases.myAliases;
     dotDir = ".config/zsh"; # relative to the users home directory.
     history.path = "$ZDOTDIR/.zsh_history";
+    autosuggestion.enable = true; # fish-like past command suggestions
     envExtra = ''
       export PATH="${lib.concatStringsSep ":" myPaths.extraPaths}:$PATH"
     '';
