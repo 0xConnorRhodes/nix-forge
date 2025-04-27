@@ -77,6 +77,7 @@ in
     cloudflared
     podman
     podman-compose
+    unixtools.watch
     
     # GUI
     utm

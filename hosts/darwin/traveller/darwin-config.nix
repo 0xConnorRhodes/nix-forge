@@ -1,7 +1,10 @@
 { config, lib, pkgs, inputs, secrets, ... }: 
 
 {
-  imports = [ ./darwin-secret.nix ];
+  imports = [ 
+    ./darwin-secret.nix 
+    ./launchd.nix
+  ];
 
   options = {
     myConfig = {
