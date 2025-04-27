@@ -39,15 +39,21 @@ in
     };
   };
 
-  programs.zsh.initExtra = ''
-    nf() {
-      ls -At1 . | sed '/\.DS_Store/d' | sed '/\.git/d' | sed -n '1p'
-    }
+  programs.zsh = {
+    dirHashes= {
+      dwn = "$HOME/Downloads";
+      docs = "$HOME/Documents";
+    };
+    initExtra = ''
+      nf() {
+        ls -At1 . | sed '/\.DS_Store/d' | sed '/\.git/d' | sed -n '1p'
+      }
 
-    lnf() {
-      ls -At1 . | sed '/\.DS_Store/d' | sed '/\.git/d' | sed -n '2p'
-    }
-  '';
+      lnf() {
+        ls -At1 . | sed '/\.DS_Store/d' | sed '/\.git/d' | sed -n '2p'
+      }
+    '';
+  };
 
   home.packages = with pkgs; [
     zoxide
