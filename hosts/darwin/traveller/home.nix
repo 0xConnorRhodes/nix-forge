@@ -18,6 +18,14 @@ in
     EDITOR = "nvim";
   };
 
+  # needed for shell integration when ghostty is installed with brew instead of nix
+  programs.zsh.initExtraFirst = ''
+    # Ghostty shell integration for zsh. This should be at the top of your bashrc!
+    if [ -n "$GHOSTTY_RESOURCES_DIR" ]; then
+        builtin source "$GHOSTTY_RESOURCES_DIR/shell-integration/zsh/ghostty-integration"
+    fi
+  '';
+
   programs.ghostty.settings = {
     font-size = 22;
     font-family = "GeistMono Nerd Font Mono";
