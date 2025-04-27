@@ -8,7 +8,6 @@ with pkgs; [
   fzf
   fd
   bat
-  # ripgrep
   just
   screen
   lf
@@ -19,7 +18,6 @@ with pkgs; [
   mosh
   nnn
   vimv-rs
-  zoxide
   tree
 ]
 
