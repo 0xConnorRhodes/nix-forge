@@ -20,5 +20,6 @@ with pkgs; [
   vimv-rs
   tree
   timer
+  bundix
 ]
 
