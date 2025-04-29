@@ -35,6 +35,7 @@
       mpro = nixpkgs.lib.nixosSystem rec {
         specialArgs = { inherit inputs; inherit secrets; };
         system = "x86_64-linux";
+        pkgs = import inputs.nixpkgs { system = system; config.allowUnfree = true;};
         modules = [ 
           ./hosts/nixos/mpro/configuration.nix 
 	        inputs.home-manager.nixosModules.default

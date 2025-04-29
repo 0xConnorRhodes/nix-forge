@@ -16,16 +16,6 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  security.sudo.extraRules = [
-    { users = [ username ];
-      commands = [{ 
-        command = "ALL" ;
-	      options = [ "NOPASSWD" ]; 
-      }];
-    }
-  ];
-
   services.bpftune.enable = true;
   programs.nix-ld.enable = true;
-
 }
