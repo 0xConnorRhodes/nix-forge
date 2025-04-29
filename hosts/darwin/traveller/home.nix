@@ -78,6 +78,7 @@ in
     podman
     podman-compose
     unixtools.watch
+    unixtools.ping
     
     # GUI
     utm
