@@ -3,7 +3,6 @@
 
 {
   nixpkgs.config.allowUnfree = true;
-  
   environment.systemPackages = with pkgs; [
     # install from unstable by prefixing package with pkgsUnstable, eg: pkgsUnstable.go
     ghostty
@@ -26,11 +25,11 @@
 
     # nonfree
     obsidian
-    # pkgsUnstable.vscode-fhs
-    # pkgsUnstable.warp-terminal
-    # pkgsUnstable.code-cursor
-    # pkgsUnstable.windsurf
-    # pkgsUnstable.discord
-    # pkgsUnstable.slack
+    pkgsUnstable.vscode-fhs
+    pkgsUnstable.warp-terminal
+    pkgsUnstable.code-cursor
+    pkgsUnstable.windsurf
+    pkgsUnstable.discord
+    pkgsUnstable.slack
   ];
 }
