@@ -6,6 +6,11 @@ let
   ]);
 in
 {
+  # set path for launchd scripts to include nix and homebrew binaries
+  system.activationScripts.text = ''
+    launchctl config user path /opt/homebrew/bin:${config.myConfig.homeDir}/.nix-profile/bin:/usr/bin:/bin:/usr/sbin:/sbin
+  '';
+
   launchd.user.agents = {
     sync-notes = {
       command = "${cronRuby}/bin/ruby /Users/connor.rhodes/code/scripts/ns";
