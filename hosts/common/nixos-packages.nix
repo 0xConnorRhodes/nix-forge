@@ -14,22 +14,23 @@
     podman-compose
     lazydocker
     gparted
-    obsidian
     nerdfonts
     distrobox
     gpu-screen-recorder
     rclone-browser
     wev # xev-style key viewer for wayland
     killall
-    bitwarden-desktop
+    # bitwarden-desktop
     chromium
     element-desktop
 
-    pkgsUnstable.vscode-fhs
-    pkgsUnstable.warp-terminal
-    pkgsUnstable.code-cursor
-    pkgsUnstable.windsurf
-    pkgsUnstable.discord
-    pkgsUnstable.slack
+    # nonfree
+    obsidian
+    # pkgsUnstable.vscode-fhs
+    # pkgsUnstable.warp-terminal
+    # pkgsUnstable.code-cursor
+    # pkgsUnstable.windsurf
+    # pkgsUnstable.discord
+    # pkgsUnstable.slack
   ];
 }

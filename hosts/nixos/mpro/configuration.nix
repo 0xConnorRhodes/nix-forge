@@ -107,7 +107,7 @@
       inherit (config.nixpkgs) config;
     };
 
-    nixpkgs.config.allowUnfree = true;
+    # nixpkgs.config.allowUnfree = true;
     # set comma to use prebuilt nixpkgs database from inputs
 	  programs.nix-index-database.comma.enable = true;
     environment.systemPackages = with pkgs; [
