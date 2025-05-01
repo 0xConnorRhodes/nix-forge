@@ -5,9 +5,12 @@
     enable = true;
     enableZshIntegration = true;
     settings = {
+      add_newline = false;
+      # format = "$all$directory$character";
+      username.disabled = true;
       hostname = {
         ssh_only = true;
-        format = "[$ssh_symbol](bold blue) on [$hostname](bold red) ";
+        format = "@[$hostname](blue) ";
       };
     };
   };
