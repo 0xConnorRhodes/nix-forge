@@ -21,5 +21,6 @@ with pkgs; [
   tree
   timer
   bundix
+  croc
 ]
 

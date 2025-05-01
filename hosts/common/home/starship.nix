@@ -6,7 +6,7 @@
     enableZshIntegration = true;
     settings = {
       add_newline = false;
-      # format = "$all$directory$character";
+      format = "$directory$git_branch$git_status";
       username.disabled = true;
       hostname = {
         ssh_only = true;

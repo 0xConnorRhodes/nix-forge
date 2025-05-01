@@ -127,6 +127,9 @@
       tealdeer
       rclone
 
+      # gui programs
+      calibre
+
       # python packages
       (python3.withPackages (python-pkgs: with python-pkgs; [
         requests
