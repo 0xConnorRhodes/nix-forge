@@ -20,9 +20,7 @@ in
     completionInit = "autoload -Uz compinit && compinit";
     initExtra = ''
       autoload -U colors && colors
-      setopt prompt_subst
     '' 
-    + "PROMPT='%{$fg[cyan]%}$USER@%m %{$fg[green]%}%~%{$reset_color%}: '"
     + # concatenate case-insensitive matching string since it contains '' which breaks the multiline string.
     "\nzstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'";
   };
