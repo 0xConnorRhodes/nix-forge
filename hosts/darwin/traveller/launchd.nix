@@ -7,6 +7,7 @@ let
 in
 {
   # set path for launchd scripts to include nix and homebrew binaries
+  # may need to run interactively on new machine setup
   system.activationScripts.text = ''
     launchctl config user path /opt/homebrew/bin:${config.myConfig.homeDir}/.nix-profile/bin:/usr/bin:/bin:/usr/sbin:/sbin
   '';

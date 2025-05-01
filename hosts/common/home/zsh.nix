@@ -2,6 +2,12 @@
 let
   shellAliases = import ./shellAliases.nix;
   myPaths = import ./pathDirs.nix;
+
+  zshPrompt = lib.mkOption {
+    type = lib.types.str;
+    default = "PROMPT='%{$fg[cyan]%}$USER@%m %{$fg[green]%}%~%{$reset_color%}: '";
+    description = "The prompt string for Zsh.";
+  };
 in 
 {
   programs.zsh = {
@@ -21,8 +27,8 @@ in
     initExtra = ''
       autoload -U colors && colors
       setopt prompt_subst
-      PROMPT='%{$fg[cyan]%}$USER@%m %{$fg[green]%}%~%{$reset_color%}: '
     '' 
+    + zshPrompt
     + # concatenate case-insensitive matching string since it contains '' which breaks the multiline string.
     "\nzstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'";
   };
