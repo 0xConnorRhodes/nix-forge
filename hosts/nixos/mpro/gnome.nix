@@ -40,10 +40,4 @@ in
     gnome-tweaks
     gnome-themes-extra # provides adwaita dark theme in gnome tweaks for legacy applications
   ];
-
-  # remote desktop
-  services.gnome.gnome-remote-desktop.enable = true;
-  services.xrdp.enable = true;
-  services.xrdp.defaultWindowManager = "${pkgs.gnome-session}/bin/gnome-session";
-  services.xrdp.openFirewall = true;
 }
