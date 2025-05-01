@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  enable_autologin = true;
+  enable_autologin = false;
 in
 {
   # Enable the X11 windowing system.
