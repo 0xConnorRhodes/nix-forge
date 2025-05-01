@@ -13,6 +13,7 @@ in
     ../../common/home/zsh.nix
     ../../common/home/ripgrep.nix
     ../../common/home/zoxide.nix
+    ../../common/home/starship.nix
     ../../common/home/vscode.nix
   ];
 
