@@ -15,6 +15,23 @@
     EDITOR = "nvim";
   };
 
+  programs.zsh = {
+    dirHashes= {
+      dwn = "$HOME/Downloads";
+      docs = "$HOME/Documents";
+    };
+    initExtra = ''
+      nf() {
+        ls -At1 . | sed '/\.git/d' | sed -n '1p'
+      }
+
+      lnf() {
+        ls -At1 . | sed '/\.git/d' | sed -n '2p'
+      }
+    '';
+  };
+
+
   programs.ghostty.settings = {
     font-size = 17;
   };
