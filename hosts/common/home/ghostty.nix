@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  programs.ghostty.enable = true;
   programs.ghostty.settings = {
     theme = "Abernathy";
     font-feature = [
