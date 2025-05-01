@@ -7,7 +7,7 @@
     settings = {
       hostname = {
         ssh_only = true;
-        format = "[ssh_symbol](bold blue) on [$hostname](bold red) ";
+        format = "[$ssh_symbol](bold blue) on [$hostname](bold red) ";
       };
     };
   };
