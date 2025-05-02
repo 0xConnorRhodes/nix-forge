@@ -6,6 +6,7 @@ in
 {
   programs.bash = {
     enable = true;
+    shellAliases = shellAliases.myAliases;
   };
 
   programs.fzf = {
