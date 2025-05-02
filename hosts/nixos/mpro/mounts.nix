@@ -19,6 +19,12 @@
     options = [ "rw" "x-systemd.automount" "noauto" ];
   };
 
+  fileSystems."/mnt/zfiles" = {
+    device = "192.168.86.10:/zstore/files";
+    fsType = "nfs4";
+    options = [ "rw" "x-systemd.automount" "noauto" ];
+  };
+
   fileSystems."/mnt/sfs" = {
     device = "192.168.86.10:/zstore/static_files";
     fsType = "nfs4";

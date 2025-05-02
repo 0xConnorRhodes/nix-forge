@@ -4,6 +4,7 @@ with pkgs; [
   git-crypt
   neovim
   chezmoi
+  # bashInteractive
   fish
   fzf
   fd

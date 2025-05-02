@@ -10,6 +10,7 @@ in
     ./comma.nix
     ./home-secret.nix
     ../../common/home/git.nix
+    ../../common/home/bash.nix
     ../../common/home/zsh.nix
     ../../common/home/ripgrep.nix
     ../../common/home/zoxide.nix
