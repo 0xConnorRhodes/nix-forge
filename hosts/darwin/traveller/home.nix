@@ -114,6 +114,7 @@ in
     "screen/screenrc".source = ../../common/home/config/screenrc;
   };
 
+
   # Don't show the "Last login" message for every new terminal.
   home.file.".hushlogin" = { text = ""; };
 }
