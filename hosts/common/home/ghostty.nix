@@ -3,6 +3,9 @@
 {
   programs.ghostty = {
     enable = true;
+    # NOTE: shell integration with nix may not affect subshells.
+    # for subshell support, can manually add integration statement in shell config 
+    # per: https://ghostty.org/docs/features/shell-integration
     enableZshIntegration = true;
     enableFishIntegration = true;
   };
