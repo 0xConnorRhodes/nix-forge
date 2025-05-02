@@ -20,6 +20,7 @@ in
     completionInit = "autoload -Uz compinit && compinit";
     initExtra = ''
       autoload -U colors && colors
+      bindkey -e # force emacs readline keybindings
     '' 
     + # concatenate case-insensitive matching string since it contains '' which breaks the multiline string.
     "\nzstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'";
