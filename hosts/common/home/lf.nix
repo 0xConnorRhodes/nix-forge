@@ -4,6 +4,10 @@
   programs.lf = {
     enable = true;
 
+    keybindings = {
+      "." = "set hidden!";
+    };
+
     previewer.source = pkgs.writeShellScript "preview.sh" ''
       #!/bin/sh
 
