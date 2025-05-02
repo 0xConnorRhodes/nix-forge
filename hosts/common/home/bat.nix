@@ -6,7 +6,7 @@
   programs.bat.config = {
     # find available languages with `bat --list-languages`
     map-syntax = [
-      "flake.lock:Nix"
+      "flake.lock:JSON"
       "Gemfile*:Ruby"
     ];
   };
