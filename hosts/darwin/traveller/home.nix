@@ -15,6 +15,7 @@ in
     ../../common/home/ripgrep.nix
     ../../common/home/zoxide.nix
     ../../common/home/starship.nix
+    ../../common/home/lf.nix
     ../../common/home/vscode.nix
   ];
 

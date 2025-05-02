@@ -10,7 +10,6 @@ with pkgs; [
   bat
   just
   screen
-  lf
   magic-wormhole
   zip
   unzip
