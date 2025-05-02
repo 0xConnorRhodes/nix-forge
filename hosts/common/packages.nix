@@ -7,7 +7,6 @@ with pkgs; [
   fish
   fzf
   fd
-  bat
   just
   screen
   magic-wormhole
