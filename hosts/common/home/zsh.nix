@@ -2,6 +2,7 @@
 let
   shellAliases = import ./shellAliases.nix;
   myPaths = import ./pathDirs.nix;
+  posixFunctions = import ./posixFunctions.nix;
 in 
 {
   programs.zsh = {

@@ -49,15 +49,7 @@ in
       dwn = "$HOME/Downloads";
       docs = "$HOME/Documents";
     };
-    initExtra = ''
-      nf() {
-        ls -At1 . | sed '/\.DS_Store/d' | sed '/\.git/d' | sed -n '1p'
-      }
-
-      lnf() {
-        ls -At1 . | sed '/\.DS_Store/d' | sed '/\.git/d' | sed -n '2p'
-      }
-    '';
+    initExtra = import ../../common/home/posixFunctions.nix;
   };
 
   home.packages = with pkgs; [
