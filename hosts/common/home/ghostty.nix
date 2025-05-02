@@ -1,7 +1,13 @@
 { config, pkgs, ... }:
 
 {
-  programs.ghostty.enable = true;
+  programs.ghostty = {
+    enable = true;
+    enableZshIntegration = true;
+    enableBashIntegration = true;
+    enableFishIntegration = true;
+  };
+
   programs.ghostty.settings = {
     theme = "Abernathy";
     font-feature = [
