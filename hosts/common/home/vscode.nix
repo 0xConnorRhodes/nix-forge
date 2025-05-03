@@ -1,4 +1,12 @@
 { config, pkgs, ... }:
+let
+  myZshProfile = {
+    path = "zsh";
+    args = [
+      "-l"
+    ];
+  };
+in 
 
 {
   nixpkgs.config.allowUnfree = true;
@@ -16,15 +24,13 @@
       github.copilot.enable."*" = false;
 
       terminal.integrated.profiles.osx = {
-        myZsh = {
-          path = "zsh";
-          args = [
-            "-l"
-          ];
-        };
+        myZsh = myZshProfile;
       };
 
-      terminal.integrated.defaultProfile.osx = "myZsh";
+      terminal.integrated.defaultProfile = {
+        linux = "myZsh";
+        osx = "myZsh";
+      };
     };
   };
 }
