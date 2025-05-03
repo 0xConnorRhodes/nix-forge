@@ -26,7 +26,8 @@
 
     # nonfree
     obsidian
-    pkgsUnstable.vscode-fhs
+    vscode
+    # pkgsUnstable.vscode-fhs
     pkgsUnstable.warp-terminal
     pkgsUnstable.code-cursor
     pkgsUnstable.windsurf

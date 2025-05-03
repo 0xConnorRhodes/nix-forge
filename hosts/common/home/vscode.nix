@@ -1,5 +1,8 @@
 { config, pkgs, inputs, ... }:
 let
+  nix-vscode-extensions = inputs.nix-vscode-extensions.extensions.${pkgs.system};
+  marketplace-extensions = nix-vscode-extensions.vscode-marketplace;
+
   myZshProfile = {
     path = "zsh";
     args = [
@@ -11,6 +14,10 @@ in
   nixpkgs.config.allowUnfree = true;
   programs.vscode = {
     enable = true;
+    mutableExtensionsDir = false;
+    enableUpdateCheck = false;
+    enableExtensionUpdateCheck = false;
+
     userSettings = {
       files.autoSave = "afterDelay";
       editor = {
@@ -31,8 +38,13 @@ in
         osx = "myZsh";
       };
     };
-    extensions = [
-      inputs.nix-vscode-extensions.vscode-marketplace.formulahendry.code-runner
-    ];
+
+    extensions =
+      with pkgs.vscode-extensions; [
+        vscodevim.vim
+        formulahendry.code-runner
+        jnoortheen.nix-ide
+        shopify.ruby-lsp
+      ];
   };
 }
