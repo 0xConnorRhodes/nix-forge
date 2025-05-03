@@ -7,7 +7,6 @@ let
     ];
   };
 in 
-
 {
   nixpkgs.config.allowUnfree = true;
   programs.vscode = {
