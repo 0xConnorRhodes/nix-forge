@@ -45,6 +45,9 @@ in
         formulahendry.code-runner
         jnoortheen.nix-ide
         shopify.ruby-lsp
-      ];
+      ]
+      ++ (with marketplace-extensions; [
+        # item 1
+      ]); 
   };
 }
