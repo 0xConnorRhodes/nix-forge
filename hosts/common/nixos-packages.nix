@@ -18,6 +18,7 @@
     gpu-screen-recorder
     rclone-browser
     wev # xev-style key viewer for wayland
+    wl-clipboard # access clipboard from terminal with wl-copy and wl-paste
     killall
     # bitwarden-desktop
     chromium
