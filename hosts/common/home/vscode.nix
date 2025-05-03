@@ -45,9 +45,12 @@ in
         formulahendry.code-runner
         jnoortheen.nix-ide
         shopify.ruby-lsp
+        github.copilot
+        github.copilot-chat
       ]
       ++ (with marketplace-extensions; [
-        # item 1
+        # extions outside of nixpkgs
+        # user.extension-name
       ]); 
   };
 }
