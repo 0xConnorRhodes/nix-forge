@@ -14,6 +14,17 @@
         confirmDelete = false;
       };
       github.copilot.enable."*" = false;
+
+      terminal.integrated.profiles.osx = {
+        myZsh = {
+          path = "zsh";
+          args = [
+            "-l"
+          ];
+        };
+      };
+
+      terminal.integrated.defaultProfile.osx = "myZsh";
     };
   };
 }
