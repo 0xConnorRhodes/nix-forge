@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 let
   myZshProfile = {
     path = "zsh";
@@ -31,5 +31,8 @@ in
         osx = "myZsh";
       };
     };
+    extensions = [
+      inputs.nix-vscode-extensions.vscode-marketplace.formulahendry.code-runner
+    ];
   };
 }

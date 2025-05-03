@@ -22,7 +22,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
@@ -38,6 +38,7 @@
         modules = [ 
           ./hosts/nixos/mpro/configuration.nix 
 	        inputs.home-manager.nixosModules.default
+          { home-manager.extraSpecialArgs = specialArgs; } # needed to access inputs in home.nix
         ];
       };
 
