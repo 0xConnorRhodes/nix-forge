@@ -6,12 +6,15 @@ pushd ~/code/nix-forge
 
 find . -type f -name "*.nix" -exec git add {} +
 
+#export NIXPKGS_ALLOW_UNFREE=1
+
 if [ "$(uname)" = "Darwin" ]; then
   darwin-rebuild switch --flake .#traveller
 else
   #sudo nixos-rebuild switch --flake .
   #sudo nixos-rebuild switch --flake . |& nom
   nh os switch .
+  #nh os switch . -- --impure 
 fi
 
 popd

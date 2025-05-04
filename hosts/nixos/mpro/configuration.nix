@@ -72,6 +72,7 @@
     };
 
     home-manager.backupFileExtension = "bak"; # append existing non hm files with this on rebuild
+    nixpkgs.config.allowUnfree = true;
     home-manager.users.${config.myConfig.username} = { pkgs, ... }: {
       home.stateVersion = "24.11";
       imports = [
@@ -96,6 +97,7 @@
       settings.PasswordAuthentication = false;
     };
 
+    #services.flatpak.enable = true;
     services.printing.enable = true;
     services.psd.enable = true;
     programs.firefox.enable = true;

@@ -26,7 +26,7 @@
 
     # nonfree
     obsidian
-    vscode
+    # vscode
     # pkgsUnstable.vscode-fhs
     pkgsUnstable.warp-terminal
     pkgsUnstable.code-cursor
@@ -34,4 +34,18 @@
     pkgsUnstable.discord
     pkgsUnstable.slack
   ];
+#   ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+#   {
+#     name = "copilot";
+#     publisher = "GitHub";
+#     version = "1.312.0";
+#     sha256 = "sha256-CsOOE/Lpfv1JL9h3KaHfGXIDZcF9KuWo4qIwzwFT1Gk=";
+#   }
+#   {
+#     name = "copilot-chat";
+#     publisher = "GitHub";
+#     version = "0.26.7";
+#     sha256 = "sha256-aR6AGU/boDmYef0GWna5sUsyv9KYGCkugWpFIusDMNE=";
+#   }
+# ];
 }
