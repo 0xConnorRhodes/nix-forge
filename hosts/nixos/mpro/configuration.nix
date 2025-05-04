@@ -8,6 +8,7 @@
       ./mounts.nix
       ./secret.nix
       ./backup-cron.nix
+      ./syncthing.nix
       ../../common/nixos-common.nix
       ../../common/nixos-packages.nix
       ../../common/gnome-common.nix
@@ -25,10 +26,13 @@
     myConfig = {
       username = lib.mkOption { type = lib.types.str; default = "connor";};
       hostname = lib.mkOption { type = lib.types.str; default = "mpro";};
+      homeDir = lib.mkOption { type = lib.types.str; default = "/home/connor";};
+      tailscaleIp = lib.mkOption { type = lib.types.str; default = "127.0.0.1";};
     };
   };
 
   config = {
+
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
@@ -37,6 +41,8 @@
     boot.supportedFilesystems = [ "zfs" ];
     networking.hostId = "eca3fb4d";
 
+    # Networking
+    myConfig.tailscaleIp = "100.80.72.12";
     networking = {
       hostName = config.myConfig.hostname;
       useDHCP = false;
@@ -50,6 +56,7 @@
       defaultGateway = "192.168.86.1";
       nameservers = [ "1.1.1.1" "1.0.0.1" ];
     };
+    networking.firewall.enable = true;
 
     time.timeZone = "America/Chicago";
 
