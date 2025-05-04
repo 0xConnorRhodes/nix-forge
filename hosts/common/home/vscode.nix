@@ -14,7 +14,6 @@ in
   nixpkgs.config.allowUnfree = true;
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode;
     mutableExtensionsDir = false;
     enableUpdateCheck = false;
     enableExtensionUpdateCheck = false;
@@ -57,11 +56,12 @@ in
       publisher = "GitHub";
       version = "0.26.7"; # works with code 1.99.3
       sha256 = "sha256-aR6AGU/boDmYef0GWna5sUsyv9KYGCkugWpFIusDMNE=";
-    } ]
-    ++ (with marketplace-extensions; [
-      # extions outside of nixpkgs
-      # user.extension-name
+    } ] ++ (with marketplace-extensions; [
+      # extensions outside of nixpkgs from nix-vscode extensions
+      # pulls latest version without requirement of manual hash
+      # format: user.extension-name
       sumneko.lua
-    ]); 
+    ])
+    ; 
   };
 }
