@@ -44,24 +44,24 @@ in
       jnoortheen.nix-ide
       formulahendry.code-runner
       shopify.ruby-lsp
-    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-    {
-      name = "copilot";
-      publisher = "GitHub";
-      version = "1.312.0"; # works with code 1.99.3
-      sha256 = "sha256-CsOOE/Lpfv1JL9h3KaHfGXIDZcF9KuWo4qIwzwFT1Gk=";
-    }
-    {
-      name = "copilot-chat";
-      publisher = "GitHub";
-      version = "0.26.7"; # works with code 1.99.3
-      sha256 = "sha256-aR6AGU/boDmYef0GWna5sUsyv9KYGCkugWpFIusDMNE=";
-    } ] ++ (with marketplace-extensions; [
+    ] ++ (with marketplace-extensions; [
       # extensions outside of nixpkgs from nix-vscode extensions
       # pulls latest version without requirement of manual hash
       # format: user.extension-name
       sumneko.lua
-    ])
-    ; 
+    ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      {
+        name = "copilot";
+        publisher = "GitHub";
+        version = "1.312.0"; # works with code 1.99.3
+        sha256 = "sha256-CsOOE/Lpfv1JL9h3KaHfGXIDZcF9KuWo4qIwzwFT1Gk=";
+      }
+      {
+        name = "copilot-chat";
+        publisher = "GitHub";
+        version = "0.26.7"; # works with code 1.99.3
+        sha256 = "sha256-aR6AGU/boDmYef0GWna5sUsyv9KYGCkugWpFIusDMNE=";
+      }
+    ]; 
   };
 }
