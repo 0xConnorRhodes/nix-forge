@@ -44,11 +44,19 @@ in
       jnoortheen.nix-ide
       formulahendry.code-runner
       shopify.ruby-lsp
+      # sumneko.lua
+      # ms-python.python
+      # ms-python.vscode-pylance
+      # ms-python.debugpy
+      # ms-vscode.powershell
+      # bmalehorn.vscode-fish
+      # ms-vscode.live-server # live webapp in pane
+      mechatroner.rainbow-csv
+      ms-vscode-remote.remote-ssh
     ] ++ (with marketplace-extensions; [
       # extensions outside of nixpkgs from nix-vscode extensions
       # pulls latest version without requirement of manual hash
       # format: user.extension-name
-      sumneko.lua
     ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "copilot";
