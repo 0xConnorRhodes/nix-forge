@@ -62,6 +62,7 @@ in
     gotop
     rclone
     android-tools # provides adb
+    pkgsUnstable.bluesnooze # not in 24.11, must launch once and choose "launch at login" from menu bar icon
 
     # mac-specific
     blueutil
