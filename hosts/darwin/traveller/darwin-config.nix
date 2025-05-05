@@ -80,7 +80,6 @@
         "kdenlive"
         "vlc"
         "wireshark"
-        "zed"
       ];
 
       masApps = { };
