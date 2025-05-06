@@ -12,6 +12,7 @@
 
   programs.ghostty.settings = {
     theme = "Abernathy";
+    font-family = "GeistMono Nerd Font";
     font-feature = [
       "-calt"
       "-liga"
