@@ -9,6 +9,7 @@
       add_newline = false; # don't print a newline at the start of each new prompt
       # format = "$directory$git_branch$git_status";
       username.disabled = true;
+
       hostname = {
         ssh_only = true;
         format = "@[$hostname](blue) ";
@@ -30,6 +31,11 @@
         format = "[$symbol]($style)";
         symbol = " ";
         style = "bright-blue";
+      };
+
+      cmd_duration = {
+        min_time = 4000; # time in milliseconds
+        format = "[$duration]($style) ";
       };
 
       # disabled modules
