@@ -135,10 +135,11 @@
       comma
       tealdeer
       rclone
-      audacious
+      lima
 
       # gui programs
       calibre
+      audacious
 
       # python packages
       (python3.withPackages (python-pkgs: with python-pkgs; [
