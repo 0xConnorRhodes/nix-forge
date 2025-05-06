@@ -40,6 +40,7 @@
 
       # disabled modules
       line_break.disabled = true; # make prompt a single line instead of two lines
+      python.disabled = true;
       ruby.disabled = true;
     };
   };
