@@ -4,6 +4,13 @@ let
     inherit (pkgs.stdenv.hostPlatform) system;
     inherit (config.nixpkgs) config;
   };
+
+  ruby = pkgs.ruby_3_4;
+  httparty = pkgs.bundlerEnv {
+    name = "httparty";
+    ruby = ruby;
+    gemdir = ../../../pkgs/ruby/httparty;
+  };
 in
 {
   imports = [
@@ -22,6 +29,8 @@ in
 
   home.sessionVariables = {
     EDITOR = "nvim";
+    # colon seperated list of dirs to be added to the default ruby $LOAD_PATH for importing modules
+    RUBYLIB = "$HOME/code/ruby-modules/lib:$HOME/code/vapi/lib"; 
   };
 
   # needed for shell integration when ghostty is installed with brew instead of nix
@@ -101,6 +110,7 @@ in
       pry
       dotenv
       highline
+      httparty # local package
     ]))
   ] ++ (import ../../common/packages.nix { pkgs = pkgs; });
 
