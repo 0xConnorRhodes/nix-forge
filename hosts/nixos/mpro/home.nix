@@ -33,9 +33,11 @@
 
   programs.vscode = {
     userSettings = {
+      # fonts: ideal size is 17 with zoom level 1
       editor.fontSize = 17;
       terminal.integrated.fontSize = 17;
       chat.editor.fontSize = 16;
+      window.zoomLevel = 1;
     };
   };
 
