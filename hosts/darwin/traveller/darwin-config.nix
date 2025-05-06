@@ -40,6 +40,7 @@
         # pass keys from https://github.com/NixOS/nixpkgs/blob/nixos-24.11/pkgs/data/fonts/nerdfonts/shas.nix
         # as strings to selectively install nerd fonts
         "GeistMono"
+        "JetBrainsMono"
         ]; }) 
     ];
 
