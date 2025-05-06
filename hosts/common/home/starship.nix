@@ -18,6 +18,14 @@
         format = "[$symbol$branch(:$remote_branch)]($style) ";
       };
 
+      shell = {
+        disabled = false;
+        format = "[$indicator]($style) ";
+        style = "white";
+        bash_indicator = "\\$";
+        zsh_indicator = "";
+      };
+
       # disabled modules
       line_break.disabled = true; # make prompt a single line instead of two lines
       ruby.disabled = true;

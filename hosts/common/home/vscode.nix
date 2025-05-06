@@ -20,6 +20,7 @@ in
 
     userSettings = {
       files.autoSave = "afterDelay";
+      editor.fontFamily = "'JetBrainsMono Nerd Font', 'monospace', monospace";
       editor = {
         tabSize = 2;
       };

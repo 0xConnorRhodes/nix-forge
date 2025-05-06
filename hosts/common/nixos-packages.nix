@@ -13,7 +13,6 @@
     podman-compose
     lazydocker
     gparted
-    nerdfonts
     distrobox
     gpu-screen-recorder
     rclone-browser
@@ -23,6 +22,15 @@
     # bitwarden-desktop
     chromium
     element-desktop
+
+
+    # Nerd Fonts
+    # pass keys from https://github.com/NixOS/nixpkgs/blob/nixos-24.11/pkgs/data/fonts/nerdfonts/shas.nix
+    # as strings to selectively install nerd fonts
+    (nerdfonts.override { fonts = [
+      "GeistMono"
+      "JetBrainsMono"
+    ];})
 
     # nonfree
     obsidian

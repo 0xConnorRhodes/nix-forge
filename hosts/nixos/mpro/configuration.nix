@@ -135,6 +135,7 @@
       comma
       tealdeer
       rclone
+      clementine
 
       # gui programs
       calibre
