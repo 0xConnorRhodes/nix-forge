@@ -77,6 +77,7 @@ in
     unixtools.watch
     unixtools.ping
     emacs-macport
+    lima
     
     # GUI
     utm
