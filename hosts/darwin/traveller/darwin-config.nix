@@ -83,7 +83,10 @@
         "wireshark"
       ];
 
-      masApps = { };
+      masApps = { 
+        "iMovie" = 408981434;
+        "Yoink" = 457622435;
+      };
 
     };
 
