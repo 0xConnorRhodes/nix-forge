@@ -76,6 +76,7 @@ in
     podman-compose
     unixtools.watch
     unixtools.ping
+    emacs-macport
     
     # GUI
     utm
