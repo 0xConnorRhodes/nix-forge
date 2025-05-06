@@ -98,6 +98,7 @@
       comma
       tealdeer
       rclone
+      clementine
 
       # python packages
       (python3.withPackages (python-pkgs: with python-pkgs; [

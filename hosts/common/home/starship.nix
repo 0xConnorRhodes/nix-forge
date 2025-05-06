@@ -6,13 +6,21 @@
     enableZshIntegration = true;
     enableBashIntegration = true;
     settings = {
-      add_newline = false;
-      format = "$directory$git_branch$git_status";
+      add_newline = false; # don't print a newline at the start of each new prompt
+      # format = "$directory$git_branch$git_status";
       username.disabled = true;
       hostname = {
         ssh_only = true;
         format = "@[$hostname](blue) ";
       };
+
+      git_branch = {
+        format = "[$symbol$branch(:$remote_branch)]($style) ";
+      };
+
+      # disabled modules
+      line_break.disabled = true; # make prompt a single line instead of two lines
+      ruby.disabled = true;
     };
   };
 }
