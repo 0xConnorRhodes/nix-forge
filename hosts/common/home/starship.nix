@@ -20,10 +20,16 @@
 
       shell = {
         disabled = false;
-        format = "[$indicator]($style) ";
+        format = "[$indicator]($style)";
         style = "white";
         bash_indicator = "\\$";
         zsh_indicator = "";
+      };
+
+      nix_shell = {
+        format = "[$symbol]($style)";
+        symbol = " ";
+        style = "bright-blue";
       };
 
       # disabled modules
