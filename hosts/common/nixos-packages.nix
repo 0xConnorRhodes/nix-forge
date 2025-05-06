@@ -1,6 +1,13 @@
 # packages exclusive to nixOS hosts (mostly GUI programs)
 { inputs, pkgs, config, pkgsUnstable, ... }:
-
+let
+  ruby = pkgs.ruby_3_4;
+  httparty = pkgs.bundlerEnv {
+    name = "httparty";
+    ruby = ruby;
+    gemdir = ../../pkgs/ruby/httparty;
+  };
+in 
 {
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
@@ -23,6 +30,12 @@
     chromium
     element-desktop
 
+    # common ruby env
+    (ruby.withPackages (ruby-pkgs: with ruby-pkgs; [
+      pry
+      dotenv
+      httparty
+    ]))
 
     # Nerd Fonts
     # pass keys from https://github.com/NixOS/nixpkgs/blob/nixos-24.11/pkgs/data/fonts/nerdfonts/shas.nix
