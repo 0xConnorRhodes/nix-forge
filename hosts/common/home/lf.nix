@@ -13,7 +13,7 @@
     };
 
     commands = {
-      trash = "\$${osConfig.myConfig.trashcli} $fx";
+      trash = "\$${osConfig.myConfig.trashcli} \"$fx\"";
     };
 
     previewer.source = pkgs.writeShellScript "preview.sh" ''
