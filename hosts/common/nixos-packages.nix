@@ -29,6 +29,7 @@ in
     # bitwarden-desktop
     chromium
     element-desktop
+    trashy
 
     # common ruby env
     (ruby.withPackages (ruby-pkgs: with ruby-pkgs; [

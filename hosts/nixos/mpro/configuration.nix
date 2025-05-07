@@ -28,6 +28,7 @@
       hostname = lib.mkOption { type = lib.types.str; default = "mpro";};
       homeDir = lib.mkOption { type = lib.types.str; default = "/home/connor";};
       tailscaleIp = lib.mkOption { type = lib.types.str; default = "127.0.0.1";};
+      trashcli = lib.mkOption { type = lib.types.str; default = "trash";}; # from pkgs.trashy
     };
   };
 
