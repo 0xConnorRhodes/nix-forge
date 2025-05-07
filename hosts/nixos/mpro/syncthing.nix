@@ -39,6 +39,10 @@ in
           path = "/scary/phone/ebooks"; # phone_path: internal/Books
           devices = [ "phone" ];
         };
+        "Movies" = {
+          path = "/scary/phone/movies"; # phone_path: internal/Movies
+          devices = [ "phone" ];
+        };
       };
     };
   };
