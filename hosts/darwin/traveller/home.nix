@@ -69,9 +69,12 @@ in
     tealdeer
     htop
     gotop
-    rclone
-    android-tools # provides adb
+    # rclone
+    # android-tools # provides adb
     pkgsUnstable.bluesnooze # not in 24.11, must launch once and choose "launch at login" from menu bar icon
+    raycast
+    scrcpy
+    wezterm
 
     # mac-specific
     blueutil
@@ -87,6 +90,7 @@ in
     unixtools.ping
     emacs-macport
     lima
+    mpv
     
     # GUI
     utm
@@ -115,7 +119,7 @@ in
   ] ++ (import ../../common/packages.nix { pkgs = pkgs; });
 
   xdg.configFile = {
-    "skhd/skhdrc".source = ./config/skhdrc;
+    # "skhd/skhdrc".source = ./config/skhdrc;
     "ghostty/config".source = ./config/ghostty;
     "screen/screenrc".source = ../../common/home/config/screenrc;
   };

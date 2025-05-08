@@ -75,11 +75,11 @@
       casks = [ 
         "ghostty" 
         "balenaetcher"
-        "hammerspoon"
-        "pine" # mac native markdown editor
-        "macs-fan-control"
+        # "hammerspoon"
+        # "pine" # mac native markdown editor
+        # "macs-fan-control"
         "jupyterlab"
-        "kdenlive"
+        # "kdenlive"
         "vlc"
         "wireshark"
       ];
@@ -110,7 +110,7 @@
     };
 
     # will use default config file at ~/skhd/skhdrc
-    services.skhd.enable = true;
+    # services.skhd.enable = true;
 
     nix.extraOptions = ''
       experimental-features = nix-command flakes
