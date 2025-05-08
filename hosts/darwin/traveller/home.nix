@@ -53,6 +53,7 @@ in
       editor.fontSize = 17;
       terminal.integrated.fontSize = 17;
       chat.editor.fontSize = 16;
+      window.zoomLevel = 1;
     };
   };
 

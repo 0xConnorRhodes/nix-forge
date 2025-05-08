@@ -29,6 +29,7 @@ in
         confirmDelete = false;
       };
       github.copilot.enable."*" = false;
+      git.openRepositoryInParentFolders = "never";
 
       terminal.integrated.profiles.osx = {
         myZsh = myZshProfile;
