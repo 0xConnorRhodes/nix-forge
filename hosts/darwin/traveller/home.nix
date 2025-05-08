@@ -25,6 +25,7 @@ in
     ../../common/home/bat.nix
     ../../common/home/lf.nix
     ../../common/home/vscode.nix
+    ../../common/home/wezterm.nix
   ];
 
   home.sessionVariables = {
@@ -40,6 +41,8 @@ in
         builtin source "$GHOSTTY_RESOURCES_DIR/shell-integration/zsh/ghostty-integration"
     fi
   '';
+
+  # programs.wezterm.extraConfig = builtins.readFile ../../../configs/wezterm/wezterm.lua;
 
   programs.zsh.shellAliases = {
     yo = "open -a yoink";
