@@ -22,10 +22,10 @@ in
     ../../common/home/ripgrep.nix
     ../../common/home/zoxide.nix
     ../../common/home/starship.nix
+    ../../common/home/wezterm.nix
     ../../common/home/bat.nix
     ../../common/home/lf.nix
     ../../common/home/vscode.nix
-    ../../common/home/wezterm.nix
   ];
 
   home.sessionVariables = {
@@ -41,8 +41,6 @@ in
         builtin source "$GHOSTTY_RESOURCES_DIR/shell-integration/zsh/ghostty-integration"
     fi
   '';
-
-  # programs.wezterm.extraConfig = builtins.readFile ../../../configs/wezterm/wezterm.lua;
 
   programs.zsh.shellAliases = {
     yo = "open -a yoink";
@@ -78,7 +76,6 @@ in
     pkgsUnstable.bluesnooze # not in 24.11, must launch once and choose "launch at login" from menu bar icon
     raycast
     scrcpy
-    wezterm
 
     # mac-specific
     blueutil
