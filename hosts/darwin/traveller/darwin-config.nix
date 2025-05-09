@@ -11,10 +11,6 @@
       username = lib.mkOption { type = lib.types.str; default = "connor.rhodes";};
       homeDir = lib.mkOption { type = lib.types.str; default = "/Users/connor.rhodes";};
       trashcli = lib.mkOption { type = lib.types.str; default = "trash";}; # built in to macOS
-      wezterm = {
-        theme = lib.mkOption { type = lib.types.str; default = "Abernathy";};
-        font_size = lib.mkOption { type = lib.types.str; default = 21;};
-      };
     };
   };
 
