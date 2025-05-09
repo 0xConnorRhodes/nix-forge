@@ -10,6 +10,7 @@
     ../../common/home/starship.nix
     ../../common/home/bat.nix
     ../../common/home/lf.nix
+    ../../common/home/wezterm.nix
     ../../common/home/ghostty.nix
     ../../common/home/vscode.nix
   ];

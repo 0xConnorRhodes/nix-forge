@@ -30,6 +30,7 @@ in
     chromium
     element-desktop
     trashy
+    wezterm
 
     # common ruby env
     (ruby.withPackages (ruby-pkgs: with ruby-pkgs; [
