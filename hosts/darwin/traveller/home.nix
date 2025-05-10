@@ -26,6 +26,7 @@ in
     ../../common/home/bat.nix
     ../../common/home/lf.nix
     ../../common/home/vscode.nix
+    # ../../common/home/imagemagick.nix
   ];
 
   home.sessionVariables = {
@@ -77,11 +78,12 @@ in
     raycast
     scrcpy
     wezterm
+    #imagemagickBig # includes ghostscript
+    poppler_utils # provides pdftoppm file.pdf -png
 
     # mac-specific
     blueutil
     ffmpeg-full
-    imagemagick
     iperf
     darwin.iproute2mac
     lazydocker
