@@ -16,7 +16,15 @@ config.window_padding = {
   bottom = 0,
 }
 
---disable ligatures
+-- disable ligatures
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
+
+config.keys = {
+  {
+    key = 'w',
+    mods = 'CMD',
+    action = wezterm.action.CloseCurrentPane { confirm = false },
+  },
+}
 
 return config
