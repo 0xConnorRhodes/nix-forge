@@ -19,6 +19,8 @@ config.window_padding = {
 -- disable ligatures
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 
+config.hide_mouse_cursor_when_typing = false
+
 config.keys = {
   {
     key = 'w',
@@ -26,5 +28,14 @@ config.keys = {
     action = wezterm.action.CloseCurrentPane { confirm = false },
   },
 }
+
+config.skip_close_confirmation_for_processes_named = {
+  'bash',
+  'sh',
+  'zsh',
+  'fish',
+  'ssh',
+}
+
 
 return config
