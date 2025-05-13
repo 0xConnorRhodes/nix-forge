@@ -12,7 +12,6 @@ in
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     # install from unstable by prefixing package with pkgsUnstable, eg: pkgsUnstable.go
-    ghostty
     mpv
     nodePackages.npm # mpv cut dependency
     audacity
