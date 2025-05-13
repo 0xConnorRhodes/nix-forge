@@ -7,7 +7,14 @@ config.initial_rows = 210
 config.window_close_confirmation = 'NeverPrompt'
 
 config.font = wezterm.font 'GeistMono Nerd Font'
-config.font_size = 21
+
+-- set font size based on hostname
+local hostname = wezterm.hostname()
+if hostname == 'mpro' then
+  config.font_size = 18
+else
+  config.font_size = 21
+end
 
 config.window_padding = {
   left = 0,
@@ -36,6 +43,5 @@ config.skip_close_confirmation_for_processes_named = {
   'fish',
   'ssh',
 }
-
 
 return config
