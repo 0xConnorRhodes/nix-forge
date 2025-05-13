@@ -22,6 +22,7 @@
   options = {
     myConfig = {
       username = lib.mkOption { type = lib.types.str; default = "connor";};
+      trashcli = lib.mkOption { type = lib.types.str; default = "trash";}; # from pkgs.trashy
     };
   };
 

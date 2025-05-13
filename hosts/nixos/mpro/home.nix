@@ -30,10 +30,6 @@
   };
 
 
-  programs.ghostty.settings = {
-    font-size = 17;
-  };
-
   programs.vscode = {
     userSettings = {
       # fonts: ideal size is 17 with zoom level 1
