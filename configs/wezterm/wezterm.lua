@@ -12,6 +12,8 @@ config.font = wezterm.font 'GeistMono Nerd Font'
 local hostname = wezterm.hostname()
 if hostname == 'mpro' then
   config.font_size = 18
+elseif hostname == 'latitude' then
+  config.font_size = 17
 else
   config.font_size = 21
 end
