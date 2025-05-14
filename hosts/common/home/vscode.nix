@@ -39,6 +39,8 @@ in
         linux = "myZsh";
         osx = "myZsh";
       };
+
+      redhat.telemetry.enabled = true; # YAML extension
     };
 
     extensions = with pkgs.vscode-extensions; [
@@ -46,6 +48,7 @@ in
       jnoortheen.nix-ide
       formulahendry.code-runner
       shopify.ruby-lsp
+      redhat.vscode-yaml
       # sumneko.lua
       # ms-python.python
       # ms-python.vscode-pylance

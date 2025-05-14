@@ -22,7 +22,6 @@ in
     ../../common/home/ripgrep.nix
     ../../common/home/zoxide.nix
     ../../common/home/starship.nix
-    ../../common/home/wezterm.nix
     ../../common/home/bat.nix
     ../../common/home/lf.nix
     ../../common/home/vscode.nix
@@ -45,6 +44,12 @@ in
 
   programs.zsh.shellAliases = {
     yo = "open -a yoink";
+  };
+
+  programs.wezterm = {
+    enable = true;
+    enableZshIntegration = true;
+    enableBashIntegration = true;
   };
 
   programs.vscode = {
