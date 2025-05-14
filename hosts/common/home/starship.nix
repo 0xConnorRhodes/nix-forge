@@ -19,6 +19,10 @@
         format = "[$symbol$branch(:$remote_branch)]($style) ";
       };
 
+      git_status = {
+        deleted = "x";
+      };
+
       shell = {
         disabled = false;
         format = "[$indicator]($style)";
