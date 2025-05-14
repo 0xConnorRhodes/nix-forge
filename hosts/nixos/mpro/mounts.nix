@@ -43,7 +43,7 @@
       ];
       device = "/mnt/disks/disk*";
       fsType = "mergerfs";
-      options = ["defaults" "fsname=mergerfs-jbod"];
+      options = ["defaults" "category.create=mfs" "minfreespace=20G" "fsname=mergerfs-jbod"];
     };
 
   fileSystems."/mnt/disks/disk01" = {
