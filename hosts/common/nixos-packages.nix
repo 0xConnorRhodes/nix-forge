@@ -36,6 +36,7 @@ in
       pry
       dotenv
       httparty
+      highline
     ]))
 
     # Nerd Fonts
