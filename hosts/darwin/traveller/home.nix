@@ -104,6 +104,7 @@ in
     # GUI
     utm
     rectangle
+    neovide
 
     # LATER
     # lua
