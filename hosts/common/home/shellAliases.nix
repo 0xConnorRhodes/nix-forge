@@ -14,6 +14,7 @@
     vm = "vimv";
     x = "exit";
     rb = "ruby";
+    py = "python3";
     cat = "bat --style=plain";
     ipy = "ipython";
     tk = "ruby $HOME/code/notes-scripts/tasks-menu-pc.rb";
