@@ -85,6 +85,8 @@ in
     wezterm
     #imagemagickBig # includes ghostscript
     poppler_utils # provides pdftoppm file.pdf -png
+    minikube
+    kubectl
 
     # mac-specific
     blueutil
