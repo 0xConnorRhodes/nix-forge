@@ -47,6 +47,7 @@
       python.disabled = true;
       ruby.disabled = true;
       lua.disabled = true;
+      nodejs.disabled = true;
     };
   };
 }

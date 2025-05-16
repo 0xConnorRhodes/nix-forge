@@ -30,6 +30,7 @@
       lima
       minikube
       kubectl
+      gcc # needed for test nvim configs
 
       # gui programs
       calibre
