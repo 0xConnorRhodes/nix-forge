@@ -30,6 +30,7 @@ in
     element-desktop
     trashy
     wezterm
+    neovide
 
     # common ruby env
     (ruby.withPackages (ruby-pkgs: with ruby-pkgs; [
