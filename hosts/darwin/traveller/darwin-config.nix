@@ -82,6 +82,8 @@
         # "kdenlive"
         "vlc"
         "wireshark"
+        "vieb"
+        "qutebrowser"
       ];
 
       masApps = { 
