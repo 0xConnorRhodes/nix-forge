@@ -15,24 +15,26 @@ in
 {
   environment.systemPackages = [ myCaddy ];
   networking.firewall.allowedTCPPorts = [ 80 443];
-  environment.etc = {
-    "caddy/Caddyfile".text = ''
-      :80 {
-        respond "hello, world" 
-      }
-    '';
-  };
 
-
-  systemd.services.caddy = {
-    enable = true;
-    serviceConfig = {
-      # ExecStart = "${myCaddy}/bin/caddy run --config /etc/caddy/Caddyfile";
-      ExecStart = "${myCaddy}/bin/caddy run --config /home/connor/code/caddy/Caddyfile";
-      Restart = "always";
+  config = {
+    environment.etc = {
+      "caddy/Caddyfile".text = ''
+        :80 {
+          respond "hello, world" 
+        }
+      '';
     };
-    wantedBy = [ "multi-user.target" ];
   };
+
+
+    systemd.services.caddy = {
+      enable = true;
+      serviceConfig = {
+        ExecStart = "${myCaddy}/bin/caddy run --config /etc/caddy/Caddyfile";
+        Restart = "always";
+      };
+      wantedBy = [ "multi-user.target" ];
+    };
 
   # systemd.services.caddy = {
   #   serviceConfig = {

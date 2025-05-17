@@ -21,5 +21,6 @@ with pkgs; [
   bundix
   croc
   gnumake
+  jq
 ]
 
