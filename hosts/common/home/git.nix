@@ -1,10 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, secrets, ... }:
 
 {
   programs.git = {
     enable = true;
     userName = "Connor Rhodes";
-    userEmail = "connor@rhodes.contact";
+    userEmail = secrets.userInfo.email;
     ignores = [
       ".DS_Store"
     ];
