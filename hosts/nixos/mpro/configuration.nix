@@ -9,7 +9,7 @@
       ./mounts.nix
       ./secret.nix
       ./backup-cron.nix
-      ./caddy.nix
+      #./caddy-old.nix
       ./syncthing.nix
       ../../common/nixos-common.nix
       ../../common/nixos-packages.nix
@@ -116,6 +116,7 @@
     programs.firefox.enable = true;
 
     # subsystems
+    virtualisation.oci-containers.backend = "podman";
     virtualisation.podman = {
       enable = true;
       dockerCompat = true;

@@ -49,6 +49,7 @@ in
       formulahendry.code-runner
       shopify.ruby-lsp
       redhat.vscode-yaml
+      matthewpi.caddyfile-support
       # sumneko.lua
       # ms-python.python
       # ms-python.vscode-pylance
