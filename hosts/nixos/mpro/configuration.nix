@@ -36,7 +36,10 @@
 
   config = {
 
-    boot.loader.systemd-boot.enable = true;
+    boot.loader.systemd-boot = {
+      enable = true;
+      configurationLimit = 5; # max number of previous system builds in bootloader
+    };
     boot.loader.efi.canTouchEfiVariables = true;
 
     # zfs
