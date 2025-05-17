@@ -3,7 +3,6 @@
 with pkgs; [
   git-crypt
   bashInteractive
-  neovim
   chezmoi
   fish
   fzf

@@ -32,6 +32,7 @@ in
     minikube
     kubectl
     gcc # needed for neovim plugins
+    pkgsUnstable.neovim
 
     # mac-specific
     blueutil
