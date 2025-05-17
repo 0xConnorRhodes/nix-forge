@@ -1,5 +1,7 @@
 { config, pkgs, pkgsUnstable, inputs, secrets, ... }:
 let
+  certsDir = config.myConfig.homeDir + "/.local/certs/cf_origin_certs";
+
   myCaddy = pkgsUnstable.caddy.withPlugins {
     # list of plugins
     plugins = [
