@@ -21,5 +21,6 @@ with pkgs; [
   timer
   bundix
   croc
+  gnumake
 ]
 
