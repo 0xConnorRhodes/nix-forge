@@ -19,11 +19,13 @@ in
     email = secrets.userInfo.email;
 
     virtualHosts = {
-      ":80".extraConfig = ''
-        respond "Hello, world"
+      "jf.connorrhodes.com".extraConfig = ''
+        reverse_proxy 127.0.0.1:8096
       '';
-      # "jf.connorrhodes.com".extraConfig = ''
-      #   reverse_proxy 127.0.0.1:8096
+
+      # TODO: proxy through authelia
+      # "sync.connorrhodes.com".extraConfig = ''
+      #   reverse_proxy 127.0.0.1:42631
       # '';
     };
   };
