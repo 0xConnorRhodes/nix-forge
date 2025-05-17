@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, pkgsUnstable, inputs, ... }:
 
 {
     # from: https://discourse.nixos.org/t/mixing-stable-and-unstable-packages-on-flake-based-nixos-system/50351/4
@@ -31,6 +31,7 @@
       minikube
       kubectl
       gcc # needed for test nvim configs
+      pkgsUnstable.neovim
 
       # gui programs
       calibre
