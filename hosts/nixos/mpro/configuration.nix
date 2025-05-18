@@ -10,6 +10,7 @@
       ./secret.nix
       ./backup-cron.nix
       ./caddy.nix
+      ./authelia.nix
       ./syncthing.nix
       ../../common/nixos-common.nix
       ../../common/nixos-packages.nix
