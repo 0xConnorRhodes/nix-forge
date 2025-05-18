@@ -22,12 +22,12 @@ in
   systemd.services."create-daily-note" = {
     script = ''
       set -eu
-      ${cronPython}/bin/python3 /home/connor/code/cron-scripts/create_daily_note.py
+      ${cronPython}/bin/python3 /home/connor/code/scripts/cron/create_daily_note.py
     '';
     serviceConfig = {
       Type = "oneshot";
       User = user;
-      WorkingDirectory = "/home/connor/code/cron-scripts";
+      WorkingDirectory = "/home/connor/code/scripts/cron";
       Environment = "PATH=${pkgs.iputils}/bin:$PATH"; }; };
 
 # load todays tasks into daily note

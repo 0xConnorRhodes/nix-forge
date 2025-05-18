@@ -9,8 +9,8 @@ in
     user = config.myConfig.username;
     dataDir = "${config.myConfig.homeDir}/.local/syncthing";
     openDefaultPorts = true;
-    key = "${config.myConfig.homeDir}/code/nix-forge/hosts/nixos/mpro/config/syncthing-key.pem";
-    cert = "${config.myConfig.homeDir}/code/nix-forge/hosts/nixos/mpro/config/syncthing-cert.pem";
+    key = "${config.myConfig.homeDir}/code/infra/certs/syncthing/mpro/syncthing-key.pem";
+    cert = "${config.myConfig.homeDir}/code/infra/certs/syncthing/mpro/syncthing-cert.pem";
     guiAddress = "127.0.0.1:${toString guiPort}";
     settings = {
       gui = { 
