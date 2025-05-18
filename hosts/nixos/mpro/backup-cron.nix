@@ -12,7 +12,7 @@
   systemd.services."backup-scary-filenames" = {
     script = ''
       set -eu
-      ${pkgs.ruby}/bin/ruby /home/connor/code/cron-scripts/backups/cache_drive_file_list.rb
+      ${pkgs.ruby}/bin/ruby /home/connor/code/scripts/cron/backups/cache_drive_file_list.rb
     '';
     serviceConfig = {
       Type = "oneshot";

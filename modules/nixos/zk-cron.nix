@@ -75,12 +75,12 @@ in
   systemd.services."bump-index-dn-link" = {
     script = ''
       set -eu
-      ${pkgs.ruby}/bin/ruby /home/connor/code/cron-scripts/bump_index_daily_note_link.rb
+      ${pkgs.ruby}/bin/ruby /home/connor/code/scripts/cron/bump_index_daily_note_link.rb
     '';
     serviceConfig = {
       Type = "oneshot";
       User = user;
-      WorkingDirectory = "/home/connor/code/cron-scripts"; }; };
+      WorkingDirectory = "/home/connor/code/scripts/cron"; }; };
 
 # build note lists (vaccounts, etc)
   systemd.timers."build-note-lists" = {
@@ -92,12 +92,12 @@ in
   systemd.services."build-note-lists" = {
     script = ''
       set -eu
-      ${pkgs.ruby}/bin/ruby /home/connor/code/cron-scripts/build_note_lists.rb
+      ${pkgs.ruby}/bin/ruby /home/connor/code/scripts/cron/build_note_lists.rb
     '';
     serviceConfig = {
       Type = "oneshot";
       User = user;
-      WorkingDirectory = "/home/connor/code/cron-scripts";
+      WorkingDirectory = "/home/connor/code/scripts/cron";
       Environment = "PATH=${pkgs.ripgrep}/bin:$PATH"; }; };
 
 }
