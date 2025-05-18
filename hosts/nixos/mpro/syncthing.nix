@@ -11,13 +11,13 @@ in
     openDefaultPorts = true;
     key = "${config.myConfig.homeDir}/code/nix-forge/hosts/nixos/mpro/config/syncthing-key.pem";
     cert = "${config.myConfig.homeDir}/code/nix-forge/hosts/nixos/mpro/config/syncthing-cert.pem";
-    #guiAddress = "${config.myConfig.tailscaleIp}:${toString guiPort}";
     guiAddress = "127.0.0.1:${toString guiPort}";
     settings = {
       gui = { 
         # disable built-in auth
         user = ""; 
         password = ""; 
+        insecureSkipHostcheck = true; # breaks reverse-proxy redirection to localhost if enabled
       };
       devices = {
         "phone" = { id = secrets.syncthing.phone_id; };

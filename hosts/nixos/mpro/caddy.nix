@@ -16,7 +16,7 @@ in
   systemd.services.caddy = {
     enable = true;
     serviceConfig = {
-      ExecStart = "${myCaddy}/bin/caddy run --config /home/connor/code/caddy/Caddyfile";
+      ExecStart = "${myCaddy}/bin/caddy run --config /home/connor/code/infra/caddy/Caddyfile";
       Restart = "always";
     };
     wantedBy = [ "multi-user.target" ];
