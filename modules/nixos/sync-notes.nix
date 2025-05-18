@@ -16,7 +16,7 @@ in
   systemd.services."sync-notes" = {
     script = ''
       set -eu
-      ${cronRuby}/bin/ruby /home/connor/code/scripts/ns
+      ${cronRuby}/bin/ruby /home/connor/code/scripts/bin/ns
     '';
     serviceConfig = {
       Type = "oneshot";

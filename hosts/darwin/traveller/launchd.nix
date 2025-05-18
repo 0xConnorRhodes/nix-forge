@@ -14,7 +14,7 @@ in
 
   launchd.user.agents = {
     sync-notes = {
-      command = "${cronRuby}/bin/ruby /Users/connor.rhodes/code/scripts/ns";
+      command = "${cronRuby}/bin/ruby /Users/connor.rhodes/code/scripts/bin/ns";
       serviceConfig = {
         RunAtLoad = true;
         StartInterval = 60;

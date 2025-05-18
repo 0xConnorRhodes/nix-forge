@@ -1,6 +1,6 @@
 {
   extraPaths = [
     "$HOME/.local/bin"
-    "$HOME/code/scripts"
+    "$HOME/code/scripts/bin"
   ];
 }
