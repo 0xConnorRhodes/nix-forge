@@ -84,6 +84,7 @@
         "wireshark"
         "vieb"
         "qutebrowser"
+        "pine" # markdown editor
       ];
 
       masApps = { 
