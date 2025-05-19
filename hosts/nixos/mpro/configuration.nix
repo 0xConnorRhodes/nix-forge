@@ -9,12 +9,13 @@
       ./mounts.nix
       ./secret.nix
       ./backup-cron.nix
-      ./caddy.nix
-      ./authelia.nix
       ./syncthing.nix
       ../../common/nixos-common.nix
       ../../common/nixos-packages.nix
       ../../common/gnome-common.nix
+      ../../../modules/nixos/caddy.nix
+      ../../../modules/nixos/authelia.nix
+      ../../../modules/nixos/gossa.nix
       ../../../modules/nixos/kvm.nix
       ../../../modules/nixos/incus.nix
       ../../../modules/nixos/tailscale.nix

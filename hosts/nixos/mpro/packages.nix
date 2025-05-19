@@ -36,6 +36,7 @@
     # gui programs
     calibre
     audacious
+    smplayer
 
     # python packages
     (python3.withPackages (python-pkgs: with python-pkgs; [
