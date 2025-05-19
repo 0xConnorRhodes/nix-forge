@@ -40,12 +40,12 @@ in
   systemd.services."load-todays-tasks" = {
     script = ''
       set -eu
-      ${pkgs.ruby}/bin/ruby /home/connor/code/notes-scripts/cron/load_todays_tasks.rb
+      ${pkgs.ruby}/bin/ruby /home/connor/code/scripts/cron/load_todays_tasks.rb
     '';
     serviceConfig = {
       Type = "oneshot";
       User = user;
-      WorkingDirectory = "/home/connor/code/notes-scripts/cron";
+      WorkingDirectory = "/home/connor/code/scripts/cron";
       Environment = "PATH=${pkgs.ripgrep}/bin:$PATH"; }; };
 
 # create md food log

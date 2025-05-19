@@ -22,6 +22,8 @@ in
     initExtra = ''
       autoload -U colors && colors
       bindkey -e # force emacs readline keybindings
+
+      export EDITOR="nvim"
     '' 
     + # concatenate case-insensitive matching string since it contains '' which breaks the multiline string.
     "\nzstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'";
