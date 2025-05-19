@@ -1,15 +1,11 @@
 { config, lib, pkgs, ... }:
-
 let
-
   user = config.myConfig.username;
 
   cronPython = pkgs.python3.withPackages (pythonPackages: with pythonPackages; [
     jinja2
   ]);
-
 in
-
 {
 
 # create daily note
