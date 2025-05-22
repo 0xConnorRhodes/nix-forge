@@ -1,0 +1,11 @@
+# symlink to ~/.config/neovide/config.toml
+
+maximized = true
+
+[font]
+#normal = ["DroidSansMono Nerd Font"]
+normal = ["GeistMono Nerd Font"]
+size = 24.0
+
+[font.features]
+"GeistMono Nerd Font" = [ "-calt", "-clig", "-liga" ]

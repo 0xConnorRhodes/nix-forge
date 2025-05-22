@@ -50,6 +50,7 @@ in
       shopify.ruby-lsp
       redhat.vscode-yaml
       matthewpi.caddyfile-support
+      tamasfe.even-better-toml
       # sumneko.lua
       # ms-python.python
       # ms-python.vscode-pylance
