@@ -32,6 +32,7 @@
     kubectl
     gcc # needed for test nvim configs
     pkgsUnstable.neovim
+    pipx
 
     # gui programs
     calibre
@@ -42,6 +43,7 @@
     (python3.withPackages (python-pkgs: with python-pkgs; [
       requests
       jinja2
+
     ]))
 
     # ruby packages
