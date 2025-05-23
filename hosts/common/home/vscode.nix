@@ -51,7 +51,7 @@ in
       redhat.vscode-yaml
       matthewpi.caddyfile-support
       tamasfe.even-better-toml
-      # sumneko.lua
+      sumneko.lua
       # ms-python.python
       # ms-python.vscode-pylance
       # ms-python.debugpy

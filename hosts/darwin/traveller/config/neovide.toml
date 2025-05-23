@@ -1,11 +1,14 @@
 # symlink to ~/.config/neovide/config.toml
 
 maximized = true
+title-hidden = true # hide title on macOS
+tabs = false # if multiple files in tabs
 
 [font]
 #normal = ["DroidSansMono Nerd Font"]
 normal = ["GeistMono Nerd Font"]
-size = 24.0
+#size = 28.0 # reading
+size = 22.0
 
 [font.features]
 "GeistMono Nerd Font" = [ "-calt", "-clig", "-liga" ]
