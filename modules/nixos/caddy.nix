@@ -8,7 +8,7 @@ let
   #  # resulting hash of binary built with all plugins
   #  hash = "sha256-saKJatiBZ4775IV2C5JLOmZ4BwHKFtRZan94aS5pO90=";
   #};
-  myCaddy = pkgs.caddy
+  myCaddy = pkgs.caddy;
 in 
 {
   environment.systemPackages = [ myCaddy ];
