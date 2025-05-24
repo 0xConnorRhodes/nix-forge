@@ -49,7 +49,15 @@ in
           foldfix = true; # don't unfold as you j/k through a folded heading
         };
 
+        # extension settings
+
+        # redhat.vscode-yaml
         redhat.telemetry.enabled = true; # YAML extension
+
+        # yzhang.markdown-all-in-one
+        markdown.extension = {
+          math.enabled = false;
+        };
       };
 
       enableUpdateCheck = false;
@@ -71,10 +79,11 @@ in
         # ms-vscode.live-server # live webapp in pane
         mechatroner.rainbow-csv
         ms-vscode-remote.remote-ssh
+        yzhang.markdown-all-in-one # markdown bullets
       ] ++ (with marketplace-extensions; [
         # extensions outside of nixpkgs from nix-vscode extensions
         # pulls latest version without requirement of manual hash
-        # format: user.extension-name
+        # format: user.extension-name (.downcase)
       ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
           name = "copilot";
