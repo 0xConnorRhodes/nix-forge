@@ -84,6 +84,7 @@ in
         # extensions outside of nixpkgs from nix-vscode extensions
         # pulls latest version without requirement of manual hash
         # format: user.extension-name (.downcase)
+        satokaz.vscode-markdown-header-coloring
       ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
           name = "copilot";
