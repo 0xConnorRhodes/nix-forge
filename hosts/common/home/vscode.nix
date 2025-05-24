@@ -23,6 +23,9 @@ in
       editor.fontFamily = "'JetBrainsMono Nerd Font', 'monospace', monospace";
       editor = {
         tabSize = 2;
+        minimap.enabled = false;
+        formatOnSave = true;
+        defaultFormatter = "null";
       };
       explorer = {
         confirmDragAndDrop = false;
@@ -38,6 +41,13 @@ in
       terminal.integrated.defaultProfile = {
         linux = "myZsh";
         osx = "myZsh";
+      };
+
+      vim = {
+        leader = "<Space";
+        hlsearch = true;
+        useSystemClipboard = true;
+        foldfix = true; # don't unfold as you j/k through a folded heading
       };
 
       redhat.telemetry.enabled = true; # YAML extension
