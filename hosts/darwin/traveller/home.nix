@@ -42,7 +42,7 @@
     enableBashIntegration = true;
   };
 
-  programs.vscode = {
+  programs.vscode.profiles.default = {
     userSettings = {
       editor.fontSize = 17;
       terminal.integrated.fontSize = 17;
@@ -56,7 +56,7 @@
       dwn = "$HOME/Downloads";
       docs = "$HOME/Documents";
     };
-    initExtra = import ../../common/home/posixFunctions.nix;
+    initContent = import ../../common/home/posixFunctions.nix;
   };
 
   xdg.configFile = {

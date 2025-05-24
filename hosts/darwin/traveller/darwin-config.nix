@@ -15,6 +15,7 @@
   };
 
   config = {
+    system.primaryUser = config.myConfig.username;
     system.defaults.finder = {
       AppleShowAllExtensions = true; # show file extensions in finder
       _FXShowPosixPathInTitle = false; # show full path in finder title
@@ -112,14 +113,14 @@
     # will use default config file at ~/skhd/skhdrc
     # services.skhd.enable = true;
 
-    nix.extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
+    nix = {
+      enable = true;
+      extraOptions = ''
+        experimental-features = nix-command flakes
+      '';
+    };
 
-    security.pam.enableSudoTouchIdAuth = true;
-
-    # allow nix-darwin to manage and update nix-daemon
-    services.nix-daemon.enable = true;
+    security.pam.services.sudo_local.touchIdAuth = true;
 
     # Used for backwards compatibility, please read the changelog before changing.
     # $ darwin-rebuild changelog
