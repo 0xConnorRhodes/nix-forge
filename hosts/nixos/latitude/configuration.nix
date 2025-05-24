@@ -72,6 +72,7 @@
     services.printing.enable = true;
     services.psd.enable = true;
     programs.firefox.enable = true;
+    services.flatpak.enable = true;
 
     # prevent password prompt on opening vscode
     security.pam.services.gdm-password.enableGnomeKeyring = true;

@@ -46,6 +46,7 @@
     gnome-user-docs
     gnome-calculator
     gnome-music
+    decibels # audio player
   ]);
 
   programs.nautilus-open-any-terminal = {
