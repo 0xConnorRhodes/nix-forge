@@ -5,6 +5,13 @@ let
     inherit (config.nixpkgs) config;
   };
 
+  flakePackages = (builtins.mapAttrs (
+    name: value: value.packages.${pkgs.system}.default) {
+      inherit (inputs)
+      json2nix;
+    }
+  );
+
   ruby = pkgs.ruby_3_4;
   httparty = pkgs.bundlerEnv {
     name = "httparty";
@@ -23,7 +30,7 @@ in
     gotop
     # rclone
     # android-tools # provides adb
-    pkgsUnstable.bluesnooze # not in 24.11, must launch once and choose "launch at login" from menu bar icon
+    bluesnooze # must launch once and choose "launch at login" from menu bar icon
     raycast
     scrcpy
     wezterm
@@ -75,5 +82,6 @@ in
       httparty # local package
     ]))
   ] 
-  ++ (import ../../common/packages.nix { pkgs = pkgs; });
+  ++ (import ../../common/packages.nix { pkgs = pkgs; })
+  ++ pkgs.lib.attrValues flakePackages;
 }

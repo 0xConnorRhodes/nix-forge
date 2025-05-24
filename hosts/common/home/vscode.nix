@@ -18,6 +18,8 @@ in
 
     profiles.default = {
       userSettings = {
+        workbench.startupEditor = "none"; # don't show startup screen
+        update.mode = "none";
         files.autoSave = "afterDelay";
         editor.fontFamily = "'JetBrainsMono Nerd Font', 'monospace', monospace";
         editor = {
@@ -50,6 +52,7 @@ in
         };
 
         # extension settings
+        extensions.autoCheckUpdates = false;
 
         # redhat.vscode-yaml
         redhat.telemetry.enabled = true; # YAML extension
@@ -58,6 +61,12 @@ in
         markdown.extension = {
           math.enabled = false;
         };
+
+        # satokaz.vscode-markdown-header-coloring
+        markdown-header-coloring = {
+          backgroundColor = false;
+        };
+
       };
 
       enableUpdateCheck = false;

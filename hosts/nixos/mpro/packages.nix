@@ -1,4 +1,11 @@
 { config, pkgs, pkgsUnstable, inputs, ... }:
+    let
+      flakePackages = builtins.mapAttrs (
+        name: value: value.packages.${pkgs.system}.default) {
+          inherit (inputs)
+          json2nix;
+        };
+    in 
 
 {
   # from: https://discourse.nixos.org/t/mixing-stable-and-unstable-packages-on-flake-based-nixos-system/50351/4
@@ -53,5 +60,6 @@
       dotenv
     ]))
   ]
-  ++ (import ../../common/packages.nix { pkgs = pkgs; });
+  ++ (import ../../common/packages.nix { pkgs = pkgs; })
+  ++ flakePackages;
 }
