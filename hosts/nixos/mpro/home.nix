@@ -29,7 +29,7 @@
   };
 
 
-  programs.vscode = {
+  programs.vscode.profiles.default = {
     userSettings = {
       # fonts: ideal size is 17 with zoom level 1
       editor.fontSize = 17;
