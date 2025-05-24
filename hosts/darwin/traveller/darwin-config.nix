@@ -100,7 +100,6 @@
     }; 
 
     home-manager = {
-      useGlobalPkgs = true; # use system level nixpkgs (shortens eval time) instead of an independent copy
       backupFileExtension = "bak"; # append existing non hm files with this on rebuild
       # useUserPackages = true; # if true install home-manager packages in /etc/profiles. Needed for nixos-rebuild build-vm.
       extraSpecialArgs = { inherit inputs; inherit secrets; };
