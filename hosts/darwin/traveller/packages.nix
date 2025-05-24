@@ -38,7 +38,7 @@ in
     blueutil
     ffmpeg-full
     iperf
-    darwin.iproute2mac
+    iproute2mac
     lazydocker
     cloudflared
     podman
