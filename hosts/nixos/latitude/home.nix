@@ -28,10 +28,10 @@
       dwn = "$HOME/Downloads";
       docs = "$HOME/Documents";
     };
-    initExtra = import ../../common/home/posixFunctions.nix;
+    initContent = import ../../common/home/posixFunctions.nix;
   };
 
-  programs.vscode = {
+  programs.vscode.profiles.default = {
     userSettings = {
       # fonts: ideal size is 17 with zoom level 1
       editor.fontSize = 17;

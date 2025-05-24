@@ -16,10 +16,9 @@ in
       export PATH="${lib.concatStringsSep ":" myPaths.extraPaths}:$PATH"
     '';
     # zsh prompt
-    # initExtra will change in future: https://nix-community.github.io/home-manager/options.xhtml#opt-programs.zsh.initContent
     enableCompletion = true;
     completionInit = "autoload -Uz compinit && compinit";
-    initExtra = ''
+    initContent = ''
       autoload -U colors && colors
       bindkey -e # force emacs readline keybindings
 

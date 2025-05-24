@@ -13,7 +13,7 @@
       ../../common/nixos-packages.nix
       ../../common/gnome-common.nix
       ../../../modules/nixos/kvm.nix
-      ../../../modules/nixos/incus.nix
+      #../../../modules/nixos/incus.nix
       ../../../modules/nixos/tailscale.nix
       ../../../modules/nixos/sync-notes.nix
       inputs.home-manager.nixosModules.default

@@ -37,12 +37,9 @@
       ApplePressAndHoldEnabled = false;
     };
 
-    fonts.packages = [ (pkgs.nerdfonts.override { fonts = [
-        # pass keys from https://github.com/NixOS/nixpkgs/blob/nixos-24.11/pkgs/data/fonts/nerdfonts/shas.nix
-        # as strings to selectively install nerd fonts
-        "GeistMono"
-        "JetBrainsMono"
-        ]; }) 
+    fonts.packages = with pkgs; [
+      nerd-fonts.geist-mono
+      nerd-fonts.jetbrains-mono
     ];
 
     # nix-homebrew options install homebrew, homebrew options below install packages with homebrew

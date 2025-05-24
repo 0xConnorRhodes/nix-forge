@@ -32,6 +32,9 @@ in
     wezterm
     neovide
 
+    nerd-fonts.geist-mono
+    nerd-fonts.jetbrains-mono
+
     # common ruby env
     (ruby.withPackages (ruby-pkgs: with ruby-pkgs; [
       pry
@@ -39,14 +42,6 @@ in
       httparty
       highline
     ]))
-
-    # Nerd Fonts
-    # pass keys from https://github.com/NixOS/nixpkgs/blob/nixos-24.11/pkgs/data/fonts/nerdfonts/shas.nix
-    # as strings to selectively install nerd fonts
-    (nerdfonts.override { fonts = [
-      "GeistMono"
-      "JetBrainsMono"
-    ];})
 
     # nonfree
     obsidian
