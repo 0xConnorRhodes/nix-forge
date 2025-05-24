@@ -38,6 +38,7 @@
     calibre
     audacious
     smplayer
+    localsend
 
     # python packages
     (python3.withPackages (python-pkgs: with python-pkgs; [
