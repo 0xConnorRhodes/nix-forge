@@ -4,16 +4,16 @@
 
   imports = [
     ../../common/home/git.nix
-    # ../../common/home/zsh.nix
-    # ../../common/home/zoxide.nix
-    # ../../common/home/git.nix
-    # ../../common/home/bash.nix
-    # ../../common/home/zsh.nix
-    # ../../common/home/ripgrep.nix
-    # ../../common/home/starship.nix
-    # ../../common/home/bat.nix
-    # ../../common/home/lf.nix
-    # ../../common/home/wezterm.nix
+    ../../common/home/zsh.nix
+    ../../common/home/zoxide.nix
+    ../../common/home/git.nix
+    ../../common/home/bash.nix
+    ../../common/home/zsh.nix
+    ../../common/home/ripgrep.nix
+    ../../common/home/starship.nix
+    ../../common/home/bat.nix
+    ../../common/home/lf.nix
+    ../../common/home/wezterm.nix
     ../../common/home/vscode.nix
   ];
 

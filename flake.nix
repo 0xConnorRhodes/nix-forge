@@ -51,6 +51,7 @@
         modules = [ 
           ./hosts/nixos/latitude/configuration.nix 
 	        inputs.home-manager.nixosModules.default
+          { home-manager.extraSpecialArgs = specialArgs; } # needed to access inputs in home.nix
           inputs.nixos-hardware.nixosModules.dell-latitude-5490
         ];
       };
