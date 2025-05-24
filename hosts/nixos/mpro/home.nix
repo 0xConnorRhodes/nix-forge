@@ -25,7 +25,7 @@
       dwn = "$HOME/Downloads";
       docs = "$HOME/Documents";
     };
-    initExtra = import ../../common/home/posixFunctions.nix;
+    initContent = import ../../common/home/posixFunctions.nix;
   };
 
 
