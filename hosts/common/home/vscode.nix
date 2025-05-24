@@ -54,8 +54,19 @@ in
         # extension settings
         extensions.autoCheckUpdates = false;
 
+        # vscodevim.vim
+        vim = {
+          useCtrlKeys = true;
+          useSystemClipboard = true;
+        };
+
         # redhat.vscode-yaml
         redhat.telemetry.enabled = true; # YAML extension
+
+        # sumneko.lua
+        Lua = {
+          window.statusBar = false;
+        };
 
         # yzhang.markdown-all-in-one
         markdown.extension = {
