@@ -44,20 +44,16 @@ in
           osx = "myZsh";
         };
 
-        vim = {
-          leader = "<Space";
-          hlsearch = true;
-          useSystemClipboard = true;
-          foldfix = true; # don't unfold as you j/k through a folded heading
-        };
-
-        # extension settings
+      # EXTENSION SETTINGS
         extensions.autoCheckUpdates = false;
 
         # vscodevim.vim
         vim = {
+          leader = "<Space";
+          hlsearch = true;
           useCtrlKeys = true;
           useSystemClipboard = true;
+          foldfix = true; # don't unfold as you j/k through a folded heading
         };
 
         # redhat.vscode-yaml

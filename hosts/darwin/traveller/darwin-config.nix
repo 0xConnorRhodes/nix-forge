@@ -83,6 +83,7 @@
         "vieb"
         "qutebrowser"
         "pine" # markdown editor
+        "zen"
       ];
 
       masApps = { 
