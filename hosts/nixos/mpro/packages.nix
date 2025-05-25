@@ -61,5 +61,5 @@
     ]))
   ]
   ++ (import ../../common/packages.nix { pkgs = pkgs; })
-  ++ flakePackages;
+  ++ pkgs.lib.attrValues flakePackages;
 }
