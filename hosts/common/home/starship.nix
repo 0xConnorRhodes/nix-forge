@@ -48,6 +48,7 @@
       ruby.disabled = true;
       lua.disabled = true;
       nodejs.disabled = true;
+      package.disabled = true;
     };
   };
 }
