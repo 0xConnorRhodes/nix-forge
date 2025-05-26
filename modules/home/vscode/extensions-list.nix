@@ -26,15 +26,30 @@ in
       # ms-python.debugpy
       # bmalehorn.vscode-fish
       # ms-vscode.live-server # live webapp in pane
-    ]
+    ] ++
     
     # extensions from vscode marketplace (rolling)
     # from nix-vscode extensions
     # pulls latest version without requirement of manual hash
     # format: user.extension-name (.downcase)
-    ++ (with marketplace-extensions; [
+    (with marketplace-extensions; [
       satokaz.vscode-markdown-header-coloring
-    ])
-    ;
+    ]) ++
+
+    # pinned extensions pulled from vs code marketplace
+    pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      {
+        name = "copilot";
+        publisher = "GitHub";
+        version = "1.323.0"; # works with code 1.100.1
+        sha256 = "sha256-rTAq6snn3HAARrYbMJYy7aZ5rDucLfFS/t01VPjgXAo=";
+      }
+      {
+        name = "copilot-chat";
+        publisher = "GitHub";
+        version = "0.27.2"; # works with code 1.100.1
+        sha256 = "sha256-nwBDQNs5qrA0TxQZVtuXRiOy0iBNOCFpIim0x2k37YA=";
+      }
+    ]; 
   };
 }

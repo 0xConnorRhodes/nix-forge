@@ -1,6 +1,5 @@
 { config, pkgs, inputs, ... }:
 let
-
   myZshProfile = {
     path = "zsh";
     args = [
@@ -55,7 +54,8 @@ in
       #   # pulls latest version without requirement of manual hash
       #   # format: user.extension-name (.downcase)
       #   satokaz.vscode-markdown-header-coloring
-      # ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      # ]) 
+      # ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       #   {
       #     name = "copilot";
       #     publisher = "GitHub";
