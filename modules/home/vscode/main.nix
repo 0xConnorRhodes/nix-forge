@@ -12,13 +12,13 @@ let
 in 
 {
   imports = [
+    ./keybindings.nix
     ./extensions.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
   programs.vscode = {
     enable = true;
-    mutableExtensionsDir = false;
 
     profiles.default = {
       userSettings = {
@@ -47,15 +47,6 @@ in
           linux = "myZsh";
           osx = "myZsh";
         };
-
-      # KEYBINDINGS
-      keybindings = [
-        {
-          key = "cmd+j";
-          command = "workbench.action.terminal.toggleTerminal";
-          when = "workbench.action.terminal.toggleTerminal";
-        }
-      ];
 
       # EXTENSION SETTINGS
         extensions.autoCheckUpdates = false;
