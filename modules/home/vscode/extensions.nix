@@ -3,8 +3,10 @@
 {
   programs.vscode = {
     profiles.default = {
+      enableExtensionUpdateCheck = false;
       userSettings = {
         extensions.autoCheckUpdates = false;
+
         # vscodevim.vim
         vim = {
           leader = "<Space";
@@ -31,8 +33,11 @@
         markdown-header-coloring = {
           backgroundColor = false;
         };
+
+        myExtensions = with pkgs.vscode-extensions; [
+          vscodevim.vim
+        ];
       };
-      enableExtensionUpdateCheck = false;
     };
   };
 }
