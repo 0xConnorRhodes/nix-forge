@@ -84,6 +84,7 @@
         "qutebrowser"
         "pine" # markdown editor
         "zen"
+        # "vivaldi" # installed directly
       ];
 
       masApps = { 

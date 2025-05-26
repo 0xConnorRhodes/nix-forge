@@ -44,6 +44,15 @@ in
           osx = "myZsh";
         };
 
+      # KEYBINDINGS
+      keybindings = [
+        {
+          key = "cmd+j";
+          command = "workbench.action.terminal.toggleTerminal";
+          when = "workbench.action.terminal.toggleTerminal";
+        }
+      ];
+
       # EXTENSION SETTINGS
         extensions.autoCheckUpdates = false;
 
@@ -87,6 +96,7 @@ in
         matthewpi.caddyfile-support
         tamasfe.even-better-toml
         sumneko.lua
+        jgclark.vscode-todo-highlight # highlight todo and fixme, maintained version
         # ms-python.python
         # ms-python.vscode-pylance
         # ms-python.debugpy
