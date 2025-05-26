@@ -47,6 +47,7 @@
     audacious
     smplayer
     localsend
+    pkgsUnstable.vivaldi
 
     # python packages
     (python3.withPackages (python-pkgs: with python-pkgs; [
