@@ -22,6 +22,7 @@ in
       enableUpdateCheck = false;
       userSettings = {
         workbench.startupEditor = "none"; # don't show startup screen
+	workbench.trustedDomains.promptInTrustedWorkspace = false;
         update.mode = "none";
         files.autoSave = "afterDelay";
         editor.fontFamily = "'JetBrainsMono Nerd Font', 'monospace', monospace";
