@@ -17,7 +17,6 @@ in
   nixpkgs.config.allowUnfree = true;
   programs.vscode = {
     enable = true;
-
     profiles.default = {
       enableUpdateCheck = false;
       userSettings = {
@@ -47,28 +46,6 @@ in
           osx = "myZsh";
         };
       };
-
-      #extensions = with pkgs.vscode-extensions; [
-      # ] ++ (with marketplace-extensions; [
-      #   # extensions outside of nixpkgs from nix-vscode extensions
-      #   # pulls latest version without requirement of manual hash
-      #   # format: user.extension-name (.downcase)
-      #   satokaz.vscode-markdown-header-coloring
-      # ]) 
-      # ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-      #   {
-      #     name = "copilot";
-      #     publisher = "GitHub";
-      #     version = "1.323.0"; # works with code 1.100.1
-      #     sha256 = "sha256-rTAq6snn3HAARrYbMJYy7aZ5rDucLfFS/t01VPjgXAo=";
-      #   }
-      #   {
-      #     name = "copilot-chat";
-      #     publisher = "GitHub";
-      #     version = "0.27.2"; # works with code 1.100.1
-      #     sha256 = "sha256-nwBDQNs5qrA0TxQZVtuXRiOy0iBNOCFpIim0x2k37YA=";
-      #   }
-      # ]; 
     };
   };
 }
