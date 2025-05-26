@@ -1,7 +1,5 @@
 { config, pkgs, inputs, ... }:
 let
-  nix-vscode-extensions = inputs.nix-vscode-extensions.extensions.${pkgs.system};
-  marketplace-extensions = nix-vscode-extensions.vscode-marketplace;
 
   myZshProfile = {
     path = "zsh";
@@ -49,27 +47,9 @@ in
           linux = "myZsh";
           osx = "myZsh";
         };
-
-
       };
 
       #extensions = with pkgs.vscode-extensions; [
-      #   jnoortheen.nix-ide
-      #   formulahendry.code-runner
-      #   shopify.ruby-lsp
-      #   redhat.vscode-yaml
-      #   matthewpi.caddyfile-support
-      #   tamasfe.even-better-toml
-      #   sumneko.lua
-      #   jgclark.vscode-todo-highlight # highlight todo and fixme, maintained version
-      #   # ms-python.python
-      #   # ms-python.vscode-pylance
-      #   # ms-python.debugpy
-      #   # bmalehorn.vscode-fish
-      #   # ms-vscode.live-server # live webapp in pane
-      #   mechatroner.rainbow-csv
-      #   ms-vscode-remote.remote-ssh
-      #   yzhang.markdown-all-in-one # markdown bullets
       # ] ++ (with marketplace-extensions; [
       #   # extensions outside of nixpkgs from nix-vscode extensions
       #   # pulls latest version without requirement of manual hash
