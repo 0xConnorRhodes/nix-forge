@@ -11,7 +11,7 @@
     ../../common/home/bat.nix
     ../../common/home/lf.nix
     ../../common/home/wezterm.nix
-    ../../common/home/vscode.nix
+    ../../../modules/home/vscode/main.nix
   ];
 
   home.sessionVariables = {
