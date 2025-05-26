@@ -17,10 +17,10 @@ in
       tamasfe.even-better-toml
       sumneko.lua
       jgclark.vscode-todo-highlight # highlight todo and fixme, maintained version
-      ms-vscode.powershell
       mechatroner.rainbow-csv
       ms-vscode-remote.remote-ssh
       yzhang.markdown-all-in-one # markdown bullets
+      # ms-vscode.powershell
       # ms-python.python
       # ms-python.vscode-pylance
       # ms-python.debugpy
