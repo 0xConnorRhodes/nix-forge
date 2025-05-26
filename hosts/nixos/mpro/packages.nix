@@ -40,6 +40,7 @@
     gcc # needed for test nvim configs
     pkgsUnstable.neovim
     pipx
+    wget
 
     # gui programs
     calibre
