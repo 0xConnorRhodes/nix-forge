@@ -40,6 +40,7 @@ in
     kubectl
     gcc # needed for neovim plugins
     pkgsUnstable.neovim
+    wget
 
     # mac-specific
     blueutil
