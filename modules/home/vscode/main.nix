@@ -12,6 +12,7 @@ in
     ./keybindings.nix
     ./extensions-list.nix
     ./extensions-settings.nix
+    ./vim.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
