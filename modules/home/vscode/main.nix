@@ -21,6 +21,7 @@ in
     enable = true;
 
     profiles.default = {
+      enableUpdateCheck = false;
       userSettings = {
         workbench.startupEditor = "none"; # don't show startup screen
         update.mode = "none";
@@ -49,7 +50,6 @@ in
         };
 
       # EXTENSION SETTINGS
-        extensions.autoCheckUpdates = false;
 
         # vscodevim.vim
         vim = {
@@ -80,8 +80,6 @@ in
 
       };
 
-      enableUpdateCheck = false;
-      enableExtensionUpdateCheck = false;
       extensions = with pkgs.vscode-extensions; [
         vscodevim.vim
         jnoortheen.nix-ide
