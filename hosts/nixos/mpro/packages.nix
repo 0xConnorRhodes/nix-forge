@@ -46,7 +46,6 @@
     calibre
     audacious
     smplayer
-    localsend
     pkgsUnstable.vivaldi
 
     # python packages
