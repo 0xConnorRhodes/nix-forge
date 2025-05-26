@@ -33,10 +33,6 @@
         markdown-header-coloring = {
           backgroundColor = false;
         };
-
-        myExtensions = with pkgs.vscode-extensions; [
-          vscodevim.vim
-        ];
       };
     };
   };

@@ -13,7 +13,8 @@ in
 {
   imports = [
     ./keybindings.nix
-    ./extensions.nix
+    ./extensions-list.nix
+    ./extensions-settings.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -52,8 +53,7 @@ in
 
       };
 
-      # extensions = with pkgs.vscode-extensions; [
-      #   vscodevim.vim
+      #extensions = with pkgs.vscode-extensions; [
       #   jnoortheen.nix-ide
       #   formulahendry.code-runner
       #   shopify.ruby-lsp
@@ -65,7 +65,6 @@ in
       #   # ms-python.python
       #   # ms-python.vscode-pylance
       #   # ms-python.debugpy
-      #   # ms-vscode.powershell
       #   # bmalehorn.vscode-fish
       #   # ms-vscode.live-server # live webapp in pane
       #   mechatroner.rainbow-csv
