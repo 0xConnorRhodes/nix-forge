@@ -13,7 +13,6 @@
     ../../common/home/starship.nix
     ../../common/home/bat.nix
     ../../common/home/lf.nix
-    # ../../common/home/vscode.nix
     ../../../modules/home/vscode/main.nix
   ];
 

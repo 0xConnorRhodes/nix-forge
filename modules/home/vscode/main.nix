@@ -11,6 +11,10 @@ let
   };
 in 
 {
+  imports = [
+    ./extensions.nix
+  ];
+
   nixpkgs.config.allowUnfree = true;
   programs.vscode = {
     enable = true;
