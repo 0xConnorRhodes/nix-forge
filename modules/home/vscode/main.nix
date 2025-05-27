@@ -23,6 +23,7 @@ in
       userSettings = {
         workbench.startupEditor = "none"; # don't show startup screen
 	workbench.trustedDomains.promptInTrustedWorkspace = false;
+	security.workspace.trust.emptyWindow = true;
         update.mode = "none";
         files.autoSave = "afterDelay";
         editor.fontFamily = "'JetBrainsMono Nerd Font', 'monospace', monospace";
