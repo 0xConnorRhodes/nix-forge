@@ -35,6 +35,9 @@ in
     nerd-fonts.geist-mono
     nerd-fonts.jetbrains-mono
 
+    # GUI programs
+    gnumeric
+
     # common ruby env
     (ruby.withPackages (ruby-pkgs: with ruby-pkgs; [
       pry
