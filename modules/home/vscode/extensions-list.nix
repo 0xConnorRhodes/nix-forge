@@ -33,7 +33,7 @@ in
     # pulls latest version without requirement of manual hash
     # format: user.extension-name (.downcase)
     (with marketplace-extensions; [
-      satokaz.vscode-markdown-header-coloring
+      #satokaz.vscode-markdown-header-coloring
     ]) ++
 
     # pinned extensions pulled from vs code marketplace
