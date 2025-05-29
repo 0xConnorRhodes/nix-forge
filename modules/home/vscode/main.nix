@@ -21,22 +21,31 @@ in
     profiles.default = {
       enableUpdateCheck = false;
       userSettings = {
-        workbench.startupEditor = "none"; # don't show startup screen
-	workbench.trustedDomains.promptInTrustedWorkspace = false;
-	security.workspace.trust.emptyWindow = true;
+
+        workbench = {
+          startupEditor = "none"; # don't show startup screen
+	        trustedDomains.promptInTrustedWorkspace = false;
+          activityBar.location = "hidden";
+          statusBar.visible = true;
+        };
+
+        security.workspace.trust.emptyWindow = true;
         update.mode = "none";
         files.autoSave = "afterDelay";
         editor.fontFamily = "'JetBrainsMono Nerd Font', 'monospace', monospace";
+
         editor = {
           tabSize = 2;
           minimap.enabled = false;
           formatOnSave = true;
           defaultFormatter = "null";
         };
+
         explorer = {
           confirmDragAndDrop = false;
           confirmDelete = false;
         };
+
         github.copilot.enable."*" = false;
         git.openRepositoryInParentFolders = "never";
 
