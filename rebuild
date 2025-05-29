@@ -8,6 +8,9 @@ find . -type f -name "*.nix" -exec git add {} +
 
 #export NIXPKGS_ALLOW_UNFREE=1
 
+rm -f "/Users/connor.rhodes/Library/Application Support/Code/User/settings.json"
+rm -f "/Users/connor.rhodes/Library/Application Support/Code/User/settings.json.bak"
+
 if [ "$(uname)" = "Darwin" ]; then
   sudo darwin-rebuild switch --flake .#traveller
 else
@@ -16,5 +19,7 @@ else
   nh os switch .
   #nh os switch . -- --impure 
 fi
+
+move-aside "/Users/connor.rhodes/Library/Application Support/Code/User/settings.json"
 
 popd

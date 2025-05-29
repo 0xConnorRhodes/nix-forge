@@ -26,7 +26,7 @@ in
           startupEditor = "none"; # don't show startup screen
 	        trustedDomains.promptInTrustedWorkspace = false;
           activityBar.location = "hidden";
-          statusBar.visible = true;
+          statusBar.visible = false;
         };
 
         security.workspace.trust.emptyWindow = true;
