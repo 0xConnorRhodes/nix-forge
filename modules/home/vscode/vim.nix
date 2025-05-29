@@ -21,6 +21,9 @@
       { before = ["leader" "b" "e"];
         # commands = ["workbench.action.toggleSidebarVisibility"]; }
         commands = ["workbench.view.explorer"]; }
+
+      { before = ["<C-l>"];
+        after = [":" "n" "o" "h" "l" "<CR>"]; }
     ];
   };
 }
