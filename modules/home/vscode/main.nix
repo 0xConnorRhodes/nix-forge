@@ -30,7 +30,7 @@ in
           # hide things
           statusBar.visible = false;
           showTabs = false;
-          editor.showTabs = false;
+          editor.showTabs = "none";
         };
 
         window = {

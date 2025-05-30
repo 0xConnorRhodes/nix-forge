@@ -39,10 +39,11 @@
         # commands = ["workbench.action.toggleSidebarVisibility"]; }
         commands = ["workbench.view.explorer"]; }
 
+      { before = ["leader" "j"];
+        commands = ["workbench.action.previousEditor"]; }
+
       { before = ["<C-l>"];
         after = [":" "n" "o" "h" "l" "<CR>"]; }
-
-      # TODO: space b b to go back to the last buffer. maybe same as ctrl tab?
     ];
   };
 }
