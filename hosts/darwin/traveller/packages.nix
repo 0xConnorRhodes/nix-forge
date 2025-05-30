@@ -12,10 +12,10 @@ let
   );
 
   ruby = pkgs.ruby_3_4;
-  httparty = pkgs.bundlerEnv {
-    name = "httparty";
+  myGems = pkgs.bundlerEnv {
+    name = "myGems";
     ruby = ruby;
-    gemdir = ../../../pkgs/ruby/httparty;
+    gemdir = ../../../pkgs/ruby/myGems;
   };
 in
 {
@@ -79,7 +79,7 @@ in
       pry
       dotenv
       highline
-      httparty # local package
+      myGems # local ruby gem packages
       ruby-lsp # for vscode ruby lsp
     ]))
   ]
