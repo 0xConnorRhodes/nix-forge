@@ -5,8 +5,7 @@ let
     inherit (config.nixpkgs) config;
   };
 
-  flakePackages = (builtins.mapAttrs (
-    name: value: value.packages.${pkgs.system}.default) {
+  flakePackages = (builtins.mapAttrs ( name: value: value.packages.${pkgs.system}.default) {
       inherit (inputs)
       json2nix;
     }
@@ -56,7 +55,7 @@ in
     emacs-macport
     lima
     mpv
-    
+
     # GUI
     utm
     rectangle
@@ -81,8 +80,9 @@ in
       dotenv
       highline
       httparty # local package
+      ruby-lsp # for vscode ruby lsp
     ]))
-  ] 
+  ]
   ++ (import ../../common/packages.nix { pkgs = pkgs; })
   ++ pkgs.lib.attrValues flakePackages;
 }
