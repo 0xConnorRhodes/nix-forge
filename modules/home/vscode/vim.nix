@@ -11,11 +11,28 @@
     foldfix = true; # don't unfold as you j/k through a folded heading
 
     normalModeKeyBindingsNonRecursive = [
-      { before = ["Y"]; 
+      { before = ["Y"];
         after = ["y" "$"]; }
 
       { before = ["leader" "s" "g"];
         commands = ["workbench.action.findInFiles"]; }
+
+      # shows only actively open editors (buffers)
+      # equivalent to typing 'edt ' in the quickOpen menu
+      { before = ["leader" " "];
+        commands = ["workbench.action.showAllEditors"]; }
+
+      { before = ["leader" "f" "d"];
+        commands = ["workbench.action.quickOpen"]; }
+
+      { before = ["leader" "b" "d"];
+        commands = ["workbench.action.closeActiveEditor"]; }
+
+      { before = ["leader" "k"];
+        commands = ["workbench.action.showCommands"]; }
+
+      { before = ["leader" "o"];
+        commands = ["workbench.action.quickOpen"]; }
 
       # leader b X changes what the sidebar shows. C-b toggles the sidebar
       { before = ["leader" "b" "e"];
@@ -24,6 +41,8 @@
 
       { before = ["<C-l>"];
         after = [":" "n" "o" "h" "l" "<CR>"]; }
+
+      # TODO: space b b to go back to the last buffer. maybe same as ctrl tab?
     ];
   };
 }

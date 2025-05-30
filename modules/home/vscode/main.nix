@@ -26,24 +26,30 @@ in
           startupEditor = "none"; # don't show startup screen
 	        trustedDomains.promptInTrustedWorkspace = false;
           activityBar.location = "hidden";
+
+          # hide things
           statusBar.visible = false;
-          editor.enablePreview = false; # open new files in main buffer, not preview buffer
+          showTabs = false;
+          editor.showTabs = false;
         };
 
         window = {
           newWindowDimensions = "inherit";
-          # nativeFullScreen = false; # don't use macOS native fullscreen
         };
 
         editor = {
           fontFamily = "'JetBrainsMono Nerd Font', 'monospace', monospace";
           tabSize = 2;
-          minimap.enabled = false;
           formatOnSave = true;
           copyWithSyntaxHighlighting = false; # copy as plain text
           defaultFormatter = "null";
           emptySelectionClipboard = false; # don't copy current line if C-c pressed with no selection
           snippetSuggestions = "top"; # snippet suggestions first in autocomplete list
+
+          enablePreview = false; # open new files in main buffer, not preview buffer
+          minimap.enabled = false;
+          renderIndentGuides = true;
+          lineNumbers = "on";
         };
 
         diffEditor = {
