@@ -2,10 +2,10 @@
 { inputs, pkgs, config, pkgsUnstable, ... }:
 let
   ruby = pkgs.ruby_3_4;
-  httparty = pkgs.bundlerEnv {
-    name = "httparty";
+  myGems = pkgs.bundlerEnv {
+    name = "myGems";
     ruby = ruby;
-    gemdir = ../../pkgs/ruby/httparty;
+    gemdir = ../../pkgs/ruby/myGems;
   };
 in 
 {
@@ -42,7 +42,7 @@ in
     (ruby.withPackages (ruby-pkgs: with ruby-pkgs; [
       pry
       dotenv
-      httparty
+      myGems
       highline
     ]))
 
