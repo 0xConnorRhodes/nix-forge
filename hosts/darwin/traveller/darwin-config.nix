@@ -75,7 +75,6 @@
         "balenaetcher"
         # "hammerspoon"
         # "pine" # mac native markdown editor
-        # "macs-fan-control"
         "jupyterlab"
         # "kdenlive"
         "vlc"
