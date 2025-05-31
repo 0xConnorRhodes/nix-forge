@@ -22,6 +22,7 @@ in
       enableUpdateCheck = false;
       userSettings = {
 
+
         workbench = {
           startupEditor = "none"; # don't show startup screen
 	        trustedDomains.promptInTrustedWorkspace = false;
@@ -35,12 +36,19 @@ in
 
         window = {
           newWindowDimensions = "inherit";
+
+          # disable vscode title bar and replace with OS native bar (smaller)
+          titleBarStyle = "native";
+          customTitleBarVisibility = "never";
+
           # zoomLevel = 0; # default zoom level, set in home.nix
         };
+
 
         editor = {
           fontFamily = "'JetBrainsMono Nerd Font', 'monospace', monospace";
           tabSize = 2;
+          glyphMargin = false;
           formatOnSave = true;
           copyWithSyntaxHighlighting = false; # copy as plain text
           defaultFormatter = "null";

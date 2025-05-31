@@ -3,20 +3,24 @@
 {
   programs.vscode.profiles.default.keybindings = [
     { key = "cmd+j";
-      command = "workbench.action.terminal.toggleTerminal";
-      when = "workbench.action.terminal.toggleTerminal"; }
+      command = "workbench.action.terminal.focus";
+      when = "!terminalFocus"; }
+    { key = "cmd+j";
+      command = "workbench.action.togglePanel";
+      when = "terminalFocus"; }
+
+    { key = "cmd+,";
+      command = "workbench.panel.chat"; }
 
     { key = "cmd+k k";
       command = "workbench.action.showCommands"; }
     { key = "cmd+k cmd+k";
       command = "workbench.action.showCommands"; }
 
-    # { key = "cmd+k j";
-    #   command = "workbench.action.previousEditor"; }
-    # { key = "cmd+k cmd+j";
-    #   command = "workbench.action.previousEditor"; }
     { key = "cmd+u";
       command = "workbench.action.previousEditor"; }
+    { key = "cmd+i";
+      command = "workbench.action.nextEditor"; }
 
     { key = "cmd+k o";
       command = "workbench.action.quickOpen"; }
