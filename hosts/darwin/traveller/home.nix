@@ -37,7 +37,7 @@
     userSettings = {
       editor.fontSize = 14; # 19 with zoom 0
       terminal.integrated.fontSize = 14; # 20 with no zoom
-      chat.editor.fontSize = 14;
+      chat.editor.fontSize = 13;
       window.zoomLevel = 2;
     };
   };
