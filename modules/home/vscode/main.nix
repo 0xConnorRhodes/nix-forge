@@ -21,8 +21,6 @@ in
     profiles.default = {
       enableUpdateCheck = false;
       userSettings = {
-
-
         workbench = {
           startupEditor = "none"; # don't show startup screen
 	        trustedDomains.promptInTrustedWorkspace = false;
@@ -44,8 +42,9 @@ in
           # zoomLevel = 0; # default zoom level, set in home.nix
         };
 
-
         editor = {
+          scrollbar.verticalScrollbarSize = 6;
+          scrollbar.horizontalScrollbarSize = 6;
           fontFamily = "'JetBrainsMono Nerd Font', 'monospace', monospace";
           tabSize = 2;
           glyphMargin = false;
