@@ -20,7 +20,7 @@
     EDITOR = "nvim";
     CODE = "${osConfig.myConfig.homeDir}/code";
     # colon seperated list of dirs to be added to the default ruby $LOAD_PATH for importing modules
-    RUBYLIB = "$HOME/code/ruby-modules/lib:$HOME/code/camdb/lib:$HOME/code/vapi/lib"; 
+    RUBYLIB = "$HOME/code/ruby-modules/lib:$HOME/code/camdb/lib:$HOME/code/vapi/lib";
   };
 
   programs.zsh.shellAliases = {
@@ -35,10 +35,10 @@
 
   programs.vscode.profiles.default = {
     userSettings = {
-      editor.fontSize = 17;
-      terminal.integrated.fontSize = 17;
-      chat.editor.fontSize = 16;
-      window.zoomLevel = 1;
+      editor.fontSize = 19;
+      terminal.integrated.fontSize = 20;
+      chat.editor.fontSize = 18;
+      window.zoomLevel = 0;
     };
   };
 

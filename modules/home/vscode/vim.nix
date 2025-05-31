@@ -28,6 +28,9 @@
       { before = ["leader" "b" "d"];
         commands = ["workbench.action.closeActiveEditor"]; }
 
+      { before = ["leader" "j"];
+        commands = ["workbench.action.previousEditor"]; }
+
       { before = ["leader" "k"];
         commands = ["workbench.action.showCommands"]; }
 
@@ -38,9 +41,6 @@
       { before = ["leader" "b" "e"];
         # commands = ["workbench.action.toggleSidebarVisibility"]; }
         commands = ["workbench.view.explorer"]; }
-
-      { before = ["leader" "j"];
-        commands = ["workbench.action.previousEditor"]; }
 
       { before = ["<C-l>"];
         after = [":" "n" "o" "h" "l" "<CR>"]; }

@@ -11,6 +11,13 @@
     { key = "cmd+k cmd+k";
       command = "workbench.action.showCommands"; }
 
+    # { key = "cmd+k j";
+    #   command = "workbench.action.previousEditor"; }
+    # { key = "cmd+k cmd+j";
+    #   command = "workbench.action.previousEditor"; }
+    { key = "cmd+u";
+      command = "workbench.action.previousEditor"; }
+
     { key = "cmd+k o";
       command = "workbench.action.quickOpen"; }
     { key = "cmd+k cmd+o";

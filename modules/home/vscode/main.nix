@@ -35,6 +35,7 @@ in
 
         window = {
           newWindowDimensions = "inherit";
+          # zoomLevel = 0; # default zoom level, set in home.nix
         };
 
         editor = {
@@ -46,6 +47,7 @@ in
           emptySelectionClipboard = false; # don't copy current line if C-c pressed with no selection
           snippetSuggestions = "top"; # snippet suggestions first in autocomplete list
 
+          stickyScroll.enabled = false;
           enablePreview = false; # open new files in main buffer, not preview buffer
           minimap.enabled = false;
           renderIndentGuides = true;
@@ -68,10 +70,15 @@ in
           confirmDelete = false;
         };
 
+        breadcrumbs.enabled = false;
         update.mode = "none";
         security.workspace.trust.emptyWindow = true;
-        github.copilot.enable."*" = false;
         git.openRepositoryInParentFolders = "never";
+
+        github.copilot = {
+          enable."*" = false; # disable copilot autocomplete
+          editor.enableCodeActions = false; # icon to modify/review with copilot on text selection
+        };
 
         terminal.integrated.profiles.osx = {
           myZsh = myZshProfile;
