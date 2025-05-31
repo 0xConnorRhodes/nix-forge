@@ -35,10 +35,10 @@
 
   programs.vscode.profiles.default = {
     userSettings = {
-      editor.fontSize = 19;
-      terminal.integrated.fontSize = 20;
-      chat.editor.fontSize = 18;
-      window.zoomLevel = 0;
+      editor.fontSize = 16; # 19 with zoom 0
+      terminal.integrated.fontSize = 16; # 20 with no zoom
+      chat.editor.fontSize = 16;
+      window.zoomLevel = 2;
     };
   };
 
