@@ -44,7 +44,7 @@ in
 
         editor = {
           scrollbar.verticalScrollbarSize = 6;
-          scrollbar.horizontalScrollbarSize = 6;
+          scrollbar.horizontalScrollbarSize = 5;
           fontFamily = "'JetBrainsMono Nerd Font', 'monospace', monospace";
           tabSize = 2;
 
