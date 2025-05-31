@@ -47,7 +47,11 @@ in
           scrollbar.horizontalScrollbarSize = 6;
           fontFamily = "'JetBrainsMono Nerd Font', 'monospace', monospace";
           tabSize = 2;
+
+          # reduce gutter (left margin padding) size
           glyphMargin = false;
+          showFoldingControls = "never";
+
           formatOnSave = true;
           copyWithSyntaxHighlighting = false; # copy as plain text
           defaultFormatter = "null";
