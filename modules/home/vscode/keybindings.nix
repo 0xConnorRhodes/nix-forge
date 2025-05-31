@@ -17,6 +17,11 @@
     { key = "cmd+k cmd+k";
       command = "workbench.action.showCommands"; }
 
+    { key = "cmd+k cmd+e";
+      command = "workbench.files.action.focusFilesExplorer"; }
+    { key = "cmd+k e";
+      command = "workbench.files.action.focusFilesExplorer"; }
+
     { key = "cmd+u";
       command = "workbench.action.previousEditor"; }
     { key = "cmd+i";
