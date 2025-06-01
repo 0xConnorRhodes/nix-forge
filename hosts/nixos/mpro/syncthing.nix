@@ -24,7 +24,7 @@ in
       };
       folders = {
         "Notes" = {
-          path = "${config.myConfig.homeDir}/notes"; # phone_path: internal/DCIM/notes
+          path = "${config.myConfig.homeDir}/code/notes"; # phone_path: internal/DCIM/notes
           devices = [ "phone" ];
         };
         "Audiobooks" = {
