@@ -34,7 +34,7 @@ in
     # format: user.extension-name (.downcase)
     (with marketplace-extensions; [
       #satokaz.vscode-markdown-header-coloring
-      sgtsquiggs.vscode-active-file-status
+      sgtsquiggs.vscode-active-file-status # show open file in status bar
     ]) ++
 
     # pinned extensions pulled from vs code marketplace

@@ -41,5 +41,6 @@
     { key = "cmd+o";
       command = "workbench.action.quickOpenNavigateNextInFilePicker";
       when = "inFilesPicker && inQuickOpen"; }
+
   ];
 }
