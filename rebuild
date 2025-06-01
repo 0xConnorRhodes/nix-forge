@@ -8,18 +8,21 @@ find . -type f -name "*.nix" -exec git add {} +
 
 #export NIXPKGS_ALLOW_UNFREE=1
 
-rm -f "/Users/connor.rhodes/Library/Application Support/Code/User/settings.json"
-rm -f "/Users/connor.rhodes/Library/Application Support/Code/User/settings.json.bak"
 
 if [ "$(uname)" = "Darwin" ]; then
+  rm -f "$HOME/Library/Application Support/Code/User/settings.json"
+  rm -f "$HOME/Library/Application Support/Code/User/settings.json.bak"
   sudo darwin-rebuild switch --flake .#traveller
+  move-aside "$HOME/Library/Application Support/Code/User/settings.json"
 else
   #sudo nixos-rebuild switch --flake .
   #sudo nixos-rebuild switch --flake . |& nom
+  rm -f "$HOME/.config/Code/User/settings.json"
+  rm -f "$HOME/.config/Code/User/settings.json.bak"
   nh os switch .
+  move-aside "$HOME/.config/Code/User/settings.json"
   #nh os switch . -- --impure 
 fi
 
-move-aside "/Users/connor.rhodes/Library/Application Support/Code/User/settings.json"
 
 popd
