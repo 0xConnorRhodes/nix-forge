@@ -27,7 +27,7 @@ in
           activityBar.location = "hidden";
 
           # hide things
-          statusBar.visible = false;
+          statusBar.visible = true;
           showTabs = false;
           editor.showTabs = "none";
         };

@@ -27,13 +27,14 @@ in
       # bmalehorn.vscode-fish
       # ms-vscode.live-server # live webapp in pane
     ] ++
-    
+
     # extensions from vscode marketplace (rolling)
     # from nix-vscode extensions
     # pulls latest version without requirement of manual hash
     # format: user.extension-name (.downcase)
     (with marketplace-extensions; [
       #satokaz.vscode-markdown-header-coloring
+      sgtsquiggs.vscode-active-file-status
     ]) ++
 
     # pinned extensions pulled from vs code marketplace
@@ -50,6 +51,6 @@ in
         version = "0.27.2"; # works with code 1.100.1
         sha256 = "sha256-nwBDQNs5qrA0TxQZVtuXRiOy0iBNOCFpIim0x2k37YA=";
       }
-    ]; 
+    ];
   };
 }
