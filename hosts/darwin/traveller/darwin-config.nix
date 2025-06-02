@@ -1,8 +1,8 @@
-{ config, lib, pkgs, inputs, secrets, ... }: 
+{ config, lib, pkgs, inputs, secrets, ... }:
 
 {
-  imports = [ 
-    ./darwin-secret.nix 
+  imports = [
+    ./darwin-secret.nix
     ./launchd.nix
   ];
 
@@ -11,6 +11,7 @@
       username = lib.mkOption { type = lib.types.str; default = "connor.rhodes";};
       homeDir = lib.mkOption { type = lib.types.str; default = "/Users/connor.rhodes";};
       trashcli = lib.mkOption { type = lib.types.str; default = "trash";}; # built in to macOS
+      modAlt = lib.mkOption { type = lib.types.str; default = "cmd"; }; # modkey on the physical Alt key on a conventional keyboard
     };
   };
 
@@ -56,7 +57,7 @@
       #
       # With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
       mutableTaps = false;
-      
+
       # declarative tap management from nix flake
       taps = {
         "homebrew/homebrew-core" = inputs.homebrew-core;
@@ -70,8 +71,8 @@
       global.brewfile = true;
       onActivation.cleanup = "uninstall"; # uninstall brew packages not listed in nix
 
-      casks = [ 
-        "ghostty" 
+      casks = [
+        "ghostty"
         "balenaetcher"
         # "hammerspoon"
         # "pine" # mac native markdown editor
@@ -86,7 +87,7 @@
         # "vivaldi" # installed directly
       ];
 
-      masApps = { 
+      masApps = {
         "iMovie" = 408981434;
         "Yoink" = 457622435;
       };
@@ -98,7 +99,7 @@
     users.users.${config.myConfig.username} = {
       home = config.myConfig.homeDir;
       shell = pkgs.zsh;
-    }; 
+    };
 
     home-manager = {
       backupFileExtension = "bak"; # append existing non hm files with this on rebuild
