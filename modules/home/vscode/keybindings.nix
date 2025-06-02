@@ -14,6 +14,12 @@ in
     { key = "${modAlt}+,";
       command = "workbench.panel.chat"; }
 
+    { key = "${modAlt}+b";
+      command = "workbench.action.toggleSidebarVisibility"; }
+
+    { key = "${modAlt}+w";
+      command = "workbench.action.closeActiveEditor"; }
+
     { key = "${modAlt}+k k";
       command = "workbench.action.showCommands"; }
     { key = "${modAlt}+k ${modAlt}+k";
