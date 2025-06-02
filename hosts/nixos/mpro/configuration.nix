@@ -33,7 +33,8 @@
       hostname = lib.mkOption { type = lib.types.str; default = "mpro";};
       homeDir = lib.mkOption { type = lib.types.str; default = "/home/connor";};
       tailscaleIp = lib.mkOption { type = lib.types.str; default = "127.0.0.1";};
-      trashcli = lib.mkOption { type = lib.types.str; default = "trash";}; # from pkgs.trashy
+      trashcli = lib.mkOption { type = lib.types.str; default = "trash"; }; # from pkgs.trashy
+      modAlt = lib.mkOption { type = lib.types.str; default = "alt"; }; # modkey on the physical Alt key on a conventional keyboard
     };
   };
 
@@ -96,7 +97,7 @@
         ./gnome-dconf.nix
         ./gnome-always-on.nix
         ../../common/gnome-dconf-common.nix
-      ]; 
+      ];
     };
 
     # suspend

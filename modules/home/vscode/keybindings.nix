@@ -1,44 +1,46 @@
-{ config, pkgs, inputs, ... }:
-
+{ config, pkgs, inputs, osConfig, ... }:
+let
+  modAlt = osConfig.myConfig.modAlt;
+in
 {
   programs.vscode.profiles.default.keybindings = [
-    { key = "cmd+j";
+    { key = "${modAlt}+j";
       command = "workbench.action.terminal.focus";
       when = "!terminalFocus"; }
-    { key = "cmd+j";
+    { key = "${modAlt}+j";
       command = "workbench.action.togglePanel";
       when = "terminalFocus"; }
 
-    { key = "cmd+,";
+    { key = "${modAlt}+,";
       command = "workbench.panel.chat"; }
 
-    { key = "cmd+k k";
+    { key = "${modAlt}+k k";
       command = "workbench.action.showCommands"; }
-    { key = "cmd+k cmd+k";
+    { key = "${modAlt}+k ${modAlt}+k";
       command = "workbench.action.showCommands"; }
 
-    { key = "cmd+k cmd+e";
+    { key = "${modAlt}+k ${modAlt}+e";
       command = "workbench.files.action.focusFilesExplorer"; }
-    { key = "cmd+k e";
+    { key = "${modAlt}+k e";
       command = "workbench.files.action.focusFilesExplorer"; }
 
-    { key = "cmd+u";
+    { key = "${modAlt}+u";
       command = "workbench.action.previousEditor"; }
-    { key = "cmd+i";
+    { key = "${modAlt}+i";
       command = "workbench.action.nextEditor"; }
 
-    { key = "cmd+k o";
+    { key = "${modAlt}+k o";
       command = "workbench.action.quickOpen"; }
-    { key = "cmd+k cmd+o";
+    { key = "${modAlt}+k ${modAlt}+o";
       command = "workbench.action.quickOpen"; }
 
-    { key = "cmd+k i";
+    { key = "${modAlt}+k i";
       command = "workbench.action.showAllEditors"; }
-    { key = "cmd+k cmd+i";
+    { key = "${modAlt}+k ${modAlt}+i";
       command = "workbench.action.showAllEditors"; }
 
     # cycle through file options in the quickOpen buffer (similar to C-p, C-p in default config)
-    { key = "cmd+o";
+    { key = "${modAlt}+o";
       command = "workbench.action.quickOpenNavigateNextInFilePicker";
       when = "inFilesPicker && inQuickOpen"; }
 
