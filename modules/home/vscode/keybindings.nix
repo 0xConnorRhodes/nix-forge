@@ -21,6 +21,10 @@ in
       command = "workbench.action.toggleMaximizeEditorGroup";
       when = "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"; }
 
+    { key = "ctrl+i";
+      command = "workbench.action.toggleMaximizeEditorGroup";
+      when = "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"; }
+
     { key = "${modAlt}+w";
       command = "workbench.action.closeActiveEditor"; }
 
@@ -53,6 +57,16 @@ in
     { key = "${modAlt}+o";
       command = "workbench.action.quickOpenNavigateNextInFilePicker";
       when = "inFilesPicker && inQuickOpen"; }
+
+    # vim-style split navigation
+    { key = "ctrl+l";
+      command = "workbench.action.focusRightGroup"; }
+    { key = "ctrl+h";
+      command = "workbench.action.focusLeftGroup"; }
+    { key = "ctrl+j";
+      command = "workbench.action.focusBelowGroup"; }
+    { key = "ctrl+k";
+      command = "workbench.action.focusAboveGroup"; }
 
   ];
 }
