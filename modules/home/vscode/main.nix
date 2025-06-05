@@ -30,6 +30,7 @@ in
           statusBar.visible = true;
           showTabs = false;
           editor.showTabs = "none";
+          editor.enablePreview = false; # open new files in new editor, not preview
         };
 
         window = {
