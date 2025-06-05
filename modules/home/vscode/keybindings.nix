@@ -17,6 +17,10 @@ in
     { key = "${modAlt}+b";
       command = "workbench.action.toggleSidebarVisibility"; }
 
+    { key = "${modAlt}+e";
+      command = "workbench.action.toggleMaximizeEditorGroup";
+      when = "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"; }
+
     { key = "${modAlt}+w";
       command = "workbench.action.closeActiveEditor"; }
 
