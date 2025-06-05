@@ -31,6 +31,7 @@ in
           showTabs = false;
           editor.showTabs = "none";
           editor.enablePreview = false; # open new files in new editor, not preview
+          editor.empty.hint = "hidden"; # don't show hint on empty editor
         };
 
         window = {
