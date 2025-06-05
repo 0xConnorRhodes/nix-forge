@@ -20,10 +20,16 @@ in
     { key = "${modAlt}+e";
       command = "workbench.action.toggleMaximizeEditorGroup";
       when = "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"; }
+    { key = "${modAlt}+e";
+      command = "workbench.action.toggleMaximizedPanel";
+      when = "panelVisible && panelFocus"; }
 
     { key = "ctrl+i";
       command = "workbench.action.toggleMaximizeEditorGroup";
       when = "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"; }
+    { key = "ctrl+i";
+      command = "workbench.action.toggleMaximizedPanel";
+      when = "panelVisible && panelFocus"; }
 
     { key = "${modAlt}+w";
       command = "workbench.action.closeActiveEditor"; }
@@ -67,6 +73,10 @@ in
       command = "workbench.action.focusBelowGroup"; }
     { key = "ctrl+k";
       command = "workbench.action.focusAboveGroup"; }
+
+    { key = "ctrl+k";
+      command = "workbench.action.focusActiveEditorGroup";
+      when = "panelVisible && panelFocus"; }
 
   ];
 }
