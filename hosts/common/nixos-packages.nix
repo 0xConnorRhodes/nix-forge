@@ -7,7 +7,7 @@ let
     ruby = ruby;
     gemdir = ../../pkgs/ruby/myGems;
   };
-in 
+in
 {
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [

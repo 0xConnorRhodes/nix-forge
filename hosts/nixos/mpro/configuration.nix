@@ -23,6 +23,7 @@
       ../../../modules/nixos/sync-notes.nix
       ../../../modules/nixos/jellyfin.nix
       ../../../modules/nixos/zk-cron.nix
+      ../../../modules/nixos/ulauncher.nix
       inputs.home-manager.nixosModules.default
       inputs.nix-index-database.nixosModules.nix-index
     ];

@@ -75,6 +75,12 @@ in
           insertFinalNewline = true;
           trimFinalNewlines = true; # trim trailing newlines (apart from the 1 added above)
           trimTrailingWhitespace = true; # trim trailing whitespace at the end of a line
+          # hotExit = "off"; # don't preserve unsaved changes across editor restarts
+
+          # if the file on disk is newer than the buffer, overwrite with buffer instead of prompting with:
+          # Failed to save 'settings.json': The content of the file is newer. Please compare your version
+          # with the file contents or overwrite the content of the file with your changes.
+          saveConflictResolution = "overwriteFileOnDisk";
         };
 
         explorer = {
