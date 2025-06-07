@@ -16,6 +16,7 @@
       #../../../modules/nixos/incus.nix
       ../../../modules/nixos/tailscale.nix
       ../../../modules/nixos/sync-notes.nix
+      ../../../modules/nixos/ulauncher.nix
       inputs.home-manager.nixosModules.default
       inputs.nix-index-database.nixosModules.nix-index
     ];
@@ -24,6 +25,8 @@
     myConfig = {
       username = lib.mkOption { type = lib.types.str; default = "connor";};
       trashcli = lib.mkOption { type = lib.types.str; default = "trash";}; # from pkgs.trashy
+      homeDir = lib.mkOption { type = lib.types.str; default = "/home/connor";};
+      modAlt = lib.mkOption { type = lib.types.str; default = "alt"; }; # modkey on the physical Alt key on a conventional keyboard
     };
   };
 

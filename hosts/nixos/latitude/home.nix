@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 {
-
   imports = [
     ../../common/home/git.nix
     ../../common/home/zsh.nix
@@ -20,7 +19,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     # colon seperated list of dirs to be added to the default ruby $LOAD_PATH for importing modules
-    RUBYLIB = "$HOME/code/ruby-modules/lib:$HOME/code/vapi/lib"; 
+    RUBYLIB = "$HOME/code/ruby-modules/lib:$HOME/code/vapi/lib";
   };
 
   programs.zsh = {
@@ -34,7 +33,7 @@
   programs.vscode.profiles.default = {
     userSettings = {
       # fonts: ideal size is 17 with zoom level 1
-      editor.fontSize = 17;
+      editor.fontSize = 17; # 17
       terminal.integrated.fontSize = 17;
       chat.editor.fontSize = 16;
       window.zoomLevel = 1;
