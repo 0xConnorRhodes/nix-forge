@@ -5,7 +5,7 @@
           inherit (inputs)
           json2nix;
         };
-    in 
+    in
 
 {
   # from: https://discourse.nixos.org/t/mixing-stable-and-unstable-packages-on-flake-based-nixos-system/50351/4
@@ -46,7 +46,6 @@
     calibre
     audacious
     smplayer
-    pkgsUnstable.vivaldi
 
     # python packages
     (python3.withPackages (python-pkgs: with python-pkgs; [

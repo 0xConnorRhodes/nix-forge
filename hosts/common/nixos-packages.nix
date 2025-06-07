@@ -54,5 +54,6 @@ in
     pkgsUnstable.windsurf
     pkgsUnstable.discord
     pkgsUnstable.slack
+    pkgsUnstable.vivaldi
   ];
 }
