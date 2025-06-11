@@ -37,6 +37,7 @@ in
 
     # GUI programs
     gnumeric
+    inputs.zen-browser.packages.${pkgs.system}.default
 
     # common ruby env
     (ruby.withPackages (ruby-pkgs: with ruby-pkgs; [
