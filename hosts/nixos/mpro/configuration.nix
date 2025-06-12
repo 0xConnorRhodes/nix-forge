@@ -13,6 +13,7 @@
       ../../common/nixos-common.nix
       ../../common/nixos-packages.nix
       ../../common/gnome-common.nix
+      ../../../modules/nixos/profile-sync-daemon.nix
       ../../../modules/nixos/caddy.nix
       ../../../modules/nixos/authelia.nix
       ../../../modules/nixos/gossa.nix
@@ -118,7 +119,6 @@
     #services.flatpak.enable = true;
     services.printing.enable = true;
     services.psd.enable = true;
-    programs.firefox.enable = true;
 
     # subsystems
     virtualisation.oci-containers.backend = "podman";
