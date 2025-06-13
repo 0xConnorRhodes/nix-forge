@@ -1,44 +1,15 @@
 { config, pkgs, ... }:
 
-let
-  psdOverlay = self: super: {
-    profile-sync-daemon = super.profile-sync-daemon.overrideAttrs (old: {
-      installPhase = ''
-        # run the stock installPhase
-        ${old.installPhase}
-
-        # create zen file in share/psd/browsers
-        mkdir -p $out/share/psd/browsers
-        cat > $out/share/psd/browsers/zen <<'EOF'
-        if [[ -d "$HOME"/.zen ]]; then
-            index=0
-            PSNAME="$browser"
-            while read -r profileItem; do
-                if [[ $(echo "$profileItem" | cut -c1) = "/" ]]; then
-                    # path is not relative
-                    DIRArr[$index]="$profileItem"
-                else
-                    # we need to append the default path to give a
-                    # fully qualified path
-                    DIRArr[$index]="$HOME/.zen/$profileItem"
-                fi
-                (( index=index+1 ))
-            done < <(grep '[Pp]'ath= "$HOME"/.zen/profiles.ini | sed 's/[Pp]ath=//')
-        fi
-
-        check_suffix=1
-        EOF
-      '';
-    });
-  };
-in
 {
-  # register the overlay
-  nixpkgs.overlays = [ psdOverlay ];
-
-  # now profile-sync-daemon in pkgs is our patched one
-  environment.systemPackages = with pkgs; [
-    profile-sync-daemon
+  environment.systemPackages = [
+    (pkgs.profile-sync-daemon.overrideAttrs {
+        src = pkgs.fetchFromGitHub {
+          owner = "graysky2";
+          repo = "profile-sync-daemon";
+          rev = "cd8c2a37f152bd2bde167a0e066085ac23bc17d9";
+          hash = "sha256-+4VHOJryoNodJvx5Ug2TX7/T3OsFW5VwxaL9WUcp8xA=";
+        };
+    })
   ];
 
   home-manager.users.${config.myConfig.username} = {
