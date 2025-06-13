@@ -1,6 +1,46 @@
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }:
 
+let
+  psdOverlay = self: super: {
+    profile-sync-daemon = super.profile-sync-daemon.overrideAttrs (old: {
+      installPhase = ''
+        # run the stock installPhase
+        ${old.installPhase}
+
+        # create zen file in share/psd/browsers
+        mkdir -p $out/share/psd/browsers
+        cat > $out/share/psd/browsers/zen <<'EOF'
+        if [[ -d "$HOME"/.zen ]]; then
+            index=0
+            PSNAME="$browser"
+            while read -r profileItem; do
+                if [[ $(echo "$profileItem" | cut -c1) = "/" ]]; then
+                    # path is not relative
+                    DIRArr[$index]="$profileItem"
+                else
+                    # we need to append the default path to give a
+                    # fully qualified path
+                    DIRArr[$index]="$HOME/.zen/$profileItem"
+                fi
+                (( index=index+1 ))
+            done < <(grep '[Pp]'ath= "$HOME"/.zen/profiles.ini | sed 's/[Pp]ath=//')
+        fi
+
+        check_suffix=1
+        EOF
+      '';
+    });
+  };
+in
 {
+  # register the overlay
+  nixpkgs.overlays = [ psdOverlay ];
+
+  # now profile-sync-daemon in pkgs is our patched one
+  environment.systemPackages = with pkgs; [
+    profile-sync-daemon
+  ];
+
   home-manager.users.${config.myConfig.username} = {
     home.file.".config/psd/psd.conf".text = ''
       # docs: https://wiki.archlinux.org/index.php/Profile-sync-daemon
@@ -13,42 +53,9 @@
 
       USE_SUSPSYNC="no"
 
-      # List any browsers in the array below to have managed by psd. Useful if you do
-      # not wish to have all possible browser profiles managed which is the default if
-      # this array is left commented.
-      #
-      # Possible values:
-      #  chromium
-      #  chromium-dev
-      #  conkeror.mozdev.org
-      #  epiphany
-      #  falkon
-      #  firefox
-      #  firefox-trunk
-      #  google-chrome
-      #  google-chrome-beta
-      #  google-chrome-unstable
-      #  heftig-aurora
-      #  icecat
-      #  inox
-      #  luakit
-      #  midori
-      #  opera
-      #  opera-beta
-      #  opera-developer
-      #  opera-legacy
-      #  otter-browser
-      #  qupzilla
-      #  qutebrowser
-      #  palemoon
-      #  rekonq
-      #  seamonkey
-      #  surf
-      #  vivaldi
-      #  vivaldi-snapshot
-      #
-      #BROWSERS=(firefox google-chrome vivaldi)
-      BROWSERS=(vivaldi)
+      # list browsers from `/nix/$psd/share/psd/browsers` in BROWSERS array
+      # example: BROWSERS=(firefox google-chrome vivaldi)
+      BROWSERS=(zen)
 
       USE_BACKUPS="yes"
       BACKUP_LIMIT=5
