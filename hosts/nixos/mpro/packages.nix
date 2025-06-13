@@ -21,7 +21,6 @@
   environment.systemPackages = with pkgs; [
     git
     git-crypt
-    profile-sync-daemon
     ffmpeg-full
     zfs_2_3
     htop

@@ -49,7 +49,7 @@ in
 
     # nonfree
     obsidian
-    vscode
+    #vscode
     pkgsUnstable.warp-terminal
     pkgsUnstable.code-cursor
     pkgsUnstable.windsurf
