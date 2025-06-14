@@ -11,8 +11,11 @@
         hash = "sha256-+4VHOJryoNodJvx5Ug2TX7/T3OsFW5VwxaL9WUcp8xA=";
       };
 
-      installPhase = (old.installPhase or "") + ''
-        cp $out/share/psd/contrib/zen $out/share/psd/browsers/zen
+      # installPhase = (old.installPhase or "") + ''
+      #   cp $out/share/psd/contrib/zen $out/share/psd/browsers/zen
+      # '';
+      postFixup = (old.postFixup or "") + ''
+        install -D -m 644 $out/share/psd/contrib/zen $out/share/psd/browsers/zen
       '';
     }))
   ];
