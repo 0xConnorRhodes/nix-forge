@@ -5,18 +5,20 @@
     [
       ./hardware-configuration.nix
       ./packages.nix
-      ./gnome.nix
+      #./gnome.nix
+      ./plasma.nix
       ./ssh-mosh.nix
       ./secret.nix
       #./kiosk.nix
       ../../common/nixos-common.nix
       ../../common/nixos-packages.nix
-      ../../common/gnome-common.nix
+      #../../common/gnome-common.nix
+      ../../common/plasma-common.nix
       ../../../modules/nixos/kvm.nix
       #../../../modules/nixos/incus.nix
       ../../../modules/nixos/tailscale.nix
-      ../../../modules/nixos/sync-notes.nix
-      ../../../modules/nixos/ulauncher.nix
+      #../../../modules/nixos/sync-notes.nix
+      #../../../modules/nixos/ulauncher.nix
       inputs.home-manager.nixosModules.default
       inputs.nix-index-database.nixosModules.nix-index
     ];
@@ -36,7 +38,7 @@
       configurationLimit = 5; # max number of previous system builds in bootloader
     };
     boot.loader.efi.canTouchEfiVariables = true;
-    
+
     # zfs
     boot.kernelPackages = pkgs.pkgs.linuxPackages_xanmod; # xanmod LTS kernel
     boot.supportedFilesystems = [ "zfs" ];
@@ -71,7 +73,7 @@
       imports = [
        ./home.nix
        ../../common/gnome-dconf-common.nix
-      ]; 
+      ];
     };
 
     # services
@@ -87,6 +89,12 @@
       dockerCompat = true;
     };
 
-    system.stateVersion = "24.11";
+    # This value determines the NixOS release from which the default
+    # settings for stateful data, like file locations and database versions
+    # on your system were taken. It‘s perfectly fine and recommended to leave
+    # this value at the release version of the first install of this system.
+    # Before changing this value read the documentation for this option
+    # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+    system.stateVersion = "25.05"; # Did you read the comment?
   };
 }
