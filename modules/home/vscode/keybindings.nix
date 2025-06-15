@@ -59,6 +59,21 @@ in
     { key = "${modAlt}+k ${modAlt}+i";
       command = "workbench.action.showAllEditors"; }
 
+    { key = "${modAlt}+k ${modAlt}+l";
+      command = "workbench.action.splitEditor"; }
+    { key = "${modAlt}+k l";
+      command = "workbench.action.splitEditor"; }
+
+    { key = "${modAlt}+k j";
+      command = "workbench.action.splitEditorDown"; }
+    { key = "${modAlt}+k ${modAlt}+j";
+      command = "workbench.action.splitEditorDown"; }
+
+    { key = "${modAlt}+k x";
+      command = "workbench.action.closeEditorsAndGroup"; }
+    { key = "${modAlt}+k ${modAlt}+x";
+      command = "workbench.action.closeEditorsAndGroup"; }
+
     # cycle through file options in the quickOpen buffer (similar to C-p, C-p in default config)
     { key = "${modAlt}+o";
       command = "workbench.action.quickOpenNavigateNextInFilePicker";
