@@ -18,7 +18,6 @@ in
     pavucontrol
     podman-compose
     lazydocker
-    gparted
     distrobox
     gpu-screen-recorder
     rclone-browser
@@ -27,7 +26,6 @@ in
     killall
     # bitwarden-desktop
     chromium
-    element-desktop
     trashy
     wezterm
     neovide
@@ -53,8 +51,5 @@ in
     pkgsUnstable.warp-terminal
     pkgsUnstable.code-cursor
     pkgsUnstable.windsurf
-    pkgsUnstable.discord
-    pkgsUnstable.slack
-    pkgsUnstable.vivaldi
   ];
 }
