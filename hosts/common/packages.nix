@@ -22,5 +22,5 @@ with pkgs; [
   croc
   gnumake
   jq
+  yq-go
 ]
-
