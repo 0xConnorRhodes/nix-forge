@@ -12,4 +12,4 @@ darwin-bootstrap:
   ./result/sw/bin/darwin-rebuild switch --flake .#traveller
 
 secret:
-  yq -o=json secrets.yml > secrets.json
+  yq -o=json secrets.yml > .secrets.json

@@ -2,6 +2,7 @@
 **/home-secret.nix filter=git-crypt diff=git-crypt
 **/darwin-secret.nix filter=git-crypt diff=git-crypt
 secrets.json filter=git-crypt diff=git-crypt
+.secrets.json filter=git-crypt diff=git-crypt
 secrets.yml filter=git-crypt diff=git-crypt
 *cert.pem* filter=git-crypt diff=git-crypt
 *key.pem* filter=git-crypt diff=git-crypt
