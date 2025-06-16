@@ -1,6 +1,5 @@
-{ pkgs, config, ... }:
+{ pkgs, config, secrets, ... }:
 let
-  secrets = builtins.fromJSON (builtins.readFile ../../../secrets.json);
   guiPort = 42631;
 in
 {
@@ -13,10 +12,10 @@ in
     cert = "${config.myConfig.homeDir}/code/infra/certs/syncthing/mpro/syncthing-cert.pem";
     guiAddress = "127.0.0.1:${toString guiPort}";
     settings = {
-      gui = { 
+      gui = {
         # disable built-in auth
-        user = ""; 
-        password = ""; 
+        user = "";
+        password = "";
         insecureSkipHostcheck = true; # breaks reverse-proxy redirection to localhost if enabled
       };
       devices = {
