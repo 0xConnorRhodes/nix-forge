@@ -6,8 +6,9 @@ pushd ~/code/nix-forge
 
 find . -type f -name "*.nix" -exec git add {} +
 
-#export NIXPKGS_ALLOW_UNFREE=1
+yq -o=json secrets.yml > .secrets.json
 
+#export NIXPKGS_ALLOW_UNFREE=1
 
 if [ "$(uname)" = "Darwin" ]; then
   rm -f "$HOME/Library/Application Support/Code/User/settings.json"
@@ -23,7 +24,7 @@ else
   rm -f "$HOME/.config/Code/User/settings.json.bak"
   nh os switch .
   move-aside "$HOME/.config/Code/User/settings.json"
-  #nh os switch . -- --impure 
+  #nh os switch . -- --impure
 fi
 
 
