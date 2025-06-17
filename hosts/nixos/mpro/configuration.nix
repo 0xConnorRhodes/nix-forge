@@ -25,6 +25,7 @@
       ../../../modules/nixos/jellyfin.nix
       ../../../modules/nixos/zk-cron.nix
       ../../../modules/nixos/ulauncher.nix
+      ../../../configs/ssh_config.nix
       inputs.home-manager.nixosModules.default
       inputs.nix-index-database.nixosModules.nix-index
     ];
