@@ -9,6 +9,9 @@
       ".DS_Store"
     ];
     extraConfig = {
+      pull = {
+        rebase = true;
+      };
       push = {
         default = "current";
         autoSetupRemote = true;
