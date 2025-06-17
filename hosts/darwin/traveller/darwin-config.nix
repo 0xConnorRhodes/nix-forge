@@ -4,6 +4,7 @@
   imports = [
     ./darwin-secret.nix
     ./launchd.nix
+    ../../../configs/ssh_config.nix
   ];
 
   options = {
