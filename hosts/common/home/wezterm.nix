@@ -6,7 +6,7 @@
     enableZshIntegration = true;
     enableBashIntegration = true;
   };
-  
+
   xdg.desktopEntries = {
     "org.wezfurlong.wezterm" = {
       name = "WezTerm";
@@ -18,4 +18,6 @@
       categories= ["System" "TerminalEmulator" "Utility"];
     };
   };
+
+  home.file.".config/wezterm/wezterm.lua".source = config.lib.file.mkOutOfStoreSymlink ../../../configs/wezterm/wezterm.lua;
 }
