@@ -90,6 +90,25 @@
       dockerCompat = true;
     };
 
+    # keyboard settings
+    services.keyd = {
+      enable = true;
+      keyboards = {
+        default = {
+          ids = [ "*" ]; # Applies to all keyboards
+          settings = {
+            main = {
+              capslock = "leftcontrol";
+              leftalt = "leftcontrol";
+              rightalt = "rightcontrol";
+              rightcontrol = "rightmeta";
+              leftcontrol = "leftalt";
+            };
+          };
+        };
+      };
+    };
+
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions
     # on your system were taken. It‘s perfectly fine and recommended to leave
