@@ -1,6 +1,7 @@
 { config, pkgs, inputs, osConfig, ... }:
 let
   modAlt = osConfig.myConfig.modAlt;
+  modCtrl = osConfig.myConfig.modCtrl;
 in
 {
   programs.vscode.profiles.default.keybindings = [
@@ -24,10 +25,10 @@ in
       command = "workbench.action.toggleMaximizedPanel";
       when = "panelVisible && panelFocus"; }
 
-    { key = "ctrl+i";
+    { key = "${modCtrl}+i";
       command = "workbench.action.toggleMaximizeEditorGroup";
       when = "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"; }
-    { key = "ctrl+i";
+    { key = "${modCtrl}+i";
       command = "workbench.action.toggleMaximizedPanel";
       when = "panelVisible && panelFocus"; }
 
@@ -80,16 +81,16 @@ in
       when = "inFilesPicker && inQuickOpen"; }
 
     # vim-style split navigation
-    { key = "ctrl+l";
+    { key = "${modCtrl}+l";
       command = "workbench.action.focusRightGroup"; }
-    { key = "ctrl+h";
+    { key = "${modCtrl}+h";
       command = "workbench.action.focusLeftGroup"; }
-    { key = "ctrl+j";
+    { key = "${modCtrl}+j";
       command = "workbench.action.focusBelowGroup"; }
-    { key = "ctrl+k";
+    { key = "${modCtrl}+k";
       command = "workbench.action.focusAboveGroup"; }
 
-    { key = "ctrl+k";
+    { key = "${modCtrl}+k";
       command = "workbench.action.focusActiveEditorGroup";
       when = "panelVisible && panelFocus"; }
 
