@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+# Ensure the ~/code directory exists
+if [ ! -d "$HOME/code" ]; then
+  echo "Creating directory $HOME/code..."
+  mkdir -p "$HOME/code"
+fi
+
+# Clone the scripts repository if it has not been cloned
+if [ ! -d "$HOME/code/scripts" ]; then
+  echo "Cloning scripts repository to $HOME/code/scripts..."
+  git clone "git@github.com:0xConnorRhodes/sysops-scripts.git" "$HOME/code/scripts"
+fi
+
+# Run the pull-repos script
+"$HOME/code/scripts/bin/pull-repos"

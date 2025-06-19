@@ -18,7 +18,7 @@
     cat = "bat --style=plain";
     ipy = "ipython";
     cb = "ruby $HOME/code/food-log/add_entry.rb";
-    reb = "$HOME/code/nix-forge/rebuild";
+    reb = "$HOME/code/nix-forge/scripts/rebuild";
     lf = "lfcd";
     ari = "aria2c";
   };

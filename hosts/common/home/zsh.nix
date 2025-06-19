@@ -3,7 +3,7 @@ let
   shellAliases = import ./shellAliases.nix;
   myPaths = import ./pathDirs.nix;
   posixFunctions = import ./posixFunctions.nix;
-in 
+in
 {
   programs.zsh = {
     enable = true;
@@ -23,7 +23,7 @@ in
       bindkey -e # force emacs readline keybindings
 
       export EDITOR="nvim"
-    '' 
+    ''
     + # concatenate case-insensitive matching string since it contains '' which breaks the multiline string.
     "\nzstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'";
   };
