@@ -30,6 +30,9 @@ in
   services.displayManager.autoLogin.enable = enable_autologin;
   services.displayManager.autoLogin.user = config.myConfig.username;
 
+  # don't autosuspend on gdm login screen
+  services.xserver.displayManager.gdm.autoSuspend = false;
+
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = enable_autologin;
   systemd.services."autovt@tty1".enable = enable_autologin;

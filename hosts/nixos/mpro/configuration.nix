@@ -5,14 +5,16 @@
     [
       ./hardware-configuration.nix
       ./packages.nix
-      ./gnome.nix
+      #./gnome.nix
+      ./plasma.nix
       ./mounts.nix
       ./secret.nix
       ./backup-cron.nix
       ./syncthing.nix
       ../../common/nixos-common.nix
       ../../common/nixos-packages.nix
-      ../../common/gnome-common.nix
+      #../../common/gnome-common.nix
+      ../../common/plasma-common.nix
       ../../../modules/nixos/profile-sync-daemon.nix
       ../../../modules/nixos/caddy.nix
       ../../../modules/nixos/authelia.nix
@@ -117,14 +119,12 @@
       home.stateVersion = "24.11";
       imports = [
         ./home.nix
-        ./gnome-dconf.nix
-        ./gnome-always-on.nix
-        ../../common/gnome-dconf-common.nix
+        #./gnome-dconf.nix
+        #./gnome-always-on.nix
+        #../../common/gnome-dconf-common.nix
       ];
     };
 
-    # suspend
-    services.xserver.displayManager.gdm.autoSuspend = false;
     services.logind.extraConfig = ''
       HandleLidSwitchExternalPower=ignore
     '';
