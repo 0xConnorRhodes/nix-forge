@@ -11,19 +11,19 @@ yq -o=json secrets.yml > .secrets.json
 #export NIXPKGS_ALLOW_UNFREE=1
 
 if [ "$(uname)" = "Darwin" ]; then
-  rm -f "$HOME/Library/Application Support/Code/User/settings.json"
-  rm -f "$HOME/Library/Application Support/Code/User/settings.json.bak"
+  #rm -f "$HOME/Library/Application Support/Code/User/settings.json"
+  #rm -f "$HOME/Library/Application Support/Code/User/settings.json.bak"
   sudo darwin-rebuild switch --flake .#traveller
-  move-aside "$HOME/Library/Application Support/Code/User/settings.json"
-elif [ "$(hostname)" = "mpro" ]; then
-  nh os switch .
+  #move-aside "$HOME/Library/Application Support/Code/User/settings.json"
+#elif [ "$(hostname)" = "mpro" ]; then
+#  nh os switch .
 else
   #sudo nixos-rebuild switch --flake .
   #sudo nixos-rebuild switch --flake . |& nom
-  rm -f "$HOME/.config/Code/User/settings.json"
-  rm -f "$HOME/.config/Code/User/settings.json.bak"
+  #rm -f "$HOME/.config/Code/User/settings.json"
+  #rm -f "$HOME/.config/Code/User/settings.json.bak"
   nh os switch .
-  move-aside "$HOME/.config/Code/User/settings.json"
+  #move-aside "$HOME/.config/Code/User/settings.json"
   #nh os switch . -- --impure
 fi
 

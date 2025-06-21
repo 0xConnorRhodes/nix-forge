@@ -72,6 +72,7 @@ in
       requests
       jinja2
       ipython
+      pipx
     ]))
 
     # ruby packages
