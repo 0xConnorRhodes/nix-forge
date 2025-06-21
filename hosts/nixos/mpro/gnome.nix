@@ -3,6 +3,10 @@ let
   enable_autologin = false;
 in
 {
+  imports = [
+    ../../common/gnome-common.nix
+  ];
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 

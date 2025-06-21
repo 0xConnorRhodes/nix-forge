@@ -13,8 +13,6 @@
       ./syncthing.nix
       ../../common/nixos-common.nix
       ../../common/nixos-packages.nix
-      #../../common/gnome-common.nix
-      ../../common/plasma-common.nix
       ../../../modules/nixos/profile-sync-daemon.nix
       ../../../modules/nixos/caddy.nix
       ../../../modules/nixos/authelia.nix
@@ -26,7 +24,6 @@
       ../../../modules/nixos/sync-notes.nix
       ../../../modules/nixos/jellyfin.nix
       ../../../modules/nixos/zk-cron.nix
-      ../../../modules/nixos/ulauncher.nix
       ../../../configs/ssh_config.nix
       inputs.home-manager.nixosModules.default
       inputs.nix-index-database.nixosModules.nix-index
@@ -84,11 +81,17 @@
           ids = [ "*" ]; # Applies to all keyboards
           settings = {
             main = {
-              capslock = "leftcontrol";
+              capslock = "leftalt";
               leftalt = "leftcontrol";
               rightalt = "rightcontrol";
               rightcontrol = "rightmeta";
               leftcontrol = "leftalt";
+            };
+
+            alt = {
+              "[" = "esc";
+              d = "C-d";
+              c = "C-c";
             };
           };
         };

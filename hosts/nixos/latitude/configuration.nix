@@ -98,11 +98,17 @@
           ids = [ "*" ]; # Applies to all keyboards
           settings = {
             main = {
-              capslock = "leftcontrol";
+              capslock = "leftalt";
               leftalt = "leftcontrol";
               rightalt = "rightcontrol";
               rightcontrol = "rightmeta";
               leftcontrol = "leftalt";
+            };
+
+            alt = {
+              "[" = "esc";
+              d = "C-d";
+              c = "C-c";
             };
           };
         };

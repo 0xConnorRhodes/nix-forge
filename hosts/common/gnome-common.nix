@@ -1,6 +1,10 @@
 { config, lib, pkgs, ... }:
 
 {
+  imports = [
+    ../../modules/nixos/ulauncher.nix
+  ]
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
