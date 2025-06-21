@@ -42,13 +42,13 @@ in
       {
         name = "copilot";
         publisher = "GitHub";
-        version = "1.336.0"; # works with code 1.100.1
+        version = "1.336.0";
         sha256 = "sha256-7IiYfOX3Xl3cW5FcG+7FjGAmkw7Wa9802eguRmaFE5Y=";
       }
       {
         name = "copilot-chat";
         publisher = "GitHub";
-        version = "0.28.1"; # works with code 1.100.1
+        version = "0.28.1";
         sha256 = "sha256-xOv1JYhE9Q8zRXoZVs/W1U58+SdbJwR5y354LLfKeDQ=";
       }
     ];
