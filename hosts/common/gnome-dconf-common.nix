@@ -6,11 +6,12 @@ with lib.hm.gvariant;
 {
   dconf.settings = {
 
+    # disabled in favor of machine-specific keyd configuration
     # caps => control
-    "org/gnome/desktop/input-sources" = {
-      sources = [ (mkTuple [ "xkb" "us" ]) ];
-      xkb-options = [ "caps:ctrl_modifier" ];
-    };
+    # "org/gnome/desktop/input-sources" = {
+    #   sources = [ (mkTuple [ "xkb" "us" ]) ];
+    #   xkb-options = [ "caps:ctrl_modifier" ];
+    # };
 
     # keyboard config
     "org/gnome/desktop/peripherals/keyboard" = {

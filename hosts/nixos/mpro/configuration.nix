@@ -37,7 +37,8 @@
       homeDir = lib.mkOption { type = lib.types.str; default = "/home/connor";};
       tailscaleIp = lib.mkOption { type = lib.types.str; default = "127.0.0.1";};
       trashcli = lib.mkOption { type = lib.types.str; default = "trash"; }; # from pkgs.trashy
-      modAlt = lib.mkOption { type = lib.types.str; default = "alt"; }; # modkey on the physical Alt key on a conventional keyboard
+      modAlt = lib.mkOption { type = lib.types.str; default = "ctrl"; }; # modkey on the physical Alt key on a conventional keyboard
+      modCtrl = lib.mkOption { type = lib.types.str; default = "alt"; }; # modkey on the physical Ctrl key on a conventional keyboard
     };
   };
 
@@ -72,6 +73,25 @@
     networking.firewall.enable = true;
 
     time.timeZone = "America/Chicago";
+
+    # keyboard settings
+    services.keyd = {
+      enable = true;
+      keyboards = {
+        default = {
+          ids = [ "*" ]; # Applies to all keyboards
+          settings = {
+            main = {
+              capslock = "leftcontrol";
+              leftalt = "leftcontrol";
+              rightalt = "rightcontrol";
+              rightcontrol = "rightmeta";
+              leftcontrol = "leftalt";
+            };
+          };
+        };
+      };
+    };
 
     programs.zsh = {
       enable = true;

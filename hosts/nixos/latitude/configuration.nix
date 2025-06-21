@@ -30,7 +30,7 @@
       trashcli = lib.mkOption { type = lib.types.str; default = "trash";}; # from pkgs.trashy
       homeDir = lib.mkOption { type = lib.types.str; default = "/home/connor";};
       modAlt = lib.mkOption { type = lib.types.str; default = "ctrl"; }; # modkey on the physical Alt key on a conventional keyboard
-      modCtrl = lib.mkOption { type = lib.types.str; default = "alt"; }; # modkey on the physical Alt key on a conventional keyboard
+      modCtrl = lib.mkOption { type = lib.types.str; default = "alt"; }; # modkey on the physical Ctrl key on a conventional keyboard
     };
   };
 
