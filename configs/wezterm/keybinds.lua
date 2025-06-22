@@ -12,22 +12,22 @@ M.keys = {
   -- Pane splitting
   {
     key = 'h',
-    mods = 'CMD|OPT',
+    mods = modAlt..'|OPT',
     action = wezterm.action.SplitPane { direction = 'Left' },
   },
   {
     key = 'j',
-    mods = 'CMD|OPT',
+    mods = modAlt..'|OPT',
     action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
   },
   {
     key = 'k',
-    mods = 'CMD|OPT',
+    mods = modAlt..'|OPT',
     action = wezterm.action.SplitPane { direction = 'Up' },
   },
   {
     key = 'l',
-    mods = 'CMD|OPT',
+    mods = modAlt..'|OPT',
     action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
   },
   -- Pane navigation
