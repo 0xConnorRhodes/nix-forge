@@ -2,6 +2,7 @@ local wezterm = require 'wezterm'
 local host_cfg = require('host_cfg')
 
 local modAlt = host_cfg.modAlt
+local modWin = host_cfg.modWin
 local modCtrl = host_cfg.modCtrl
 
 local M = {}
@@ -13,22 +14,22 @@ M.keys = {
   -- Pane splitting
   {
     key = 'h',
-    mods = modAlt..'|OPT',
+    mods = modAlt..'|'..modWin,
     action = wezterm.action.SplitPane { direction = 'Left' },
   },
   {
     key = 'j',
-    mods = modAlt..'|OPT',
+    mods = modAlt..'|'..modWin,
     action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
   },
   {
     key = 'k',
-    mods = modAlt..'|OPT',
+    mods = modAlt..'|'..modWin,
     action = wezterm.action.SplitPane { direction = 'Up' },
   },
   {
     key = 'l',
-    mods = modAlt..'|OPT',
+    mods = modAlt..'|'..modWin,
     action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
   },
   -- Pane navigation
