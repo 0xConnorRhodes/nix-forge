@@ -8,9 +8,6 @@ local modCtrl = host_cfg.modCtrl
 local M = {}
 
 M.keys = {
-  { key = 'w',
-    mods = modAlt,
-    action = wezterm.action.CloseCurrentPane { confirm = false }, },
   -- Pane splitting
   {
     key = 'h',
@@ -53,17 +50,52 @@ M.keys = {
     mods = modCtrl,
     action = wezterm.action.ActivatePaneDirection 'Right',
   },
-  -- Clear terminal
-  {
-    key = ';',
-    mods = modCtrl,
-    action = wezterm.action.ClearScrollback 'ScrollbackAndViewport',
-  },
   {
     key = 'e',
     mods = modAlt,
     action = wezterm.action.TogglePaneZoomState,
   },
+  -- actions
+  { key = 'w',
+    mods = modAlt,
+    action = wezterm.action.CloseCurrentPane { confirm = false }, },
+  -- Clear terminal
+  { key = ';',
+    mods = modCtrl,
+    action = wezterm.action.ClearScrollback 'ScrollbackAndViewport', },
+  -- copy/paste
+  {
+    key = "c",
+    mods = modAlt,
+    action = wezterm.action_callback(function(window, pane)
+      local has_selection = window:get_selection_text_for_pane(pane) ~= ""
+      if has_selection then
+        window:perform_action(
+          wezterm.action{CopyTo="ClipboardAndPrimarySelection"},
+          pane)
+        window:perform_action("ClearSelection", pane)
+      else
+        window:perform_action(
+          wezterm.action{SendKey={key="c", mods='CTRL'}},
+          pane)
+      end
+    end)
+  },
+  {
+    key = "c",
+    mods = modCtrl,
+    action = wezterm.action{SendKey={key="c", mods='CTRL'}}
+  },
+  -- {
+  --    key="v",
+  --    mods="CTRL",
+  --    action="Paste",
+  -- },
+  -- {
+  --    key="v",
+  --    mods="CTRL|SHIFT",
+  --    action=wezterm.action{SendKey={key="v", mods="CTRL"}},
+  -- },
 }
 
 return M
