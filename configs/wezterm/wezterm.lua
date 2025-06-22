@@ -1,5 +1,6 @@
-local wezterm = require 'wezterm'
-local keybinds = require 'keybinds'
+local wezterm = require('wezterm')
+local host_cfg = require('host_cfg')
+local keybinds = require('keybinds')
 local config = wezterm.config_builder()
 
 config.color_scheme = 'Abernathy'
@@ -9,15 +10,7 @@ config.window_close_confirmation = 'NeverPrompt'
 
 config.font = wezterm.font 'GeistMono Nerd Font'
 
--- set font size based on hostname
-local hostname = wezterm.hostname()
-if hostname == 'mpro' then
-  config.font_size = 18
-elseif hostname == 'latitude' then
-  config.font_size = 17
-else
-  config.font_size = 21
-end
+config.font_size = host_cfg.font_size
 
 config.window_padding = {
   left = 0,

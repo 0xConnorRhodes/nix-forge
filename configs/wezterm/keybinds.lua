@@ -1,10 +1,13 @@
 local wezterm = require 'wezterm'
+local host_cfg = require('host_cfg')
+
+local modAlt = host_cfg.modAlt
 
 local M = {}
 
 M.keys = {
   { key = 'w',
-    mods = 'CMD',
+    mods = modAlt,
     action = wezterm.action.CloseCurrentPane { confirm = false }, },
   -- Pane splitting
   {
