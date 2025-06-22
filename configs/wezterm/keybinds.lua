@@ -2,6 +2,7 @@ local wezterm = require 'wezterm'
 local host_cfg = require('host_cfg')
 
 local modAlt = host_cfg.modAlt
+local modCtrl = host_cfg.modCtrl
 
 local M = {}
 
@@ -33,28 +34,28 @@ M.keys = {
   -- Pane navigation
   {
     key = 'h',
-    mods = 'CTRL',
+    mods = modCtrl,
     action = wezterm.action.ActivatePaneDirection 'Left',
   },
   {
     key = 'j',
-    mods = 'CTRL',
+    mods = modCtrl,
     action = wezterm.action.ActivatePaneDirection 'Down',
   },
   {
     key = 'k',
-    mods = 'CTRL',
+    mods = modCtrl,
     action = wezterm.action.ActivatePaneDirection 'Up',
   },
   {
     key = 'l',
-    mods = 'CTRL',
+    mods = modCtrl,
     action = wezterm.action.ActivatePaneDirection 'Right',
   },
   -- Clear terminal
   {
     key = ';',
-    mods = 'CTRL',
+    mods = modCtrl,
     action = wezterm.action.ClearScrollback 'ScrollbackAndViewport',
   },
 }
