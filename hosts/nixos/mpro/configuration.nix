@@ -54,6 +54,7 @@
       configurationLimit = 5; # max number of previous system builds in bootloader
     };
     boot.loader.efi.canTouchEfiVariables = true;
+    boot.loader.timeout = 0; # hold space during boot to see boot selection menu
 
     # zfs
     boot.kernelPackages = pkgs.pkgs.linuxPackages_xanmod; # xanmod LTS kernel
