@@ -59,6 +59,11 @@ M.keys = {
     mods = modCtrl,
     action = wezterm.action.ClearScrollback 'ScrollbackAndViewport',
   },
+  {
+    key = 'e',
+    mods = modAlt,
+    action = wezterm.action.TogglePaneZoomState,
+  },
 }
 
 return M
