@@ -17,7 +17,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     # colon seperated list of dirs to be added to the default ruby $LOAD_PATH for importing modules
-    RUBYLIB = "$HOME/code/ruby-modules/lib:$HOME/code/camdb/lib:$HOME/code/vapi/lib"; 
+    RUBYLIB = "$HOME/code/ruby-modules/lib:$HOME/code/camdb/lib:$HOME/code/vapi/lib";
   };
 
   programs.zsh = {

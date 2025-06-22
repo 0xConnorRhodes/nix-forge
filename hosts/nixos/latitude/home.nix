@@ -13,7 +13,7 @@
     ../../common/home/bat.nix
     ../../common/home/lf.nix
     ../../common/home/wezterm.nix
-        ../../../modules/home/vscode/main.nix
+    ../../../modules/home/vscode/main.nix
   ];
 
   home.sessionVariables = {

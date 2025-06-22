@@ -1,6 +1,10 @@
 { config, osConfig, pkgs, ... }:
 
 {
+  imports = [
+    ../../../configs/wezterm/wezterm-common.nix
+  ];
+
   programs.wezterm = {
     enable = true;
     enableZshIntegration = true;
@@ -18,6 +22,4 @@
       categories= ["System" "TerminalEmulator" "Utility"];
     };
   };
-
-  home.file.".config/wezterm/wezterm.lua".source = config.lib.file.mkOutOfStoreSymlink ../../../configs/wezterm/wezterm.lua;
 }
