@@ -1,4 +1,5 @@
-{ config, pkgs, ... }:
+# { config, pkgs, ... }:
+{ config, pkgs, inputs, secrets, osConfig, ... }:
 
 {
   imports = [
