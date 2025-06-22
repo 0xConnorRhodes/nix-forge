@@ -1,4 +1,5 @@
 local wezterm = require 'wezterm'
+local keybinds = require 'keybinds'
 local config = wezterm.config_builder()
 
 config.color_scheme = 'Abernathy'
@@ -30,59 +31,7 @@ config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 
 config.hide_mouse_cursor_when_typing = false
 
-config.keys = {
-  { key = 'w',
-    mods = 'CMD',
-    action = wezterm.action.CloseCurrentPane { confirm = false }, },
-  -- Pane splitting
-  {
-    key = 'h',
-    mods = 'CMD|OPT',
-    action = wezterm.action.SplitPane { direction = 'Left' },
-  },
-  {
-    key = 'j',
-    mods = 'CMD|OPT',
-    action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
-  },
-  {
-    key = 'k',
-    mods = 'CMD|OPT',
-    action = wezterm.action.SplitPane { direction = 'Up' },
-  },
-  {
-    key = 'l',
-    mods = 'CMD|OPT',
-    action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
-  },
-  -- Pane navigation
-  {
-    key = 'h',
-    mods = 'CTRL',
-    action = wezterm.action.ActivatePaneDirection 'Left',
-  },
-  {
-    key = 'j',
-    mods = 'CTRL',
-    action = wezterm.action.ActivatePaneDirection 'Down',
-  },
-  {
-    key = 'k',
-    mods = 'CTRL',
-    action = wezterm.action.ActivatePaneDirection 'Up',
-  },
-  {
-    key = 'l',
-    mods = 'CTRL',
-    action = wezterm.action.ActivatePaneDirection 'Right',
-  },
-  -- Clear terminal
-  {
-    key = ';',
-    mods = 'CTRL',
-    action = wezterm.action.ClearScrollback 'ScrollbackAndViewport',
-  },
-}
+config.keys = keybinds.keys
 
 config.skip_close_confirmation_for_processes_named = {
   'bash',
