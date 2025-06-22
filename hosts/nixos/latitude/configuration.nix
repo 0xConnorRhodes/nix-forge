@@ -13,6 +13,7 @@
       ../../common/nixos-packages.nix
       ../../common/plasma-common.nix
       ../../../modules/nixos/kvm.nix
+      ../../../modules/nixos/profile-sync-daemon.nix
       #../../../modules/nixos/incus.nix
       ../../../modules/nixos/tailscale.nix
       #../../../modules/nixos/sync-notes.nix
