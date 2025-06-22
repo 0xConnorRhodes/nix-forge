@@ -4,6 +4,10 @@ let
   enable_autologin = false;
 in
 {
+  imports = [
+    ../../common/gnome-common.nix
+  ];
+  
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = enable_autologin;
   services.displayManager.autoLogin.user = username;

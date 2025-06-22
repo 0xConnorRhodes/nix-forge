@@ -1,14 +1,11 @@
 { config, lib, pkgs, osConfig, hostPaths ? [], ... }:
-# { config, lib, pkgs, ... }:
 let
   shellAliases = import ./shellAliases.nix;
   myPaths = import ./pathDirs.nix;
   posixFunctions = import ./posixFunctions.nix;
 
   # Combine common paths with host-specific paths
-  # allPaths = hostPaths ++ myPaths.extraPaths;
   allPaths = osConfig.myConfig.hostPaths ++ myPaths.extraPaths;
-  # allPaths =  myPaths.extraPaths;
 in
 {
   programs.zsh = {

@@ -1,4 +1,3 @@
-# { config, pkgs, ... }:
 { config, pkgs, inputs, secrets, osConfig, ... }:
 
 {
