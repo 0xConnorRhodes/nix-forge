@@ -35,6 +35,7 @@
       hostname = lib.mkOption { type = lib.types.str; default = "mpro";};
       homeDir = lib.mkOption { type = lib.types.str; default = "/home/connor";};
       tailscaleIp = lib.mkOption { type = lib.types.str; default = "127.0.0.1";};
+      hostPaths = lib.mkOption { type = lib.types.listOf lib.types.str; default = []; };
       trashcli = lib.mkOption { type = lib.types.str; default = "trash"; }; # from pkgs.trashy
       modAlt = lib.mkOption { type = lib.types.str; default = "ctrl"; }; # modkey on the physical Alt key on a conventional keyboard
       modCtrl = lib.mkOption { type = lib.types.str; default = "alt"; }; # modkey on the physical Ctrl key on a conventional keyboard
@@ -42,6 +43,11 @@
   };
 
   config = {
+    myConfig.hostPaths = [
+      "/usr/local/bin"
+      "$HOME/.local/share/flatpak/exports/bin"
+      "/var/lib/flatpak/exports/bin"
+    ];
 
     boot.loader.systemd-boot = {
       enable = true;
@@ -117,6 +123,9 @@
     };
 
     home-manager.backupFileExtension = "bak"; # append existing non hm files with this on rebuild
+    home-manager.extraSpecialArgs = {
+      hostPaths = config.myConfig.hostPaths;
+    };
     nixpkgs.config.allowUnfree = true;
     home-manager.users.${config.myConfig.username} = { pkgs, ... }: {
       home.stateVersion = "24.11";

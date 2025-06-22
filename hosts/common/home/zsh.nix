@@ -1,8 +1,11 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, hostPaths ? [], ... }:
 let
   shellAliases = import ./shellAliases.nix;
   myPaths = import ./pathDirs.nix;
   posixFunctions = import ./posixFunctions.nix;
+
+  # Combine common paths with host-specific paths
+  allPaths = hostPaths ++ myPaths.extraPaths;
 in
 {
   programs.zsh = {
@@ -13,7 +16,7 @@ in
     autocd = true; # cd into directory with path only
     autosuggestion.enable = true; # fish-like past command suggestions
     envExtra = ''
-      export PATH="${lib.concatStringsSep ":" myPaths.extraPaths}:$PATH"
+      export PATH="${lib.concatStringsSep ":" allPaths}:$PATH"
     '';
     # zsh prompt
     enableCompletion = true;

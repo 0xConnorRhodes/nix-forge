@@ -4,20 +4,21 @@
   imports = [
     ./darwin-secret.nix
     ./launchd.nix
+    ../../common/host-options.nix
     ../../../configs/ssh_config.nix
   ];
 
-  options = {
-    myConfig = {
-      username = lib.mkOption { type = lib.types.str; default = "connor.rhodes";};
-      homeDir = lib.mkOption { type = lib.types.str; default = "/Users/connor.rhodes";};
-      trashcli = lib.mkOption { type = lib.types.str; default = "trash";}; # built in to macOS
-      modAlt = lib.mkOption { type = lib.types.str; default = "cmd"; }; # modkey on the physical Alt key on a conventional keyboard
-      modCtrl = lib.mkOption { type = lib.types.str; default = "ctrl"; }; # modkey on the physical Alt key on a conventional keyboard
-    };
-  };
-
   config = {
+    myConfig = {
+      username = "connor.rhodes";
+      homeDir = "/Users/connor.rhodes";
+      modAlt = "cmd";
+      modCtrl = "ctrl";
+      hostPaths = [
+        "$CODE/scripts/darwin"
+      ];
+    };
+
     system.primaryUser = config.myConfig.username;
     system.defaults.finder = {
       AppleShowAllExtensions = true; # show file extensions in finder
@@ -106,7 +107,12 @@
     home-manager = {
       backupFileExtension = "bak"; # append existing non hm files with this on rebuild
       # useUserPackages = true; # if true install home-manager packages in /etc/profiles. Needed for nixos-rebuild build-vm.
-      extraSpecialArgs = { inherit inputs; inherit secrets; };
+      extraSpecialArgs = {
+        inherit inputs;
+        inherit secrets;
+        # Pass host-specific paths from myConfig
+        hostPaths = config.myConfig.hostPaths;
+      };
       users.${config.myConfig.username} = {
         home.stateVersion = "24.11";
         imports = [ ./home.nix ];
