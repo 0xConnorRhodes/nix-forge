@@ -91,11 +91,11 @@ M.keys = {
   --    mods="CTRL",
   --    action="Paste",
   -- },
-  -- {
-  --    key="v",
-  --    mods="CTRL|SHIFT",
-  --    action=wezterm.action{SendKey={key="v", mods="CTRL"}},
-  -- },
+  {
+     key = "v",
+     mods = modCtrl'|SHIFT',
+     action=wezterm.action{SendKey={key="v", mods="CTRL"}},
+  },
 }
 
 return M
