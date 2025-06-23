@@ -93,7 +93,7 @@ M.keys = {
   -- },
   {
      key = "v",
-     mods = modCtrl'|SHIFT',
+     mods = modCtrl..'|SHIFT',
      action=wezterm.action{SendKey={key="v", mods="CTRL"}},
   },
 }
