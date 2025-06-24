@@ -86,16 +86,24 @@ M.keys = {
     mods = modCtrl,
     action = wezterm.action{SendKey={key="c", mods='CTRL'}}
   },
-  -- {
-  --    key="v",
-  --    mods="CTRL",
-  --    action="Paste",
-  -- },
+  -- paste with physical alt (logical ctrl) + v
+  {
+    key = "v",
+    mods = modAlt,
+    action = wezterm.action.PasteFrom("Clipboard")
+  },
+  -- map modAlt (physical ctrl) to send C-v which allows conventional C-v usage
   {
      key = "v",
-     mods = modCtrl..'|SHIFT',
+     mods = modCtrl,
      action=wezterm.action{SendKey={key="v", mods="CTRL"}},
   },
+  -- -- logical ctrl + shift + v sends conventional C-v
+  -- {
+  --    key = "v",
+  --    mods = modAlt..'|SHIFT',
+  --    action=wezterm.action{SendKey={key="v", mods="CTRL"}},
+  -- },
 }
 
 return M
