@@ -47,6 +47,9 @@
     smplayer
     pkgsUnstable.vivaldi
 
+    # KDE apps
+    kdePackages.krdc # remote desktop client
+
     # python packages
     (python3.withPackages (python-pkgs: with python-pkgs; [
       requests
