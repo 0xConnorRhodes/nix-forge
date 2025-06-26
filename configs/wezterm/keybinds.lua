@@ -104,6 +104,11 @@ M.keys = {
   --    mods = modAlt..'|SHIFT',
   --    action=wezterm.action{SendKey={key="v", mods="CTRL"}},
   -- },
+  {
+    key = "r",
+    mods = modAlt,
+    action = wezterm.action{SendKey={key="r", mods='CTRL'}}
+  },
 }
 
 return M
