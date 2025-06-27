@@ -11,43 +11,43 @@ M.keys = {
   -- Pane splitting
   {
     key = 'h',
-    mods = modAlt..'|'..modWin,
+    mods = modAlt..'|SHIFT',
     action = wezterm.action.SplitPane { direction = 'Left' },
   },
   {
     key = 'j',
-    mods = modAlt..'|'..modWin,
+    mods = modAlt..'|SHIFT',
     action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
   },
   {
     key = 'k',
-    mods = modAlt..'|'..modWin,
+    mods = modAlt..'|SHIFT',
     action = wezterm.action.SplitPane { direction = 'Up' },
   },
   {
     key = 'l',
-    mods = modAlt..'|'..modWin,
+    mods = modAlt..'|SHIFT',
     action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
   },
   -- Pane navigation
   {
     key = 'h',
-    mods = modCtrl,
+    mods = modAlt..'|'..modWin,
     action = wezterm.action.ActivatePaneDirection 'Left',
   },
   {
     key = 'j',
-    mods = modCtrl,
+    mods = modAlt..'|'..modWin,
     action = wezterm.action.ActivatePaneDirection 'Down',
   },
   {
     key = 'k',
-    mods = modCtrl,
+    mods = modAlt..'|'..modWin,
     action = wezterm.action.ActivatePaneDirection 'Up',
   },
   {
     key = 'l',
-    mods = modCtrl,
+    mods = modAlt..'|'..modWin,
     action = wezterm.action.ActivatePaneDirection 'Right',
   },
   {
