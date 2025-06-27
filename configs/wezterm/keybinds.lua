@@ -7,47 +7,50 @@ local modCtrl = host_cfg.modCtrl
 
 local M = {}
 
+local pane_split_mod = modAlt..'|SHIFT'
+local pane_switch_mod = modAlt..'|'..modWin
+
 M.keys = {
   -- Pane splitting
   {
     key = 'h',
-    mods = modAlt..'|SHIFT',
+    mods = pane_split_mod,
     action = wezterm.action.SplitPane { direction = 'Left' },
   },
   {
     key = 'j',
-    mods = modAlt..'|SHIFT',
+    mods = pane_split_mod,
     action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
   },
   {
     key = 'k',
-    mods = modAlt..'|SHIFT',
+    mods = pane_split_mod,
     action = wezterm.action.SplitPane { direction = 'Up' },
   },
   {
     key = 'l',
-    mods = modAlt..'|SHIFT',
+    mods = pane_split_mod,
     action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
   },
   -- Pane navigation
   {
     key = 'h',
-    mods = modAlt..'|'..modWin,
+    mods = pane_switch_mod,
     action = wezterm.action.ActivatePaneDirection 'Left',
   },
   {
     key = 'j',
-    mods = modAlt..'|'..modWin,
+    mods = pane_switch_mod,
     action = wezterm.action.ActivatePaneDirection 'Down',
   },
   {
     key = 'k',
-    mods = modAlt..'|'..modWin,
+    mods = pane_switch_mod,
     action = wezterm.action.ActivatePaneDirection 'Up',
   },
   {
     key = 'l',
-    mods = modAlt..'|'..modWin,
+    mods = pane_switch_mod,
     action = wezterm.action.ActivatePaneDirection 'Right',
   },
   {
