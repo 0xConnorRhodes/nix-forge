@@ -49,6 +49,8 @@ in
           fontFamily = "'JetBrainsMono Nerd Font', 'monospace', monospace";
           tabSize = 2;
 
+          guides.indentation = true;
+
           # reduce gutter (left margin padding) size
           glyphMargin = false;
           showFoldingControls = "never";
