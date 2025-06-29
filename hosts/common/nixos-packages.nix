@@ -29,6 +29,7 @@ in
     trashy
     wezterm
     neovide
+    caligula # write ISOs to drives
 
     nerd-fonts.geist-mono
     nerd-fonts.jetbrains-mono
