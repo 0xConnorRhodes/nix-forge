@@ -67,6 +67,16 @@
         ];
       };
 
+      vostro = nixpkgs.lib.nixosSystem rec {
+        specialArgs = { inherit inputs; inherit secrets; };
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/nixos/vostro/configuration.nix
+	        inputs.home-manager.nixosModules.default
+          { home-manager.extraSpecialArgs = specialArgs; } # needed to access inputs in home.nix
+        ];
+      };
+
       testvm = nixpkgs.lib.nixosSystem rec {
         specialArgs = { inherit inputs; };
         system = "x86_64-linux";
