@@ -83,6 +83,7 @@
         # "kdenlive"
         "vlc"
         "wireshark"
+        "wireshark-app"
         "vieb"
         "qutebrowser"
         "pine" # markdown editor
