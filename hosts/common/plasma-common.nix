@@ -38,4 +38,15 @@
   # services.xserver.libinput.enable = true;
 
   programs.kdeconnect.enable = true;
+
+  home-manager.users.${config.myConfig.username} = { pkgs, ... }: {
+    home.stateVersion = "24.11";
+    programs.plasma = {
+      enable = true;
+      workspace = {
+        clickItemTo = "open";
+        lookAndFeel = "org.kde.breezedark.desktop";
+      };
+    };
+  };
 }
