@@ -94,6 +94,7 @@
       masApps = {
         "iMovie" = 408981434;
         "Yoink" = 457622435;
+        "System Color Picker" = 1545870783;
       };
 
     };
