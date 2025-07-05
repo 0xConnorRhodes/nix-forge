@@ -10,9 +10,9 @@
     home.stateVersion = "24.11";
     programs.plasma = {
       enable = true;
-      lookAndFeel = {
-        globalTheme = "Breeze Dark";
-      };
+      # lookAndFeel = {
+      #   globalTheme = "Breeze Dark";
+      # };
     };
   };
 }
