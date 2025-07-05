@@ -12,11 +12,13 @@
 
   home-manager.users.${config.myConfig.username} = { pkgs, ... }: {
     home.stateVersion = "24.11";
-    # programs.plasma = {
-    #   enable = true;
-    #   workspace = {
-    #     clickItemTo = "open";
-    #   };
-    # };
+    programs.plasma = {
+      configFile = {
+        kcminputrc."Libinput/2/14/ETPS\\/2 Elantech Touchpad" = {
+          "NaturalScroll" = true;
+          "TapToClick" = false;
+        };
+      };
+    };
   };
 }
