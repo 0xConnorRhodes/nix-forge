@@ -43,20 +43,33 @@
     home.stateVersion = "24.11";
     programs.plasma = {
       enable = true;
+      kwin = {
+        effects = {
+          blur.enable = false;
+        };
+        titlebarButtons = {
+          left = [ "close" "maximize" "minimize" ];
+          right = [ ];
+        };
+      };
       workspace = {
         clickItemTo = "open";
         lookAndFeel = "org.kde.breezedark.desktop";
       };
+      krunner = {
+        activateWhenTypingOnDesktop = false;
+        position = "center";
+      };
       configFile = {
+        kcminputrc = {
+          Keyboard = {
+            "RepeatDelay" = 200;
+            "RepeatRate" = 35;
+          };
+        };
         kwinrc = {
           Plugins = {
             screenedgeEnabled = false;
-          };
-        };
-        krunnerrc = {
-          General = {
-            FreeFloating = true;
-            ActivateWhenTypingOnDesktop = false;
           };
         };
       };

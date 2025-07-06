@@ -13,6 +13,9 @@
   home-manager.users.${config.myConfig.username} = { pkgs, ... }: {
     home.stateVersion = "24.11";
     programs.plasma = {
+      krunner = {
+        shortcuts.launch = "Ctrl+Space";
+      };
       configFile = {
         kcminputrc."Libinput/2/14/ETPS\\/2 Elantech Touchpad" = {
           "NaturalScroll" = true;
@@ -32,7 +35,6 @@
           "mute" = "F4";
           "mic_mute" = "Meta+Shift+F4";
         };
-        "services/org.kde.krunner.desktop"."_launch" = "Ctrl+Space";
         org_kde_powerdevil = {
           "Decrease Screen Brightness" = "F5";
           "Increase Screen Brightness" = "F6";
@@ -46,11 +48,6 @@
           location = "top";
           hiding = "autohide";
           widgets = [
-            # We can configure the widgets by adding the name and config
-            # attributes. For example to add the the kickoff widget and set the
-            # icon to "nix-snowflake-white" use the below configuration. This will
-            # add the "icon" key to the "General" group for the widget in
-            # ~/.config/plasma-org.kde.plasma.desktop-appletsrc.
             {
               name = "org.kde.plasma.kickoff";
               config = {
