@@ -24,6 +24,13 @@
           "Window Close" = "Ctrl+Q";
         };
         "services/org.kde.krunner.desktop"."_launch" = "Ctrl+Space";
+        org_kde_powerdevil = {
+          "Decrease Screen Brightness" = "F5";
+          "Increase Screen Brightness" = "F6";
+
+          "Increase Screen Brightness Small" = "Meta+Shift+F6";
+          "Decrease Screen Brightness Small" = "Meta+Shift+F5";
+        };
       };
       panels = [
         {
