@@ -56,7 +56,7 @@
     users.users.${config.myConfig.username} = {
       isNormalUser = true;
       description = "Connor Rhodes";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "wheel" "adbusers"];
       shell = pkgs.zsh;
       openssh = {
         authorizedKeys.keys = [
@@ -78,6 +78,7 @@
     # services
     services.printing.enable = true;
     services.psd.enable = true;
+    programs.adb.enable = true;
 
     # prevent password prompt on opening vscode
     security.pam.services.gdm-password.enableGnomeKeyring = true;
