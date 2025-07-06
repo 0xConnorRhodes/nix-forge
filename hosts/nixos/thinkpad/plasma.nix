@@ -22,6 +22,15 @@
       shortcuts = {
         kwin = {
           "Window Close" = "Ctrl+Q";
+          "Overview" = "F1";
+        };
+        kmix = {
+          "increase_volume" = "F3";
+          "increase_volume_small" = "Meta+Shift+F3";
+          "decrease_volume" = "F2";
+          "decrease_volume_small" = "Meta+Shift+F2";
+          "mute" = "F4";
+          "mic_mute" = "Meta+Shift+F4";
         };
         "services/org.kde.krunner.desktop"."_launch" = "Ctrl+Space";
         org_kde_powerdevil = {
