@@ -137,7 +137,7 @@
       #         systemTray.items = {
       #           # We explicitly show bluetooth and battery
       #           shown = [
-      #             "org.kde.plasma.battery"
+      #             "org.kde.plasma.battery"org.kde.plasma.panelspacer""
       #             "org.kde.plasma.bluetooth"
       #           ];
       #           # And explicitly hide networkmanagement and volume

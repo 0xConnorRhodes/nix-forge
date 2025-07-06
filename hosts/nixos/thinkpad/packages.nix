@@ -26,6 +26,7 @@
       comma
       tealdeer
       rclone
+      android-tools
       pkgsUnstable.neovim
 
       # python packages
