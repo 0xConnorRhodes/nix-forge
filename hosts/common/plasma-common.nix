@@ -47,6 +47,19 @@
         clickItemTo = "open";
         lookAndFeel = "org.kde.breezedark.desktop";
       };
+      configFile = {
+        kwinrc = {
+          Plugins = {
+            screenedgeEnabled = false;
+          };
+        };
+        krunnerrc = {
+          General = {
+            FreeFloating = true;
+            ActivateWhenTypingOnDesktop = false;
+          };
+        };
+      };
     };
   };
 }

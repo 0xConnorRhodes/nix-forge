@@ -13,3 +13,6 @@ darwin-bootstrap:
 
 secret:
   yq -o=json secrets.yml > .secrets.json
+
+rc2nix:
+  nix run github:nix-community/plasma-manager > rc2nix.nix
