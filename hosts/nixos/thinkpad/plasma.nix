@@ -20,17 +20,55 @@
         };
       };
       shortcuts = {
+        kwin = {
+          "Window Close" = "Ctrl+Q";
+        };
         "services/org.kde.krunner.desktop"."_launch" = "Ctrl+Space";
-        "kwin"."Window Close" = "Ctrl+Q,Alt+F4,Close Window"; # verify that this disables alt f4 and enables C-q
       };
       panels = [
         {
           location = "top";
           hiding = "autohide";
+          widgets = [
+            # We can configure the widgets by adding the name and config
+            # attributes. For example to add the the kickoff widget and set the
+            # icon to "nix-snowflake-white" use the below configuration. This will
+            # add the "icon" key to the "General" group for the widget in
+            # ~/.config/plasma-org.kde.plasma.desktop-appletsrc.
+            {
+              name = "org.kde.plasma.kickoff";
+              config = {
+                General = {
+                  icon = "nix-snowflake-white";
+                  alphaSort = true;
+                };
+              };
+            }
+            "org.kde.plasma.panelspacer"
+            {
+              systemTray.items = {
+                shown = [
+                  "org.kde.plasma.battery"
+                  "org.kde.plasma.bluetooth"
+                  "org.kde.plasma.networkmanagement"
+                  "org.kde.plasma.volume"
+                ];
+                hidden = [
+                  # "org.kde.plasma.networkmanagement"
+                  # "org.kde.plasma.volume"
+                ];
+              };
+            }
+            {
+              digitalClock = {
+                calendar.firstDayOfWeek = "sunday";
+                time.format = "12h";
+              };
+            }
+          ];
         }
       #   # Windows-like panel at the bottom
       #   {
-      #     location = "bottom";
       #     widgets = [
       #       # We can configure the widgets by adding the name and config
       #       # attributes. For example to add the the kickoff widget and set the
@@ -110,7 +148,6 @@
       #         };
       #       }
       #     ];
-      #     hiding = "autohide";
       #   }
       #   # Application name, Global menu and Song information and playback controls at the top
       #   {
