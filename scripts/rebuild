@@ -5,6 +5,7 @@ set -e
 pushd ~/code/nix-forge
 
 [ -f ~/code/nix-forge/rc2nix.nix ] && rm ~/code/nix-forge/rc2nix.nix
+
 find . -type f -name "*.nix" -exec git add {} +
 
 yq -o=json secrets.yml > .secrets.json
