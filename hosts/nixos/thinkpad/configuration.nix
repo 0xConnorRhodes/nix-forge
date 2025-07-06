@@ -78,7 +78,7 @@
     # services
     services.printing.enable = true;
     services.psd.enable = true;
-    programs.adb.enable = true;
+    programs.adb.enable = true; # ensure in user.users: extraGroups = [ "adbusers"];
 
     # prevent password prompt on opening vscode
     security.pam.services.gdm-password.enableGnomeKeyring = true;
