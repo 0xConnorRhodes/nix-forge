@@ -21,6 +21,7 @@
           "NaturalScroll" = true;
           "TapToClick" = false;
         };
+        kscreenlockerrc.Daemon.Timeout = 15; # minutes until screen locks automatically
       };
       shortcuts = {
         kwin = {
@@ -41,6 +42,45 @@
 
           "Increase Screen Brightness Small" = "Meta+Shift+F6";
           "Decrease Screen Brightness Small" = "Meta+Shift+F5";
+        };
+      };
+      fonts = {
+        general = {
+          family = "Noto Sans";
+          pointSize = 12;
+        };
+        windowTitle = {
+          family = "Noto Sans";
+          pointSize = 12;
+        };
+      };
+      powerdevil = {
+        battery = {
+          dimDisplay = {
+            enable = true;
+            idleTimeout = 600; # 10m
+          };
+          turnOffDisplay = {
+            idleTimeout = 900; # 15m as well, dim display then sleep, don't turn off display as an intermediate step
+            idleTimeoutWhenLocked = 60; # 1m
+          };
+          autoSuspend = {
+            action = "sleep";
+            idleTimeout = 900; # 15m
+          };
+          inhibitLidActionWhenExternalMonitorConnected = true;
+          powerButtonAction = "sleep";
+          whenLaptopLidClosed = "sleep";
+        };
+        AC = {
+          dimDisplay.enable = false;
+          autoSuspend = {
+            action = "sleep";
+            idleTimeout = 1200; # 20m
+          };
+          inhibitLidActionWhenExternalMonitorConnected = true;
+          powerButtonAction = "lockScreen";
+          whenLaptopLidClosed = "sleep";
         };
       };
       panels = [

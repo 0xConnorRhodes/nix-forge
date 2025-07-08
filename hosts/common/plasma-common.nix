@@ -72,6 +72,16 @@
             screenedgeEnabled = false;
           };
         };
+        krunnerrc = {
+          Plugins = {
+            baloosearchEnabled = false;
+            krunner_appstreamEnabled = false;
+            krunner_katesessionsEnabled = false;
+            krunner_konsoleprofilesEnabled = false;
+            krunner_recentdocumentsEnabled = false;
+            krunner_sessionsEnabled = false;
+          };
+        };
       };
     };
   };
