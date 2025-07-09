@@ -19,6 +19,8 @@
       ];
     };
 
+    nixpkgs.config.allowUnsupportedSystem = true;
+
     system.primaryUser = config.myConfig.username;
     system.defaults.finder = {
       AppleShowAllExtensions = true; # show file extensions in finder

@@ -55,6 +55,7 @@ in
     emacs-macport
     lima
     mpv
+    # piper
 
     # GUI
     utm
