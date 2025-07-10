@@ -82,6 +82,11 @@
             krunner_sessionsEnabled = false;
           };
         };
+        plasmaparc = {
+          General = {
+            AudioFeedback = false; # disable chime on changing volume
+          };
+        };
       };
     };
   };
