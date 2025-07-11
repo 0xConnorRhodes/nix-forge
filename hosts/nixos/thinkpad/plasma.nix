@@ -18,8 +18,12 @@
       };
       configFile = {
         kcminputrc."Libinput/2/14/ETPS\\/2 Elantech Touchpad" = {
+          # configure touchpad for 2 finger right click instead of zone based left|middle|right click
+          "Enabled" = true;
           "NaturalScroll" = true;
           "TapToClick" = false;
+          "ClickMethod" = 2;
+          "Tapping" = true;
         };
         kscreenlockerrc.Daemon.Timeout = 15; # minutes until screen locks automatically
       };
