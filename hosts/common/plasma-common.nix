@@ -72,6 +72,28 @@
             screenedgeEnabled = false;
           };
         };
+        kwinrulesrc = {
+          "25bd0576-34dc-4506-ad48-8d34a6fe285e" ={
+            "Description" = "Window settings for zen PiP";
+            "title" = "Picture-in-Picture";
+            "titlematch" = 1; # exact match
+            "types" = 1; # window types: normal window
+
+            "wmclass" = "zen";
+            "wmclassmatch" = 1; # exact match
+
+            "desktops" = "\\0"; # all desktops
+            "desktopsrule" = 3; # apply initially
+
+            "above" = true; # keep above other windows
+            "aboverule" = 3; # apply initially
+
+            "skipswitcher" = true;
+            "skipswitcherrule" = 2; # force
+
+            "acceptfocusrule" = 2; # force
+          };
+        };
         krunnerrc = {
           Plugins = {
             baloosearchEnabled = false;
