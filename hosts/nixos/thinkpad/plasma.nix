@@ -25,8 +25,10 @@
       };
       shortcuts = {
         kwin = {
-          "Window Close" = "Ctrl+Q";
           "Overview" = "F1";
+          "Window Maximize" = "Ctrl+Alt+I";
+          "Window Minimize" = "Ctrl+H";
+          "Window Close" = "Ctrl+Q";
         };
         kmix = {
           "increase_volume" = "F3";
