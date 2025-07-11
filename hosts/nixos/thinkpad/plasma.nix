@@ -33,6 +33,14 @@
           "Window Maximize" = "Ctrl+Alt+I";
           "Window Minimize" = "Ctrl+H";
           "Window Close" = "Ctrl+Q";
+          "Walk Through Windows" = "Ctrl+Tab";
+          "Walk Through Windows (Reverse)" = "Ctrl+Shift+Tab";
+          "Walk Through Windows of Current Application" = "Ctrl+`";
+          "Walk Through Windows of Current Application (Reverse)" = "Ctrl+~";
+          "Window Quick Tile Top" = "Ctrl+Alt+K";
+          "Window Quick Tile Bottom" = "Ctrl+Alt+J";
+          "Window Quick Tile Left" = "Ctrl+Alt+H";
+          "Window Quick Tile Right" = "Ctrl+Alt+L";
         };
         kmix = {
           "increase_volume" = "F3";
