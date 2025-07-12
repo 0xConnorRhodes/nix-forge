@@ -104,45 +104,6 @@
           whenLaptopLidClosed = "sleep";
         };
       };
-      panels = [
-        {
-          location = "top";
-          height = 34;
-          hiding = "autohide";
-          widgets = [
-            {
-              name = "org.kde.plasma.kickoff";
-              config = {
-                General = {
-                  icon = "nix-snowflake-white";
-                  alphaSort = true;
-                };
-              };
-            }
-            "org.kde.plasma.panelspacer"
-            {
-              systemTray.items = {
-                shown = [
-                  "org.kde.plasma.battery"
-                  "org.kde.plasma.bluetooth"
-                  "org.kde.plasma.networkmanagement"
-                  "org.kde.plasma.volume"
-                ];
-                hidden = [
-                  # "org.kde.plasma.networkmanagement"
-                  # "org.kde.plasma.volume"
-                ];
-              };
-            }
-            {
-              digitalClock = {
-                calendar.firstDayOfWeek = "sunday";
-                time.format = "12h";
-              };
-            }
-          ];
-        }
-      ];
     };
   };
 }
