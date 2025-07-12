@@ -33,6 +33,13 @@
           };
         };
         kscreenlockerrc.Daemon.Timeout = 15; # minutes until screen locks automatically
+
+        # show date beside time in digitalclock widget in panel
+        "plasma-org.kde.plasma.digitalclock.cfg" = {
+          General = {
+            showDate = "beside";
+          };
+        };
       };
       panels = [
         {

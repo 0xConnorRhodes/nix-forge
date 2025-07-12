@@ -17,7 +17,7 @@
       krunner = {
         shortcuts.launch = "Ctrl+Space";
       };
-      # configFile = {
+      configFile = {
       #   # kcminputrc = {
       #   #   "Libinput/2/14/ETPS\\/2 Elantech Touchpad" = {
       #   #     # configure touchpad for 2 finger right click instead of zone based left|middle|right click
@@ -34,7 +34,14 @@
       #   #   };
       #   # };
       #   # kscreenlockerrc.Daemon.Timeout = 15; # minutes until screen locks automatically
-      # };
+
+        # show date beside time in digitalclock widget in panel
+        "plasma-org.kde.plasma.digitalclock.cfg" = {
+          General = {
+            showDate = "beside";
+          };
+        };
+      };
       panels = [
         {
           location = "top";
