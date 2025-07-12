@@ -18,22 +18,7 @@
         shortcuts.launch = "Ctrl+Space";
       };
       configFile = {
-      #   # kcminputrc = {
-      #   #   "Libinput/2/14/ETPS\\/2 Elantech Touchpad" = {
-      #   #     # configure touchpad for 2 finger right click instead of zone based left|middle|right click
-      #   #     "Enabled" = true;
-      #   #     "NaturalScroll" = true;
-      #   #     "TapToClick" = false;
-      #   #     "ClickMethod" = 2;
-      #   #     "Tapping" = true;
-      #   #   };
-
-      #   #   "Libinput/2/14/ETPS\\/2 Elantech TrackPoint" = {
-      #   #     "Enabled" = true;
-      #   #     "PointerAcceleration" = 0.400;
-      #   #   };
-      #   # };
-      #   # kscreenlockerrc.Daemon.Timeout = 15; # minutes until screen locks automatically
+        kscreenlockerrc.Daemon.Timeout = 0; # no auto-locking
 
         # show date beside time in digitalclock widget in panel
         "plasma-org.kde.plasma.digitalclock.cfg" = {
@@ -81,48 +66,41 @@
           ];
         }
       ];
-      # shortcuts = {
-      #   kwin = {
-      #     "Overview" = "F1";
-      #     "Window Maximize" = "Ctrl+Alt+I";
-      #     "Window Minimize" = "Ctrl+H";
-      #     "Window Close" = "Ctrl+Q";
-      #     "Walk Through Windows" = "Ctrl+Tab";
-      #     "Walk Through Windows (Reverse)" = "Ctrl+Shift+Tab";
-      #     "Walk Through Windows of Current Application" = "Ctrl+`";
-      #     "Walk Through Windows of Current Application (Reverse)" = "Ctrl+~";
-      #     "Window Quick Tile Top" = "Ctrl+Alt+K";
-      #     "Window Quick Tile Bottom" = "Ctrl+Alt+J";
-      #     "Window Quick Tile Left" = "Ctrl+Alt+H";
-      #     "Window Quick Tile Right" = "Ctrl+Alt+L";
-      #   };
-      #   kmix = {
-      #     "increase_volume" = "F3";
-      #     "increase_volume_small" = "Meta+Shift+F3";
-      #     "decrease_volume" = "F2";
-      #     "decrease_volume_small" = "Meta+Shift+F2";
-      #     "mute" = "F4";
-      #     "mic_mute" = "Meta+Shift+F4";
-      #   };
-      #   org_kde_powerdevil = {
-      #     "Decrease Screen Brightness" = "F5";
-      #     "Increase Screen Brightness" = "F6";
-
-      #     "Increase Screen Brightness Small" = "Meta+Shift+F6";
-      #     "Decrease Screen Brightness Small" = "Meta+Shift+F5";
-      #   };
-      # };
-      # fonts = {
-      #   general = {
-      #     family = "Noto Sans";
-      #     pointSize = 12;
-      #   };
-      #   windowTitle = {
-      #     family = "Noto Sans";
-      #     pointSize = 12;
-      #   };
-      # };
-      # powerdevil = {
+      shortcuts = {
+        kwin = {
+          "Overview" = "F1";
+          "Window Maximize" = "Ctrl+Alt+I";
+          "Window Minimize" = "Ctrl+H";
+          "Window Close" = "Ctrl+Q";
+          "Walk Through Windows" = "Ctrl+Tab";
+          "Walk Through Windows (Reverse)" = "Ctrl+Shift+Tab";
+          "Walk Through Windows of Current Application" = "Ctrl+`";
+          "Walk Through Windows of Current Application (Reverse)" = "Ctrl+~";
+          "Window Quick Tile Top" = "Ctrl+Alt+K";
+          "Window Quick Tile Bottom" = "Ctrl+Alt+J";
+          "Window Quick Tile Left" = "Ctrl+Alt+H";
+          "Window Quick Tile Right" = "Ctrl+Alt+L";
+        };
+        kmix = {
+          "increase_volume" = "Meta+F11";
+          "increase_volume_small" = "Meta+Shift+F11";
+          "decrease_volume" = "Meta+F10";
+          "decrease_volume_small" = "Meta+Shift+F10";
+          "mute" = "Meta+F9";
+          "mic_mute" = "Meta+Shift+F9";
+        };
+      };
+      fonts = {
+        general = {
+          family = "Noto Sans";
+          pointSize = 10;
+        };
+        windowTitle = {
+          family = "Noto Sans";
+          pointSize = 10;
+        };
+      };
+      powerdevil = {
       #   battery = {
       #     dimDisplay = {
       #       enable = true;
@@ -140,17 +118,21 @@
       #     powerButtonAction = "sleep";
       #     whenLaptopLidClosed = "sleep";
       #   };
-        # AC = {
-        #   dimDisplay.enable = false;
-        #   autoSuspend = {
-        #     action = "sleep";
-        #     idleTimeout = 1200; # 20m
-        #   };
-        #   inhibitLidActionWhenExternalMonitorConnected = true;
-        #   powerButtonAction = "lockScreen";
-        #   whenLaptopLidClosed = "sleep";
-        # };
-      # };
+        AC = {
+          dimDisplay = {
+            enable = true;
+            idleTimeout = 600; # 10m
+          };
+          turnOffDisplay = {
+            idleTimeout = 1800; # 30m
+            idleTimeoutWhenLocked = 60; # 1m
+          };
+          autoSuspend = {
+            action = "nothing";
+          };
+          powerButtonAction = "nothing";
+        };
+      };
     };
   };
 }
