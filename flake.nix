@@ -59,7 +59,10 @@
         modules = [
           ./hosts/nixos/mpro/configuration.nix
 	        inputs.home-manager.nixosModules.default
-          { home-manager.extraSpecialArgs = specialArgs; } # needed to access inputs in home.nix
+          {
+            home-manager.extraSpecialArgs = specialArgs; # needed to access inputs in home.nix
+            home-manager.sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
+          }
         ];
       };
 
