@@ -93,6 +93,20 @@
 
             "acceptfocusrule" = 2; # force
           };
+
+          "27207fbc-3dee-48fb-97b4-d6ba6d0f1428" = {
+            "Description" = "Settings for zen main window";
+
+            # show only on 1 desktop, default to desktop 1
+            "desktops" = "2e63571e-1aa2-4dd3-a8e4-80d383761723";
+            "desktopsrule" = 4;
+
+            "wmclass" = "zen zen";
+            "wmclassmatch" = 1; # exact match
+            "wmclasscomplete" = true; # match whole window class
+
+            "types" = 1; # normal window
+          };
         };
         krunnerrc = {
           Plugins = {
