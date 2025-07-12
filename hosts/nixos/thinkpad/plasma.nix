@@ -17,13 +17,20 @@
         shortcuts.launch = "Ctrl+Space";
       };
       configFile = {
-        kcminputrc."Libinput/2/14/ETPS\\/2 Elantech Touchpad" = {
-          # configure touchpad for 2 finger right click instead of zone based left|middle|right click
-          "Enabled" = true;
-          "NaturalScroll" = true;
-          "TapToClick" = false;
-          "ClickMethod" = 2;
-          "Tapping" = true;
+        kcminputrc = {
+          "Libinput/2/14/ETPS\\/2 Elantech Touchpad" = {
+            # configure touchpad for 2 finger right click instead of zone based left|middle|right click
+            "Enabled" = true;
+            "NaturalScroll" = true;
+            "TapToClick" = false;
+            "ClickMethod" = 2;
+            "Tapping" = true;
+          };
+
+          "Libinput/2/14/ETPS\\/2 Elantech TrackPoint" = {
+            "Enabled" = true;
+            "PointerAcceleration" = 0.400;
+          };
         };
         kscreenlockerrc.Daemon.Timeout = 15; # minutes until screen locks automatically
       };
