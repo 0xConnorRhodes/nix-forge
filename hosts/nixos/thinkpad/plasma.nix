@@ -133,6 +133,7 @@
           };
           autoSuspend = {
             action = "sleep";
+
             idleTimeout = 900; # 15m
           };
           inhibitLidActionWhenExternalMonitorConnected = true;

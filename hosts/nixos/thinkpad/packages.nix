@@ -28,6 +28,9 @@
       rclone
       pkgsUnstable.neovim
 
+      # GUI
+      obs-studio
+
       # python packages
       (python3.withPackages (python-pkgs: with python-pkgs; [
         requests

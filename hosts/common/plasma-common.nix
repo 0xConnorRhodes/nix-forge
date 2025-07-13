@@ -45,7 +45,10 @@
       enable = true;
       kwin = {
         effects = {
-          blur.enable = true;
+          blur.enable = false;
+          translucency.enable = false;
+          minimization.animation = "off";
+          shakeCursor.enable = true;
         };
         titlebarButtons = {
           left = [ "close" "maximize" "minimize" ];
@@ -71,6 +74,8 @@
           Plugins = {
             screenedgeEnabled = false;
           };
+          Plugins.hidecursorEnabled = true;
+          Effect-hidecursor.InactivityDuration = 10; # in seconds
         };
         kwinrulesrc = {
           "25bd0576-34dc-4506-ad48-8d34a6fe285e" ={
