@@ -54,8 +54,20 @@
                   icon = "nix-snowflake-white";
                   alphaSort = true;
                 };
-              };
+              }
             }
+            "org.kde.plasma.icontasks"
+            # {
+            #   iconTasks = {
+            #     # to get these names, check `ls /run/current-system/sw/share/applications` and `ls ~/.nix-profile/share/applications` and remove ".desktop" to get application names
+            #     launchers = [
+            #       "applications:org.wezfurlong.wezterm"
+            #       "applications:zen"
+            #       "applications:obsidian"
+            #       "applications:code"
+            #     ];
+            #   };
+            # }
             "org.kde.plasma.panelspacer"
             {
               systemTray.items = {
@@ -110,6 +122,7 @@
           "Increase Screen Brightness Small" = "Meta+Shift+F6";
           "Decrease Screen Brightness Small" = "Meta+Shift+F5";
         };
+        "services/org.kde.dolphin.desktop"."_launch" = "Meta+B"; # launch dolphin
       };
       fonts = {
         general = {

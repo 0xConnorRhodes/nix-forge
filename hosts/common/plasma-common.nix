@@ -129,6 +129,11 @@
           };
         };
       };
+      shortcuts = {
+        plasmashell = {
+          "activate application launcher" = "none";
+        };
+      };
     };
   };
 }
