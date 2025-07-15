@@ -35,6 +35,7 @@ in
     (with marketplace-extensions; [
       #satokaz.vscode-markdown-header-coloring
       sgtsquiggs.vscode-active-file-status # show open file in status bar
+      google.geminicodeassist
     ]) ++
 
     # pinned extensions pulled from vs code marketplace
