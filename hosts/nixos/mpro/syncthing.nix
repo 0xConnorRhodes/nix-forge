@@ -42,6 +42,11 @@ in
           path = "/scary/phone/movies"; # phone_path: internal/Movies
           devices = [ "phone" ];
         };
+
+        "Sync" = {
+          path = "/scary/phone/sync"; # phone_path: internal/sync
+          devices = [ "phone" ];
+        };
       };
     };
   };
