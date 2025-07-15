@@ -79,6 +79,13 @@
     services.printing.enable = true;
     services.psd.enable = true;
     programs.adb.enable = true; # ensure in user.users: extraGroups = [ "adbusers"];
+    programs.appimage = {
+      enable = true;
+      binfmt = true; # use appimage-run to run appimage binaries
+      package = pkgs.appimage-run.override {
+        extraPkgs = pkgs: [ pkgs.xorg.libxshmfence ];
+      };
+    };
 
     # prevent password prompt on opening vscode
     security.pam.services.gdm-password.enableGnomeKeyring = true;
