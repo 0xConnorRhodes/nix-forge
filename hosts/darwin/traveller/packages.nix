@@ -56,6 +56,7 @@ in
     lima
     mpv
     piper-tts
+    gemini-cli
 
     # GUI
     utm

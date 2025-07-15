@@ -1,11 +1,21 @@
 {
   myAliases = {
-    e = "nvim";
-    gs = "git status";
-    gc = "git checkout";
+
+    # git
+    gs = "git status --short";
+    ga = "git add";
+    gp = "git push";
+    gu = "git pull";
+    gl = "git log";
     gb = "git branch";
-    gcm = "git commit -m";
+    gi = "git init";
+    gcl = "git clone";
+    gc = "git commit";
+
+    # gc = "git checkout";
     gmm = "git add . && git commit -m 'u' && git rebase --continue && git push";
+
+    e = "nvim";
     j = "__zoxide_z";
     ji = "__zoxide_zi";
     cm = "chezmoi";
