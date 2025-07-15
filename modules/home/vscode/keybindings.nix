@@ -12,8 +12,9 @@ in
       command = "workbench.action.togglePanel";
       when = "terminalFocus"; }
 
+    # toggle right-side panel (chat/other custom elements)
     { key = "${modAlt}+,";
-      command = "workbench.panel.chat"; }
+      command = "workbench.action.toggleAuxiliaryBar"; }
 
     { key = "${modAlt}+b";
       command = "workbench.action.toggleSidebarVisibility"; }

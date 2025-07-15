@@ -17,7 +17,8 @@ in
 
   nixpkgs.config.allowUnfree = true;
   programs.vscode = {
-    enable = true;    profiles.default = {
+    enable = true;
+    profiles.default = {
       enableUpdateCheck = false;
       userSettings = {
         workbench = {

@@ -6,7 +6,6 @@
     userSettings.extensions.autoCheckUpdates = false;
     # per-extension settings (comment shows extension ID)
     userSettings = {
-
       simple-project-switcher.directory = osConfig.myConfig.homeDir+"/code";
 
       # redhat.vscode-yaml
@@ -37,6 +36,10 @@
       # satokaz.vscode-markdown-header-coloring
       markdown-header-coloring = {
         backgroundColor = false;
+      };
+
+      geminicodeassist = {
+        inlineSuggestions.enableAuto = false;
       };
     };
   };
