@@ -54,7 +54,7 @@
                   icon = "nix-snowflake-white";
                   alphaSort = true;
                 };
-              }
+              };
             }
             "org.kde.plasma.icontasks"
             # {
