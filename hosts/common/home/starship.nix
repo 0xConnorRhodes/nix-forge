@@ -42,9 +42,14 @@
         format = "[$duration]($style) ";
       };
 
+      python = {
+        disabled = false;
+        # show python only if inside a virtual env: `🐍 (venv) >`
+        format = "([🐍 \\($virtualenv\\)]($style) )";
+      };
+
       # disabled modules
       line_break.disabled = true; # make prompt a single line instead of two lines
-      python.disabled = true;
       ruby.disabled = true;
       lua.disabled = true;
       nodejs.disabled = true;
