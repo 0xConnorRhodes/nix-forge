@@ -29,6 +29,7 @@
       pkgsUnstable.neovim
 
       # GUI
+      calibre
       obs-studio
 
       # KDE apps
