@@ -45,7 +45,7 @@
       enable = true;
       kwin = {
         effects = {
-          blur.enable = false;
+          blur.enable = true;
           translucency.enable = false;
           minimization.animation = "off";
           shakeCursor.enable = true;

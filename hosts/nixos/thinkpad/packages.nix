@@ -31,6 +31,10 @@
       # GUI
       obs-studio
 
+      # KDE apps
+      kdePackages.krdc # remote desktop client
+      kdePackages.partitionmanager # kparted
+
       # python packages
       (python3.withPackages (python-pkgs: with python-pkgs; [
         requests
