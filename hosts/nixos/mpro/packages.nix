@@ -40,6 +40,7 @@
     pkgsUnstable.neovim
     pipx
     wget
+    buku
 
     # gui programs
     calibre

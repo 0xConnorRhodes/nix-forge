@@ -27,6 +27,7 @@
       tealdeer
       rclone
       pkgsUnstable.neovim
+      buku
 
       # GUI
       calibre
