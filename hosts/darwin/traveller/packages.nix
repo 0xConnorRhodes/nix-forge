@@ -40,6 +40,7 @@ in
     gcc # needed for neovim plugins
     pkgsUnstable.neovim
     wget
+    buku
 
     # mac-specific
     blueutil
