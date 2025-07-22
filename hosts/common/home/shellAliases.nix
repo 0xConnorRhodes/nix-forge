@@ -31,5 +31,6 @@
     reb = "$HOME/code/nix-forge/scripts/rebuild";
     lf = "lfcd";
     ari = "aria2c";
+    bk = "buku";
   };
 }
