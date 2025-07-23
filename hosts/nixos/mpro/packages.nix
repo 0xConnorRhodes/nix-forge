@@ -46,7 +46,6 @@
     calibre
     audacious
     smplayer
-    pkgsUnstable.vivaldi
 
     # KDE apps
     kdePackages.krdc # remote desktop client
