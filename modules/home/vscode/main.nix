@@ -24,7 +24,7 @@ in
         workbench = {
           startupEditor = "none"; # don't show startup screen
 	  trustedDomains.promptInTrustedWorkspace = false;
-	  sideBar.location = "right";
+	  sideBar.location = "left";
           activityBar.location = "hidden";
 
           # hide things

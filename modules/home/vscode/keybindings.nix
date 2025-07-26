@@ -17,7 +17,8 @@ in
       command = "workbench.action.toggleAuxiliaryBar"; }
 
     { key = "${modAlt}+b";
-      command = "workbench.action.toggleSidebarVisibility"; }
+      command = "workbench.action.toggleSidebarVisibility";
+      when = "panelFocus && terminalFocus"; }
 
     { key = "${modAlt}+e";
       command = "workbench.action.toggleMaximizeEditorGroup";
@@ -99,5 +100,17 @@ in
       command = "inlineChat.start"; }
     { key = "${modAlt}+k ${modAlt}+n";
       command = "inlineChat.start"; }
+
+    { key = "${modAlt}+k v f"; # view, files
+      command = "workbench.view.explorer"; }
+
+    { key = "${modAlt}+k v e"; # view, extensions
+      command = "workbench.view.extensions"; }
+
+    { key = "${modAlt}+k v k"; # view, keybinds
+      command = "workbench.action.openGlobalKeybindings"; }
+
+    { key = "${modAlt}+k v s"; # view, settings
+      command = "workbench.action.openSettings2"; }
   ];
 }
