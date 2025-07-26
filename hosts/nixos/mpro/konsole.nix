@@ -7,7 +7,7 @@
       enable = true;
       defaultProfile = "MyProfile.profile";
       profiles."MyProfile" = {
-        font.size = 18;
+        font.size = 16;
       };
     };
   };
