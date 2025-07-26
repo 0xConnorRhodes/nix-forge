@@ -16,9 +16,24 @@ in
     { key = "${modAlt}+,";
       command = "workbench.action.toggleAuxiliaryBar"; }
 
+    # toggle bar
     { key = "${modAlt}+b";
-      command = "workbench.action.toggleSidebarVisibility";
-      when = "panelFocus && terminalFocus"; }
+      command = "workbench.action.toggleSidebarVisibility"; }
+
+    # hack to bounce focus to panel and back to allow toggling panel when terminal is focused
+    {
+      key = "${modAlt}+b";
+      command = "runCommands";
+      when = "terminalFocus";
+      args = {
+        # The list of commands to execute in sequence
+        commands = [
+          "workbench.action.focusActiveEditorGroup"
+          "workbench.action.toggleSidebarVisibility"
+          "workbench.action.terminal.focus"
+        ];
+      };
+    }
 
     { key = "${modAlt}+e";
       command = "workbench.action.toggleMaximizeEditorGroup";
