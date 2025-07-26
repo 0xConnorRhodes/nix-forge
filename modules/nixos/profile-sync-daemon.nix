@@ -30,8 +30,8 @@
       USE_SUSPSYNC="no"
 
       # list browsers from `/nix/$psd/share/psd/browsers` in BROWSERS array
-      # example: BROWSERS=(firefox google-chrome vivaldi)
-      BROWSERS=(zen chromium)
+      # example: BROWSERS=(firefox google-chrome vivaldi chromium)
+      BROWSERS=(zen google-chrome)
 
       USE_BACKUPS="yes"
       BACKUP_LIMIT=5

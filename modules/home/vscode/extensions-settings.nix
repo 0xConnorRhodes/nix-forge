@@ -45,6 +45,7 @@
 
       geminicodeassist = {
         inlineSuggestions.enableAuto = false;
+        enableTelemetry = false;
       };
     };
   };

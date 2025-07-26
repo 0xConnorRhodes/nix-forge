@@ -25,11 +25,11 @@ in
     wl-clipboard # access clipboard from terminal with wl-copy and wl-paste
     killall
     # bitwarden-desktop
-    chromium
     trashy
     wezterm
     neovide
     caligula # write ISOs to drives
+    pkgsUnstable.google-chrome
 
     nerd-fonts.geist-mono
     nerd-fonts.jetbrains-mono
