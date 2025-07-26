@@ -102,8 +102,6 @@ in
           editor.enableCodeActions = false; # icon to modify/review with copilot on text selection
         };
 
-        terminal.integrated.sendKeybindingsToShell = false;
-
         terminal.integrated.profiles.osx = {
           myZsh = myZshProfile;
         };
