@@ -55,7 +55,7 @@
     (python3.withPackages (python-pkgs: with python-pkgs; [
       requests
       jinja2
-
+      ipython
     ]))
 
     # ruby packages

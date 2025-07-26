@@ -23,7 +23,8 @@ in
       userSettings = {
         workbench = {
           startupEditor = "none"; # don't show startup screen
-	        trustedDomains.promptInTrustedWorkspace = false;
+	  trustedDomains.promptInTrustedWorkspace = false;
+	  sideBar.location = "right";
           activityBar.location = "hidden";
 
           # hide things

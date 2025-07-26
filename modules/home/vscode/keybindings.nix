@@ -95,5 +95,9 @@ in
       command = "workbench.action.focusActiveEditorGroup";
       when = "panelVisible && panelFocus"; }
 
+    { key = "${modAlt}+k n";
+      command = "inlineChat.start"; }
+    { key = "${modAlt}+k ${modAlt}+n";
+      command = "inlineChat.start"; }
   ];
 }

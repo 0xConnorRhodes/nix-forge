@@ -16,6 +16,7 @@
     gmm = "git add . && git commit -m 'u' && git rebase --continue && git push";
 
     e = "nvim";
+    chx = "chmod +x";
     j = "__zoxide_z";
     ji = "__zoxide_zi";
     cm = "chezmoi";

@@ -28,6 +28,11 @@
         window.statusBar = false;
       };
 
+      # ms-python.python
+      python = {
+      	defaultInterpreterPath = "/run/current-system/sw/bin/python";
+      };
+
       # yzhang.markdown-all-in-one
       markdown.extension = {
         math.enabled = false;

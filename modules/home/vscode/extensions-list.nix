@@ -20,10 +20,10 @@ in
       mechatroner.rainbow-csv
       ms-vscode-remote.remote-ssh
       yzhang.markdown-all-in-one # markdown bullets
+      ms-python.python
+      ms-python.vscode-pylance
+      ms-python.debugpy
       # ms-vscode.powershell
-      # ms-python.python
-      # ms-python.vscode-pylance
-      # ms-python.debugpy
       # bmalehorn.vscode-fish
       # ms-vscode.live-server # live webapp in pane
     ] ++
