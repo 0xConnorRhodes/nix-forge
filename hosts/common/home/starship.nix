@@ -44,8 +44,7 @@
 
       python = {
         disabled = false;
-        # show python only if inside a virtual env: ` (venv) >`
-        #format = "([ \\($virtualenv\\)]($style) )";
+        # show python only if inside a virtual env: `py (venv) >`
         format = "([py \\($virtualenv\\)]($style) )";
       };
 
