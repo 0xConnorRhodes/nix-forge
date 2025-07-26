@@ -35,6 +35,21 @@ in
       };
     }
 
+    # same as previous task, but re-maximizes terminal if it was previously maximized
+    {
+      key = "${modAlt}+b";
+      command = "runCommands";
+      when = "terminalFocus && panelMaximized";
+      args = {
+        commands = [
+          "workbench.action.focusActiveEditorGroup"
+          "workbench.action.toggleSidebarVisibility"
+          "workbench.action.terminal.focus"
+          "workbench.action.toggleMaximizedPanel"
+        ];
+      };
+    }
+
     { key = "${modAlt}+e";
       command = "workbench.action.toggleMaximizeEditorGroup";
       when = "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"; }
