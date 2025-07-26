@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./konsole.nix
     ../../common/plasma-common.nix
   ];
 
