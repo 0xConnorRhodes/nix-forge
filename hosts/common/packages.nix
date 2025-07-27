@@ -23,4 +23,5 @@ with pkgs; [
   gnumake
   jq
   yq-go
+  alejandra
 ]
