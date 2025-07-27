@@ -26,6 +26,7 @@ in
       # ms-vscode.powershell
       # bmalehorn.vscode-fish
       # ms-vscode.live-server # live webapp in pane
+      sdras.night-owl # theme
     ] ++
 
     # extensions from vscode marketplace (rolling)

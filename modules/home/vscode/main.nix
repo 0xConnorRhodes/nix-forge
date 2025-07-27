@@ -22,17 +22,17 @@ in
       enableUpdateCheck = false;
       userSettings = {
         workbench = {
+          colorTheme = "Night Owl";
+
           startupEditor = "none"; # don't show startup screen
-	  trustedDomains.promptInTrustedWorkspace = false;
-	  sideBar.location = "left";
+	        trustedDomains.promptInTrustedWorkspace = false;
+	        sideBar.location = "left";
           activityBar.location = "hidden";
 
           # hide things
           statusBar.visible = true;
           showTabs = false;
           editor.showTabs = "none";
-          editor.enablePreview = false; # open new files in new editor, not preview
-          editor.empty.hint = "hidden"; # don't show hint on empty editor
         };
 
         window = {
@@ -46,12 +46,19 @@ in
         };
 
         editor = {
+          empty.hint = "hidden"; # don't show hint on empty editor
           scrollbar.verticalScrollbarSize = 6;
           scrollbar.horizontalScrollbarSize = 5;
           fontFamily = "'JetBrainsMono Nerd Font', 'monospace', monospace";
           tabSize = 2;
 
-          guides.indentation = true;
+          guides = {
+            indentation = true;
+            bracketPairs = true;
+            bracketPairsHorizontal = true;
+          };
+
+          bracketPairColorization.independentColorPoolPerBracketType = true;
 
           # reduce gutter (left margin padding) size
           glyphMargin = false;
