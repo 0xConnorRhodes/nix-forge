@@ -15,6 +15,7 @@
       ../../common/nixos-packages.nix
       ../../../modules/nixos/profile-sync-daemon.nix
       ../../../modules/nixos/caddy.nix
+      ../../../modules/nixos/dashy.nix
       ../../../modules/nixos/authelia.nix
       ../../../modules/nixos/gossa.nix
       ../../../modules/nixos/pairdrop.nix
