@@ -3,6 +3,7 @@
 {
   services.dashy = {
     enable = true;
+    settings = import ./config.nix;
   };
 
   # create custom symlink to static dashy files (config.services.dashy.finalDrv) so they can be served with caddy
