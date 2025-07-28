@@ -22,7 +22,7 @@ in
       enableUpdateCheck = false;
       userSettings = {
         workbench = {
-          colorTheme = "Night Owl";
+          colorTheme = "Night Owl (No Italics)";
 
           startupEditor = "none"; # don't show startup screen
 	        trustedDomains.promptInTrustedWorkspace = false;
