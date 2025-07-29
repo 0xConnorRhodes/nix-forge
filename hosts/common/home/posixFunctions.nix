@@ -8,8 +8,12 @@ lnf() {
 }
 
 # https://github.com/gokcehan/lf/blob/master/etc/lfcd.sh
-lfcd () {
+lfcd() {
     # `command` is needed in case `lfcd` is aliased to `lf`
     cd "$(command lf -print-last-dir "$@")"
+}
+
+mcd() {
+  mkdir -p "$1" && cd "$1";
 }
 ''
