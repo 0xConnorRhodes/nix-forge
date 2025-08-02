@@ -46,7 +46,7 @@
         {
           location = "top";
           height = 34;
-          hiding = "autohide";
+          hiding = "dodgewindows";
           widgets = [
             {
               name = "org.kde.plasma.kickoff";
