@@ -50,19 +50,6 @@
     # KDE apps
     kdePackages.krdc # remote desktop client
     kdePackages.partitionmanager # kparted
-
-    # python packages
-    (python3.withPackages (python-pkgs: with python-pkgs; [
-      requests
-      jinja2
-      ipython
-    ]))
-
-    # ruby packages
-    (ruby.withPackages (ruby-pkgs: with ruby-pkgs; [
-      pry
-      dotenv
-    ]))
   ]
   ++ (import ../../common/packages.nix { pkgs = pkgs; })
   ++ pkgs.lib.attrValues flakePackages;

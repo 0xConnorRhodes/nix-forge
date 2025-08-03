@@ -46,6 +46,14 @@ in
       highline
     ]))
 
+    # python packages
+    (python3.withPackages (python-pkgs: with python-pkgs; [
+      requests
+      jinja2
+      pyaml
+      ipython
+    ]))
+
     # nonfree
     obsidian
     #vscode
