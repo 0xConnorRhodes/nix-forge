@@ -16,6 +16,7 @@ if [ "$(uname)" = "Darwin" ]; then
   #rm -f "$HOME/Library/Application Support/Code/User/settings.json"
   #rm -f "$HOME/Library/Application Support/Code/User/settings.json.bak"
   sudo darwin-rebuild switch --flake .#traveller
+  sudo darwin-rebuild switch --flake .#traveller
   brew upgrade
   #move-aside "$HOME/Library/Application Support/Code/User/settings.json"
 #elif [ "$(hostname)" = "mpro" ]; then

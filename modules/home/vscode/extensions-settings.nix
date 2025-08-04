@@ -50,10 +50,10 @@
         backgroundColor = false;
       };
 
-      geminicodeassist = {
-        inlineSuggestions.enableAuto = false;
-        enableTelemetry = false;
-      };
+      # geminicodeassist = {
+      #   inlineSuggestions.enableAuto = false;
+      #   enableTelemetry = false;
+      # };
     };
   };
 }

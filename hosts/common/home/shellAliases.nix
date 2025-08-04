@@ -2,8 +2,8 @@
   myAliases = {
 
     # git
-    gs = "git status --short";
-    ga = "git add";
+    gs = "git status";
+    ga = "git add .";
     gp = "git push";
     gu = "git pull";
     gl = "git log";

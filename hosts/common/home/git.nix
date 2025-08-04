@@ -19,6 +19,10 @@
       init = {
         defaultBranch = "main";
       };
+      alias = {
+        d = "!git diff --quiet && git diff --cached || git diff";
+        a = "!git add \${1:-.}";
+      };
     };
   };
 }
