@@ -16,4 +16,12 @@ lfcd() {
 mcd() {
   mkdir -p "$1" && cd "$1";
 }
+
+g() {
+  if [[ $# -gt 0 ]]; then
+    git "$@"
+  else
+    git status
+  fi
+}
 ''
