@@ -33,5 +33,9 @@
     lf = "lfcd";
     ari = "aria2c";
     bk = "buku";
+
+    # connections
+    mm = "mosh m";
+    sm = "ssh m";
   };
 }
