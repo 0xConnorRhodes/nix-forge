@@ -33,6 +33,7 @@
     lf = "lfcd";
     ari = "aria2c";
     bk = "buku";
+    be = "bat --style=plain \"$(fzf)\"";
 
     # connections
     mm = "mosh m";
