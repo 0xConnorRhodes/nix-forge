@@ -104,11 +104,6 @@ in
         security.workspace.trust.emptyWindow = true;
         git.openRepositoryInParentFolders = "never";
 
-        github.copilot = {
-          enable."*" = false; # disable copilot autocomplete
-          editor.enableCodeActions = false; # icon to modify/review with copilot on text selection
-        };
-
         terminal.integrated.profiles.osx = {
           myZsh = myZshProfile;
         };

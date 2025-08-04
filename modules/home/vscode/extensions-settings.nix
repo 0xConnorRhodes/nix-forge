@@ -23,6 +23,13 @@
         ];
       };
 
+
+      # GitHub Copilot
+      github.copilot = {
+        enable."*" = true; # copilot autocomplete
+        editor.enableCodeActions = true; # icon to modify/review with copilot on text selection
+      };
+
       # sumneko.lua
       Lua = {
         window.statusBar = false;
