@@ -66,17 +66,6 @@
         ];
       };
 
-      latitude = nixpkgs.lib.nixosSystem rec {
-        specialArgs = { inherit inputs; inherit secrets; };
-        system = "x86_64-linux";
-        modules = [
-          ./hosts/nixos/latitude/configuration.nix
-	        inputs.home-manager.nixosModules.default
-          { home-manager.extraSpecialArgs = specialArgs; } # needed to access inputs in home.nix
-          inputs.nixos-hardware.nixosModules.dell-latitude-5490
-        ];
-      };
-
       thinkpad = nixpkgs.lib.nixosSystem rec {
         specialArgs = { inherit inputs; inherit secrets; };
         system = "x86_64-linux";
@@ -89,27 +78,6 @@
           }
         ];
       };
-
-      vostro = nixpkgs.lib.nixosSystem rec {
-        specialArgs = { inherit inputs; inherit secrets; };
-        system = "x86_64-linux";
-        modules = [
-          ./hosts/nixos/vostro/configuration.nix
-	        inputs.home-manager.nixosModules.default
-          { home-manager.extraSpecialArgs = specialArgs; } # needed to access inputs in home.nix
-        ];
-      };
-
-      testvm = nixpkgs.lib.nixosSystem rec {
-        specialArgs = { inherit inputs; };
-        system = "x86_64-linux";
-        modules = [
-          ./hosts/nixos/testvm/configuration.nix
-	        inputs.home-manager.nixosModules.default
-          inputs.nix-index-database.nixosModules.nix-index
-        ];
-      };
-
     }; # end nixosConfigurations
 
     darwinConfigurations = {
