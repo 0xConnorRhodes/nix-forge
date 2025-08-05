@@ -1,4 +1,4 @@
-{ config, pkgs, pkgsUnstable, inputs, secrets, ... }:
+{ config, lib, pkgs, pkgsUnstable, inputs, secrets, ... }:
 
 {
   environment.systemPackages = [ pkgs.authelia ];
@@ -10,5 +10,15 @@
       Restart = "always";
     };
     wantedBy = [ "multi-user.target" ];
+  };
+
+  services.redis = {
+    servers.authelia = {
+      enable = true;
+      settings = {
+        bind = "127.0.0.1";
+        port = lib.mkForce 6385;
+      };
+    };
   };
 }
