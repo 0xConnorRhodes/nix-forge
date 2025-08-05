@@ -46,6 +46,7 @@
     calibre
     audacious
     smplayer
+    gpodder
 
     # KDE apps
     kdePackages.krdc # remote desktop client

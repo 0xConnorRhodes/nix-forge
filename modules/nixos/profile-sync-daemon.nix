@@ -31,7 +31,7 @@
 
       # list browsers from `/nix/$psd/share/psd/browsers` in BROWSERS array
       # example: BROWSERS=(firefox google-chrome vivaldi chromium)
-      BROWSERS=(zen google-chrome)
+      BROWSERS=(firefox google-chrome)
 
       USE_BACKUPS="yes"
       BACKUP_LIMIT=5
