@@ -18,13 +18,13 @@
       ../../../modules/nixos/dashy
       ../../../modules/nixos/authelia.nix
       ../../../modules/nixos/gossa.nix
-      ../../../modules/nixos/pairdrop.nix
+      ../../../modules/services/pairdrop.nix
       ../../../modules/nixos/kvm.nix
       #../../../modules/nixos/incus.nix
       ../../../modules/nixos/tailscale.nix
-      ../../../modules/nixos/sync-notes.nix
+      ../../../modules/jobs/sync-notes.nix
       ../../../modules/nixos/jellyfin.nix
-      ../../../modules/nixos/zk-cron.nix
+      ../../../modules/jobs/zk-cron.nix
       ../../../configs/ssh_config.nix
       inputs.home-manager.nixosModules.default
       inputs.nix-index-database.nixosModules.nix-index

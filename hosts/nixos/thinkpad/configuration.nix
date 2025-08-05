@@ -15,7 +15,7 @@
     ../../../modules/nixos/profile-sync-daemon.nix
     #../../../modules/nixos/incus.nix
     ../../../modules/nixos/tailscale.nix
-    ../../../modules/nixos/sync-notes.nix
+    ../../../modules/jobs/sync-notes.nix
     ../../../configs/ssh_config.nix
     inputs.home-manager.nixosModules.default
     inputs.nix-index-database.nixosModules.nix-index

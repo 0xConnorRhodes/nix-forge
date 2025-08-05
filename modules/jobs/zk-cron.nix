@@ -7,7 +7,6 @@ let
   ]);
 in
 {
-
 # create daily note
   systemd.timers."create-daily-note" = {
     wantedBy = [ "timers.target" ];
@@ -95,5 +94,4 @@ in
       User = user;
       WorkingDirectory = "/home/connor/code/scripts/cron";
       Environment = "PATH=${pkgs.ripgrep}/bin:$PATH"; }; };
-
 }
