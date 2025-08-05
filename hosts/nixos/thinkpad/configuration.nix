@@ -72,6 +72,7 @@
       home.stateVersion = "24.11";
       imports = [
        ./home.nix
+        ../../../modules/home/firefox.nix
       ];
     };
 
