@@ -3,7 +3,7 @@
 
     # git
     gs = "git status";
-    ga = "git add .";
+    ga = "git add \${1:-.}";
     gp = "git push";
     gu = "git pull";
     gl = "git log";
@@ -11,6 +11,7 @@
     gi = "git init";
     gcl = "git clone";
     gc = "git commit";
+    gd = "git diff --quiet && git diff --cached || git diff";
 
     # gc = "git checkout";
     gmm = "git add . && git commit -m 'u' && git rebase --continue && git push";
