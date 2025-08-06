@@ -18,6 +18,7 @@
 
     e = "nvim";
     chx = "chmod +x";
+    xargs = "xargs -I __";
     j = "__zoxide_z";
     ji = "__zoxide_zi";
     cm = "chezmoi";
