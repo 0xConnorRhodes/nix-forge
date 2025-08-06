@@ -15,6 +15,7 @@
   services.redis = {
     servers.authelia = {
       enable = true;
+      appendOnly = true; # persist data on disk
       settings = {
         bind = "127.0.0.1";
         port = lib.mkForce 6385;
