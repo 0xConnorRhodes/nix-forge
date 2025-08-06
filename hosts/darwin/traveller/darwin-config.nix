@@ -90,6 +90,7 @@
         "qutebrowser"
         "pine" # markdown editor
         "zen"
+        "ollama-app"
         # "vivaldi" # installed directly
       ];
 
