@@ -142,5 +142,8 @@ in
 
     { key = "${modAlt}+k v s"; # view, settings
       command = "workbench.action.openSettings2"; }
+
+    { key = "${modAlt}+k r";
+      command = "opensshremotes.openEmptyWindow"; }
   ];
 }
