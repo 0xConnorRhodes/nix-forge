@@ -14,6 +14,7 @@ with pkgs; [
   unzip
   dua
   mosh
+  eternal-terminal
   nnn
   vimv-rs
   tree
