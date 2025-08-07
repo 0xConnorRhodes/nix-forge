@@ -24,4 +24,17 @@ g() {
     git status --short
   fi
 }
+
+pyvenv() {
+    venv_path="$PWD/.venv"
+    activate_script="$venv_path/bin/activate"
+
+    if [ -f "$activate_script" ]; then
+        . "$activate_script"
+    else
+        echo "Creating new virtual environment at $venv_path"
+            python3 -m venv "$venv_path"
+        . "$activate_script"
+    fi
+}
 ''
