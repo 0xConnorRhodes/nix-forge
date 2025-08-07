@@ -11,6 +11,7 @@
       ./secret.nix
       ./backup-cron.nix
       ./syncthing.nix
+      # ./llm.nix
       ../../common/nixos-common.nix
       ../../common/nixos-packages.nix
       ../../../modules/nixos/profile-sync-daemon.nix
