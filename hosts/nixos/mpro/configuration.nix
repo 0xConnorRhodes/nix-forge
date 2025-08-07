@@ -78,7 +78,7 @@
       defaultGateway = "192.168.86.1";
       nameservers = [ "1.1.1.1" "1.0.0.1" ];
     };
-    networking.firewall.enable = true;
+    networking.firewall.enable = false;
 
     time.timeZone = "America/Chicago";
 
@@ -148,6 +148,7 @@
 
     # services
     programs.mosh.enable = true;
+    services.eternal-terminal.enable = true;
     services.openssh = {
       enable = true;
       ports = [ 31583 ];
