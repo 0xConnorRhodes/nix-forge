@@ -38,7 +38,7 @@
     be = "bat --style=plain \"$(fzf)\"";
 
     # connections
-    mm = "mosh m";
+    mm = "et -p 63104 m"; # "mosh m"
     sm = "ssh m";
   };
 }
