@@ -23,7 +23,10 @@
       ../../../modules/nixos/kvm.nix
       #../../../modules/nixos/incus.nix
       ../../../modules/nixos/tailscale.nix
+
+      # services
       ../../../modules/jobs/sync-notes.nix
+      ../../../modules/jobs/monitor_podcasts.nix
       ../../../modules/nixos/jellyfin.nix
       ../../../modules/jobs/zk-cron.nix
       ../../../configs/ssh_config.nix
