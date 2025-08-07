@@ -10,7 +10,7 @@ in
   systemd.timers."monitor-podcasts" = {
     wantedBy = [ "timers.target" ];
       timerConfig = {
-        OnCalendar = "*:0/5"; # every 5m
+        OnCalendar = "*-*-01 00:00:00"; # at midnight on the first day of each month
         Persistent = true;
         Unit = "monitor-podcasts.service"; }; };
   systemd.services."monitor-podcasts" = {
