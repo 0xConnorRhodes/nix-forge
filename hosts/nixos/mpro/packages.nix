@@ -41,6 +41,7 @@
     pipx
     wget
     buku
+    cfssl # copyparty dependency
 
     # gui programs
     calibre
