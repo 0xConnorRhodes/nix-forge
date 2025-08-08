@@ -91,6 +91,7 @@
         "pine" # markdown editor
         "zen"
         "ollama-app"
+        "musicbrainz-picard"
         # "vivaldi" # installed directly
       ];
 
