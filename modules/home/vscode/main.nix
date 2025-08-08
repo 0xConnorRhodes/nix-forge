@@ -33,6 +33,7 @@ in
           statusBar.visible = true;
           showTabs = false;
           editor.showTabs = "none";
+          editor.empty.hint = "hidden";
         };
 
         window = {
