@@ -54,6 +54,7 @@
       lua.disabled = true;
       nodejs.disabled = true;
       package.disabled = true;
+      golang.disabled = true;
     };
   };
 }
