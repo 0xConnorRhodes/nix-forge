@@ -9,6 +9,7 @@
       ReverseProxyWhitelist = "0.0.0.0/0";
       EnableUserEditing = false;
       Port = 15612;
+      BaseUrl = "https://mus.connorrhodes.com";
       MusicFolder = "/scary/phone/music_library";
     };
   };
