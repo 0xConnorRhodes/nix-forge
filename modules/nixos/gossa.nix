@@ -3,16 +3,16 @@
 {
   environment.systemPackages = [ pkgs.gossa ];
 
-  systemd.services.gossa-files = {
-    enable = true;
-    serviceConfig = {
-      ExecStart = "${pkgs.gossa}/bin/gossa -p 8782 /mnt/zfiles/";
-      Restart = "always";
-      User = config.myConfig.username;
-      Group = "users";
-    };
-    wantedBy = [ "multi-user.target" ];
-  };
+  # systemd.services.gossa-files = {
+  #   enable = true;
+  #   serviceConfig = {
+  #     ExecStart = "${pkgs.gossa}/bin/gossa -p 8782 /mnt/zfiles/";
+  #     Restart = "always";
+  #     User = config.myConfig.username;
+  #     Group = "users";
+  #   };
+  #   wantedBy = [ "multi-user.target" ];
+  # };
 
   systemd.services.gossa-papers = {
     enable = true;
