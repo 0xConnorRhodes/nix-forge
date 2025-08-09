@@ -17,8 +17,8 @@
       ../../../modules/nixos/caddy.nix
       ../../../modules/nixos/dashy
       ../../../modules/nixos/authelia.nix
-      ../../../modules/nixos/gossa.nix
       ../../../modules/services/pairdrop.nix
+      ../../../modules/services/copyparty.nix
       ../../../modules/nixos/kvm.nix
       #../../../modules/nixos/incus.nix
       ../../../modules/nixos/tailscale.nix
