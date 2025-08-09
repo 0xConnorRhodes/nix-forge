@@ -29,6 +29,7 @@
       ../../../modules/jobs/monitor_podcasts.nix
       ../../../modules/nixos/jellyfin.nix
       ../../../modules/jobs/zk-cron.nix
+      ../../../modules/services/navidrome.nix
       ../../../configs/ssh_config.nix
       inputs.home-manager.nixosModules.default
       inputs.nix-index-database.nixosModules.nix-index
