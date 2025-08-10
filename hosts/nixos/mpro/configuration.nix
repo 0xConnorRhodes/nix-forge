@@ -118,7 +118,7 @@
     users.users.${config.myConfig.username} = {
       isNormalUser = true;
       description = "Connor Rhodes";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "wheel" "docker"];
       shell = pkgs.zsh;
       openssh = {
         authorizedKeys.keys = [
@@ -166,11 +166,7 @@
     services.psd.enable = true;
 
     # subsystems
-    virtualisation.oci-containers.backend = "podman";
-    virtualisation.podman = {
-      enable = true;
-      dockerCompat = true;
-    };
+    virtualisation.docker.enable = true;
 
     system.stateVersion = "24.11";
   };
