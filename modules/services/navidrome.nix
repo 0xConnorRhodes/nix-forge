@@ -11,6 +11,19 @@
       Port = 15612;
       BaseUrl = "https://mus.connorrhodes.com";
       MusicFolder = "/scary/phone/music_library";
+
+      DefaultTheme = "Catppuccin Macchiato";
+      CoverArtPriority = "embedded"; # pull cover art from embedded file data
+      DefaultUIVolume = 15; # out of 100
+      Scanner.PurgeMissing = "always";
+
+      EnableDownloads = false;
+      LastFM.Enabled = false;
+      ListenBrainz.Enabled = false;
+      Deezer.Enabled = false;
+      EnableNowPlaying = false;
+      SessionTimeout = "1h";
+      SmartPlaylistRefreshDelay = "30s";
     };
   };
 }
