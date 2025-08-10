@@ -112,6 +112,9 @@ in
       command = "workbench.action.quickOpenNavigateNextInFilePicker";
       when = "inFilesPicker && inQuickOpen"; }
 
+    { key = "${modAlt}+k f";
+      command = "workbench.action.files.openFolder"; }
+
     # vim-style split navigation
     { key = "${modCtrl}+l";
       command = "workbench.action.focusRightGroup"; }

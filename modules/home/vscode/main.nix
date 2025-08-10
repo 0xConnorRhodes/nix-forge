@@ -88,6 +88,7 @@ in
           trimFinalNewlines = true; # trim trailing newlines (apart from the 1 added above)
           trimTrailingWhitespace = true; # trim trailing whitespace at the end of a line
           # hotExit = "off"; # don't preserve unsaved changes across editor restarts
+          simpleDialog.enable = true; # use vscode file picker, not OS native
 
           # if the file on disk is newer than the buffer, overwrite with buffer instead of prompting with:
           # Failed to save 'settings.json': The content of the file is newer. Please compare your version
