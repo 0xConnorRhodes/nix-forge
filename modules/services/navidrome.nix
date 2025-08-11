@@ -17,6 +17,7 @@
       DefaultUIVolume = 15; # out of 100
       Scanner.PurgeMissing = "always";
 
+      EnableCoverAnimation = false;
       EnableDownloads = false;
       LastFM.Enabled = false;
       ListenBrainz.Enabled = false;
