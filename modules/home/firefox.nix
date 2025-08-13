@@ -22,9 +22,25 @@
       };
       search.force = true;
 
-      # https://discourse.nixos.org/t/firefox-import-html-bookmark-file-in-a-declarative-manner/38168/23
       bookmarks = {
-        settings = [];
+        settings = [
+          {
+            name = "Some bookmarks";
+            toolbar = true;
+            # bookmarks in here go in the bookmarks bar
+            bookmarks = [
+              {
+                name = "Home";
+                url = "https://home.connorrhodes.com";
+              }
+            ];
+          }
+          # other bookmarks not in the bookmarks bar
+          {
+            name = "test";
+            url = "https://example.com";
+          }
+        ];
         force = true; # override existing bookmarks
       };
 
@@ -36,6 +52,7 @@
           download.panel.shown = false;
           startup.homepage = "https://home.connorrhodes.com";
           newtabpage.enabled = false;
+          bookmarks.addedImportButton = false;
         };
         identity.fxaccounts.enabled = false;
         trailhead.firstrun.didSeeAboutWelcome = true;
