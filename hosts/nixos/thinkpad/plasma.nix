@@ -21,11 +21,12 @@
         kcminputrc = {
           "Libinput/2/14/ETPS\\/2 Elantech Touchpad" = {
             # configure touchpad for 2 finger right click instead of zone based left|middle|right click
-            "Enabled" = true;
-            "NaturalScroll" = true;
-            "TapToClick" = false;
-            "ClickMethod" = 2;
-            "Tapping" = true;
+            Enabled = true;
+            NaturalScroll = true;
+            TapToClick = false;
+            ClickMethod = 2;
+            Tapping = true;
+            PointerAcceleration = 0.800;
           };
 
           "Libinput/2/14/ETPS\\/2 Elantech TrackPoint" = {
