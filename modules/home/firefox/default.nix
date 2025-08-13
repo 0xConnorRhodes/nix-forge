@@ -3,6 +3,10 @@
 { pkgs, inputs, ... }:
 
 {
+  imports = [
+    ./extensions.nix
+  ];
+
   programs.firefox = {
     enable = true;
     profiles.main = {
@@ -54,16 +58,12 @@
         trailhead.firstrun.didSeeAboutWelcome = true;
         toolkit.telemetry.reportingpolicy.firstRun = false;
         sidebar.visibility = "hide-sidebar";
-        signon.rememberSignons = false;
+        "signon.rememberSignons" = false;
       };
 
       # userChrome = ''
       #   /* some css */
       # '';
-
-      extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
-        bitwarden
-      ];
     };
   };
 }
