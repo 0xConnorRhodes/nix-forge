@@ -19,6 +19,19 @@
           icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
           definedAliases = [ "nxp" ];
         };
+
+        "home-manager" = {
+          urls = [{
+            template = "https://home-manager-options.extranix.com/";
+            params = [
+              { name = "type"; value = "packages"; }
+              { name = "query"; value = "{searchTerms}"; }
+            ];
+          }];
+
+          icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+          definedAliases = [ "hm" ];
+        };
       };
       search.force = true;
 
@@ -48,9 +61,9 @@
       #   /* some css */
       # '';
 
-      # extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
-      #   bitwarden
-      # ];
+      extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
+        bitwarden
+      ];
     };
   };
 }
