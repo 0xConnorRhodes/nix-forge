@@ -7,7 +7,7 @@
     enable = true;
     profiles.main = {
       search.engines = {
-        "Nix Packages" = {
+        "nixpkgs" = {
           urls = [{
             template = "https://search.nixos.org/packages";
             params = [
@@ -67,11 +67,6 @@
 
       # extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
       #   bitwarden
-      #   ublock-origin
-      #   sponsorblock
-      #   darkreader
-      #   tridactyl
-      #   youtube-shorts-block
       # ];
     };
   };
