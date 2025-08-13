@@ -52,7 +52,7 @@
           download.panel.shown = false;
           startup.homepage = "https://home.connorrhodes.com";
           newtabpage.enabled = false;
-          bookmarks.addedImportButton = false;
+          bookmarks.addedImportButton = false; # remove the "Import bookmarks" button from bookmarks toolbar
         };
         identity.fxaccounts.enabled = false;
         trailhead.firstrun.didSeeAboutWelcome = true;
