@@ -14,6 +14,7 @@
     ../../common/home/lf.nix
     ../../common/home/wezterm.nix
     ../../../modules/home/vscode/main.nix
+    ../../../modules/home/firefox.nix
   ];
 
   home.sessionVariables = {

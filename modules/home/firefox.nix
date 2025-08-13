@@ -22,20 +22,26 @@
       };
       search.force = true;
 
-      # bookmarks = [
-      #   {
-      #     name = "wikipedia";
-      #     tags = [ "wiki" ];
-      #     keyword = "wiki";
-      #     url = "https://en.wikipedia.org/wiki/Special:Search?search=%s&go=Go";
-      #   }
-      # ];
+      # https://discourse.nixos.org/t/firefox-import-html-bookmark-file-in-a-declarative-manner/38168/23
+      bookmarks = {
+        settings = [];
+        force = true; # override existing bookmarks
+      };
 
-      settings = {
+      settings = { # from about:config
         # "dom.security.https_only_mode" = true;
-        # "browser.download.panel.shown" = true;
-        "identity.fxaccounts.enabled" = false;
-        # "signon.rememberSignons" = false;
+        browser = {
+          aboutwelcome.didSeeFinalScreen = true;
+          aboutConfig.showWarning = false;
+          download.panel.shown = false;
+          startup.homepage = "https://home.connorrhodes.com";
+          newtabpage.enabled = false;
+        };
+        identity.fxaccounts.enabled = false;
+        trailhead.firstrun.didSeeAboutWelcome = true;
+        toolkit.telemetry.reportingpolicy.firstRun = false;
+        sidebar.visibility = "hide-sidebar";
+        signon.rememberSignons = false;
       };
 
       # userChrome = ''
