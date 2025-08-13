@@ -23,24 +23,7 @@
       search.force = true;
 
       bookmarks = {
-        settings = [
-          {
-            name = "Some bookmarks";
-            toolbar = true;
-            # bookmarks in here go in the bookmarks bar
-            bookmarks = [
-              {
-                name = "Home";
-                url = "https://home.connorrhodes.com";
-              }
-            ];
-          }
-          # other bookmarks not in the bookmarks bar
-          {
-            name = "test";
-            url = "https://example.com";
-          }
-        ];
+        settings = import ./bookmarks.nix;
         force = true; # override existing bookmarks
       };
 

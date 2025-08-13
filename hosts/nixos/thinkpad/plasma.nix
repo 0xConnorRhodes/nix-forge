@@ -26,7 +26,8 @@
             TapToClick = false;
             ClickMethod = 2;
             Tapping = true;
-            PointerAcceleration = 0.800;
+            PointerAcceleration = 0.600;
+            PointerAccelerationProfile = 1; # 1 = no acceleration
           };
 
           "Libinput/2/14/ETPS\\/2 Elantech TrackPoint" = {
