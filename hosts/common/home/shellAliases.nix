@@ -36,7 +36,7 @@
     ari = "aria2c";
     bk = "buku";
     be = "bat --style=plain \"$(fzf)\"";
-    dup = "docker compose up -d"
+    dup = "docker compose up -d";
 
     # connections
     mm = "et -p 63104 m"; # "mosh m"
