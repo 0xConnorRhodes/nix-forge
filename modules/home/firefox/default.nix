@@ -46,18 +46,16 @@
 
       settings = { # from about:config
         # "dom.security.https_only_mode" = true;
-        browser = {
-          aboutwelcome.didSeeFinalScreen = true;
-          aboutConfig.showWarning = false;
-          download.panel.shown = false;
-          startup.homepage = "https://home.connorrhodes.com";
-          newtabpage.enabled = false;
-          bookmarks.addedImportButton = false; # remove the "Import bookmarks" button from bookmarks toolbar
-        };
-        identity.fxaccounts.enabled = false;
-        trailhead.firstrun.didSeeAboutWelcome = true;
-        toolkit.telemetry.reportingpolicy.firstRun = false;
-        sidebar.visibility = "hide-sidebar";
+        "browser.aboutwelcome.didSeeFinalScreen" = true;
+        "browser.aboutConfig.showWarning" = false;
+        "browser.download.panel.shown" = false;
+        "browser.startup.homepage" = "https://home.connorrhodes.com";
+        "browser.newtabpage.enabled" = false;
+        "browser.bookmarks.addedImportButton" = false; # remove the "Import bookmarks" button from bookmarks toolbar
+        "identity.fxaccounts.enabled" = false;
+        "trailhead.firstrun.didSeeAboutWelcome" = true;
+        "toolkit.telemetry.reportingpolicy.firstRun" = false;
+        "sidebar.visibility" = "hide-sidebar";
         "signon.rememberSignons" = false;
       };
 
