@@ -14,8 +14,9 @@
     ../../common/home/bat.nix
     ../../common/home/lf.nix
     ../../../pkgs/cursedtag.nix
-    ../../../modules/home/vscode/main.nix
     ../../../configs/wezterm/wezterm-common.nix
+    ../../../modules/home/vscode
+    ../../../modules/home/firefox
   ];
 
   home.sessionVariables = {
