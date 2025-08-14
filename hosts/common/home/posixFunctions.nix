@@ -26,7 +26,8 @@ g() {
 }
 
 pyvenv() {
-    venv_path="$PWD/.venv"
+    local venv_name="''${1:-.venv}"
+    venv_path="$PWD/$venv_name"
     activate_script="$venv_path/bin/activate"
 
     if [ -f "$activate_script" ]; then
