@@ -48,10 +48,13 @@ in
     audacious
     smplayer
     tageditor
+    vlc
+    handbrake
 
     # KDE apps
     kdePackages.krdc # remote desktop client
     kdePackages.partitionmanager # kparted
+    kdePackages.k3b # cd/dvd tool
   ]
   ++ (import ../../common/packages.nix { pkgs = pkgs; })
   ++ pkgs.lib.attrValues flakePackages;
