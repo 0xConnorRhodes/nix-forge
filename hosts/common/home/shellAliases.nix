@@ -11,6 +11,7 @@
     gi = "git init";
     gcl = "git clone";
     gc = "git commit";
+    gco = "git checkout";
     gd = "git diff --quiet && git diff --cached || git diff";
 
     # gc = "git checkout";
