@@ -67,6 +67,8 @@
       };
     };
 
+    nixpkgs.config.allowUnfree = true;
+
     home-manager.backupFileExtension = "bak"; # append existing non hm files with this on rebuild
     home-manager.users.${config.myConfig.username} = { pkgs, ... }: {
       home.stateVersion = "24.11";
