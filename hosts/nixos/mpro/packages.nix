@@ -3,8 +3,7 @@ let
   flakePackages = builtins.mapAttrs (
     name: value: value.packages.${pkgs.system}.default) {
       inherit (inputs)
-      json2nix;
-    };
+      json2nix; };
 in
 
 {
@@ -42,6 +41,8 @@ in
     wget
     buku
     cfssl # copyparty dependency
+    usbutils
+    brlaser # brother printer driver
 
     # gui programs
     calibre

@@ -82,6 +82,7 @@
       nameservers = [ "1.1.1.1" "1.0.0.1" ];
     };
     networking.firewall.enable = true;
+    networking.firewall.trustedInterfaces = [ "lo" ];
 
     time.timeZone = "America/Chicago";
 
@@ -161,7 +162,12 @@
     };
 
     #services.flatpak.enable = true;
+
+    # printing
     services.printing.enable = true;
+    services.printing.listenAddresses = [ "localhost" ];
+    services.printing.webInterface = true;
+
     services.psd.enable = true;
 
     # subsystems
