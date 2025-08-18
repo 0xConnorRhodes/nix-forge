@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, osConfig, ... }:
+{ config, lib, pkgs, inputs, osConfig, ... }:
 
 {
   programs.vscode.profiles.default = {
@@ -54,6 +54,20 @@
       #   inlineSuggestions.enableAuto = false;
       #   enableTelemetry = false;
       # };
+
+      # blockman recommended settings
+      editor = {
+        inlayHints.enabled = "off";
+        guides.indentation = lib.mkForce false;
+        guides.bracketPairs = lib.mkForce false;
+        wordWrap = "off";
+      };
+      diffEditor.wordWrap = "off";
+
+      workbench.colorCustomizations = {
+        editor.lineHighlightBorder = "#9fced11f";
+        editor.lineHighlightBackground = "#1073cf2d";
+      };
     };
   };
 }

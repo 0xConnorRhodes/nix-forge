@@ -41,6 +41,7 @@ in
     (with marketplace-extensions; [
       #satokaz.vscode-markdown-header-coloring
       sgtsquiggs.vscode-active-file-status # show open file in status bar
+      leodevbro.blockman
       # google.geminicodeassist
     ]) ++
 
