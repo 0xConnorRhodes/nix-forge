@@ -1,4 +1,4 @@
-{ config, pkgs, pkgsUnstable, inputs, ... }:
+{ config, lib, pkgs, pkgsUnstable, inputs, ... }:
 let
   nix-vscode-extensions = inputs.nix-vscode-extensions.extensions.${pkgs.system};
   marketplace-extensions = nix-vscode-extensions.vscode-marketplace;
@@ -41,7 +41,6 @@ in
     (with marketplace-extensions; [
       #satokaz.vscode-markdown-header-coloring
       sgtsquiggs.vscode-active-file-status # show open file in status bar
-      leodevbro.blockman
       # google.geminicodeassist
     ]) ++
 

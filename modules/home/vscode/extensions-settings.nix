@@ -3,9 +3,9 @@
 {
   programs.vscode.profiles.default = {
     enableExtensionUpdateCheck = false;
-    userSettings.extensions.autoCheckUpdates = false;
     # per-extension settings (comment shows extension ID)
     userSettings = {
+      extensions.autoCheckUpdates = false;
       simple-project-switcher.directory = osConfig.myConfig.homeDir+"/code";
 
       # redhat.vscode-yaml
@@ -55,19 +55,10 @@
       #   enableTelemetry = false;
       # };
 
-      # blockman recommended settings
-      editor = {
-        inlayHints.enabled = "off";
-        guides.indentation = lib.mkForce false;
-        guides.bracketPairs = lib.mkForce false;
-        wordWrap = "off";
-      };
-      diffEditor.wordWrap = "off";
-
-      workbench.colorCustomizations = {
-        editor.lineHighlightBorder = "#9fced11f";
-        editor.lineHighlightBackground = "#1073cf2d";
-      };
+      # workbench.colorCustomizations = {
+      #   editor.lineHighlightBorder = "#9fced11f";
+      #   editor.lineHighlightBackground = "#1073cf2d";
+      # };
     };
   };
 }
