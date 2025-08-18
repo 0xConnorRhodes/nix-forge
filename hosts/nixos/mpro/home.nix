@@ -1,6 +1,13 @@
-{ config, pkgs, ... }:
-
+{ config, pkgs, inputs, ... }:
+let
+  pkgsUnstable = import inputs.nixpkgs-unstable {
+    inherit (pkgs.stdenv.hostPlatform) system;
+    inherit (config.nixpkgs) config;
+  };
+in
 {
+  # make pkgsUnstable available to all modules
+  _module.args.pkgsUnstable = pkgsUnstable;
   imports = [
     ../../common/home/git.nix
     ../../common/home/bash.nix
