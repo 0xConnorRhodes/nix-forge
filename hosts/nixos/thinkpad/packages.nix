@@ -32,6 +32,7 @@
       # GUI
       calibre
       obs-studio
+      helvum # pipewire patchbay
 
       # KDE apps
       kdePackages.krdc # remote desktop client
