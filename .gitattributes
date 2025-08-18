@@ -11,3 +11,4 @@ modules/nixos/dashy/config.nix filter=git-crypt diff=git-crypt
 modules/services/copyparty.nix filter=git-crypt diff=git-crypt
 modules/home/firefox/bookmarks.nix filter=git-crypt diff=git-crypt
 modules/home/firefox/extensions.nix filter=git-crypt diff=git-crypt
+hosts/nixos/mpro/syncthing.nix filter=git-crypt diff=git-crypt
