@@ -19,6 +19,9 @@ let
   };
 in
 {
+  # make pkgsUnstable available to all modules
+  _module.args.pkgsUnstable = pkgsUnstable;
+
   home.packages = with pkgs; [
     zoxide
     powershell
