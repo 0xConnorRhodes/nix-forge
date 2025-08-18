@@ -42,7 +42,6 @@ in
     buku
     cfssl # copyparty dependency
     usbutils
-    brlaser # brother printer driver
 
     # gui programs
     calibre
@@ -51,6 +50,7 @@ in
     tageditor
     vlc
     handbrake
+    bitwarden-desktop
 
     # KDE apps
     kdePackages.krdc # remote desktop client

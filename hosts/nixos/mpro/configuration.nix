@@ -165,8 +165,8 @@
 
     # printing
     services.printing.enable = true;
-    services.printing.listenAddresses = [ "localhost" ];
-    services.printing.webInterface = true;
+    # services.printing.listenAddresses = [ "localhost" ];
+    # services.printing.webInterface = true;
 
     services.psd.enable = true;
 
