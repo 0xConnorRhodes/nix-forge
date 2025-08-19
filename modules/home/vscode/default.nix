@@ -109,9 +109,16 @@ in
 
         # Language-specific settings
         "[python]" = {
-          "editor.guides.indentation" = false;
-          "editor.guides.bracketPairs" = false;
-          "editor.guides.bracketPairsHorizontal" = false;
+          editor = {
+            tabSize = 4;
+            detectIndentation = false;
+            renderWhitespace = "boundary";
+            guides = {
+              indentation = false;
+              bracketPairs = false;
+              bracketPairsHorizontal = false;
+            };
+          };
         };
 
         "[yaml]" = {
