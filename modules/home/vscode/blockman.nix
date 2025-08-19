@@ -19,6 +19,11 @@ in
         wordWrap = "off";
       };
       diffEditor.wordWrap = "off";
+
+      workbench.colorCustomizations = {
+        editor.lineHighlightBorder = "#9fced11f";
+        editor.lineHighlightBackground = "#1073cf2d";
+      };
     };
   };
 }

@@ -37,7 +37,7 @@
 
       # ms-python.python
       python = {
-      	defaultInterpreterPath = "/run/current-system/sw/bin/python";
+        defaultInterpreterPath = "/run/current-system/sw/bin/python";
       };
 
       # yzhang.markdown-all-in-one
@@ -55,10 +55,18 @@
       #   enableTelemetry = false;
       # };
 
-      # workbench.colorCustomizations = {
-      #   editor.lineHighlightBorder = "#9fced11f";
-      #   editor.lineHighlightBackground = "#1073cf2d";
-      # };
+      # indent-rainbow
+      indentRainbow = {
+        includedLanguages = [ "python" "yaml" ];
+        indicatorStyle = "light";
+        lightIndicatorStyleLineWidth = 1;
+        colors = [
+          "rgba(255,214,2,0.8)"
+          "rgba(218,112,214,0.8)"
+          "rgba(22,159,255,0.8)"
+          "rgba(0,252,118,0.8)"
+        ];
+      };
     };
   };
 }
