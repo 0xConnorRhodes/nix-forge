@@ -58,7 +58,7 @@
       # indent-rainbow
       indentRainbow = {
         includedLanguages = [ "python" "yaml" ];
-        indicatorStyle = "light";
+        indicatorStyle = "light"; # single line indicator
         lightIndicatorStyleLineWidth = 1;
         colors = [
           "rgba(255,214,2,0.8)"
