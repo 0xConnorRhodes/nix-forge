@@ -107,6 +107,19 @@ in
         security.workspace.trust.emptyWindow = true;
         git.openRepositoryInParentFolders = "never";
 
+        # Language-specific settings
+        "[python]" = {
+          "editor.guides.indentation" = false;
+          "editor.guides.bracketPairs" = false;
+          "editor.guides.bracketPairsHorizontal" = false;
+        };
+
+        "[yaml]" = {
+          "editor.guides.indentation" = false;
+          "editor.guides.bracketPairs" = false;
+          "editor.guides.bracketPairsHorizontal" = false;
+        };
+
         terminal.integrated.profiles.osx = {
           myZsh = myZshProfile;
         };
