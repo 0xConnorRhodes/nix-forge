@@ -56,19 +56,19 @@
       # };
 
       # indent-rainbow
-      indentRainbow = {
-        includedLanguages = [ "python" "yaml" ];
-        # indicator style: "light"; # light = single line ; classic = full block
-        indicatorStyle = "light";
-        lightIndicatorStyleLineWidth = 1;
-        colors = [
-          # 0.8 opacity for light, 0.3 for classic
-          "rgba(255,214,2,0.8)"
-          "rgba(218,112,214,0.8)"
-          "rgba(22,159,255,0.8)"
-          #"rgba(0,252,118,0.8)"
-        ];
-      };
+      # indentRainbow = {
+      #   includedLanguages = [ "python" "yaml" ];
+      #   # indicator style: "light"; # light = single line ; classic = full block
+      #   indicatorStyle = "light";
+      #   lightIndicatorStyleLineWidth = 1;
+      #   colors = [
+      #     # 0.8 opacity for light, 0.3 for classic
+      #     "rgba(255,214,2,0.8)"
+      #     "rgba(218,112,214,0.8)"
+      #     "rgba(22,159,255,0.8)"
+      #     #"rgba(0,252,118,0.8)"
+      #   ];
+      # };
     };
   };
 }

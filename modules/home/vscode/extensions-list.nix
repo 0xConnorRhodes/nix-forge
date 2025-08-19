@@ -27,7 +27,7 @@ in
       # bmalehorn.vscode-fish
       # ms-vscode.live-server # live webapp in pane
       sdras.night-owl # theme
-      oderwat.indent-rainbow
+      # oderwat.indent-rainbow
     ] ++
 
     (with pkgsUnstable.vscode-extensions; [

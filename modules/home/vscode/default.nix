@@ -111,10 +111,9 @@ in
         "[python]" = {
           editor = {
             tabSize = 4;
-            detectIndentation = false;
             renderWhitespace = "boundary";
             guides = {
-              indentation = false;
+              indentation = true;
               bracketPairs = false;
               bracketPairsHorizontal = false;
             };
