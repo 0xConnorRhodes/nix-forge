@@ -42,6 +42,7 @@ in
     buku
     cfssl # copyparty dependency
     usbutils
+    shiori
 
     # gui programs
     calibre
