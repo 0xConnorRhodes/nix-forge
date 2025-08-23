@@ -22,6 +22,7 @@ in
     ../../common/home/wezterm.nix
     ../../../modules/home/vscode
     ../../../modules/home/firefox
+    ../../../modules/home/mpv.nix
   ];
 
   home.sessionVariables = {
