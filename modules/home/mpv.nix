@@ -21,6 +21,15 @@ in
     write-filename-in-watch-later-config=yes
   '';
 
+  # SCRIPTS
+
+  # multi_cut_mode: seperate => stay seperate files, merge => merge all cuts into one file
+  home.file.".config/mpv/script-opts/mpv-lossless-cut.conf".text = ''
+    lossless=yes
+    output_dir=.
+    multi_cut_mode=separate
+  '';
+
   # Install the lossless cut script
   home.file.".config/mpv/scripts/mpv-lossless-cut.lua".source = "${mpv-lossless-cut}/mpv-lossless-cut.lua";
 }
