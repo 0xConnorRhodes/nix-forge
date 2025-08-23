@@ -92,7 +92,9 @@
         "zen"
         "ollama-app"
         "musicbrainz-picard"
-        # "vivaldi" # installed directly
+        "iterm2"
+        "calibre"
+        # "vivaldi"
       ];
 
       masApps = {
