@@ -24,6 +24,7 @@ in
   # SCRIPTS
 
   # multi_cut_mode: seperate => stay seperate files, merge => merge all cuts into one file
+  # NOTE: g = start cut, h = end cut, r = export cuts
   home.file.".config/mpv/script-opts/mpv-lossless-cut.conf".text = ''
     lossless=yes
     output_dir=.
