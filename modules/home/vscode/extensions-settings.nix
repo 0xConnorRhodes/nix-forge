@@ -26,7 +26,10 @@
 
       # GitHub Copilot
       github.copilot = {
-        enable."*" = true; # copilot autocomplete
+        enable = {
+          "*" = true; # copilot autocomplete in all files
+          "markdown" = true; # copilot autocomplete in markdown files (not included in "*")
+        };
         editor.enableCodeActions = true; # icon to modify/review with copilot on text selection
       };
 
