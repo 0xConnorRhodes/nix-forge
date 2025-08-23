@@ -37,6 +37,7 @@
       # KDE apps
       kdePackages.krdc # remote desktop client
       kdePackages.partitionmanager # kparted
+      kdePackages.kdenlive
 
       # ruby packages
       (ruby.withPackages (ruby-pkgs: with ruby-pkgs; [
