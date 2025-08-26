@@ -32,6 +32,8 @@
         };
         editor.enableCodeActions = true; # icon to modify/review with copilot on text selection
       };
+      chat.tools.autoApprove = true; # auto-approve chat tools for agent mode
+
 
       # sumneko.lua
       Lua = {
