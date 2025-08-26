@@ -20,7 +20,7 @@
       ../../../modules/services/pairdrop.nix
       ../../../modules/services/copyparty.nix
       ../../../modules/services/shiori.nix
-      ../../../modules/services/miniflux.nix
+      #../../../modules/services/miniflux.nix
       ../../../modules/nixos/kvm.nix
       #../../../modules/nixos/incus.nix
       ../../../modules/nixos/tailscale.nix
