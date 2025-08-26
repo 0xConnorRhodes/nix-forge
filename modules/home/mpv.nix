@@ -28,7 +28,7 @@ in
   home.file.".config/mpv/script-opts/mpv-lossless-cut.conf".text = ''
     lossless=yes
     output_dir=.
-    multi_cut_mode=separate
+    multi_cut_mode=seperate
   '';
 
   # Install the lossless cut script
