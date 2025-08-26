@@ -44,6 +44,7 @@ in
     pkgsUnstable.neovim
     wget
     buku
+    caligula
 
     # mac-specific
     blueutil
