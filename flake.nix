@@ -1,10 +1,15 @@
 {
-  description = "Nix config for personal infrastructure";
+  description = "Nix monorepo for personal infrastructure";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -45,7 +50,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, nixos-generators, ... }@inputs:
   let
     secrets = builtins.fromJSON (builtins.readFile ./.secrets.json);
   in
@@ -77,6 +82,18 @@
           }
         ];
       };
+
+      media = nixpkgs.lib.nixosSystem rec {
+        specialArgs = { inherit inputs; inherit secrets; };
+        system = "aarch64-linux";
+        modules = [
+          ./hosts/nixos/media/configuration.nix
+          inputs.home-manager.nixosModules.default
+          {
+            home-manager.extraSpecialArgs = specialArgs; # needed to access inputs in home.nix
+          }
+        ];
+      };
     }; # end nixosConfigurations
 
     darwinConfigurations = {
@@ -92,5 +109,28 @@
         ];
       };
     }; # end darwinConfigurations
+    # end nixosConfigurations
+
+    # Image generation for Raspberry Pi
+    packages.aarch64-linux.media-image = nixos-generators.nixosGenerate {
+      system = "aarch64-linux";
+      specialArgs = { inherit inputs; inherit secrets; };
+      modules = [
+        ./hosts/nixos/media/configuration.nix
+        inputs.home-manager.nixosModules.default
+        {
+          home-manager.extraSpecialArgs = { inherit inputs; inherit secrets; };
+        }
+        # Override problematic default modules
+        {
+          boot.initrd.availableKernelModules = nixpkgs.lib.mkForce [
+            "usbhid" "usb_storage" "vc4" "pcie_brcmstb" "reset-raspberrypi"
+            "bcm2835_dma" "i2c_bcm2835" "spi_bcm2835" "pwm_bcm2835"
+            "sd_mod" "ext4" "crc32c" "libcrc32c" "crc32c_generic"
+          ];
+        }
+      ];
+      format = "sd-aarch64";
+    };
   }; # end outputs
 }
