@@ -16,3 +16,6 @@ secret:
 
 rc2nix:
   nix run github:nix-community/plasma-manager > rc2nix.nix
+
+build-media:
+  nix build .#packages.aarch64-linux.media-image

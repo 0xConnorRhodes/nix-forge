@@ -17,5 +17,6 @@
     curl
     tree
     unzip
+    trash
   ];
 }

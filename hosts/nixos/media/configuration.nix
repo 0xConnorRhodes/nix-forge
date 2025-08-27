@@ -18,9 +18,6 @@
       username = "connor";
       homeDir = "/home/connor";
       trashcli = "trash";
-      modAlt = "ctrl";
-      modCtrl = "alt";
-      tailscaleIp = "100.80.72.15";
     };
 
     # Raspberry Pi specific settings
