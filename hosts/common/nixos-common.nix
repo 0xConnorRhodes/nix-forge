@@ -17,5 +17,5 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   services.bpftune.enable = true;
-  programs.nix-ld.enable = true;
+  programs.nix-ld.enable = true; # allows non nixos precompiled binaries that depend on FHS to work
 }
