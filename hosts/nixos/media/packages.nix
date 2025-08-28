@@ -18,5 +18,10 @@
     tree
     unzip
     trashy
+    yq-go
+    git-crypt
+    magic-wormhole
+    zip
+    unzip
   ];
 }
