@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./hardware-configuration.nix
     ./packages.nix
     ./secret.nix
     ../../common/host-options.nix

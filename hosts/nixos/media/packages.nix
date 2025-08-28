@@ -23,5 +23,7 @@
     magic-wormhole
     zip
     unzip
+    fd
+    nh
   ];
 }
