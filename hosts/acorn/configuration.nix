@@ -15,8 +15,8 @@
 
   config = {
     myConfig = {
-      username = "connor";
-      homeDir = "/home/connor";
+      username = ${secrets.ssh.config.acorn.user};
+      homeDir = "/home/${secrets.ssh.config.acorn.user}";
       trashcli = "trash";
     };
 
@@ -31,14 +31,14 @@
     networking = {
       interfaces.enp0s1 = {
         useDHCP = false;
-	ipv4.addresses = [ {
-	  address = "192.168.64.20";
-	  prefixLength = 24;
-	} ];
+	      ipv4.addresses = [ {
+	        address = ${secrets.ssh.config.acorn.ip};
+	        prefixLength = 24;
+	      } ];
       };
       defaultGateway = {
         address = "192.168.64.1";
-	interface = "enp0s1";
+	      interface = "enp0s1";
       };
       nameservers = [ "1.1.1.1" "1.0.0.1" ];
     };

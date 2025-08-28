@@ -10,6 +10,12 @@
         ServerAliveCountMax 10
         SetEnv TERM=xterm-256color
 
+      Host acorn
+        Hostname ${secrets.ssh.config.acorn.ip}
+        User ${secrets.ssh.config.acorn.user}
+        Port ${secrets.ssh.config.acorn.port}
+        SetEnv TERM=xterm-256color
+
       Host s
         Hostname ${secrets.ssh.config.pve.ip}
         Port ${secrets.ssh.config.pve.port}
