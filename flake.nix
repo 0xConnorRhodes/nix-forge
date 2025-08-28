@@ -83,6 +83,19 @@
         ];
       };
 
+      # ARM dev vm
+      acorn = nixpkgs.lib.nixosSystem rec {
+        specialArgs = { inherit inputs; inherit secrets; };
+        system = "aarch64-linux";
+        modules = [
+          ./hosts/acorn/configuration.nix
+          inputs.home-manager.nixosModules.default
+          {
+            home-manager.extraSpecialArgs = specialArgs; # needed to access inputs in home.nix
+          }
+        ];
+      };
+
       media = nixpkgs.lib.nixosSystem rec {
         specialArgs = { inherit inputs; inherit secrets; };
         system = "aarch64-linux";
