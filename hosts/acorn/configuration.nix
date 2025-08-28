@@ -28,6 +28,13 @@
     boot.loader.timeout = 0; # hold space during boot to see boot selection menu
 
     networking.hostName = "acorn";
+    networking.interfaces.enp0s1 = {
+      useDHCP = false;
+      ipv4.addresses = [ {
+        address = "192.168.64.20";
+        prefixLength = 24;
+      } ];
+    };
 
     time.timeZone = "America/Chicago";
 
