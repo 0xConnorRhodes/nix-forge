@@ -10,6 +10,13 @@
         ServerAliveCountMax 10
         SetEnv TERM=xterm-256color
 
+      Host med
+        Hostname ${secrets.ssh.config.media.ip}
+        Port ${secrets.ssh.config.media.port}
+        User ${secrets.ssh.config.media.user}
+        SetEnv TERM=xterm-256color
+        ProxyJump m
+
       Host acorn
         Hostname ${secrets.ssh.config.acorn.ip}
         User ${secrets.ssh.config.acorn.user}
