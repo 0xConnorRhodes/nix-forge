@@ -76,6 +76,10 @@
       global.brewfile = true;
       onActivation.cleanup = "uninstall"; # uninstall brew packages not listed in nix
 
+      brews = [
+        "espeak-ng"
+      ];
+
       casks = [
         "ghostty"
         "balenaetcher"
