@@ -25,5 +25,6 @@
     unzip
     fd
     nh
+    screen
   ];
 }
