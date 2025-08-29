@@ -134,6 +134,7 @@
         inputs.home-manager.nixosModules.default
         {
           home-manager.extraSpecialArgs = { inherit inputs; inherit secrets; };
+          home-manager.sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
         }
         # Override problematic default modules
         {
@@ -142,6 +143,16 @@
             "bcm2835_dma" "i2c_bcm2835" "spi_bcm2835" "pwm_bcm2835"
             "sd_mod" "ext4" "crc32c" "libcrc32c" "crc32c_generic"
           ];
+          # Override filesystem configuration for SD image
+          fileSystems."/" = nixpkgs.lib.mkForce {
+            device = "/dev/disk/by-label/NIXOS_SD";
+            fsType = "ext4";
+          };
+          fileSystems."/boot/firmware" = nixpkgs.lib.mkForce {
+            device = "/dev/disk/by-label/FIRMWARE";
+            fsType = "vfat";
+            options = [ "nofail" "noauto" ];
+          };
         }
       ];
       format = "sd-aarch64";

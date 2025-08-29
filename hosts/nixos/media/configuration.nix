@@ -154,14 +154,6 @@
           };
         };
       };
-
-      programs.konsole = {
-        enable = true;
-        defaultProfile = "MyProfile";
-        profiles."MyProfile" = {
-          font.size = 14;
-        };
-      };
     };
 
     system.stateVersion = "25.05";
