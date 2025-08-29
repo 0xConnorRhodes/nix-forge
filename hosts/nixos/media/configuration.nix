@@ -102,6 +102,7 @@
 
     environment.systemPackages = with pkgs; [
       kdePackages.bluedevil
+      firefox
     ];
 
     programs.zsh.enable = true;
