@@ -69,12 +69,10 @@
 
     # Enable the X11 windowing system and KDE Plasma
     services.xserver.enable = true;
-    services.displayManager.sddm = {
+    services.displayManager.sddm.enable = true;
+    services.displayManager.autoLogin = {
       enable = true;
-      autoLogin = {
-        enable = true;
-        user = "media";
-      };
+      user = "media";
     };
     services.desktopManager.plasma6.enable = true;
 
