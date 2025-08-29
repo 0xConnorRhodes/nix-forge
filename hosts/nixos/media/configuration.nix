@@ -19,6 +19,9 @@
       username = "connor";
       homeDir = "/home/connor";
       trashcli = "trash";
+      modAlt = "ctrl";
+      modCtrl = "alt";
+      hostPaths = [];
     };
 
     # Raspberry Pi specific settings
@@ -64,6 +67,37 @@
 
     time.timeZone = "America/Chicago";
 
+    # Enable the X11 windowing system and KDE Plasma
+    services.xserver.enable = true;
+    services.displayManager.sddm.enable = true;
+    services.desktopManager.plasma6.enable = true;
+
+    # Configure keymap in X11
+    services.xserver.xkb = {
+      layout = "us";
+      variant = "";
+    };
+
+    # Enable CUPS to print documents.
+    services.printing.enable = true;
+
+    # Enable sound with pipewire.
+    services.pulseaudio.enable = false;
+    security.rtkit.enable = true;
+    services.pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
+
+    programs.kdeconnect.enable = true;
+    hardware.bluetooth.enable = true;
+
+    environment.systemPackages = with pkgs; [
+      kdePackages.bluedevil
+    ];
+
     programs.zsh.enable = true;
 
     users.users.${config.myConfig.username} = {
@@ -93,6 +127,41 @@
       imports = [
         ./home.nix
       ];
+
+      programs.plasma = {
+        enable = true;
+        krunner = {
+          shortcuts.launch = "Ctrl+Space";
+        };
+        shortcuts = {
+          kwin = {
+            "Overview" = "F1";
+            "Window Maximize" = "Ctrl+Alt+I";
+            "Window Minimize" = "Ctrl+H";
+            "Window Close" = "Ctrl+Q";
+            "Walk Through Windows" = "Ctrl+Tab";
+            "Walk Through Windows (Reverse)" = "Ctrl+Shift+Tab";
+            "Window Quick Tile Top" = "Ctrl+Alt+K";
+            "Window Quick Tile Bottom" = "Ctrl+Alt+J";
+            "Window Quick Tile Left" = "Ctrl+Alt+H";
+            "Window Quick Tile Right" = "Ctrl+Alt+L";
+          };
+        };
+        fonts = {
+          general = {
+            family = "Noto Sans";
+            pointSize = 10;
+          };
+        };
+      };
+
+      programs.konsole = {
+        enable = true;
+        defaultProfile = "MyProfile";
+        profiles."MyProfile" = {
+          font.size = 14;
+        };
+      };
     };
 
     system.stateVersion = "25.05";
