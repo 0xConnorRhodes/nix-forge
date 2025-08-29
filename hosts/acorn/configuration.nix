@@ -15,7 +15,7 @@
 
   config = {
     myConfig = {
-      username = ${secrets.ssh.config.acorn.user};
+      username = "${secrets.ssh.config.acorn.user}";
       homeDir = "/home/${secrets.ssh.config.acorn.user}";
       trashcli = "trash";
     };
@@ -32,7 +32,7 @@
       interfaces.enp0s1 = {
         useDHCP = false;
 	      ipv4.addresses = [ {
-	        address = ${secrets.ssh.config.acorn.ip};
+	        address = "${secrets.ssh.config.acorn.ip}";
 	        prefixLength = 24;
 	      } ];
       };
