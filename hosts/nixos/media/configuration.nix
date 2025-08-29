@@ -69,7 +69,13 @@
 
     # Enable the X11 windowing system and KDE Plasma
     services.xserver.enable = true;
-    services.displayManager.sddm.enable = true;
+    services.displayManager.sddm = {
+      enable = true;
+      autoLogin = {
+        enable = true;
+        user = "media";
+      };
+    };
     services.desktopManager.plasma6.enable = true;
 
     # Configure keymap in X11
@@ -110,6 +116,13 @@
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAHczZo2Xoo9jN7BGmtu2nabaSzFq9sW2Y4eh7UELReA connor@devct"
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILvE1Dk8jXCzFOqyph0k8Lp/ynYMX5vqA/MZni2L/JE4 connor@rhodes.contact"
       ];
+    };
+
+    users.users.media = {
+      isNormalUser = true;
+      description = "Media User";
+      extraGroups = [ "networkmanager" ];
+      shell = pkgs.zsh;
     };
 
     services.openssh = {
