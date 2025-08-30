@@ -139,46 +139,48 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
-      # Force HDMI audio to be available
-      extraConfig.pipewire."92-low-latency" = {
+
+      # Basic configuration for Raspberry Pi
+      extraConfig.pipewire."99-rpi-audio" = {
         context.properties = {
           default.clock.rate = 48000;
-          default.clock.quantum = 32;
-          default.clock.min-quantum = 32;
-          default.clock.max-quantum = 32;
         };
       };
-      # Configure ALSA for HDMI audio
-      extraConfig.pipewire-pulse."92-low-latency" = {
-        context.modules = [
+
+      # WirePlumber configuration for Raspberry Pi
+      wireplumber.enable = true;
+      extraConfig.wireplumber."51-rpi-hdmi" = {
+        "monitor.alsa.rules" = [
           {
-            name = "libpipewire-module-protocol-pulse";
-            args = {
-              pulse.min.req = "32/48000";
-              pulse.default.req = "32/48000";
-              pulse.max.req = "32/48000";
-              pulse.min.quantum = "32/48000";
-              pulse.max.quantum = "32/48000";
+            matches = [
+              {
+                "device.name" = "alsa_card.platform-bcm2835_audio";
+              }
+            ];
+            actions = {
+              update-props = {
+                "api.acp.auto-profile" = false;
+                "api.acp.auto-port" = false;
+              };
+            };
+            apply_properties = {
+              "device.profile" = "pro-audio";
             };
           }
-        ];
-        stream.properties = {
-          node.latency = "32/48000";
-          resample.quality = 1;
-        };
-      };
-      # Raspberry Pi specific ALSA configuration
-      extraConfig.pipewire."99-rpi-hdmi" = {
-        context.modules = [
           {
-            name = "libpipewire-module-adapter";
-            args = {
-              factory.name = "support.null-audio-sink";
-              node.name = "rpi-hdmi";
-              node.description = "Raspberry Pi HDMI";
-              media.class = "Audio/Sink";
-              audio.position = [ "FL" "FR" ];
-              monitor.channel-volumes = true;
+            matches = [
+              {
+                "device.name" = "alsa_card.platform-bcm2835_audio.2";
+              }
+            ];
+            actions = {
+              update-props = {
+                "api.acp.auto-profile" = false;
+                "api.acp.auto-port" = false;
+              };
+            };
+            apply_properties = {
+              "device.profile" = "pro-audio";
             };
           }
         ];
@@ -201,20 +203,13 @@
       ctl.!default {
         type pulse
       }
-
-      # Make HDMI the default audio output
-      pcm.hdmi {
-        type hw
-        card 0
-        device 1
-      }
     '';
 
     # Service to ensure HDMI audio is detected
     systemd.services.hdmi-audio-setup = {
       description = "Setup HDMI Audio";
       wantedBy = [ "multi-user.target" ];
-      after = [ "sound.target" ];
+      after = [ "sound.target" "pipewire.service" ];
       serviceConfig = {
         Type = "oneshot";
         RemainAfterExit = true;
@@ -224,17 +219,20 @@
         ${pkgs.kmod}/bin/modprobe snd-bcm2835
 
         # Wait for audio devices to appear
-        sleep 2
+        sleep 3
 
-        # Force HDMI audio detection
+        # Check if audio devices are available
         if [ -e /proc/asound/cards ]; then
           echo "Audio cards detected:"
           cat /proc/asound/cards
         fi
 
-        # Set HDMI as default if available
-        if ${pkgs.alsa-utils}/bin/aplay -l | grep -q "HDMI"; then
-          echo "HDMI audio detected"
+        # Try to activate HDMI profile via systemd user service
+        if [ -e /dev/snd/controlC0 ]; then
+          echo "HDMI control device found"
+          # Set card profile to activate HDMI output
+          systemctl --user restart pipewire pipewire-pulse || true
+          sleep 2
         fi
       '';
     };
