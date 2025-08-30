@@ -36,6 +36,9 @@
       kernelParams = [ "console=serial0,115200" "console=tty1" ];
     };
 
+    hardware.raspberry-pi."4".fkms-3d.enable = true;
+    hardware.raspberry-pi."4".apply-overlays-dtmerge.enable = true;
+
     networking = {
       hostName = "media";
       networkmanager = {
@@ -152,6 +155,13 @@
       ];
     };
 
+    users.users.media = {
+      isNormalUser = true;
+      description = "Media User";
+      extraGroups = [ "networkmanager" ];
+      shell = pkgs.zsh;
+    };
+
     services.openssh = {
       enable = true;
       settings = {
@@ -184,11 +194,12 @@
 
       imports = [
         ./media-home.nix
-        ./firefox.nix
       ];
 
       # Copy JWM configuration file to user's home directory
       home.file.".jwmrc".text = builtins.readFile ./jwmrc;
     };
-  system.stateVersion = "25.05";
+
+    system.stateVersion = "25.05";
+  };
 }
