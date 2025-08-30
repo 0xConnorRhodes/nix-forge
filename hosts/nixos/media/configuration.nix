@@ -182,13 +182,13 @@
     home-manager.users.media = { pkgs, ... }: {
       home.stateVersion = "25.05";
 
-      # Copy JWM configuration file to user's home directory
-      home.file.".jwmrc".text = builtins.readFile ./jwmrc;
-
       imports = [
+        ./media-home.nix
         ./firefox.nix
       ];
 
-    system.stateVersion = "25.05";
-  };
+      # Copy JWM configuration file to user's home directory
+      home.file.".jwmrc".text = builtins.readFile ./jwmrc;
+    };
+  system.stateVersion = "25.05";
 }
