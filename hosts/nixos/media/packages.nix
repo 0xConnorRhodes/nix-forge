@@ -26,5 +26,8 @@
     fd
     nh
     screen
+    mpv
+    vlc
+    pipx
   ];
 }

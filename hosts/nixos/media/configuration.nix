@@ -168,6 +168,14 @@
       };
     };
 
+    # Home manager configuration for media user
+    home-manager.users.media = { pkgs, ... }: {
+      home.stateVersion = "25.05";
+      imports = [
+        ./firefox.nix
+      ];
+    };
+
     system.stateVersion = "25.05";
   };
 }
