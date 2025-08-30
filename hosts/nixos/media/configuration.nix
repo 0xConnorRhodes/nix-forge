@@ -45,41 +45,6 @@
     hardware.raspberry-pi."4".apply-overlays-dtmerge.enable = true;
 
     # Automated HDMI audio configuration
-    # This systemd service will automatically add the required HDMI audio settings to config.txt
-    systemd.services.raspberry-pi-hdmi-audio = {
-      description = "Configure Raspberry Pi HDMI Audio";
-      wantedBy = [ "multi-user.target" ];
-      after = [ "local-fs.target" ];
-      serviceConfig = {
-        Type = "oneshot";
-        RemainAfterExit = true;
-      };
-      script = ''
-        CONFIG_FILE="/boot/firmware/config.txt"
-
-        # Check if config.txt exists (it might be in /boot/config.txt instead)
-        if [ ! -f "$CONFIG_FILE" ]; then
-          CONFIG_FILE="/boot/config.txt"
-        fi
-
-        if [ -f "$CONFIG_FILE" ]; then
-          # Remove any existing HDMI audio configuration
-          sed -i '/# NixOS HDMI Audio Configuration/,/^$/d' "$CONFIG_FILE"
-
-          # Add our HDMI audio configuration
-          echo "Adding HDMI audio configuration to $CONFIG_FILE"
-          cat >> "$CONFIG_FILE" << 'EOF'
-
-# NixOS HDMI Audio Configuration
-hdmi_group=1
-hdmi_mode=16
-hdmi_drive=2
-EOF
-        else
-          echo "Warning: config.txt not found at expected locations"
-        fi
-      '';
-    };
 
     networking = {
       hostName = "media";
