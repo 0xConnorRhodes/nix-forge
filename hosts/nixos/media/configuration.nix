@@ -67,10 +67,56 @@
 
     time.timeZone = "America/Chicago";
 
-    # Enable the X11 windowing system and KDE Plasma
+    # Enable the X11 windowing system and JWM
     services.xserver.enable = true;
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
     services.displayManager.sddm.enable = true;
     services.desktopManager.plasma6.enable = true;
+=======
+=======
+>>>>>>> Stashed changes
+    services.xserver.windowManager.jwm.enable = true;
+
+    # Disable screen saver and DPMS
+    services.xserver.xkb.options = "terminate:ctrl_alt_bksp";
+    services.xserver.displayManager.sessionCommands = ''
+      ${pkgs.xorg.xset}/bin/xset -dpms
+      ${pkgs.xorg.xset}/bin/xset s noblank
+      ${pkgs.xorg.xset}/bin/xset s off
+    '';
+
+    services.displayManager = {
+      autoLogin = {
+        enable = true;
+        user = "media";
+      };
+      defaultSession = "none+jwm";
+    };
+
+    # Power management - prevent screen blanking and system suspension
+    services.xserver.serverFlagsSection = ''
+      Option "BlankTime" "0"
+      Option "StandbyTime" "0"
+      Option "SuspendTime" "0"
+      Option "OffTime" "0"
+    '';
+
+    # Disable power management and suspend
+    powerManagement = {
+      enable = false;
+      powertop.enable = false;
+    };
+
+    # Disable systemd sleep and suspend targets
+    systemd.targets.sleep.enable = false;
+    systemd.targets.suspend.enable = false;
+    systemd.targets.hibernate.enable = false;
+    systemd.targets.hybrid-sleep.enable = false;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 
     # Configure keymap in X11
     services.xserver.xkb = {
@@ -91,11 +137,26 @@
       pulse.enable = true;
     };
 
-    programs.kdeconnect.enable = true;
+    programs.kdeconnect.enable = false;
     hardware.bluetooth.enable = true;
 
     environment.systemPackages = with pkgs; [
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
       kdePackages.bluedevil
+=======
+=======
+>>>>>>> Stashed changes
+      firefox
+      xterm
+      pcmanfm  # File manager
+      htop    # System monitor
+      xorg.xclock
+      networkmanagerapplet  # Network manager GUI
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
     ];
 
     programs.zsh.enable = true;
@@ -128,34 +189,36 @@
         ./home.nix
       ];
 
-      programs.plasma = {
+      # Copy JWM configuration file to user's home directory
+      home.file.".jwmrc".text = builtins.readFile ./jwmrc;
+
+      # Set up X session to start JWM
+      xsession = {
         enable = true;
-        krunner = {
-          shortcuts.launch = "Ctrl+Space";
-        };
-        shortcuts = {
-          kwin = {
-            "Overview" = "F1";
-            "Window Maximize" = "Ctrl+Alt+I";
-            "Window Minimize" = "Ctrl+H";
-            "Window Close" = "Ctrl+Q";
-            "Walk Through Windows" = "Ctrl+Tab";
-            "Walk Through Windows (Reverse)" = "Ctrl+Shift+Tab";
-            "Window Quick Tile Top" = "Ctrl+Alt+K";
-            "Window Quick Tile Bottom" = "Ctrl+Alt+J";
-            "Window Quick Tile Left" = "Ctrl+Alt+H";
-            "Window Quick Tile Right" = "Ctrl+Alt+L";
-          };
-        };
-        fonts = {
-          general = {
-            family = "Noto Sans";
-            pointSize = 10;
-          };
-        };
+        windowManager.command = "${pkgs.jwm}/bin/jwm";
       };
     };
 
+<<<<<<< Updated upstream
+=======
+    # Home manager configuration for media user
+    home-manager.users.media = { pkgs, ... }: {
+      home.stateVersion = "25.05";
+      imports = [
+        ./firefox.nix
+      ];
+
+      # Copy JWM configuration file to media user's home directory
+      home.file.".jwmrc".text = builtins.readFile ./jwmrc;
+
+      # Set up X session to start JWM
+      xsession = {
+        enable = true;
+        windowManager.command = "${pkgs.jwm}/bin/jwm";
+      };
+    };
+
+>>>>>>> Stashed changes
     system.stateVersion = "25.05";
   };
 }

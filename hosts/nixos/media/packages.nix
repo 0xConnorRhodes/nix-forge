@@ -26,5 +26,15 @@
     fd
     nh
     screen
+<<<<<<< Updated upstream
+=======
+    mpv
+    vlc
+    pipx
+    libraspberrypi # pi diagonistic cli utilities
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
   ];
 }

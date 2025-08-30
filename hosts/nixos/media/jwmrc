@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<JWM>
+
+    <!-- The root menu -->
+    <RootMenu onroot="12">
+        <Program label="Firefox" icon="firefox">firefox</Program>
+        <Separator/>
+        <Program label="Terminal" icon="terminal">xterm</Program>
+        <Program label="File Manager" icon="folder">pcmanfm</Program>
+        <Separator/>
+        <Program label="System Monitor" icon="utilities-system-monitor">htop</Program>
+        <Separator/>
+        <Restart label="Restart JWM" icon="gtk-refresh"/>
+        <Exit label="Exit" confirm="true" icon="gtk-quit"/>
+    </RootMenu>
+
+    <!-- Options for program groups -->
+    <Group>
+        <Option>aerosnap</Option>
+        <Option>tiled</Option>
+    </Group>
+
+    <!-- Tray at the bottom -->
+    <Tray x="0" y="-1" height="32" autohide="false">
+        <!-- Menu button -->
+        <TrayButton label="Menu">root:1</TrayButton>
+
+        <!-- Desktop pager -->
+        <Pager labeled="true"/>
+
+        <!-- Task list -->
+        <TaskList maxwidth="256"/>
+
+        <!-- System tray for network manager -->
+        <Dock/>
+
+        <!-- Clock -->
+        <Clock format="%I:%M %p"><Button mask="123">exec:xclock</Button></Clock>
+    </Tray>
+
+    <!-- Visual Styles -->
+    <WindowStyle>
+        <Font>Sans-12</Font>
+        <Width>4</Width>
+        <Height>21</Height>
+        <Corner>3</Corner>
+        <Foreground>#FFFFFF</Foreground>
+        <Background>#555753</Background>
+        <Outline>#000000</Outline>
+        <Opacity>0.5</Opacity>
+        <Active>
+            <Foreground>#FFFFFF</Foreground>
+            <Background>#729FCF</Background>
+            <Outline>#000000</Outline>
+            <Opacity>1.0</Opacity>
+        </Active>
+    </WindowStyle>
+
+    <TrayStyle group="true" list="all">
+        <Font>Sans-10</Font>
+        <Background>#2E3436</Background>
+        <Foreground>#FFFFFF</Foreground>
+        <Outline>#000000</Outline>
+        <Opacity>0.75</Opacity>
+    </TrayStyle>
+
+    <TaskListStyle>
+        <Font>Sans-10</Font>
+        <Active>
+            <Foreground>#FFFFFF</Foreground>
+            <Background>#729FCF</Background>
+        </Active>
+        <Foreground>#FFFFFF</Foreground>
+        <Background>#555753</Background>
+    </TaskListStyle>
+
+    <PagerStyle>
+        <Outline>#000000</Outline>
+        <Foreground>#555753</Foreground>
+        <Background>#2E3436</Background>
+        <Text>#FFFFFF</Text>
+        <Active>
+            <Foreground>#729FCF</Foreground>
+            <Background>#2E3436</Background>
+        </Active>
+    </PagerStyle>
+
+    <MenuStyle>
+        <Font>Sans-10</Font>
+        <Foreground>#FFFFFF</Foreground>
+        <Background>#2E3436</Background>
+        <Outline>#000000</Outline>
+        <Opacity>0.85</Opacity>
+        <Active>
+            <Foreground>#FFFFFF</Foreground>
+            <Background>#729FCF</Background>
+        </Active>
+    </MenuStyle>
+
+    <PopupStyle>
+        <Font>Sans-10</Font>
+        <Foreground>#000000</Foreground>
+        <Background>#999999</Background>
+    </PopupStyle>
+
+    <!-- Path where icons can be found -->
+    <IconPath>/usr/share/pixmaps</IconPath>
+    <IconPath>/usr/share/icons/hicolor/48x48/apps</IconPath>
+
+    <!-- Virtual Desktops -->
+    <Desktops width="4" height="1">
+        <Background type="solid">#2E3436</Background>
+    </Desktops>
+
+    <!-- Double click speed (in milliseconds) -->
+    <DoubleClickSpeed>400</DoubleClickSpeed>
+
+    <!-- Double click delta (in pixels) -->
+    <DoubleClickDelta>2</DoubleClickDelta>
+
+    <!-- Focus model (sloppy or click) -->
+    <FocusModel>sloppy</FocusModel>
+
+    <!-- Snap mode (none, screen, or border) -->
+    <SnapMode distance="10">border</SnapMode>
+
+    <!-- Move mode (outline or opaque) -->
+    <MoveMode>opaque</MoveMode>
+
+    <!-- Resize mode (outline or opaque) -->
+    <ResizeMode>opaque</ResizeMode>
+
+    <!-- Key bindings -->
+    <Key key="Up">up</Key>
+    <Key key="Down">down</Key>
+    <Key key="Right">right</Key>
+    <Key key="Left">left</Key>
+    <Key key="h">left</Key>
+    <Key key="j">down</Key>
+    <Key key="k">up</Key>
+    <Key key="l">right</Key>
+    <Key key="Return">select</Key>
+    <Key key="Escape">escape</Key>
+
+    <Key mask="A" key="Tab">nextstacked</Key>
+    <Key mask="A" key="F4">close</Key>
+    <Key mask="A" key="#">desktop#</Key>
+    <Key mask="A" key="F1">root:1</Key>
+    <Key mask="A" key="F2">window</Key>
+
+    <!-- Startup Programs -->
+    <StartupCommand>nm-applet</StartupCommand>
+
+</JWM>
