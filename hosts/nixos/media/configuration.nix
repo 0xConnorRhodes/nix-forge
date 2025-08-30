@@ -29,15 +29,18 @@
       loader = {
         grub.enable = false;
         generic-extlinux-compatible.enable = true;
+        # Add device tree parameter for audio
+        generic-extlinux-compatible.configurationLimit = 1;
       };
       consoleLogLevel = lib.mkDefault 7;
 
-      # Basic Pi kernel parameters
+      # Basic Pi kernel parameters including audio
       kernelParams = [
         "snd_bcm2835.enable_hdmi=1"
         "snd_bcm2835.enable_headphones=1"
         "console=serial0,115200"
         "console=tty1"
+        "dtparam=audio=on"
       ];
     };
 
