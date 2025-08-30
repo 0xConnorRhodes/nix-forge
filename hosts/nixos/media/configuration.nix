@@ -128,7 +128,7 @@
     # Enable CUPS to print documents.
     services.printing.enable = true;
 
-    # Enable sound with pipewire.
+    # Enable sound with pipewire and force HDMI audio detection
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
     services.pipewire = {
@@ -136,10 +136,60 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
+      # Force HDMI audio to be available
+      extraConfig.pipewire."92-low-latency" = {
+        context.properties = {
+          default.clock.rate = 48000;
+          default.clock.quantum = 32;
+          default.clock.min-quantum = 32;
+          default.clock.max-quantum = 32;
+        };
+      };
+      # Configure ALSA for HDMI audio
+      extraConfig.pipewire-pulse."92-low-latency" = {
+        context.modules = [
+          {
+            name = "libpipewire-module-protocol-pulse";
+            args = {
+              pulse.min.req = "32/48000";
+              pulse.default.req = "32/48000";
+              pulse.max.req = "32/48000";
+              pulse.min.quantum = "32/48000";
+              pulse.max.quantum = "32/48000";
+            };
+          }
+        ];
+        stream.properties = {
+          node.latency = "32/48000";
+          resample.quality = 1;
+        };
+      };
     };
 
     programs.kdeconnect.enable = false;
     hardware.bluetooth.enable = true;
+
+    # Force ALSA to load HDMI audio card
+    boot.extraModprobeConfig = ''
+      options snd-bcm2835 enable_hdmi=1 enable_headphones=1
+    '';
+
+    # Create ALSA configuration for HDMI audio
+    environment.etc."asound.conf".text = ''
+      pcm.!default {
+        type pulse
+      }
+      ctl.!default {
+        type pulse
+      }
+
+      # Make HDMI the default audio output
+      pcm.hdmi {
+        type hw
+        card 0
+        device 1
+      }
+    '';
 
     environment.systemPackages = with pkgs; [
       kdePackages.bluedevil
