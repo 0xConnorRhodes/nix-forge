@@ -69,13 +69,6 @@
 
     # Enable the X11 windowing system and JWM
     services.xserver.enable = true;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    services.displayManager.sddm.enable = true;
-    services.desktopManager.plasma6.enable = true;
-=======
-=======
->>>>>>> Stashed changes
     services.xserver.windowManager.jwm.enable = true;
 
     # Disable screen saver and DPMS
@@ -113,11 +106,6 @@
     systemd.targets.suspend.enable = false;
     systemd.targets.hibernate.enable = false;
     systemd.targets.hybrid-sleep.enable = false;
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-
     # Configure keymap in X11
     services.xserver.xkb = {
       layout = "us";
@@ -141,22 +129,13 @@
     hardware.bluetooth.enable = true;
 
     environment.systemPackages = with pkgs; [
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
       kdePackages.bluedevil
-=======
-=======
->>>>>>> Stashed changes
       firefox
       xterm
-      pcmanfm  # File manager
-      htop    # System monitor
+      pcmanfm
+      htop
       xorg.xclock
       networkmanagerapplet  # Network manager GUI
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     ];
 
     programs.zsh.enable = true;
@@ -199,26 +178,17 @@
       };
     };
 
-<<<<<<< Updated upstream
-=======
     # Home manager configuration for media user
     home-manager.users.media = { pkgs, ... }: {
       home.stateVersion = "25.05";
+
+      # Copy JWM configuration file to user's home directory
+      home.file.".jwmrc".text = builtins.readFile ./jwmrc;
+
       imports = [
         ./firefox.nix
       ];
 
-      # Copy JWM configuration file to media user's home directory
-      home.file.".jwmrc".text = builtins.readFile ./jwmrc;
-
-      # Set up X session to start JWM
-      xsession = {
-        enable = true;
-        windowManager.command = "${pkgs.jwm}/bin/jwm";
-      };
-    };
-
->>>>>>> Stashed changes
     system.stateVersion = "25.05";
   };
 }
