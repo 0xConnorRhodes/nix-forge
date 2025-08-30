@@ -151,7 +151,7 @@
     users.users.${config.myConfig.username} = {
       isNormalUser = true;
       description = "Connor Rhodes";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "wheel" "audio"];
       shell = pkgs.zsh;
       # Add your SSH keys here for initial access
       openssh.authorizedKeys.keys = [
@@ -163,7 +163,7 @@
     users.users.media = {
       isNormalUser = true;
       description = "Media User";
-      extraGroups = [ "networkmanager" ];
+      extraGroups = [ "networkmanager" "audio"];
       shell = pkgs.zsh;
     };
 
