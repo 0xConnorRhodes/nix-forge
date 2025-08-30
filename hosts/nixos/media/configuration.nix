@@ -148,42 +148,44 @@
       };
 
       # WirePlumber configuration for Raspberry Pi
-      wireplumber.enable = true;
-      extraConfig.wireplumber."51-rpi-hdmi" = {
-        "monitor.alsa.rules" = [
-          {
-            matches = [
-              {
-                "device.name" = "alsa_card.platform-bcm2835_audio";
-              }
-            ];
-            actions = {
-              update-props = {
-                "api.acp.auto-profile" = false;
-                "api.acp.auto-port" = false;
+      wireplumber = {
+        enable = true;
+        extraConfig."51-rpi-hdmi" = {
+          "monitor.alsa.rules" = [
+            {
+              matches = [
+                {
+                  "device.name" = "alsa_card.platform-bcm2835_audio";
+                }
+              ];
+              actions = {
+                update-props = {
+                  "api.acp.auto-profile" = false;
+                  "api.acp.auto-port" = false;
+                };
               };
-            };
-            apply_properties = {
-              "device.profile" = "pro-audio";
-            };
-          }
-          {
-            matches = [
-              {
-                "device.name" = "alsa_card.platform-bcm2835_audio.2";
-              }
-            ];
-            actions = {
-              update-props = {
-                "api.acp.auto-profile" = false;
-                "api.acp.auto-port" = false;
+              apply_properties = {
+                "device.profile" = "pro-audio";
               };
-            };
-            apply_properties = {
-              "device.profile" = "pro-audio";
-            };
-          }
-        ];
+            }
+            {
+              matches = [
+                {
+                  "device.name" = "alsa_card.platform-bcm2835_audio.2";
+                }
+              ];
+              actions = {
+                update-props = {
+                  "api.acp.auto-profile" = false;
+                  "api.acp.auto-port" = false;
+                };
+              };
+              apply_properties = {
+                "device.profile" = "pro-audio";
+              };
+            }
+          ];
+        };
       };
     };
 
