@@ -33,7 +33,12 @@
       consoleLogLevel = lib.mkDefault 7;
 
       # Basic Pi kernel parameters
-      kernelParams = [ "console=serial0,115200" "console=tty1" ];
+      kernelParams = [
+        "snd_bcm2835.enable_hdmi=1"
+        "snd_bcm2835.enable_headphones=1"
+        "console=serial0,115200"
+        "console=tty1"
+      ];
     };
 
     hardware.raspberry-pi."4".fkms-3d.enable = true;
