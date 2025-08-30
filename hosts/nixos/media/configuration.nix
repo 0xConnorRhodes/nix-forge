@@ -42,6 +42,9 @@
         "console=tty1"
         "dtparam=audio=on"
       ];
+
+      # Ensure audio modules are loaded
+      kernelModules = [ "snd-bcm2835" ];
     };
 
     hardware.raspberry-pi."4".fkms-3d.enable = true;
@@ -164,6 +167,22 @@
           resample.quality = 1;
         };
       };
+      # Raspberry Pi specific ALSA configuration
+      extraConfig.pipewire."99-rpi-hdmi" = {
+        context.modules = [
+          {
+            name = "libpipewire-module-adapter";
+            args = {
+              factory.name = "support.null-audio-sink";
+              node.name = "rpi-hdmi";
+              node.description = "Raspberry Pi HDMI";
+              media.class = "Audio/Sink";
+              audio.position = [ "FL" "FR" ];
+              monitor.channel-volumes = true;
+            };
+          }
+        ];
+      };
     };
 
     programs.kdeconnect.enable = false;
@@ -191,6 +210,35 @@
       }
     '';
 
+    # Service to ensure HDMI audio is detected
+    systemd.services.hdmi-audio-setup = {
+      description = "Setup HDMI Audio";
+      wantedBy = [ "multi-user.target" ];
+      after = [ "sound.target" ];
+      serviceConfig = {
+        Type = "oneshot";
+        RemainAfterExit = true;
+      };
+      script = ''
+        # Force load audio modules
+        ${pkgs.kmod}/bin/modprobe snd-bcm2835
+
+        # Wait for audio devices to appear
+        sleep 2
+
+        # Force HDMI audio detection
+        if [ -e /proc/asound/cards ]; then
+          echo "Audio cards detected:"
+          cat /proc/asound/cards
+        fi
+
+        # Set HDMI as default if available
+        if ${pkgs.alsa-utils}/bin/aplay -l | grep -q "HDMI"; then
+          echo "HDMI audio detected"
+        fi
+      '';
+    };
+
     environment.systemPackages = with pkgs; [
       kdePackages.bluedevil
       firefox
@@ -199,6 +247,9 @@
       htop
       xorg.xclock
       networkmanagerapplet  # Network manager GUI
+      pavucontrol           # Audio control
+      alsa-utils           # ALSA utilities for audio debugging
+      pulseaudio           # For pactl commands
     ];
 
     programs.zsh.enable = true;
@@ -212,6 +263,7 @@
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAHczZo2Xoo9jN7BGmtu2nabaSzFq9sW2Y4eh7UELReA connor@devct"
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILvE1Dk8jXCzFOqyph0k8Lp/ynYMX5vqA/MZni2L/JE4 connor@rhodes.contact"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID+LN8Mv7LSJ+fJzXQE1vBQW5LTlbXGFP7f/NrF8ZEm9 connor@acorn"
       ];
     };
 
