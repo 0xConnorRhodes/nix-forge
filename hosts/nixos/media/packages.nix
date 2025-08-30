@@ -30,5 +30,6 @@
     vlc
     pipx
     libraspberrypi # pi diagonistic cli utilities
+    pavucontrol
   ];
 }
