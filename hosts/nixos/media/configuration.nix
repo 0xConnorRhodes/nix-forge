@@ -24,6 +24,38 @@
       hostPaths = [];
     };
 
+    # Distributed builds configuration
+    nix = {
+      distributedBuilds = true;
+
+      buildMachines = [
+        {
+          hostName = "vm-builder.local"; # or IP/DNS of your VM
+          sshUser = "nix-ssh";           # user provided by nix.sshServe
+          system = "aarch64-linux";
+          protocol = "ssh-ng";
+          maxJobs = 6;
+          speedFactor = 2;
+          supportedFeatures = [ "big-parallel" "kvm" ];
+          publicHostKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFhGQBo2OYv8NbdeXLp4FaoQzgLSv79q29/9C4H8DGw2 root@media";
+        }
+      ];
+
+      settings = {
+        builders-use-substitutes = true;
+        # Keep official cache for prebuilt stuff
+        substituters = [
+          "https://cache.nixos.org"
+        ];
+        trusted-public-keys = [
+          "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+        ];
+      };
+    };
+
+    # Make sure we use 64-bit on the Pi
+    nixpkgs.hostPlatform = "aarch64-linux";
+
     # Raspberry Pi specific settings
     boot = {
       loader = {
