@@ -30,14 +30,16 @@
 
       buildMachines = [
         {
-          hostName = "acorn"; # or IP/DNS of your VM
+          # TODO: change back to shortname when testing finished
+          hostName = "acorn.taila2416.ts.net"; # Use full Tailscale hostname
           sshUser = "nix-ssh";           # user provided by nix.sshServe
           system = "aarch64-linux";
           protocol = "ssh-ng";
           maxJobs = 6;
           speedFactor = 2;
           supportedFeatures = [ "big-parallel" "kvm" ];
-          publicHostKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFhGQBo2OYv8NbdeXLp4FaoQzgLSv79q29/9C4H8DGw2 root@media";
+          sshKey = "/etc/ssh/nix-builders/id_ed25519";  # Use properly permissioned key
+          publicHostKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFhGQBo2OYv8NbdeXLp4FaoQzgLSv79q29/9C4H8DGw2";
         }
       ];
 
@@ -267,6 +269,28 @@
           # Set card profile to activate HDMI output
           systemctl --user restart pipewire pipewire-pulse || true
           sleep 2
+        fi
+      '';
+    };
+
+    # Service to setup SSH key for remote builds (needed to fix permissions on nix written root key)
+    systemd.services.setup-nix-builder-ssh = {
+      description = "Setup SSH key for Nix remote builds";
+      wantedBy = [ "multi-user.target" ];
+      before = [ "nix-daemon.service" ];
+      serviceConfig = {
+        Type = "oneshot";
+        RemainAfterExit = true;
+      };
+      script = ''
+        # Create directory for builder SSH keys
+        mkdir -p /etc/ssh/nix-builders
+
+        # Copy SSH key with proper permissions
+        if [ -f /root/.ssh/id_ed25519 ]; then
+          cp /root/.ssh/id_ed25519 /etc/ssh/nix-builders/id_ed25519
+          chmod 600 /etc/ssh/nix-builders/id_ed25519
+          chown root:root /etc/ssh/nix-builders/id_ed25519
         fi
       '';
     };
