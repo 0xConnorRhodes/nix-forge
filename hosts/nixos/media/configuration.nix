@@ -10,7 +10,7 @@
     # ../../common/nixos-packages.nix
     ../../../configs/ssh_config.nix
     ../../../modules/nixos/tailscale.nix
-    inputs.nixos-hardware.nixosModules.raspberry-pi-4 # or change to raspberry-pi-5 if you have a Pi 5
+    inputs.nixos-hardware.nixosModules.raspberry-pi-4
     inputs.nix-index-database.nixosModules.nix-index
   ];
 
@@ -21,7 +21,6 @@
       trashcli = "trash";
       modAlt = "ctrl";
       modCtrl = "alt";
-      hostPaths = [];
     };
 
     # Raspberry Pi specific settings
@@ -35,6 +34,10 @@
       # Basic Pi kernel parameters
       kernelParams = [ "console=serial0,115200" "console=tty1" ];
     };
+
+    # enable gpu acceleration
+    hardware.raspberry-pi."4".fkms-3d.enable = true;
+    hardware.raspberry-pi."4".apply-overlays-dtmerge.enable = true;
 
     networking = {
       hostName = "media";
@@ -67,15 +70,45 @@
 
     time.timeZone = "America/Chicago";
 
-    # Enable the X11 windowing system and KDE Plasma
+    # Enable the X11 windowing system and JWM
     services.xserver.enable = true;
-    services.displayManager.sddm.enable = true;
-    services.displayManager.autoLogin = {
-      enable = true;
-      user = "media";
-    };
-    services.desktopManager.plasma6.enable = true;
+    services.xserver.windowManager.jwm.enable = true;
 
+    # Disable screen saver and DPMS
+    services.xserver.xkb.options = "terminate:ctrl_alt_bksp";
+    services.xserver.displayManager.sessionCommands = ''
+      ${pkgs.xorg.xset}/bin/xset -dpms
+      ${pkgs.xorg.xset}/bin/xset s noblank
+      ${pkgs.xorg.xset}/bin/xset s off
+    '';
+
+    services.displayManager = {
+      autoLogin = {
+        enable = true;
+        user = "media";
+      };
+      defaultSession = "none+jwm";
+    };
+
+    # Power management - prevent screen blanking and system suspension
+    services.xserver.serverFlagsSection = ''
+      Option "BlankTime" "0"
+      Option "StandbyTime" "0"
+      Option "SuspendTime" "0"
+      Option "OffTime" "0"
+    '';
+
+    # Disable power management and suspend
+    powerManagement = {
+      enable = false;
+      powertop.enable = false;
+    };
+
+    # Disable systemd sleep and suspend targets
+    systemd.targets.sleep.enable = false;
+    systemd.targets.suspend.enable = false;
+    systemd.targets.hibernate.enable = false;
+    systemd.targets.hybrid-sleep.enable = false;
     # Configure keymap in X11
     services.xserver.xkb = {
       layout = "us";
@@ -99,8 +132,13 @@
     hardware.bluetooth.enable = true;
 
     environment.systemPackages = with pkgs; [
-      kdePackages.bluedevil
       firefox
+      xterm
+      pcmanfm
+      htop
+      xorg.xclock
+      networkmanagerapplet
+      pavucontrol           # Audio control
     ];
 
     programs.zsh.enable = true;
@@ -114,6 +152,7 @@
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAHczZo2Xoo9jN7BGmtu2nabaSzFq9sW2Y4eh7UELReA connor@devct"
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILvE1Dk8jXCzFOqyph0k8Lp/ynYMX5vqA/MZni2L/JE4 connor@rhodes.contact"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID+LN8Mv7LSJ+fJzXQE1vBQW5LTlbXGFP7f/NrF8ZEm9 connor@acorn"
       ];
     };
 
@@ -140,41 +179,46 @@
         ./home.nix
       ];
 
-      programs.plasma = {
+      # Copy JWM configuration file to user's home directory
+      home.file.".jwmrc".text = builtins.readFile ./jwmrc;
+
+      # fix fullscreen video playback on Raspberry Pi
+      home.file.".config/mpv/mpv.conf".text = ''
+        fs=yes
+        vo=gpu
+        gpu-context=x11egl
+        hwdec=auto-copy
+      '';
+
+      # Set up X session to start JWM
+      xsession = {
         enable = true;
-        krunner = {
-          shortcuts.launch = "Ctrl+Space";
-        };
-        shortcuts = {
-          kwin = {
-            "Overview" = "F1";
-            "Window Maximize" = "Ctrl+Alt+I";
-            "Window Minimize" = "Ctrl+H";
-            "Window Close" = "Ctrl+Q";
-            "Walk Through Windows" = "Ctrl+Tab";
-            "Walk Through Windows (Reverse)" = "Ctrl+Shift+Tab";
-            "Window Quick Tile Top" = "Ctrl+Alt+K";
-            "Window Quick Tile Bottom" = "Ctrl+Alt+J";
-            "Window Quick Tile Left" = "Ctrl+Alt+H";
-            "Window Quick Tile Right" = "Ctrl+Alt+L";
-          };
-        };
-        fonts = {
-          general = {
-            family = "Noto Sans";
-            pointSize = 10;
-          };
-        };
+        windowManager.command = "${pkgs.jwm}/bin/jwm";
       };
     };
 
     # Home manager configuration for media user
     home-manager.users.media = { pkgs, ... }: {
       home.stateVersion = "25.05";
+
       imports = [
-        ./firefox.nix
+        ./media-home.nix
       ];
+
+      # Copy JWM configuration file to user's home directory
+      home.file.".jwmrc".text = builtins.readFile ./jwmrc;
+
+      # fix fullscreen video playback on Raspberry Pi
+      home.file.".config/mpv/mpv.conf".text = ''
+        fs=yes
+        vo=gpu
+        gpu-context=x11egl
+        hwdec=auto-copy
+      '';
     };
+
+    # services
+    programs.kdeconnect.enable = true;
 
     system.stateVersion = "25.05";
   };
