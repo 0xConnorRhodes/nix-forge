@@ -67,6 +67,26 @@
       };
     };
 
+    # Allow remote builds via the modern ssh-ng store protocol
+    nix = {
+      sshServe = {
+        enable = true;
+        protocol = "ssh-ng";
+        keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOpQDjU7zgXdBrP/dYIJCeKZuAkVMB/7jpDyHeIqQ3zq root@media" ];
+        write = true; # allow pushing build results back
+      };
+
+      settings = {
+        # Tune parallelism to your VM
+        max-jobs = 6;
+        cores = 6;
+        # Optional but nice for speed:
+        auto-optimise-store = true;
+        # Optional: mark extra features if you run tests or need big-parallel
+        system-features = [ "kvm" "big-parallel" ];
+      };
+    };
+
     # Home manager configuration
     home-manager.backupFileExtension = "bak";
     home-manager.users.${config.myConfig.username} = { pkgs, ... }: {
