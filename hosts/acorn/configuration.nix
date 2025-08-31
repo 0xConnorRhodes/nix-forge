@@ -47,6 +47,12 @@
 
     programs.zsh.enable = true;
 
+    # Allow remote builds from media host
+    nix.settings = {
+      trusted-users = [ "connor" ];
+      allowed-users = [ "connor" ];
+    };
+
     users.users.${config.myConfig.username} = {
       isNormalUser = true;
       description = "Connor Rhodes";
@@ -56,6 +62,7 @@
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAHczZo2Xoo9jN7BGmtu2nabaSzFq9sW2Y4eh7UELReA connor@devct"
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILvE1Dk8jXCzFOqyph0k8Lp/ynYMX5vqA/MZni2L/JE4 connor@rhodes.contact"
+	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFCuW2WHsmq3Nl8QNOlzoqu+hCmEzrEJgaAd/xSydBxS connor@media"
       ];
     };
 

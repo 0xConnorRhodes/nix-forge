@@ -105,6 +105,25 @@
 
     programs.zsh.enable = true;
 
+    # Configure remote builds to use acorn
+    nix = {
+      distributedBuilds = true;
+      buildMachines = [{
+        hostName = "acorn";
+        system = "aarch64-linux";
+        protocol = "ssh-ng";
+        sshUser = "connor";
+        sshKey = "/home/connor/.ssh/id_ed25519";
+        maxJobs = 4;
+        speedFactor = 2;
+        supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
+        mandatoryFeatures = [ ];
+      }];
+      extraOptions = ''
+        builders-use-substitutes = true
+      '';
+    };
+
     users.users.${config.myConfig.username} = {
       isNormalUser = true;
       description = "Connor Rhodes";
