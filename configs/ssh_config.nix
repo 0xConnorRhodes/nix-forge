@@ -10,8 +10,8 @@
         ServerAliveCountMax 10
         SetEnv TERM=xterm-256color
 
-      Host med
-        Hostname ${secrets.ssh.config.media.ip}
+      Host media
+        Hostname media
         Port ${secrets.ssh.config.media.port}
         User ${secrets.ssh.config.media.user}
         SetEnv TERM=xterm-256color
