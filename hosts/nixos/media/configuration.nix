@@ -30,7 +30,7 @@
 
       buildMachines = [
         {
-          hostName = "vm-builder.local"; # or IP/DNS of your VM
+          hostName = "acorn-builder"; # or IP/DNS of your VM
           sshUser = "nix-ssh";           # user provided by nix.sshServe
           system = "aarch64-linux";
           protocol = "ssh-ng";
