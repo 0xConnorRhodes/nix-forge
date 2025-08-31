@@ -67,7 +67,7 @@
       };
     };
 
-    # Allow remote builds via the modern ssh-ng store protocol
+    # Allow remote builds via the ssh-ng
     nix = {
       sshServe = {
         enable = true;

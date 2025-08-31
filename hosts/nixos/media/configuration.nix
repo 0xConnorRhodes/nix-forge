@@ -325,6 +325,14 @@
       # Copy JWM configuration file to user's home directory
       home.file.".jwmrc".text = builtins.readFile ./jwmrc;
 
+      # fix fullscreen video playback on Raspberry Pi
+      home.file.".config/mpv/mpv.conf".text = ''
+        fs=yes
+        vo=gpu
+        gpu-context=x11egl
+        hwdec=auto-copy
+      '';
+
       # Set up X session to start JWM
       xsession = {
         enable = true;
@@ -342,19 +350,15 @@
 
       # Copy JWM configuration file to user's home directory
       home.file.".jwmrc".text = builtins.readFile ./jwmrc;
-    };
 
-    programs.mpv = {
-      enable = true;
+      # fix fullscreen video playback on Raspberry Pi
+      home.file.".config/mpv/mpv.conf".text = ''
+        fs=yes
+        vo=gpu
+        gpu-context=x11egl
+        hwdec=auto-copy
+      '';
     };
-
-    # fix fullscreen video playback on Raspberry Pi
-    home.file.".config/mpv/mpv.conf".text = ''
-      fs=yes
-      vo=gpu
-      gpu-context=x11egl
-      hwdec=auto-copy
-    '';
 
     system.stateVersion = "25.05";
   };
