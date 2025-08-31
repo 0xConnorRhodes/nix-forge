@@ -312,6 +312,18 @@
       home.file.".jwmrc".text = builtins.readFile ./jwmrc;
     };
 
+    programs.mpv = {
+      enable = true;
+    };
+
+    # fix fullscreen video playback on Raspberry Pi
+    home.file.".config/mpv/mpv.conf".text = ''
+      fs=yes
+      vo=gpu
+      gpu-context=x11egl
+      hwdec=auto-copy
+    '';
+
     system.stateVersion = "25.05";
   };
 }
