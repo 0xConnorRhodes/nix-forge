@@ -70,6 +70,13 @@
 
     time.timeZone = "America/Chicago";
 
+    # Mount NFS share from mpro
+    fileSystems."/home/media/Videos" = {
+      device = "100.80.72.12:/scary/share";
+      fsType = "nfs";
+      options = [ "defaults" "user" "rw" "exec" ];
+    };
+
     # Enable the X11 windowing system and JWM
     services.xserver.enable = true;
     services.xserver.windowManager.jwm.enable = true;
@@ -218,7 +225,6 @@
     };
 
     # services
-    programs.kdeconnect.enable = true;
 
     system.stateVersion = "25.05";
   };
