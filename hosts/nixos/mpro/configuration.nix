@@ -7,6 +7,7 @@
       #./gnome.nix
       ./plasma.nix
       ./mounts.nix
+      ./nfs.nix
       ./secret.nix
       ./backup-cron.nix
       ./syncthing.nix
