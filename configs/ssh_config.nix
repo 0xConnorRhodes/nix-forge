@@ -11,9 +11,9 @@
         SetEnv TERM=xterm-256color
 
       Host media
-        Hostname media
-        Port ${secrets.ssh.config.media.port}
-        User ${secrets.ssh.config.media.user}
+        Hostname 192.168.86.189
+        Port 22
+        User media
         SetEnv TERM=xterm-256color
         ProxyJump m
 
