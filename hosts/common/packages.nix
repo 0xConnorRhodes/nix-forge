@@ -25,4 +25,5 @@ with pkgs; [
   jq
   yq-go
   alejandra
+  doppler
 ]

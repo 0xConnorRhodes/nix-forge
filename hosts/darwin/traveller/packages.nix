@@ -45,6 +45,7 @@ in
     wget
     buku
     caligula
+    doppler
 
     # mac-specific
     blueutil
