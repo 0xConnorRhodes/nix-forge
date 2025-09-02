@@ -168,5 +168,13 @@
         };
       };
     };
+    programs.kate = {
+      editor = {
+        font = {
+          family = "Hack";
+          pointSize = 16;
+        };
+      };
+    };
   };
 }

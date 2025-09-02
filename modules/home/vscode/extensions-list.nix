@@ -31,8 +31,8 @@ in
     ] ++
 
     (with pkgsUnstable.vscode-extensions; [
-      github.copilot
-      github.copilot-chat
+      # github.copilot
+      # github.copilot-chat
     ]) ++
 
     # extensions from vscode marketplace (rolling)
@@ -47,18 +47,18 @@ in
 
     # pinned extensions pulled from vs code marketplace
     pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-      # {
-      #   name = "copilot";
-      #   publisher = "GitHub";
-      #   version = "1.336.0";
-      #   sha256 = "sha256-7IiYfOX3Xl3cW5FcG+7FjGAmkw7Wa9802eguRmaFE5Y=";
-      # }
-      # {
-      #   name = "copilot-chat";
-      #   publisher = "GitHub";
-      #   version = "0.28.1";
-      #   sha256 = "sha256-xOv1JYhE9Q8zRXoZVs/W1U58+SdbJwR5y354LLfKeDQ=";
-      # }
+      {
+        name = "copilot";
+        publisher = "GitHub";
+        version = "1.336.0";
+        sha256 = "sha256-7IiYfOX3Xl3cW5FcG+7FjGAmkw7Wa9802eguRmaFE5Y=";
+      }
+      {
+        name = "copilot-chat";
+        publisher = "GitHub";
+        version = "0.28.1";
+        sha256 = "sha256-xOv1JYhE9Q8zRXoZVs/W1U58+SdbJwR5y354LLfKeDQ=";
+      }
     ];
   };
 }
