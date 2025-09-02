@@ -10,6 +10,7 @@
       ./secret.nix
       ./backup-cron.nix
       ./syncthing.nix
+      ./nfs.nix
       # ./llm.nix
       ../../common/nixos-common.nix
       ../../common/nixos-packages.nix
