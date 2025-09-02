@@ -46,6 +46,8 @@ in
     buku
     caligula
     doppler
+    ansible
+    sshpass # needed by ansible
 
     # mac-specific
     blueutil
