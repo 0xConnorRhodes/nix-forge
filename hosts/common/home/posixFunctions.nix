@@ -38,4 +38,30 @@ pyvenv() {
         . "$activate_script"
     fi
 }
+
+mkrepo() {
+  local repo_name target_dir
+
+  # Combine all arguments with hyphens
+  repo_name=$(printf '%s' "$1")
+  shift
+  for arg in "$@"; do
+    repo_name="$repo_name-$arg"
+  done
+
+  case "$repo_name" in
+    ./*)
+      target_dir="$repo_name"
+      ;;
+    *)
+      target_dir="$HOME/code/$repo_name"
+      ;;
+  esac
+
+  mkdir -- "$target_dir" || return 1
+
+  cd -- "$target_dir" || return 1
+
+  gh repo create --private "$repo_name"
+}
 ''
