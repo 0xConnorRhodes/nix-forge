@@ -52,9 +52,12 @@ mkrepo() {
   case "$repo_name" in
     ./*)
       target_dir="$repo_name"
+      # Extract just the basename for GitHub repo creation
+      gh_repo_name=$(basename "$target_dir")
       ;;
     *)
       target_dir="$HOME/code/$repo_name"
+      gh_repo_name="$repo_name"
       ;;
   esac
 
@@ -62,6 +65,6 @@ mkrepo() {
 
   cd -- "$target_dir" || return 1
 
-  gh repo create --private "$repo_name"
+  gh repo create --private "$gh_repo_name"
 }
 ''
