@@ -39,34 +39,46 @@ pyvenv() {
     fi
 }
 
-mkrepo() {
-  # mkrepo <name> (will create inside ~/code)
-  # mkrepo ./<name> (will create in current directory)
+mkr() {
+  # mkrepo
+  # mkr <name> (will create inside ~/code)
+  # mkr . (will use current directory, will git init if not already done)
+  # mkr ./<name> (will create in current directory)
 
-  local repo_name target_dir
+  local repo_name target_dir gh_repo_name
 
-  # Combine all arguments with hyphens
-  repo_name=$(printf '%s' "$1")
-  shift
-  for arg in "$@"; do
-    repo_name="$repo_name-$arg"
-  done
+  if [ "$1" = "." ]; then
+    target_dir="$PWD"
 
-  case "$repo_name" in
-    ./*)
-      target_dir="$repo_name"
-      # Extract just the basename for GitHub repo creation
-      gh_repo_name=$(basename "$target_dir")
-      ;;
-    *)
-      target_dir="$HOME/code/$repo_name"
-      gh_repo_name="$repo_name"
-      ;;
-  esac
+    gh_repo_name=$(basename "$PWD" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
 
-  mkdir -- "$target_dir" || return 1
+    if [ ! -d ".git" ]; then
+      git init
+    fi
 
-  cd -- "$target_dir" || return 1
+    git add .
+  else
+    # Combine all arguments with hyphens
+    repo_name=$(printf '%s' "$1")
+    shift
+    for arg in "$@"; do
+      repo_name="$repo_name-$arg"
+    done
+
+    case "$repo_name" in
+      ./*)
+        target_dir="$repo_name"
+        gh_repo_name=$(basename "$target_dir")
+        ;;
+      *)
+        target_dir="$HOME/code/$repo_name"
+        gh_repo_name="$repo_name"
+        ;;
+    esac
+
+    mkdir -- "$target_dir" || return 1
+    cd -- "$target_dir" || return 1
+  fi
 
   gh repo create --private "$gh_repo_name"
 }
