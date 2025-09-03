@@ -43,6 +43,7 @@ in
     cfssl # copyparty dependency
     usbutils
     shiori
+    sqlite
 
     # gui programs
     calibre
