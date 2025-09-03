@@ -65,6 +65,7 @@ in
     mpv
     piper-tts
     gemini-cli
+    gh
 
     # GUI
     utm
