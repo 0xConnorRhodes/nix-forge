@@ -43,28 +43,28 @@ in
       #satokaz.vscode-markdown-header-coloring
       sgtsquiggs.vscode-active-file-status # show open file in status bar
       # google.geminicodeassist
-      github.copilot
-      github.copilot-chat
+      # github.copilot
+      # github.copilot-chat
     ]) ++
 
     # pinned extensions pulled from vs code marketplace
     pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-      # {
-      #   # https://marketplace.visualstudio.com/items?itemName=GitHub.copilot
-      #   # https://search.nixos.org/packages?show=vscode-extensions.github.copilot&query=vscode-extensions.github.copilot
-      #   name = "copilot";
-      #   publisher = "GitHub";
-      #   version = "1.336.0";
-      #   sha256 = "sha256-7IiYfOX3Xl3cW5FcG+7FjGAmkw7Wa9802eguRmaFE5Y=";
-      # }
-      # {
-      #   # https://github.com/microsoft/vscode-copilot-chat/releases
-      #   # https://search.nixos.org/packages?show=vscode-extensions.github.copilot-chat&query=vscode-extensions.github.copilot-chat
-      #   name = "copilot-chat";
-      #   publisher = "GitHub";
-      #   version = "0.28.1";
-      #   sha256 = "sha256-xOv1JYhE9Q8zRXoZVs/W1U58+SdbJwR5y354LLfKeDQ=";
-      # }
+      {
+        # https://marketplace.visualstudio.com/items?itemName=GitHub.copilot
+        # https://search.nixos.org/packages?show=vscode-extensions.github.copilot&query=vscode-extensions.github.copilot
+        name = "copilot";
+        publisher = "GitHub";
+        version = "1.364.0";
+        sha256 = "sha256-5nDbGhqvdU4Ivmat0DevkXN8d8JN3Z+0bptqNqbWIR8=";
+      }
+      {
+        # https://github.com/microsoft/vscode-copilot-chat/releases
+        # https://search.nixos.org/packages?show=vscode-extensions.github.copilot-chat&query=vscode-extensions.github.copilot-chat
+        name = "copilot-chat";
+        publisher = "GitHub";
+        version = "0.29.1";
+        sha256 = "sha256-v9PP+3psOOMCrIgIaVqrwOUZ9tqTXiSjUUuOcCrEie4=";
+      }
     ];
   };
 }
