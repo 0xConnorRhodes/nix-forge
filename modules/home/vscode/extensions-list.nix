@@ -48,12 +48,16 @@ in
     # pinned extensions pulled from vs code marketplace
     pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
+        # https://marketplace.visualstudio.com/items?itemName=GitHub.copilot
+        # https://search.nixos.org/packages?show=vscode-extensions.github.copilot&query=vscode-extensions.github.copilot
         name = "copilot";
         publisher = "GitHub";
         version = "1.336.0";
         sha256 = "sha256-7IiYfOX3Xl3cW5FcG+7FjGAmkw7Wa9802eguRmaFE5Y=";
       }
       {
+        # https://github.com/microsoft/vscode-copilot-chat/releases
+        # https://search.nixos.org/packages?show=vscode-extensions.github.copilot-chat&query=vscode-extensions.github.copilot-chat
         name = "copilot-chat";
         publisher = "GitHub";
         version = "0.28.1";
