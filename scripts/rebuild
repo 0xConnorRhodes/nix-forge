@@ -25,9 +25,10 @@ if [ "$(uname)" = "Darwin" ]; then
 else
   #sudo nixos-rebuild switch --flake .
   #sudo nixos-rebuild switch --flake . |& nom
+  sudo -E nixos-rebuild switch --impure --flake .
   #rm -f "$HOME/.config/Code/User/settings.json"
   #rm -f "$HOME/.config/Code/User/settings.json.bak"
-  nh os switch .
+  # nh os switch .
   #move-aside "$HOME/.config/Code/User/settings.json"
   #nh os switch . -- --impure
 fi
