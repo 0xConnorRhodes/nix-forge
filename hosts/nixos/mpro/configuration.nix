@@ -148,6 +148,13 @@
       ];
     };
 
+    home-manager.users.root = { pkgs, ... }: {
+      home.stateVersion = "24.11";
+      imports = [
+        ./root-home.nix
+      ];
+    };
+
     services.logind.extraConfig = ''
       HandleLidSwitchExternalPower=ignore
     '';
