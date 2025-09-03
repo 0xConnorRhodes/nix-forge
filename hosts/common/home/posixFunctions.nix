@@ -40,6 +40,9 @@ pyvenv() {
 }
 
 mkrepo() {
+  # mkrepo <name> (will create inside ~/code)
+  # mkrepo ./<name> (will create in current directory)
+
   local repo_name target_dir
 
   # Combine all arguments with hyphens
