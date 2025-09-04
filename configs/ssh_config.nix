@@ -23,6 +23,15 @@
         Port ${secrets.ssh.config.acorn.port}
         SetEnv TERM=xterm-256color
 
+      Host tp
+        Hostname thinkpad
+        Port 22
+        User connor
+        ServerAliveInterval 60
+        ServerAliveCountMax 10
+        SetEnv TERM=xterm-256color
+        ProxyJump m
+
       Host s
         Hostname ${secrets.ssh.config.pve.ip}
         Port ${secrets.ssh.config.pve.port}
