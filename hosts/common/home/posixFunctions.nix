@@ -47,6 +47,16 @@ mkr() {
 
   local repo_name target_dir gh_repo_name
 
+  if [ $# -eq 0 ]; then
+    printf "repo name: "
+    read -r repo_name
+    if [ -z "$repo_name" ]; then
+      echo "No repository name provided"
+      return 1
+    fi
+    set -- "$repo_name"
+  fi
+
   if [ "$1" = "." ]; then
     target_dir="$PWD"
 
