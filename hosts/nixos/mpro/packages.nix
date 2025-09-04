@@ -58,6 +58,7 @@ in
     kdePackages.krdc # remote desktop client
     kdePackages.partitionmanager # kparted
     kdePackages.k3b # cd/dvd tool
+    kdePackages.kdenlive
   ]
   ++ (import ../../common/packages.nix { pkgs = pkgs; })
   ++ pkgs.lib.attrValues flakePackages;
