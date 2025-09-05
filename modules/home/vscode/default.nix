@@ -95,6 +95,7 @@ in
           # Failed to save 'settings.json': The content of the file is newer. Please compare your version
           # with the file contents or overwrite the content of the file with your changes.
           saveConflictResolution = "overwriteFileOnDisk";
+          dialog.defaultPath = "${config.home.homeDirectory}/code";
         };
 
         explorer = {
