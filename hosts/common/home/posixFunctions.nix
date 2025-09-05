@@ -54,6 +54,8 @@ mkr() {
       echo "No repository name provided"
       return 1
     fi
+    # Normalize repo name: lowercase and replace spaces with hyphens
+    repo_name=$(printf '%s' "$repo_name" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
     set -- "$repo_name"
   fi
 
@@ -66,12 +68,17 @@ mkr() {
       git init
     fi
 
-    git add .
+    # only add and commit if directory contains files beyond .git
+    if [ -n "$(ls -A | grep -v '^\.git$')" ]; then
+      git add .
+      git commit -m "Initial commit"
+    fi
   else
-    # Combine all arguments with hyphens
-    repo_name=$(printf '%s' "$1")
+    # Combine all arguments with hyphens and normalize
+    repo_name=$(printf '%s' "$1" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
     shift
     for arg in "$@"; do
+      arg=$(printf '%s' "$arg" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
       repo_name="$repo_name-$arg"
     done
 
@@ -88,8 +95,14 @@ mkr() {
 
     mkdir -- "$target_dir" || return 1
     cd -- "$target_dir" || return 1
+    git init
+    git add . || true
+    git commit -m "Initial commit" || true
   fi
 
+  # Create GitHub repo and set remote origin for all cases
   gh repo create --private "$gh_repo_name"
+  REMOTE_URL=$(gh repo view "$gh_repo_name" --json sshUrl -q .sshUrl)
+  git remote add origin "$REMOTE_URL"
 }
 ''
