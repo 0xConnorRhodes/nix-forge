@@ -13,8 +13,6 @@
     gc = "git commit";
     gco = "git checkout";
     gd = "git diff --quiet && git diff --cached || git diff";
-
-    # gc = "git checkout";
     gmm = "git add . && git commit -m 'u' && git rebase --continue && git push";
 
     e = "nvim";

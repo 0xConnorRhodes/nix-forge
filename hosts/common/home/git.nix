@@ -32,10 +32,17 @@
         showStash = true;
       };
       alias = {
-        d = "!git diff --quiet && git diff --cached || git diff";
-        a = "!git add \${1:-.}";
-        co = "checkout";
         s = "status";
+        a = "!git add \${1:-.}";
+        p = "push";
+        u = "pull";
+        l = "log";
+        b = "branch";
+        i = "init";
+        cl = "clone";
+        c = "commit";
+        co = "checkout";
+        d = "!git diff --quiet && git diff --cached || git diff";
       };
     };
   };
