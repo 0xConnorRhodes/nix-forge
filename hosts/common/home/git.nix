@@ -1,6 +1,8 @@
 { config, pkgs, secrets, ... }:
 
 {
+  # see also hosts/common/home/shellAliases.nix for git-related aliases
+  # and posixFunctions.nix for g() function
   programs.git = {
     enable = true;
     userName = "Connor Rhodes";
