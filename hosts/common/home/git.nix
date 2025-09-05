@@ -44,6 +44,14 @@
         co = "checkout";
         d = "!git diff --quiet && git diff --cached || git diff";
       };
+      url = {
+        "git@github.com:0xConnorRhodes/" = {
+          insteadOf = "c:";
+        };
+        "git@github.com:" = {
+          insteadOf = "gh:";
+        };
+      };
     };
   };
 }
