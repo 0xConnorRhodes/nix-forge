@@ -31,6 +31,7 @@
           "markdown" = true; # copilot autocomplete in markdown files (not included in "*")
         };
         editor.enableCodeActions = true; # icon to modify/review with copilot on text selection
+        advanced.authPermissions = "Grant"; # grant advanced auth permissions for Copilot
       };
       chat.tools.autoApprove = true; # auto-approve chat tools for agent mode
 

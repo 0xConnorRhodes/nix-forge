@@ -7,6 +7,8 @@
     userEmail = secrets.userInfo.email;
     ignores = [
       ".DS_Store"
+      ".env"
+      ".venv"
     ];
     extraConfig = {
       core = {
