@@ -35,6 +35,7 @@
         d = "!git diff --quiet && git diff --cached || git diff";
         a = "!git add \${1:-.}";
         co = "checkout";
+        s = "status";
       };
     };
   };

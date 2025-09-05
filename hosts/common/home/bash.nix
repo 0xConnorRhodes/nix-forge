@@ -1,6 +1,6 @@
 { config, lib, pkgs, secrets, ... }:
 let
-  shellAliases = import ./shellAliases.nix { inherit config pkgs secrets; };
+  shellAliases = import ./shellAliases.nix;
   myPaths = import ./pathDirs.nix;
 in
 {
