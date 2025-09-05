@@ -44,6 +44,7 @@ in
     usbutils
     shiori
     sqlite
+    lazysql
 
     # gui programs
     calibre
