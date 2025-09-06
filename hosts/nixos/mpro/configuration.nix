@@ -27,12 +27,15 @@
       ../../../modules/nixos/tailscale.nix
 
       # services
-      ../../../modules/jobs/sync-notes.nix
-      ../../../modules/jobs/monitor_podcasts.nix
       ../../../modules/nixos/jellyfin.nix
-      ../../../modules/jobs/zk-cron.nix
       ../../../modules/services/navidrome.nix
       ../../../configs/ssh_config.nix
+
+      # jobs
+      ../../../modules/jobs/sync-notes.nix
+      ../../../modules/jobs/monitor_podcasts.nix
+      ../../../modules/jobs/zk-cron.nix
+      ../../../modules/jobs/db-backup.nix
       inputs.home-manager.nixosModules.default
       inputs.nix-index-database.nixosModules.nix-index
     ];
