@@ -13,6 +13,7 @@ in
     ./extensions-list.nix
     ./extensions-settings.nix
     ./vim.nix
+    ./snippets.nix
     # ./blockman.nix
   ];
 
