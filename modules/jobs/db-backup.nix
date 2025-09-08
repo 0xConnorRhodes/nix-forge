@@ -2,8 +2,7 @@
 let
   user = config.myConfig.username;
   workingDir = "${config.myConfig.homeDir}/code/sqlite-backup";
-  cronPython = pkgs.python3.withPackages (ps: with ps; [
-  ]);
+  cronPython = pkgs.python3 #.withPackages (ps: with ps; [ ]);
 in
 {
   # Run script to backup, dump, and store the contents of databases
