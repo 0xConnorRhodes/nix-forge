@@ -2,7 +2,9 @@
 let
   user = config.myConfig.username;
   workingDir = "${config.myConfig.homeDir}/code/sqlite-backup";
-  cronPython = pkgs.python3 #.withPackages (ps: with ps; [ ]);
+  cronPython = pkgs.python3.withPackages (ps: with ps; [
+    # add non stdlib packages here
+  ]);
 in
 {
   # Run script to backup, dump, and store the contents of databases
@@ -22,7 +24,7 @@ in
   systemd.services."sqlite-backup" = {
     script = ''
       set -eu
-      cronPython/bin/python3 ${workingDir}/main.py
+      ${cronPython}/bin/python3 ${workingDir}/main.py
     '';
     serviceConfig = {
       Type = "oneshot";
