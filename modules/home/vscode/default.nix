@@ -61,7 +61,10 @@ in
             bracketPairsHorizontal = true;
           };
 
-          bracketPairColorization.independentColorPoolPerBracketType = true;
+          bracketPairColorization = {
+            enable = true;
+            independentColorPoolPerBracketType = true;
+          };
 
           # reduce gutter (left margin padding) size
           glyphMargin = false;
@@ -110,6 +113,10 @@ in
         git.openRepositoryInParentFolders = "never";
 
         # Language-specific settings
+        "[markdown]" = {
+          editor.bracketPairColorization.enabled = false;
+        };
+
         "[python]" = {
           editor = {
             tabSize = 4;
@@ -123,9 +130,9 @@ in
         };
 
         "[yaml]" = {
-          "editor.guides.indentation" = false;
-          "editor.guides.bracketPairs" = false;
-          "editor.guides.bracketPairsHorizontal" = false;
+          editor.guides.indentation = false;
+          editor.guides.bracketPairs = false;
+          editor.guides.bracketPairsHorizontal = false;
         };
 
         terminal.integrated.profiles.osx = {
