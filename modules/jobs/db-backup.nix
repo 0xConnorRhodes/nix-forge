@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }:
 let
   user = config.myConfig.username;
   workingDir = "${config.myConfig.homeDir}/code/sqlite-backup";
@@ -7,11 +7,8 @@ let
   ]);
 in
 {
-  # Run script to backup, dump, and store the contents of databases
-  # (currently supports sqlite)
-
-  # The systemd timer definition
-  systemd.timers."sqlite-backup" = {
+  # ... timer definition ...
+  systemd.user.timers."sqlite-backup" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
       OnCalendar = "daily";
@@ -20,19 +17,18 @@ in
     };
   };
 
-  # The systemd service that the timer triggers
-  systemd.services."sqlite-backup" = {
-    path =  with pkgs; [
-      sudo
-      rclone
-    ];
+  # The systemd user service that the timer triggers
+  systemd.user.services."sqlite-backup" = {
     script = ''
       set -eu
+      # Add the system's wrapper path to the PATH environment variable, needed for
+      export PATH="/run/wrappers/bin:${pkgs.coreutils}/bin:${pkgs.rclone}/bin:${pkgs.sqlite}/bin"
+
+      # Execute the python script
       ${cronPython}/bin/python3 ${workingDir}/main.py
     '';
     serviceConfig = {
       Type = "oneshot";
-      User = user;
       WorkingDirectory = workingDir;
     };
   };
