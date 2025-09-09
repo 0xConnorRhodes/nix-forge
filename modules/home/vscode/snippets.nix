@@ -4,7 +4,37 @@
   programs.vscode.profiles.default = {
     languageSnippets = {
       nix = {
+        systemdTimerAndService = {
+          description = "Creates a NixOS systemd timer and a corresponding one-shot service.";
+          body = [
+            "systemd.timers.\"\${1:service-name}\" = {"
+            "  wantedBy = [ \"timers.target\" ];"
+            "  timerConfig = {"
+            "    OnCalendar = \"\${5:daily}\"; # Examples: daily, weekly, hourly, *-*-* 03:00:00"
+            "    Persistent = true; # Run missed jobs on next boot"
+            "    Unit = \"\${1:service-name}.service\";"
+            "  };"
+            "};"
+            ""
+            "systemd.services.\"\${1:service-name}\" = {"
+            "  script = ''"
+            "    set -eu"
+            "    \${3:Hello World}"
+            "  '';"
+            "  serviceConfig = {"
+            "    Type = \"oneshot\";"
+            "    User = \"\${config.myConfig.username}\";"
+            "  };"
+            "};"
+          ];
+          prefix = [
+            "cronjob"
+            "systemd-timer"
+          ];
+        };
+
         cronpython = {
+          description = "cronpython snippet";
           body = [
             "{ config, lib, pkgs, ... }:"
             "let"
@@ -41,7 +71,6 @@
             "  };"
             "}"
           ];
-          description = "cronpython snippet";
           prefix = [
             "cronpy"
           ];
