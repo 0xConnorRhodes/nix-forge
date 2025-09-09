@@ -22,6 +22,10 @@ in
 
   # The systemd service that the timer triggers
   systemd.services."sqlite-backup" = {
+    path =  with pkgs; [
+      sudo
+      rclone
+    ];
     script = ''
       set -eu
       ${cronPython}/bin/python3 ${workingDir}/main.py
