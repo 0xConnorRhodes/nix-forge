@@ -10,7 +10,7 @@
             "systemd.timers.\"\${1:service-name}\" = {"
             "  wantedBy = [ \"timers.target\" ];"
             "  timerConfig = {"
-            "    OnCalendar = \"\${5:daily}\"; # Examples: daily, weekly, hourly, *-*-* 03:00:00"
+            "    OnCalendar = \"\${2:daily}\"; # Examples: daily, weekly, hourly, *-*-* 03:00:00"
             "    Persistent = true; # Run missed jobs on next boot"
             "    Unit = \"\${1:service-name}.service\";"
             "  };"
