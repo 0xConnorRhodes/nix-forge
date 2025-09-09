@@ -34,6 +34,8 @@
         fi
       done
 
+      rclone copy "$SOURCE_DIR" dropbox_enc:db_backups/audiobookshelf --ignore-existing
+
       echo "Backup operation completed."
     '')
   ];
