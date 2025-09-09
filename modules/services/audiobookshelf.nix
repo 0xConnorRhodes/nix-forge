@@ -8,8 +8,27 @@
     port = 61793;
   };
 
-  environment.systemPackages = with pkgs; [
-    (writeShellScriptBin "audiobookshelf-backup" ''
+
+  # APP STATE BACKUP
+  systemd.timers."audiobookshelf-db-backup" = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = "daily";
+      Persistent = true;
+      Unit = "audiobookshelf-db-backup.service";
+    };
+  };
+
+  systemd.services."audiobookshelf-db-backup" = {
+    path =  with pkgs; [
+      bash
+      coreutils
+      findutils
+      gnugrep
+      rclone
+    ];
+    script = ''
+      set -eu
       #!/bin/bash
 
       SOURCE_DIR="/var/lib/audiobookshelf/metadata/backups"
@@ -37,6 +56,10 @@
       rclone copy "$SOURCE_DIR" dropbox_enc:db_backups/audiobookshelf --ignore-existing
 
       echo "Backup operation completed."
-    '')
-  ];
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = "${config.myConfig.username}";
+    };
+  };
 }
