@@ -45,6 +45,7 @@ in
     shiori
     sqlite
     lazysql
+    gh
 
     # gui programs
     calibre
