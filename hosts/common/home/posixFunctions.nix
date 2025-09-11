@@ -17,14 +17,6 @@ mcd() {
   mkdir -p "$1" && cd "$1";
 }
 
-g() {
-  if [[ $# -gt 0 ]]; then
-    git "$@"
-  else
-    git status --short
-  fi
-}
-
 pyvenv() {
     local venv_name="''${1:-.venv}"
     venv_path="$PWD/$venv_name"
@@ -104,5 +96,18 @@ mkr() {
   gh repo create --private "$gh_repo_name"
   REMOTE_URL=$(gh repo view "$gh_repo_name" --json sshUrl -q .sshUrl)
   git remote add origin "$REMOTE_URL"
+}
+
+# git functions
+g() {
+  if [[ $# -gt 0 ]]; then
+    git "$@"
+  else
+    git status --short
+  fi
+}
+
+ga() {
+	git add "$\{@:-.}"
 }
 ''

@@ -1,9 +1,8 @@
 {
   myAliases = {
 
-    # git
+    # git (see also posixFunctions)
     gs = "git status";
-    ga = "git add \${1:-.}";
     gp = "git push";
     gu = "git pull";
     gl = "git log";
