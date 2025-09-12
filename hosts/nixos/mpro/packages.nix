@@ -46,6 +46,8 @@ in
     sqlite
     lazysql
     gh
+    ansible
+    sshpass # needed for ansible
 
     # gui programs
     calibre
