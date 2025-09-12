@@ -39,8 +39,9 @@
     boot.loader.timeout = 0; # hold space during boot to see boot selection menu
 
     # zfs
-    #boot.kernelPackages = pkgs.pkgs.linuxPackages_xanmod; # xanmod LTS kernel
-    boot.kernelPackages = pkgs.linuxPackages_latest;
+    # changed (back) to xanmod on 250912
+    boot.kernelPackages = pkgs.pkgs.linuxPackages_xanmod; # xanmod LTS kernel
+    #boot.kernelPackages = pkgs.linuxPackages_latest;
     #boot.supportedFilesystems = [ "zfs" ];
     networking.hostId = "1c88d69b"; # needed by zfs to track unique machines for pool import, generate with `head -c 8 /etc/machine-id`
 
