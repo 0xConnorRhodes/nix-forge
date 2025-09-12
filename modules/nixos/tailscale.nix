@@ -1,8 +1,9 @@
-{ config, pkgs, secrets, ... }:
+{ config, pkgs, pkgsUnstable, secrets, ... }:
 
 {
   # install and enable tailscale service
   services.tailscale.enable = true;
+  #services.tailscale.package = pkgsUnstable.tailscale;
   networking.nftables.enable = true;
 
   # create a oneshot job to authenticate to Tailscale
