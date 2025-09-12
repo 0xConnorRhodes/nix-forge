@@ -108,6 +108,10 @@ g() {
 }
 
 ga() {
-	git add "$\{@:-.}"
+  if [[ $# -gt 0 ]]; then
+    git add "$@"
+  else
+    git add .
+  fi
 }
 ''
