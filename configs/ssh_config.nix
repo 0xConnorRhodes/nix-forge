@@ -45,6 +45,7 @@
         User ${secrets.ssh.config.phone.user}
         Port ${secrets.ssh.config.phone.port}
         SetEnv TERM=xterm-256color
+        ProxyJump m
     '';
   };
 }
