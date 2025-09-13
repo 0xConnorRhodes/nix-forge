@@ -114,4 +114,12 @@ ga() {
     git add .
   fi
 }
+
+gd() {
+  if [[ $# -gt 0 ]]; then
+    git diff "$@"
+  else
+    git diff
+  fi
+}
 ''
