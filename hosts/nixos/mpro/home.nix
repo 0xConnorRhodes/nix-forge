@@ -20,6 +20,7 @@ in
     ../../common/home/wezterm.nix
     ../../../modules/home/ipython.nix
     ../../../modules/home/vscode
+    ../../../modules/home/mpv.nix
     ../../../modules/home/firefox
   ];
 
