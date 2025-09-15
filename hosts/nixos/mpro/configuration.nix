@@ -37,6 +37,7 @@
       ../../../modules/jobs/monitor_podcasts.nix
       ../../../modules/jobs/zk-cron.nix
       ../../../modules/jobs/db-backup.nix
+      ../../../modules/jobs/readeck-backup.nix
       inputs.home-manager.nixosModules.default
       inputs.nix-index-database.nixosModules.nix-index
     ];
