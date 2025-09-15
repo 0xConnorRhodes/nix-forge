@@ -15,6 +15,9 @@ in
     after = [ "network.target" ];
     wantedBy = [ "multi-user.target" ];
 
+    path = with pkgs; [
+      cups # needed for lp command
+    ];
     script = ''
       set -eu
       cd /home/connor/code/print-web-form
