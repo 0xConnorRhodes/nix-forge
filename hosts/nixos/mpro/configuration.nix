@@ -31,6 +31,7 @@
       ../../../modules/nixos/jellyfin.nix
       ../../../modules/services/navidrome.nix
       ../../../modules/services/audiobookshelf.nix
+      ../../../modules/services/web-print.nix
 
       # jobs
       ../../../modules/jobs/sync-notes.nix
