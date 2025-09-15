@@ -56,8 +56,6 @@ in
     iproute2mac
     lazydocker
     cloudflared
-    podman
-    podman-compose
     unixtools.watch
     unixtools.ping
     emacs-macport

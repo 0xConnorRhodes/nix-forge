@@ -98,6 +98,8 @@
         "musicbrainz-picard"
         "iterm2"
         "calibre"
+        "kiro"
+        "docker-desktop"
         # "vivaldi"
       ];
 
