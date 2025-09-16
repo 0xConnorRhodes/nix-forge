@@ -9,7 +9,7 @@
       ./mounts.nix
       ./secret.nix
       # ./backup-cron.nix # FIXME
-      # ./syncthing.nix # FIXME
+      ./syncthing.nix
       ./nfs.nix
       # ./llm.nix
       ../../common/nixos-common.nix
