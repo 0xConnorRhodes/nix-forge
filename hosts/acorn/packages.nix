@@ -26,5 +26,6 @@
     fd
     nh
     just
+    uv
   ];
 }

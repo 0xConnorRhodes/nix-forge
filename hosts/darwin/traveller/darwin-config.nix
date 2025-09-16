@@ -78,6 +78,7 @@
 
       brews = [
         "espeak-ng"
+        "monolith"
       ];
 
       casks = [

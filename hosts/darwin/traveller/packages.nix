@@ -48,6 +48,7 @@ in
     doppler
     ansible
     sshpass # needed by ansible
+    cargo
 
     # mac-specific
     blueutil
@@ -64,6 +65,7 @@ in
     piper-tts
     gemini-cli
     gh
+    uv
 
     # GUI
     utm
