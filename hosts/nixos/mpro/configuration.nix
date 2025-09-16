@@ -30,7 +30,7 @@
       ../../../configs/ssh_config.nix
       # ../../../modules/nixos/jellyfin.nix # FIXME
       # ../../../modules/services/navidrome.nix # FIXME
-      # ../../../modules/services/audiobookshelf.nix # FIXME
+      ../../../modules/services/audiobookshelf.nix # FIXME backups
       ../../../modules/services/web-print.nix
 
       # jobs
