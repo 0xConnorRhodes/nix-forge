@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  fileSystems."/scary-new" = {
-    device = "/dev/disk/by-uuid/46e69ff6-a3c4-4862-a825-884682d27543";
+  fileSystems."/scary" = {
+    device = "/dev/disk/by-uuid/29959e00-6cc9-46e5-87a8-eb479a45db67";
     fsType = "ext4";
     options = ["nofail"];
   };
