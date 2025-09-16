@@ -8,9 +8,9 @@
       ./plasma.nix
       ./mounts.nix
       ./secret.nix
-      ./backup-cron.nix
-      ./syncthing.nix
-      ./nfs.nix
+      # ./backup-cron.nix # FIXME
+      # ./syncthing.nix
+      # ./nfs.nix # FIXME
       # ./llm.nix
       ../../common/nixos-common.nix
       ../../common/nixos-packages.nix
@@ -19,7 +19,7 @@
       ../../../modules/nixos/dashy
       ../../../modules/nixos/authelia.nix
       ../../../modules/services/pairdrop.nix
-      ../../../modules/services/copyparty.nix
+      # ../../../modules/services/copyparty.nix # FIXME
       ../../../modules/services/shiori.nix
       #../../../modules/services/miniflux.nix
       ../../../modules/nixos/kvm.nix
@@ -28,17 +28,17 @@
 
       # services
       ../../../configs/ssh_config.nix
-      ../../../modules/nixos/jellyfin.nix
-      ../../../modules/services/navidrome.nix
-      ../../../modules/services/audiobookshelf.nix
+      # ../../../modules/nixos/jellyfin.nix # FIXME
+      # ../../../modules/services/navidrome.nix # FIXME
+      # ../../../modules/services/audiobookshelf.nix # FIXME
       ../../../modules/services/web-print.nix
 
       # jobs
       ../../../modules/jobs/sync-notes.nix
       ../../../modules/jobs/monitor_podcasts.nix
       ../../../modules/jobs/zk-cron.nix
-      ../../../modules/jobs/db-backup.nix
-      ../../../modules/jobs/readeck-backup.nix
+      # ../../../modules/jobs/db-backup.nix
+      # ../../../modules/jobs/readeck-backup.nix
       inputs.home-manager.nixosModules.default
       inputs.nix-index-database.nixosModules.nix-index
     ];
