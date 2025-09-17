@@ -27,7 +27,7 @@
 
       # services
       ../../../configs/ssh_config.nix
-      # ../../../modules/nixos/jellyfin.nix # FIXME
+      ../../../modules/nixos/jellyfin.nix
       ../../../modules/services/navidrome.nix
       ../../../modules/services/audiobookshelf.nix
       ../../../modules/services/web-print.nix
