@@ -21,7 +21,6 @@
       ../../../modules/services/pairdrop.nix
       ../../../modules/services/copyparty.nix
       ../../../modules/services/shiori.nix
-      #../../../modules/services/miniflux.nix
       ../../../modules/nixos/kvm.nix
       #../../../modules/nixos/incus.nix
       ../../../modules/nixos/tailscale.nix
@@ -29,16 +28,16 @@
       # services
       ../../../configs/ssh_config.nix
       # ../../../modules/nixos/jellyfin.nix # FIXME
-      # ../../../modules/services/navidrome.nix # FIXME
-      ../../../modules/services/audiobookshelf.nix # FIXME backups
+      ../../../modules/services/navidrome.nix
+      ../../../modules/services/audiobookshelf.nix
       ../../../modules/services/web-print.nix
 
       # jobs
       ../../../modules/jobs/sync-notes.nix
       ../../../modules/jobs/monitor_podcasts.nix
       ../../../modules/jobs/zk-cron.nix
-      # ../../../modules/jobs/db-backup.nix
-      # ../../../modules/jobs/readeck-backup.nix
+      # ../../../modules/jobs/db-backup.nix # FIXME
+      # ../../../modules/jobs/readeck-backup.nix # FIXME
       inputs.home-manager.nixosModules.default
       inputs.nix-index-database.nixosModules.nix-index
     ];
