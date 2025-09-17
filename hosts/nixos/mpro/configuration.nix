@@ -8,7 +8,7 @@
       ./plasma.nix
       ./mounts.nix
       ./secret.nix
-      # ./backup-cron.nix # FIXME
+      ./backup-cron.nix
       ./syncthing.nix
       ./nfs.nix
       # ./llm.nix
