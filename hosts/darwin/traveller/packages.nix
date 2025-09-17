@@ -48,7 +48,6 @@ in
     doppler
     ansible
     sshpass # needed by ansible
-    cargo
 
     # mac-specific
     blueutil
