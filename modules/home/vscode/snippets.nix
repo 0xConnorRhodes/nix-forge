@@ -4,6 +4,19 @@
   programs.vscode.profiles.default = {
     languageSnippets = {
       nix = {
+        module = {
+          description = "basic nixos module import";
+          body = [
+            "{ config, pkgs, ... }:"
+            ""
+            "{"
+            "  \${1:code}"
+            "}"
+          ];
+          prefix = [
+            "module"
+          ];
+        };
         systemdTimerAndService = {
           description = "Creates a NixOS systemd timer and a corresponding one-shot service.";
           body = [
