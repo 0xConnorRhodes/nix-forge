@@ -19,7 +19,7 @@
       ../../../modules/nixos/dashy
       ../../../modules/nixos/authelia.nix
       ../../../modules/services/pairdrop.nix
-      # ../../../modules/services/copyparty.nix # FIXME
+      ../../../modules/services/copyparty.nix
       ../../../modules/services/shiori.nix
       #../../../modules/services/miniflux.nix
       ../../../modules/nixos/kvm.nix
