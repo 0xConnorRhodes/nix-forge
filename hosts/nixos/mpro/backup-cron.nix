@@ -17,7 +17,7 @@
     serviceConfig = {
       Type = "oneshot";
       User = "connor";
-      WorkingDirectory = "/home/connor/code/cron-scripts/backups";
+      WorkingDirectory = "/home/connor/code/scripts/cron/backups";
       Environment = "PATH=${pkgs.rclone}/bin:${pkgs.fd}/bin:$PATH"; }; };
 
   systemd.timers."backup-papers" = {
@@ -34,7 +34,7 @@
     serviceConfig = {
       Type = "oneshot";
       User = "connor";
-      WorkingDirectory = "/home/connor/code/cron-scripts/backups";
+      WorkingDirectory = "/home/connor/code/scripts/cron/backups";
       Environment = "PATH=${pkgs.rclone}/bin:${pkgs.rsync}/bin:$PATH"; }; };
 
 }

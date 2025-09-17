@@ -21,7 +21,7 @@
       CONTAINER_NAME="readeck"
       CONTAINER_BACKUP_PATH="/readeck/export.zip"
       HOST_BACKUP_FILENAME="$(date +%y%m%d)-readeck.zip"
-      LOCAL_BACKUP_DIR="/mnt/zdata/records/db_backups/readeck"
+      LOCAL_BACKUP_DIR="/zstore/data/records/db_backups/readeck"
       RCLONE_REMOTE="dropbox_enc:db_backups/readeck"
       # ---------------------
 

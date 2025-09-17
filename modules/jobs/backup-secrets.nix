@@ -1,38 +1,23 @@
 { config, lib, pkgs, pkgsUnstable, ... }:
 
 {
-  services.audiobookshelf = {
-    enable = true;
-    package = pkgsUnstable.audiobookshelf;
-    host = "127.0.0.1";
-    port = 61793;
-  };
-
-
-  # APP STATE BACKUP
-  systemd.timers."audiobookshelf-db-backup" = {
+  systemd.timers."backup-secrets" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
-      OnCalendar = "daily";
-      Persistent = true;
-      Unit = "audiobookshelf-db-backup.service";
+      OnCalendar = "daily"; # Examples: daily, weekly, hourly, *-*-* 03:00:00
+      Persistent = true; # Run missed jobs on next boot
+      Unit = "backup-secrets.service";
     };
   };
 
-  systemd.services."audiobookshelf-db-backup" = {
-    path =  with pkgs; [
-      bash
-      coreutils
-      findutils
-      gnugrep
+  systemd.services."backup-secrets" = {
+    path = with pkgs; [
       rclone
     ];
     script = ''
       set -eu
-      #!/bin/bash
-
-      SOURCE_DIR="/var/lib/audiobookshelf/metadata/backups"
-      DEST_DIR="/zstore/data/records/db_backups/audiobookshelf"
+      SOURCE_DIR="/home/connor/.local/.secret"
+      DEST_DIR="/zstore/data/records/db_backups/secrets"
 
       echo "Checking existing files in destination..."
       EXISTING_FILES=$(find "$DEST_DIR" -maxdepth 1 -type f -printf "%f\n" 2>/dev/null || true)
@@ -53,7 +38,7 @@
         fi
       done
 
-      rclone copy "$SOURCE_DIR" dropbox_enc:db_backups/audiobookshelf --ignore-existing
+      rclone copy "$SOURCE_DIR" dropbox_enc:db_backups/secrets --ignore-existing
 
       echo "Backup operation completed."
     '';
