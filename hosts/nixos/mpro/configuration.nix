@@ -31,6 +31,7 @@
       ../../../modules/services/navidrome.nix
       ../../../modules/services/audiobookshelf.nix
       ../../../modules/services/web-print.nix
+      ../../../modules/services/vaultwarden.nix
 
       # jobs
       ../../../modules/jobs/sync-notes.nix
