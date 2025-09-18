@@ -14,7 +14,7 @@
             "}"
           ];
           prefix = [
-            "module"
+            "nixmodule"
           ];
         };
         systemdTimerAndService = {
