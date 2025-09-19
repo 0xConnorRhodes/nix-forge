@@ -48,6 +48,7 @@ in
     gh
     ansible
     sshpass # needed for ansible
+    auto-editor
 
     # gui programs
     calibre
