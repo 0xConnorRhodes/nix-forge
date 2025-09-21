@@ -26,14 +26,21 @@
   #   path = with pkgs; [
   #     sqlite
   #     rclone
-  #     tar
+  #     gnutar
   #     gzip
   #   ];
+  #   # TODO: write a shell script outside of systemd and get it working. then troubleshoot why it won't run in systemd with claude
   #   script = ''
   #     set -eu
+  #     PATH="/run/wrappers/bin:$PATH"
+  #     sudo systemctl stop vaultwarden.service
   #     # stop service
   #     # .backup database to /var/lib/vaultwarden/backups
   #     # tar the whole thing to /tmp then copy to zstore and rclone do db_enc
+  #     sleep 5
+  #     systemctl status vaultwarden.service
+  #     sleep 5
+  #     sudo systemctl start vaultwarden.service
   #   '';
   #   serviceConfig = {
   #     Type = "oneshot";
