@@ -3,6 +3,8 @@
 let
   backupScript = pkgs.writeShellScript "backup-vaultwarden" ''
     set -eu
+    PATH="/run/wrappers/bin:$PATH"
+
     SOURCE_DB="/var/lib/vaultwarden/data/db.sqlite3"
     BACKUP_DB="/var/lib/vaultwarden/backups/$(date +%y%m%d)-db.sqlite"
     BACKUP_FILENAME="$(date +%y%m%d)-vaultwarden.tar.gz"
@@ -13,7 +15,7 @@ let
     tar -czpf "$BACKUP_FILE" -C /var/lib vaultwarden
     cp "$BACKUP_FILE" "$ZSTORE_PATH/"
     chown 1000:100 "$ZSTORE_PATH/$BACKUP_FILENAME"
-    # TODO: rclone to db_enc
+    sudo -u ${config.myConfig.username} rclone copy "$ZSTORE_PATH/$BACKUP_FILENAME" dropbox_enc:db_backups/vaultwarden
     rm "$BACKUP_FILE"
   '';
 in
