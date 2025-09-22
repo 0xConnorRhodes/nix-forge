@@ -30,15 +30,30 @@
       gzip
       coreutils
     ];
-    script = ''
-      set -eu
-      PATH="/run/wrappers/bin:$PATH"
-      sudo sqlite3 /var/lib/vaultwarden/data/db.sqlite3 ".backup '/var/lib/vaultwarden/backups/$(date +%y%m%d)-db.sqlite'"
-      # TODO: tar the whole thing to /tmp then copy to zstore and rclone do db_enc
-    '';
+    # script = ''
+    #   set -eu
+    #   PATH="/run/wrappers/bin:$PATH"
+    #   sudo sqlite3 /var/lib/vaultwarden/data/db.sqlite3 ".backup '/var/lib/vaultwarden/backups/$(date +%y%m%d)-db.sqlite'"
+    #   # TODO: tar the whole thing to /tmp then copy to zstore and rclone do db_enc
+    # '';
     serviceConfig = {
       Type = "oneshot";
-      User = "${config.myConfig.username}";
+      # User = "${config.myConfig.username}";
+      User = "root";
+      ExecStartPre = "${pkgs.systemd}/bin/systemctl stop vaultwarden.service";
+      ExecStart = "${pkgs.bash}/bin/bash -c 'echo Hello from Bash on NixOS'";
+      ExecStartPost = "${pkgs.systemd}/bin/systemctl start vaultwarden.service";
+
+
+      # ExecStart = ''
+      #   ${pkgs.bash}/bin/bash -c "
+      #   set -eu
+      #   PATH=\"/run/wrappers/bin:$PATH\"
+      #   echo $PATH
+      #   # sudo sqlite3 /var/lib/vaultwarden/data/db.sqlite3 ".backup '/var/lib/vaultwarden/backups/$(date +%y%m%d)-db.sqlite'"
+      #   # # TODO: tar the whole thing to /tmp then copy to zstore and rclone do db_enc
+      #   "
+      # '';
     };
   };
 }
