@@ -12,6 +12,9 @@
       BaseUrl = "https://mus.connorrhodes.com";
       MusicFolder = "/scary/phone/music_library";
       DataDir = "/var/lib/navidrome";
+      PlaylistsPath = "_playlists";
+      DefaultPlaylistPublicVisibility = false;
+      AutoImportPlaylists = true;
 
       DefaultTheme = "Catppuccin Macchiato";
       CoverArtPriority = "embedded"; # pull cover art from embedded file data
