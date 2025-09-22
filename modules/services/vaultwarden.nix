@@ -5,7 +5,16 @@ let
     set -eu
     SOURCE_DB="/var/lib/vaultwarden/data/db.sqlite3"
     BACKUP_DB="/var/lib/vaultwarden/backups/$(date +%y%m%d)-db.sqlite"
+    BACKUP_FILENAME="$(date +%y%m%d)-vaultwarden.tar.gz"
+    BACKUP_FILE="/tmp/$BACKUP_FILENAME"
+    ZSTORE_PATH="/zstore/data/records/db_backups/vaultwarden"
+
     sqlite3 "$SOURCE_DB" ".backup '$BACKUP_DB'"
+    tar -czpf "$BACKUP_FILE" -C /var/lib vaultwarden
+    cp "$BACKUP_FILE" "$ZSTORE_PATH/"
+    chown 1000:100 "$ZSTORE_PATH/$BACKUP_FILENAME"
+    # TODO: rclone to db_enc
+    rm "$BACKUP_FILE"
   '';
 in
 {
