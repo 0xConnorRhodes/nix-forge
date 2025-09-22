@@ -35,6 +35,8 @@
     bk = "buku";
     be = "bat --style=plain \"$(fzf)\"";
     dup = "docker compose up -d";
+    sl = "systemctl";
+    ssl = "sudo systemctl";
 
     # connections
     mm = "et -p 63104 m"; # "mosh m"

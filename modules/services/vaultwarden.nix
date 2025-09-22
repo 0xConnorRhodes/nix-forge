@@ -13,38 +13,32 @@
     };
   };
 
-  # systemd.timers."backup-vaultwarden-files" = {
-  #   wantedBy = [ "timers.target" ];
-  #   timerConfig = {
-  #     OnCalendar = "daily"; # Examples: daily, weekly, hourly, *-*-* 03:00:00
-  #     Persistent = true; # Run missed jobs on next boot
-  #     Unit = "backup-vaultwarden-files.service";
-  #   };
-  # };
+  systemd.timers."backup-vaultwarden-files" = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = "daily"; # Examples: daily, weekly, hourly, *-*-* 03:00:00
+      Persistent = true; # Run missed jobs on next boot
+      Unit = "backup-vaultwarden-files.service";
+    };
+  };
 
-  # systemd.services."backup-vaultwarden-files" = {
-  #   path = with pkgs; [
-  #     sqlite
-  #     rclone
-  #     gnutar
-  #     gzip
-  #   ];
-  #   # TODO: write a shell script outside of systemd and get it working. then troubleshoot why it won't run in systemd with claude
-  #   script = ''
-  #     set -eu
-  #     PATH="/run/wrappers/bin:$PATH"
-  #     sudo systemctl stop vaultwarden.service
-  #     # stop service
-  #     # .backup database to /var/lib/vaultwarden/backups
-  #     # tar the whole thing to /tmp then copy to zstore and rclone do db_enc
-  #     sleep 5
-  #     systemctl status vaultwarden.service
-  #     sleep 5
-  #     sudo systemctl start vaultwarden.service
-  #   '';
-  #   serviceConfig = {
-  #     Type = "oneshot";
-  #     User = "${config.myConfig.username}";
-  #   };
-  # };
+  systemd.services."backup-vaultwarden-files" = {
+    path = with pkgs; [
+      sqlite
+      rclone
+      gnutar
+      gzip
+      coreutils
+    ];
+    script = ''
+      set -eu
+      PATH="/run/wrappers/bin:$PATH"
+      sudo sqlite3 /var/lib/vaultwarden/data/db.sqlite3 ".backup '/var/lib/vaultwarden/backups/$(date +%y%m%d)-db.sqlite'"
+      # TODO: tar the whole thing to /tmp then copy to zstore and rclone do db_enc
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = "${config.myConfig.username}";
+    };
+  };
 }
