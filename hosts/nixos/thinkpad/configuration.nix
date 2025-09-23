@@ -44,6 +44,7 @@
     #boot.kernelPackages = pkgs.linuxPackages_latest;
     boot.supportedFilesystems = [ "zfs" ];
     networking.hostId = "1c88d69b"; # needed by zfs to track unique machines for pool import, generate with `head -c 8 /etc/machine-id`
+    boot.zfs.forceImportRoot = false;
 
     networking.hostName = "thinkpad";
     networking.networkmanager.enable = true;
