@@ -8,6 +8,10 @@ config.initial_cols = 210
 config.initial_rows = 210
 config.window_close_confirmation = 'NeverPrompt'
 
+config.skip_close_confirmation_for_processes_named = {
+  'bash', 'sh', 'zsh', 'fish', 'tmux', 'screen', 'ssh', 'et', 'mosh'
+}
+
 config.font = wezterm.font 'GeistMono Nerd Font'
 
 config.font_size = host_cfg.font_size
