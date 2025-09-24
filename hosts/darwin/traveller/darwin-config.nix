@@ -31,6 +31,7 @@
 
     system.defaults.dock = {
       autohide = true;
+      appswitcher-all-displays = true; # show alt-tab on all monitors
     };
 
     system.keyboard = {
