@@ -32,6 +32,7 @@
       ../../../modules/services/audiobookshelf.nix
       ../../../modules/services/web-print.nix
       ../../../modules/services/vaultwarden.nix
+      # ../../../modules/services/immich.nix
 
       # jobs
       ../../../modules/jobs/sync-notes.nix
