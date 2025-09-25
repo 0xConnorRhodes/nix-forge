@@ -110,6 +110,7 @@
         "Yoink" = 457622435;
         "System Color Picker" = 1545870783;
         "Infuse" = 1136220934;
+        "Amperfy" = 1530145038;
       };
 
     };
