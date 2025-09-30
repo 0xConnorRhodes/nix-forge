@@ -77,6 +77,7 @@
     boot.kernelPackages = pkgs.pkgs.linuxPackages_xanmod; # xanmod LTS kernel
     boot.supportedFilesystems = [ "zfs" ];
     networking.hostId = "eca3fb4d";
+    boot.zfs.forceImportRoot = false;
 
     # Networking
     myConfig.tailscaleIp = "100.80.72.12";
