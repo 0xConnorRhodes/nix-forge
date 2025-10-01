@@ -64,7 +64,6 @@ in
     piper-tts
     gemini-cli
     gh
-    uv
 
     # GUI
     utm

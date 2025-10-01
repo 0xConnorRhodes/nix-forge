@@ -18,6 +18,7 @@
     ../../../configs/wezterm/wezterm-common.nix
     ../../../modules/home/vscode
     ../../../modules/home/firefox
+    ../../../modules/home/uv.nix
   ];
 
   home.sessionVariables = {
