@@ -23,6 +23,7 @@ in
     ../../../modules/home/vscode
     ../../../modules/home/firefox
     ../../../modules/home/mpv.nix
+    ../../../modules/home/uv.nix
   ];
 
   home.sessionVariables = {
