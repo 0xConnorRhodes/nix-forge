@@ -1,8 +1,19 @@
-{ config, osConfig, pkgs, ... }:
+{ config, osConfig, pkgs, lib, ... }:
 
+let
+  # Get all .lua files in the current directory
+  luaFiles = builtins.attrNames (lib.filterAttrs
+    (name: type: type == "regular" && lib.hasSuffix ".lua" name)
+    (builtins.readDir ./.));
+
+  # Create home.file entries for each .lua file
+  luaFileAttrs = lib.listToAttrs (map (filename: {
+    name = ".config/wezterm/${filename}";
+    value = {
+      source = config.lib.file.mkOutOfStoreSymlink ./${filename};
+    };
+  }) luaFiles);
+in
 {
-  home.file.".config/wezterm/wezterm.lua".source = config.lib.file.mkOutOfStoreSymlink ./wezterm.lua;
-  home.file.".config/wezterm/keybinds.lua".source = config.lib.file.mkOutOfStoreSymlink ./keybinds.lua;
-  home.file.".config/wezterm/host_cfg.lua".source = config.lib.file.mkOutOfStoreSymlink ./host_cfg.lua;
-  home.file.".config/wezterm/caps_alt_to_control.lua".source = config.lib.file.mkOutOfStoreSymlink ./caps_alt_to_control.lua;
+  home.file = luaFileAttrs;
 }
