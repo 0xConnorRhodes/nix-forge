@@ -62,10 +62,15 @@ M.keys = {
   { key = 'w',
     mods = modAlt,
     action = wezterm.action.CloseCurrentPane { confirm = false }, },
-  -- Clear terminal
+
+  -- Clear terminal, for now set both alt and control for different modkey schemas
   { key = ';',
     mods = modCtrl,
     action = wezterm.action.ClearScrollback 'ScrollbackAndViewport', },
+  { key = ';',
+    mods = modAlt,
+    action = wezterm.action.ClearScrollback 'ScrollbackAndViewport', },
+
   -- copy/paste
   {
     key = "c",
@@ -84,6 +89,7 @@ M.keys = {
       end
     end)
   },
+
   {
     key = "c",
     mods = modCtrl,
@@ -101,12 +107,46 @@ M.keys = {
      mods = modCtrl,
      action=wezterm.action{SendKey={key="v", mods="CTRL"}},
   },
-  -- -- logical ctrl + shift + v sends conventional C-v
-  -- {
-  --    key = "v",
-  --    mods = modAlt..'|SHIFT',
-  --    action=wezterm.action{SendKey={key="v", mods="CTRL"}},
-  -- },
 }
+
+-- Add conditional keybinds for hosts where alt is remapped to ctrl
+if host_cfg.remap_alt_to_ctrl then
+  -- On hosts where left alt is remapped to control (like thinkpad):
+  -- Ctrl+C and Ctrl+V for copy/paste
+  table.insert(M.keys, {
+    key = "c",
+    mods = "CTRL",
+    action = wezterm.action_callback(function(window, pane)
+      local has_selection = window:get_selection_text_for_pane(pane) ~= ""
+      if has_selection then
+        window:perform_action(
+          wezterm.action{CopyTo="ClipboardAndPrimarySelection"},
+          pane)
+        window:perform_action("ClearSelection", pane)
+      else
+        -- Do nothing for no selection on plain Ctrl+C to avoid conflicts
+      end
+    end)
+  })
+
+  table.insert(M.keys, {
+    key = "v",
+    mods = "CTRL",
+    action = wezterm.action.PasteFrom("Clipboard")
+  })
+
+  -- Ctrl+Shift+C and Ctrl+Shift+V for original terminal functions
+  table.insert(M.keys, {
+    key = "c",
+    mods = "CTRL|SHIFT",
+    action = wezterm.action{SendKey={key="c", mods='CTRL'}}
+  })
+
+  table.insert(M.keys, {
+    key = "v",
+    mods = "CTRL|SHIFT",
+    action = wezterm.action{SendKey={key="v", mods="CTRL"}}
+  })
+end
 
 return M
