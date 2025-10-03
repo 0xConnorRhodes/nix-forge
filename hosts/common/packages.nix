@@ -26,4 +26,5 @@ with pkgs; [
   yq-go
   alejandra
   doppler
+  lazysql
 ]

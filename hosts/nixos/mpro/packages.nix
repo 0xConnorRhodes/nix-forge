@@ -44,7 +44,6 @@ in
     usbutils
     shiori
     sqlite
-    lazysql
     gh
     ansible
     sshpass # needed for ansible

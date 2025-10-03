@@ -11,6 +11,8 @@
       ".DS_Store"
       ".env"
       ".venv"
+      "*.py[oc]"
+      "__pycache__/"
     ];
     extraConfig = {
       core = {

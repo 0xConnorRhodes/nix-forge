@@ -48,6 +48,7 @@ in
     doppler
     ansible
     sshpass # needed by ansible
+    lazysql
 
     # mac-specific
     blueutil
