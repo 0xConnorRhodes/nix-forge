@@ -28,6 +28,7 @@
       rclone
       pkgsUnstable.neovim
       buku
+      fermyon-spin
 
       # GUI
       calibre
