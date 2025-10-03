@@ -65,7 +65,7 @@
 	        inputs.home-manager.nixosModules.default
           {
             home-manager.extraSpecialArgs = specialArgs; # needed to access inputs in home.nix
-            home-manager.sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
+            home-manager.sharedModules = [ inputs.plasma-manager.homeModules.plasma-manager ];
           }
         ];
       };
@@ -78,7 +78,7 @@
 	        inputs.home-manager.nixosModules.default
           {
             home-manager.extraSpecialArgs = specialArgs; # needed to access inputs in home.nix
-            home-manager.sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
+            home-manager.sharedModules = [ inputs.plasma-manager.homeModules.plasma-manager ];
           }
         ];
       };
@@ -104,7 +104,7 @@
           inputs.home-manager.nixosModules.default
           {
             home-manager.extraSpecialArgs = specialArgs; # needed to access inputs in home.nix
-            home-manager.sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
+            home-manager.sharedModules = [ inputs.plasma-manager.homeModules.plasma-manager ];
           }
         ];
       };
@@ -134,7 +134,7 @@
         inputs.home-manager.nixosModules.default
         {
           home-manager.extraSpecialArgs = { inherit inputs; inherit secrets; };
-          home-manager.sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
+          home-manager.sharedModules = [ inputs.plasma-manager.homeModules.plasma-manager ];
         }
         # Override problematic default modules
         {

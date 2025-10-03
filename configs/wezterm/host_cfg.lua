@@ -22,6 +22,12 @@ elseif wezterm.target_triple:find("darwin") then
   host_cfg.modWin = 'OPT'
   host_cfg.modCtrl = 'CTRL'
   host_cfg.remap_alt_to_ctrl = false  -- Disable Alt_L to Control_L remapping on macOS
+elseif hostname == 'thinkpad' then
+  host_cfg.font_size = 21
+  host_cfg.modAlt = 'ALT'
+  host_cfg.modWin = 'WIN'
+  host_cfg.modCtrl = 'CTRL'
+  host_cfg.remap_alt_to_ctrl = true  -- Disable Alt_L to Control_L remapping by default
 else
   host_cfg.font_size = 21
   host_cfg.modAlt = 'ALT'

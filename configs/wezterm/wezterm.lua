@@ -31,7 +31,7 @@ if host_cfg.remap_alt_to_ctrl then
   -- Add key mappings to remap Alt_L to Control_L
   local alt_to_ctrl_keys = {}
 
-  -- Common control key combinations that should be remapped
+  -- Alt key combinations that should be remapped
   local control_keys = {
     'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
     'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
