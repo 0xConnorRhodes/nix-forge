@@ -29,6 +29,8 @@
       pkgsUnstable.neovim
       buku
       fermyon-spin
+      podman-desktop
+      pkgsUnstable.ramalama
 
       # GUI
       calibre

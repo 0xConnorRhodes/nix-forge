@@ -13,6 +13,7 @@
       ./syncthing.nix
       ./nfs.nix
       # ./llm.nix
+      ../../common/host-options.nix
       ../../common/nixos-common.nix
       ../../common/nixos-packages.nix
       ../../../modules/nixos/profile-sync-daemon.nix
@@ -65,6 +66,7 @@
       "$HOME/.local/share/flatpak/exports/bin"
       "/var/lib/flatpak/exports/bin"
     ];
+    myConfig.tailscale.isExitNode = true;
 
     boot.loader.systemd-boot = {
       enable = true;

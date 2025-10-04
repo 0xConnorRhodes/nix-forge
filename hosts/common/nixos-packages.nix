@@ -36,6 +36,7 @@ in
 
     # GUI programs
     gnumeric
+    abiword
 
     # common ruby env
     (ruby.withPackages (ruby-pkgs: with ruby-pkgs; [

@@ -33,7 +33,7 @@ function M.setup_alt_to_ctrl_remapping(config, host_cfg, keybinds)
   --   'F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11', 'F12'
   -- }
   local control_keys = {
-    'c', 'k',
+    'c', 'k', 'r'
   }
 
   for _, key in ipairs(control_keys) do

@@ -11,6 +11,12 @@
     enable = true;
     profiles.main = {
       search.engines = {
+        "MySearch" = {
+          urls = [{
+            template = "https://search.connorrhodes.com/?q={searchTerms}";
+          }];
+        };
+
         "nixpkgs" = {
           urls = [{
             template = "https://search.nixos.org/packages";
@@ -37,6 +43,7 @@
           definedAliases = [ "hm" ];
         };
       };
+      search.default = "MySearch";
       search.force = true;
 
       bookmarks = {

@@ -29,6 +29,9 @@
       modAlt = "ctrl";
       modCtrl = "alt";
       hostPaths = [];
+      tailscale = {
+        isExitNode = false;
+      };
     };
 
     boot.loader.systemd-boot = {
