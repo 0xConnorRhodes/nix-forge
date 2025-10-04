@@ -49,24 +49,26 @@
 
   options = {
     myConfig = {
-      username = lib.mkOption { type = lib.types.str; default = "connor";};
       hostname = lib.mkOption { type = lib.types.str; default = "mpro";};
-      homeDir = lib.mkOption { type = lib.types.str; default = "/home/connor";};
       tailscaleIp = lib.mkOption { type = lib.types.str; default = "127.0.0.1";};
-      hostPaths = lib.mkOption { type = lib.types.listOf lib.types.str; default = []; };
-      trashcli = lib.mkOption { type = lib.types.str; default = "trash"; }; # from pkgs.trashy
-      modAlt = lib.mkOption { type = lib.types.str; default = "ctrl"; }; # modkey on the physical Alt key on a conventional keyboard
-      modCtrl = lib.mkOption { type = lib.types.str; default = "alt"; }; # modkey on the physical Ctrl key on a conventional keyboard
     };
   };
 
   config = {
-    myConfig.hostPaths = [
-      "/usr/local/bin"
-      "$HOME/.local/share/flatpak/exports/bin"
-      "/var/lib/flatpak/exports/bin"
-    ];
-    myConfig.tailscale.isExitNode = true;
+    myConfig = {
+      username = "connor";
+      homeDir = "/home/connor";
+      trashcli = "trash"; # from pkgs.trashy
+      modAlt = "ctrl"; # modkey on the physical Alt key on a conventional keyboard
+      modCtrl = "alt"; # modkey on the physical Ctrl key on a conventional keyboard
+      hostPaths = [
+        "/usr/local/bin"
+        "$HOME/.local/share/flatpak/exports/bin"
+        "/var/lib/flatpak/exports/bin"
+      ];
+      tailscale.isExitNode = true;
+      tailscaleIp = "100.80.72.12";
+    };
 
     boot.loader.systemd-boot = {
       enable = true;
@@ -82,7 +84,6 @@
     boot.zfs.forceImportRoot = false;
 
     # Networking
-    myConfig.tailscaleIp = "100.80.72.12";
     networking = {
       hostName = config.myConfig.hostname;
       useDHCP = false;
