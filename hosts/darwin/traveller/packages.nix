@@ -33,7 +33,6 @@ in
     # rclone
     # android-tools # provides adb
     bluesnooze # must launch once and choose "launch at login" from menu bar icon
-    raycast
     scrcpy
     wezterm
     #imagemagickBig # includes ghostscript

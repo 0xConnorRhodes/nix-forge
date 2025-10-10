@@ -102,6 +102,7 @@
         "calibre"
         "kiro"
         "docker-desktop"
+        "raycast"
         # "vivaldi"
       ];
 
