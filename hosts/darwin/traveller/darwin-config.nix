@@ -58,62 +58,6 @@
 
       # User owning the Homebrew prefix
       user = config.myConfig.username;
-
-      # Optional: Enable fully-declarative tap management
-      #
-      # With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
-      mutableTaps = false;
-
-      # declarative tap management from nix flake
-      taps = {
-        "homebrew/homebrew-core" = inputs.homebrew-core;
-        "homebrew/homebrew-cask" = inputs.homebrew-cask;
-      };
-    };
-
-    homebrew = {
-      enable = true;
-      caskArgs.no_quarantine = true;
-      global.brewfile = true;
-      onActivation.cleanup = "uninstall"; # uninstall brew packages not listed in nix
-
-      brews = [
-        "espeak-ng"
-        "monolith"
-      ];
-
-      casks = [
-        "ghostty"
-        "balenaetcher"
-        # "hammerspoon"
-        # "pine" # mac native markdown editor
-        "jupyterlab"
-        # "kdenlive"
-        "vlc"
-        "wireshark"
-        "wireshark-app"
-        "vieb"
-        "qutebrowser"
-        "pine" # markdown editor
-        "zen"
-        "ollama-app"
-        "musicbrainz-picard"
-        "iterm2"
-        "calibre"
-        "kiro"
-        "docker-desktop"
-        "raycast"
-        # "vivaldi"
-      ];
-
-      masApps = {
-        "iMovie" = 408981434;
-        "Yoink" = 457622435;
-        "System Color Picker" = 1545870783;
-        "Infuse" = 1136220934;
-        "Amperfy" = 1530145038;
-      };
-
     };
 
     # shells that will be accessible from chsh
