@@ -19,7 +19,6 @@ in
     podman-compose
     lazydocker
     distrobox
-    gpu-screen-recorder
     rclone-browser
     wev # xev-style key viewer for wayland
     wl-clipboard # access clipboard from terminal with wl-copy and wl-paste
@@ -30,6 +29,7 @@ in
     neovide
     caligula # write ISOs to drives
     pkgsUnstable.google-chrome
+    gpu-screen-recorder
 
     nerd-fonts.geist-mono
     nerd-fonts.jetbrains-mono

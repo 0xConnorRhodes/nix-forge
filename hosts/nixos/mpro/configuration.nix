@@ -193,6 +193,11 @@
 
     services.psd.enable = true;
 
+    programs.gpu-screen-recorder = {
+    	enable = true;
+	package = pkgs.gpu-screen-recorder;
+    };
+
     # subsystems
     virtualisation.docker.enable = true;
 
