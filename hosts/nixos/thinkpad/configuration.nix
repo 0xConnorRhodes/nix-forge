@@ -94,6 +94,11 @@
       };
     };
 
+    programs.gpu-screen-recorder = {
+    	enable = true;
+	    package = pkgs.gpu-screen-recorder;
+    };
+
     # prevent password prompt on opening vscode
     security.pam.services.gdm-password.enableGnomeKeyring = true;
 

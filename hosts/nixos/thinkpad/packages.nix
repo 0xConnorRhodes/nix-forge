@@ -31,6 +31,7 @@
       fermyon-spin
       podman-desktop
       pkgsUnstable.ramalama
+      gpu-screen-recorder
 
       # GUI
       calibre
