@@ -54,20 +54,16 @@ in
         # https://search.nixos.org/packages?show=vscode-extensions.github.copilot&query=vscode-extensions.github.copilot
         name = "copilot";
         publisher = "GitHub";
-        # version = "1.364.0";
-        version = "1.368.0";
-        # sha256 = "sha256-5nDbGhqvdU4Ivmat0DevkXN8d8JN3Z+0bptqNqbWIR8=";
-        sha256 = "sha256-Bf216f5/QcvuBRfLX8L65XNasaxm3lRXq8woJWsGL4s=";
+        version = "1.372.0";
+        sha256 = "sha256-1L4zE2waIjI1Z8hYFaeHbnSWX9g31Sre4uDNOiQ2Fz8=";
       }
       {
         # https://github.com/microsoft/vscode-copilot-chat/releases
         # https://search.nixos.org/packages?show=vscode-extensions.github.copilot-chat&query=vscode-extensions.github.copilot-chat
         name = "copilot-chat";
         publisher = "GitHub";
-        # version = "0.29.1";
-        version = "0.30.3";
-        # sha256 = "sha256-v9PP+3psOOMCrIgIaVqrwOUZ9tqTXiSjUUuOcCrEie4=";
-        sha256 = "sha256-MugWkmyQx/K/9hFGDAKSG6hC6altD6PImyRAHJms5iU=";
+        version = "0.31.5";
+        sha256 = "sha256-D7k+hA786w7IZHVI+Og6vHGAAohpfpuOmmCcDUU0WsY=";
       }
     ];
   };
