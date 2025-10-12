@@ -10,7 +10,7 @@
       EnableUserEditing = false;
       Port = 15612;
       BaseUrl = "https://mus.connorrhodes.com";
-      MusicFolder = "/scary/phone/music_library";
+      MusicFolder = "/scary/music_library";
       DataDir = "/var/lib/navidrome";
       PlaylistsPath = "_playlists";
       DefaultPlaylistPublicVisibility = false;

@@ -119,7 +119,7 @@ gd() {
   if [[ $# -gt 0 ]]; then
     git diff "$@"
   else
-    git diff
+    git diff --quiet && git diff --cached || git diff
   fi
 }
 ''
