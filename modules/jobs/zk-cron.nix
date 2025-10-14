@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }:
 let
   user = config.myConfig.username;
+  codeDir = "/home/${user}/code";
 
   cronPython = pkgs.python3.withPackages (pythonPackages: with pythonPackages; [
     jinja2
@@ -53,12 +54,12 @@ in
   systemd.services."create-foodlog" = {
     script = ''
       set -eu
-      ${pkgs.ruby}/bin/ruby /home/connor/code/food-log/create_md_logfile.rb
+      ${pkgs.uv}/bin/uv run ${codeDir}/food-log/create_cal_budget.py
     '';
     serviceConfig = {
       Type = "oneshot";
       User = user;
-      WorkingDirectory = "/home/connor/code/food-log"; }; };
+      WorkingDirectory = "${codeDir}/food-log"; }; };
 
 # bump index link to daily note
   systemd.timers."bump-index-dn-link" = {
