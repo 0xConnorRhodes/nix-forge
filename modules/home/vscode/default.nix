@@ -14,6 +14,7 @@ in
     ./extensions-settings.nix
     ./vim.nix
     ./snippets.nix
+    ./language-settings.nix
     # ./blockman.nix
   ];
 
@@ -112,32 +113,6 @@ in
         update.mode = "none";
         security.workspace.trust.emptyWindow = true;
         git.openRepositoryInParentFolders = "never";
-
-        # Language-specific settings
-        "[markdown]" = {
-          editor = {
-            bracketPairColorization.enabled = false;
-            lightbulb.enabled = "off";
-          };
-        };
-
-        "[python]" = {
-          editor = {
-            tabSize = 4;
-            renderWhitespace = "boundary";
-            guides = {
-              indentation = true;
-              bracketPairs = false;
-              bracketPairsHorizontal = false;
-            };
-          };
-        };
-
-        "[yaml]" = {
-          editor.guides.indentation = false;
-          editor.guides.bracketPairs = false;
-          editor.guides.bracketPairsHorizontal = false;
-        };
 
         terminal.integrated.profiles.osx = {
           myZsh = myZshProfile;
