@@ -115,7 +115,10 @@ in
 
         # Language-specific settings
         "[markdown]" = {
-          editor.bracketPairColorization.enabled = false;
+          editor = {
+            bracketPairColorization.enabled = false;
+            lightbulb.enabled = "off";
+          };
         };
 
         "[python]" = {
