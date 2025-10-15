@@ -40,6 +40,7 @@ in
 
         window = {
           newWindowDimensions = "inherit";
+          autoDetectHighContrast = false;
 
           # disable vscode title bar and replace with OS native bar (smaller)
           titleBarStyle = "native";
