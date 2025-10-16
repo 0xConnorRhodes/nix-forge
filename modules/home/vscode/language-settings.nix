@@ -6,6 +6,10 @@
       editor = {
         bracketPairColorization.enabled = false;
         lightbulb.enabled = "off";
+        guides = {
+          bracketPairs = false;
+          bracketPairsHorizontal = false;
+        };
       };
     };
 
