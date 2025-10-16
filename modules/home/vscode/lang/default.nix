@@ -1,18 +1,11 @@
 { config, pkgs, inputs, ... }:
 
 {
-  programs.vscode.profiles.default.userSettings = {
-    "[markdown]" = {
-      editor = {
-        bracketPairColorization.enabled = false;
-        lightbulb.enabled = "off";
-        guides = {
-          bracketPairs = false;
-          bracketPairsHorizontal = false;
-        };
-      };
-    };
+  imports = [
+    ./markdown.nix
+  ];
 
+  programs.vscode.profiles.default.userSettings = {
     "[python]" = {
       editor = {
         tabSize = 4;
