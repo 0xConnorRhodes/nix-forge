@@ -28,7 +28,7 @@
       github.copilot = {
         enable = {
           "*" = true; # copilot autocomplete in all files
-          "markdown" = true; # copilot autocomplete in markdown files (not included in "*")
+          "markdown" = false; # copilot autocomplete in markdown files (not included in "*")
         };
         editor.enableCodeActions = true; # icon to modify/review with copilot on text selection
         advanced.authPermissions = "Grant"; # grant advanced auth permissions for Copilot
@@ -54,6 +54,16 @@
       # satokaz.vscode-markdown-header-coloring
       markdown-header-coloring = {
         backgroundColor = false;
+        userDefinedHeaderColor = {
+          enabled = true;
+
+          Header_1 = { color = "#78DCE8"; };
+          Header_2 = { color = "#82AAFF"; };
+          Header_3 = { color = "#C792EA"; };
+          Header_4 = { color = "#FFCB6B"; };
+          Header_5 = { color = "#FF5370"; };
+          Header_6 = { color = "#C3E88D"; };
+        };
       };
 
       # geminicodeassist = {

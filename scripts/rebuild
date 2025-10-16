@@ -4,10 +4,17 @@ set -e
 
 pushd ~/code/nix-forge
 
+# Set VS Code config path based on OS
+if [ "$(uname)" = "Darwin" ]; then
+  VSCODE_CONFIG_PATH="/Users/connor.rhodes/Library/Application Support/Code/User"
+else
+  VSCODE_CONFIG_PATH="$HOME/.config/Code/User"
+fi
+
 [ -f ~/code/nix-forge/rc2nix.nix ] && rm ~/code/nix-forge/rc2nix.nix
 
-rm -f "/Users/connor.rhodes/Library/Application Support/Code/User/settings.json.bak"
-rm -f "/Users/connor.rhodes/Library/Application Support/Code/User/keybindings.json.bak"
+rm -f "$VSCODE_CONFIG_PATH/settings.json.bak"
+rm -f "$VSCODE_CONFIG_PATH/keybindings.json.bak"
 
 find . -type f -name "*.nix" -exec git add {} +
 
@@ -36,11 +43,11 @@ else
   #nh os switch . -- --impure
 fi
 
-cp "/Users/connor.rhodes/Library/Application Support/Code/User/settings.json" "/Users/connor.rhodes/Library/Application Support/Code/User/settings.json.tmp"
-cp "/Users/connor.rhodes/Library/Application Support/Code/User/keybindings.json" "/Users/connor.rhodes/Library/Application Support/Code/User/keybindings.json.tmp"
-rm -f "/Users/connor.rhodes/Library/Application Support/Code/User/settings.json"
-rm -f "/Users/connor.rhodes/Library/Application Support/Code/User/keybindings.json"
-mv "/Users/connor.rhodes/Library/Application Support/Code/User/settings.json.tmp" "/Users/connor.rhodes/Library/Application Support/Code/User/settings.json"
-mv "/Users/connor.rhodes/Library/Application Support/Code/User/keybindings.json.tmp" "/Users/connor.rhodes/Library/Application Support/Code/User/keybindings.json"
+cp "$VSCODE_CONFIG_PATH/settings.json" "$VSCODE_CONFIG_PATH/settings.json.tmp"
+cp "$VSCODE_CONFIG_PATH/keybindings.json" "$VSCODE_CONFIG_PATH/keybindings.json.tmp"
+rm -f "$VSCODE_CONFIG_PATH/settings.json"
+rm -f "$VSCODE_CONFIG_PATH/keybindings.json"
+mv "$VSCODE_CONFIG_PATH/settings.json.tmp" "$VSCODE_CONFIG_PATH/settings.json"
+mv "$VSCODE_CONFIG_PATH/keybindings.json.tmp" "$VSCODE_CONFIG_PATH/keybindings.json"
 
 popd
