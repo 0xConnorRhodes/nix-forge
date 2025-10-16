@@ -6,6 +6,9 @@ pushd ~/code/nix-forge
 
 [ -f ~/code/nix-forge/rc2nix.nix ] && rm ~/code/nix-forge/rc2nix.nix
 
+rm -f "/Users/connor.rhodes/Library/Application Support/Code/User/settings.json.bak"
+rm -f "/Users/connor.rhodes/Library/Application Support/Code/User/keybindings.json.bak"
+
 find . -type f -name "*.nix" -exec git add {} +
 
 yq -o=json secrets.yml > .secrets.json
@@ -32,5 +35,12 @@ else
   #move-aside "$HOME/.config/Code/User/settings.json"
   #nh os switch . -- --impure
 fi
+
+cp "/Users/connor.rhodes/Library/Application Support/Code/User/settings.json" "/Users/connor.rhodes/Library/Application Support/Code/User/settings.json.tmp"
+cp "/Users/connor.rhodes/Library/Application Support/Code/User/keybindings.json" "/Users/connor.rhodes/Library/Application Support/Code/User/keybindings.json.tmp"
+rm -f "/Users/connor.rhodes/Library/Application Support/Code/User/settings.json"
+rm -f "/Users/connor.rhodes/Library/Application Support/Code/User/keybindings.json"
+mv "/Users/connor.rhodes/Library/Application Support/Code/User/settings.json.tmp" "/Users/connor.rhodes/Library/Application Support/Code/User/settings.json"
+mv "/Users/connor.rhodes/Library/Application Support/Code/User/keybindings.json.tmp" "/Users/connor.rhodes/Library/Application Support/Code/User/keybindings.json"
 
 popd
