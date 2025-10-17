@@ -14,6 +14,10 @@
       };
     };
 
+    github.copilot.enable.markdown = false;
+
+    # EXTENSION SETTINGS
+
     # satokaz.vscode-markdown-header-coloring
     markdown-header-coloring = {
       backgroundColor = false;
@@ -27,6 +31,11 @@
         Header_5 = { color = "#FF5370"; };
         Header_6 = { color = "#C3E88D"; };
       };
+    };
+
+    # yzhang.markdown-all-in-one
+    markdown.extension = {
+      math.enabled = false;
     };
   };
 }

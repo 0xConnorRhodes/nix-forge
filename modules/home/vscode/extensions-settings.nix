@@ -23,18 +23,15 @@
         ];
       };
 
-
       # GitHub Copilot
       github.copilot = {
         enable = {
           "*" = true; # copilot autocomplete in all files
-          "markdown" = false; # copilot autocomplete in markdown files (not included in "*")
         };
         editor.enableCodeActions = true; # icon to modify/review with copilot on text selection
         advanced.authPermissions = "Grant"; # grant advanced auth permissions for Copilot
       };
-      chat.tools.autoApprove = true; # auto-approve chat tools for agent mode
-
+      chat.tools.global.autoApprove = true; # auto-approve chat tools for agent mode
 
       # sumneko.lua
       Lua = {
@@ -44,11 +41,6 @@
       # ms-python.python
       python = {
         defaultInterpreterPath = "/run/current-system/sw/bin/python";
-      };
-
-      # yzhang.markdown-all-in-one
-      markdown.extension = {
-        math.enabled = false;
       };
 
       # geminicodeassist = {
