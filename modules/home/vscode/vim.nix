@@ -9,6 +9,13 @@
     useCtrlKeys = true;
     useSystemClipboard = true;
     foldfix = true; # don't unfold as you j/k through a folded heading
+    easymotion = true; # \ss
+    incsearch = true;
+
+    insertModeKeyBindings = [
+      { before = ["k" "j"];
+        after = ["<Esc>"]; }
+    ];
 
     normalModeKeyBindingsNonRecursive = [
       { before = ["Y"];
@@ -44,6 +51,22 @@
 
       { before = ["<C-l>"];
         after = [":" "n" "o" "h" "l" "<CR>"]; }
+
+      { before = ["<Enter>"];
+        commands = ["editor.toggleFold"]; }
+
+      { before = ["leader" "|"];
+        commands = [":vsplit"]; }
+
+      { before = ["leader" "-"];
+        commands = [":split"]; }
+
+      # Go to beginning and end of line with gh and gl
+      { before = ["g" "h"];
+        commands = ["cursorHome"]; }
+
+      { before = ["g" "l"];
+        commands = ["cursorEnd"]; }
     ];
   };
 }

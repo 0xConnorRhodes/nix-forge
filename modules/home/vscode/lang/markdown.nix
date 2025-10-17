@@ -27,6 +27,13 @@ in
         };
       };
 
+      # Vim key bindings for markdown
+      vim.normalModeKeyBindingsNonRecursive = [
+        { before = ["<Space>" "m" "p"];
+          commands = ["markdown.showPreviewToSide"];
+          when = "editorLangId == markdown"; }
+      ];
+
       github.copilot.enable.markdown = false;
 
       # EXTENSION SETTINGS
