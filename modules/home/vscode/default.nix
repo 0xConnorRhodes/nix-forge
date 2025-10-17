@@ -14,8 +14,6 @@ in
     ./extensions-settings.nix
     ./vim.nix
     ./snippets.nix
-    ./language-settings.nix
-    ./markdown.nix
     ./lang
     # ./blockman.nix
   ];

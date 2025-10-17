@@ -6,6 +6,7 @@
       editor = {
         bracketPairColorization.enabled = false;
         lightbulb.enabled = "off";
+        matchBrackets = false;
         guides = {
           bracketPairs = false;
           bracketPairsHorizontal = false;
