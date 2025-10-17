@@ -148,5 +148,15 @@ in
 
     { key = "${modAlt}+k r";
       command = "opensshremotes.openEmptyWindow"; }
+
+    # Go to definition with Alt+Enter
+    { key = "alt+enter";
+      command = "editor.action.revealDefinition";
+      when = "editorHasDefinitionProvider && editorTextFocus"; }
+
+    # Disable F12 for go to definition
+    { key = "f12";
+      command = "-editor.action.revealDefinition";
+      when = "editorHasDefinitionProvider && editorTextFocus"; }
   ];
 }

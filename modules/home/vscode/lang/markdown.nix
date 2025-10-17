@@ -1,41 +1,58 @@
 { config, pkgs, inputs, ... }:
-
+let
+  nix-vscode-extensions = inputs.nix-vscode-extensions.extensions.${pkgs.system};
+  marketplace-extensions = nix-vscode-extensions.vscode-marketplace;
+in
 {
-  programs.vscode.profiles.default.userSettings = {
-    "[markdown]" = {
-      editor = {
-        bracketPairColorization.enabled = false;
-        lightbulb.enabled = "off";
-        matchBrackets = false;
-        guides = {
-          bracketPairs = false;
-          bracketPairsHorizontal = false;
+  programs.vscode.profiles.default = {
+    extensions = with pkgs.vscode-extensions; [
+      yzhang.markdown-all-in-one # markdown bullets
+    ] ++
+
+    (with marketplace-extensions; [
+      satokaz.vscode-markdown-header-coloring
+      imaikosuke.vscode-wiki-links
+    ]);
+
+    userSettings = {
+      "[markdown]" = {
+        editor = {
+          bracketPairColorization.enabled = false;
+          lightbulb.enabled = "off";
+          matchBrackets = false;
+          guides = {
+            bracketPairs = false;
+            bracketPairsHorizontal = false;
+          };
         };
       };
-    };
 
-    github.copilot.enable.markdown = false;
+      github.copilot.enable.markdown = false;
 
-    # EXTENSION SETTINGS
+      # EXTENSION SETTINGS
 
-    # satokaz.vscode-markdown-header-coloring
-    markdown-header-coloring = {
-      backgroundColor = false;
-      userDefinedHeaderColor = {
-        enabled = true;
+      # satokaz.vscode-markdown-header-coloring
+      markdown-header-coloring = {
+        backgroundColor = false;
+        userDefinedHeaderColor = {
+          enabled = true;
 
-        Header_1 = { color = "#78DCE8"; };
-        Header_2 = { color = "#82AAFF"; };
-        Header_3 = { color = "#C792EA"; };
-        Header_4 = { color = "#FFCB6B"; };
-        Header_5 = { color = "#FF5370"; };
-        Header_6 = { color = "#C3E88D"; };
+          Header_1 = { color = "#78DCE8"; };
+          Header_2 = { color = "#82AAFF"; };
+          Header_3 = { color = "#C792EA"; };
+          Header_4 = { color = "#FFCB6B"; };
+          Header_5 = { color = "#FF5370"; };
+          Header_6 = { color = "#C3E88D"; };
+        };
       };
-    };
 
-    # yzhang.markdown-all-in-one
-    markdown.extension = {
-      math.enabled = false;
+      # yzhang.markdown-all-in-one
+      markdown.extension = {
+        math.enabled = false;
+      };
+
+      # imaikosuke.vscode-wiki-links
+      vscodeWikiLinks.workspaceFilenameConvention = "relativePaths";
     };
   };
 }

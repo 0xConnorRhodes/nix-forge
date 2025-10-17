@@ -19,7 +19,6 @@ in
       jgclark.vscode-todo-highlight # highlight todo and fixme, maintained version
       mechatroner.rainbow-csv
       ms-vscode-remote.remote-ssh
-      yzhang.markdown-all-in-one # markdown bullets
       ms-python.python
       ms-python.vscode-pylance
       ms-python.debugpy
@@ -40,10 +39,7 @@ in
     # pulls latest version without requirement of manual hash
     # format: user.extension-name (.downcase)
     (with marketplace-extensions; [
-      #satokaz.vscode-markdown-header-coloring
       sgtsquiggs.vscode-active-file-status # show open file in status bar
-      bradzacher.vscode-markdown-linkifier
-      satokaz.vscode-markdown-header-coloring
       # google.geminicodeassist
       #github.copilot
       #github.copilot-chat
