@@ -12,6 +12,9 @@ in
     (with marketplace-extensions; [
       satokaz.vscode-markdown-header-coloring
       imaikosuke.vscode-wiki-links
+      #arr.marksman # slower than wikilinks, allows for file preview
+      #davidanson.vscode-markdownlint
+      #esbenp.prettier-vscode
     ]);
 
     userSettings = {
@@ -29,7 +32,7 @@ in
 
       # Vim key bindings for markdown
       vim.normalModeKeyBindingsNonRecursive = [
-        { before = ["<Space>" "m" "p"];
+        { before = ["<Space>" "v" "p"];
           commands = ["markdown.showPreviewToSide"];
           when = "editorLangId == markdown"; }
       ];

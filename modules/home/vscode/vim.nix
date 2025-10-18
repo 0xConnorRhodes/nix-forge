@@ -21,8 +21,14 @@
       { before = ["Y"];
         after = ["y" "$"]; }
 
+      { before = ["leader" "e"];
+        commands = ["workbench.action.toggleSidebarVisibility"]; }
+
       { before = ["leader" "s" "g"];
         commands = ["workbench.action.findInFiles"]; }
+
+      { before = ["leader" "f" "f"];
+        commands = ["workbench.action.quickOpen"]; }
 
       # shows only actively open editors (buffers)
       # equivalent to typing 'edt ' in the quickOpen menu
