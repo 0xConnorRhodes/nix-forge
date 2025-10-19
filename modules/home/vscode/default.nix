@@ -14,6 +14,7 @@ in
     ./extensions-settings.nix
     ./vim.nix
     ./snippets.nix
+    ./tasks
     ./lang
     # ./blockman.nix
   ];
@@ -42,6 +43,7 @@ in
         window = {
           newWindowDimensions = "inherit";
           autoDetectHighContrast = false;
+          title = "\${rootName}"; # window title = project dir
 
           # disable vscode title bar and replace with OS native bar (smaller)
           titleBarStyle = "native";
