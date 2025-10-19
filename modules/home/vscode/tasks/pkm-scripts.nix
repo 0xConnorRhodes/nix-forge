@@ -26,6 +26,25 @@ in
           runOn = "default";
         };
       }
+      {
+        label = "Prune Drafts";
+        type = "shell";
+        command = "uv";
+        args = [ "run" "--script" "${scriptsDir}/pkm/prune-drafts" ];
+        group = "pkm";
+        presentation = {
+          echo = false;
+          reveal = "silent";
+          focus = false;
+          panel = "shared";
+          showReuseMessage = false;
+          clear = true;
+        };
+        problemMatcher = [];
+        runOptions = {
+          runOn = "default";
+        };
+      }
     ];
   };
 }
