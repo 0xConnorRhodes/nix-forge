@@ -10,7 +10,8 @@ in
       {
         label = "Build FP Note";
         type = "shell";
-        command = "${scriptsDir}/pkm/build-fp-note";
+        command = "uv";
+        args = [ "run" "--script" "${scriptsDir}/pkm/build-fp-note" ];
         group = "pkm";
         presentation = {
           echo = false;
