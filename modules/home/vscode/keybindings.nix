@@ -88,9 +88,9 @@ in
       command = "workbench.action.quickOpen"; }
 
     { key = "${modAlt}+k i";
-      command = "workbench.action.showAllEditors"; }
+      command = "workbench.action.tasks.runTask"; }
     { key = "${modAlt}+k ${modAlt}+i";
-      command = "workbench.action.showAllEditors"; }
+      command = "workbench.action.tasks.runTask"; }
 
     { key = "${modAlt}+k ${modAlt}+l";
       command = "workbench.action.splitEditor"; }
