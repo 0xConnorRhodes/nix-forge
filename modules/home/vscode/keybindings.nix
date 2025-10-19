@@ -92,6 +92,13 @@ in
     { key = "${modAlt}+k ${modAlt}+i";
       command = "workbench.action.tasks.runTask"; }
 
+    { key = "${modAlt}+i j";
+      command = "workbench.action.tasks.runTask";
+      args = "Open Daily Note"; }
+    { key = "${modAlt}+i ${modAlt}+j";
+      command = "workbench.action.tasks.runTask";
+      args = "Open Daily Note"; }
+
     { key = "${modAlt}+k ${modAlt}+l";
       command = "workbench.action.splitEditor"; }
     { key = "${modAlt}+k l";
