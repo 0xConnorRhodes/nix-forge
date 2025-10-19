@@ -8,6 +8,25 @@ in
     version = "2.0.0";
     tasks = [
       {
+        label = "Open Daily Note";
+        type = "shell";
+        command = "uv";
+        args = [ "run" "--script" "${scriptsDir}/pkm/open-daily-note" ];
+        group = "pkm";
+        presentation = {
+          echo = false;
+          reveal = "silent";
+          focus = false;
+          panel = "shared";
+          showReuseMessage = false;
+          clear = true;
+        };
+        problemMatcher = [];
+        runOptions = {
+          runOn = "default";
+        };
+      }
+      {
         label = "Build FP Note";
         type = "shell";
         command = "uv";
