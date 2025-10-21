@@ -64,6 +64,63 @@ in
           runOn = "default";
         };
       }
+      {
+        label = "Open Weekly Note";
+        type = "shell";
+        command = "uv";
+        args = [ "run" "--script" "${scriptsDir}/pkm/open-weekly-note" ];
+        group = "pkm";
+        presentation = {
+          echo = false;
+          reveal = "silent";
+          focus = false;
+          panel = "shared";
+          showReuseMessage = false;
+          clear = true;
+        };
+        problemMatcher = [];
+        runOptions = {
+          runOn = "default";
+        };
+      }
+      {
+        label = "Create New Draft";
+        type = "shell";
+        command = "uv";
+        args = [ "run" "--script" "${scriptsDir}/pkm/create-new-draft" ];
+        group = "pkm";
+        presentation = {
+          echo = false;
+          reveal = "silent";
+          focus = false;
+          panel = "shared";
+          showReuseMessage = false;
+          clear = true;
+        };
+        problemMatcher = [];
+        runOptions = {
+          runOn = "default";
+        };
+      }
+      {
+        label = "Open Last Draft";
+        type = "shell";
+        command = "uv";
+        args = [ "run" "--script" "${scriptsDir}/pkm/open-last-draft" ];
+        group = "pkm";
+        presentation = {
+          echo = false;
+          reveal = "silent";
+          focus = false;
+          panel = "shared";
+          showReuseMessage = false;
+          clear = true;
+        };
+        problemMatcher = [];
+        runOptions = {
+          runOn = "default";
+        };
+      }
     ];
   };
 }

@@ -99,6 +99,27 @@ in
       command = "workbench.action.tasks.runTask";
       args = "Open Daily Note"; }
 
+    { key = "${modAlt}+i w";
+      command = "workbench.action.tasks.runTask";
+      args = "Open Weekly Note"; }
+    { key = "${modAlt}+i ${modAlt}+w";
+      command = "workbench.action.tasks.runTask";
+      args = "Open Weekly Note"; }
+
+    { key = "${modAlt}+i i";
+      command = "workbench.action.tasks.runTask";
+      args = "Create New Draft"; }
+    { key = "${modAlt}+i ${modAlt}+i";
+      command = "workbench.action.tasks.runTask";
+      args = "Create New Draft"; }
+
+    { key = "${modAlt}+i u";
+      command = "workbench.action.tasks.runTask";
+      args = "Open Last Draft"; }
+    { key = "${modAlt}+i ${modAlt}+u";
+      command = "workbench.action.tasks.runTask";
+      args = "Open Last Draft"; }
+
     { key = "${modAlt}+k ${modAlt}+l";
       command = "workbench.action.splitEditor"; }
     { key = "${modAlt}+k l";
