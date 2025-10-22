@@ -79,7 +79,7 @@ in
 
     { key = "${modAlt}+u";
       command = "workbench.action.previousEditor"; }
-    { key = "${modAlt}+i";
+    { key = "Shift+${modAlt}+u";
       command = "workbench.action.nextEditor"; }
 
     { key = "${modAlt}+k o";
