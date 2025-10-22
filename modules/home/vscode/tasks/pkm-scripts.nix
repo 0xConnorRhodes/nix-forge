@@ -46,10 +46,10 @@ in
         };
       }
       {
-        label = "Prune Drafts";
+        label = "Update ZK";
         type = "shell";
         command = "uv";
-        args = [ "run" "--script" "${scriptsDir}/pkm/prune-drafts" ];
+        args = [ "run" "--script" "${scriptsDir}/pkm/update-zk" ];
         group = "pkm";
         presentation = {
           echo = false;
