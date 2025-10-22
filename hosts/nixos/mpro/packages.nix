@@ -37,7 +37,6 @@ in
     kubectl
     gcc # needed for test nvim configs
     pkgsUnstable.neovim
-    pipx
     wget
     buku
     cfssl # copyparty dependency
@@ -48,6 +47,7 @@ in
     ansible
     sshpass # needed for ansible
     auto-editor
+    pipx
 
     # gui programs
     calibre

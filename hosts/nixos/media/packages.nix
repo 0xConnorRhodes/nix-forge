@@ -28,6 +28,5 @@
     screen
     mpv
     vlc
-    pipx
   ];
 }

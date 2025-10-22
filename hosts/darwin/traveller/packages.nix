@@ -78,10 +78,7 @@ in
 
     # python packages
     (python3.withPackages (python-pkgs: with python-pkgs; [
-      requests
-      jinja2
       ipython
-      pipx
     ]))
 
     # ruby packages
