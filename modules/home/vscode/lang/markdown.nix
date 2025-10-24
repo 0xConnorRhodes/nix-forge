@@ -68,6 +68,15 @@ in
               foreground = "#C5E478";
             };
           }
+          {
+            scope = [
+              "punctuation.definition.link.title.begin.markdown"
+              "punctuation.definition.link.title.end.markdown"
+            ];
+            settings = {
+              foreground = "#ffffff";
+            };
+          }
         ];
       };
 
