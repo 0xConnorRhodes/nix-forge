@@ -72,6 +72,8 @@ in
             scope = [
               "punctuation.definition.link.title.begin.markdown"
               "punctuation.definition.link.title.end.markdown"
+              "punctuation.definition.wiki-link"
+              "punctuation.definition.metadata.markdown"
             ];
             settings = {
               foreground = "#ffffff";
