@@ -56,15 +56,37 @@ in
               foreground = "#888888";
             };
           }
+          {
+            scope = [
+              "string.other.link.title.markdown"
+              "meta.link.inline.markdown"
+              "meta.paragraph.markdown"
+              "markup.list.unnumbered.markdown"
+              "text.html.markdown"
+            ];
+            settings = {
+              foreground = "#C5E478";
+            };
+          }
         ];
       };
 
       tokenColorCustomizations = {
         "markup.underline.link" = "#888888";
         "markup.underline.link.markdown" = "#888888";
+        "string.other.link.title.markdown" = "#C5E478";
+        "meta.link.inline.markdown" = "#C5E478";
+        "meta.paragraph.markdown" = "#C5E478";
+        "markup.list.unnumbered.markdown" = "#C5E478";
+        "text.html.markdown" = "#C5E478";
         "[Night Owl (No Italics)]" = {
           "markup.underline.link" = "#888888";
           "markup.underline.link.markdown" = "#888888";
+          "string.other.link.title.markdown" = "#C5E478";
+          "meta.link.inline.markdown" = "#C5E478";
+          "meta.paragraph.markdown" = "#C5E478";
+          "markup.list.unnumbered.markdown" = "#C5E478";
+          "text.html.markdown" = "#C5E478";
         };
       };
 
