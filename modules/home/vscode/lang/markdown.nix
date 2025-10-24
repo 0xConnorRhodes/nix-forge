@@ -5,7 +5,7 @@ let
 
   # Markdown link color override variables
   link_text_color = "#C5E478";
-  link_symbols_color = "#D7DBE0";
+  link_symbols_color = "#D6DEEB";
   link_url_color = "#637777";
 in
 {
@@ -64,10 +64,6 @@ in
           {
             scope = [
               "string.other.link.title.markdown"
-              "meta.link.inline.markdown"
-              "meta.paragraph.markdown"
-              "markup.list.unnumbered.markdown"
-              "text.html.markdown"
             ];
             settings = {
               foreground = link_text_color;
@@ -91,18 +87,10 @@ in
         "markup.underline.link" = link_url_color;
         "markup.underline.link.markdown" = link_url_color;
         "string.other.link.title.markdown" = link_text_color;
-        "meta.link.inline.markdown" = link_text_color;
-        "meta.paragraph.markdown" = link_text_color;
-        "markup.list.unnumbered.markdown" = link_text_color;
-        "text.html.markdown" = link_text_color;
         "[Night Owl (No Italics)]" = {
           "markup.underline.link" = link_url_color;
           "markup.underline.link.markdown" = link_url_color;
           "string.other.link.title.markdown" = link_text_color;
-          "meta.link.inline.markdown" = link_text_color;
-          "meta.paragraph.markdown" = link_text_color;
-          "markup.list.unnumbered.markdown" = link_text_color;
-          "text.html.markdown" = link_text_color;
         };
       };
 
