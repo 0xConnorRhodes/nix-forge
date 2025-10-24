@@ -2,6 +2,11 @@
 let
   nix-vscode-extensions = inputs.nix-vscode-extensions.extensions.${pkgs.system};
   marketplace-extensions = nix-vscode-extensions.vscode-marketplace;
+
+  # Markdown link color variables
+  link_text_color = "#C5E478";
+  link_symbols_color = "#ffffff";
+  link_url_color = "#888888";
 in
 {
   programs.vscode.profiles.default = {
@@ -53,7 +58,7 @@ in
               "text.html.markdown markup.underline.link.markdown"
             ];
             settings = {
-              foreground = "#888888";
+              foreground = link_url_color;
             };
           }
           {
@@ -65,7 +70,7 @@ in
               "text.html.markdown"
             ];
             settings = {
-              foreground = "#C5E478";
+              foreground = link_text_color;
             };
           }
           {
@@ -76,28 +81,28 @@ in
               "punctuation.definition.metadata.markdown"
             ];
             settings = {
-              foreground = "#ffffff";
+              foreground = link_symbols_color;
             };
           }
         ];
       };
 
       tokenColorCustomizations = {
-        "markup.underline.link" = "#888888";
-        "markup.underline.link.markdown" = "#888888";
-        "string.other.link.title.markdown" = "#C5E478";
-        "meta.link.inline.markdown" = "#C5E478";
-        "meta.paragraph.markdown" = "#C5E478";
-        "markup.list.unnumbered.markdown" = "#C5E478";
-        "text.html.markdown" = "#C5E478";
+        "markup.underline.link" = link_url_color;
+        "markup.underline.link.markdown" = link_url_color;
+        "string.other.link.title.markdown" = link_text_color;
+        "meta.link.inline.markdown" = link_text_color;
+        "meta.paragraph.markdown" = link_text_color;
+        "markup.list.unnumbered.markdown" = link_text_color;
+        "text.html.markdown" = link_text_color;
         "[Night Owl (No Italics)]" = {
-          "markup.underline.link" = "#888888";
-          "markup.underline.link.markdown" = "#888888";
-          "string.other.link.title.markdown" = "#C5E478";
-          "meta.link.inline.markdown" = "#C5E478";
-          "meta.paragraph.markdown" = "#C5E478";
-          "markup.list.unnumbered.markdown" = "#C5E478";
-          "text.html.markdown" = "#C5E478";
+          "markup.underline.link" = link_url_color;
+          "markup.underline.link.markdown" = link_url_color;
+          "string.other.link.title.markdown" = link_text_color;
+          "meta.link.inline.markdown" = link_text_color;
+          "meta.paragraph.markdown" = link_text_color;
+          "markup.list.unnumbered.markdown" = link_text_color;
+          "text.html.markdown" = link_text_color;
         };
       };
 
