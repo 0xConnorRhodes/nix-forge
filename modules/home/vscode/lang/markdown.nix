@@ -39,25 +39,33 @@ in
 
       github.copilot.enable.markdown = false;
 
-      # Set markdown link text
-      tokenColorCustomizations = {
+      # Token color customizations for markdown links
+      editor.tokenColorCustomizations = {
         textMateRules = [
-          # text of link title
-          { scope = "string.other.link.title.markdown";
-            settings = { foreground = "#C5E478"; };
-          }
-          # { scope = "punctuation.definition.string.begin.markdown, punctuation.definition.string.end.markdown";
-          #   settings = { foreground = "#C5E478"; };
-          # }
-          # text of parens and brackets in links
-          { scope = "punctuation.definition.metadata.markdown";
-            settings = { foreground = "#ffffff"; };
-          }
-          # text of url
-          { scope = "markup.underline.link.markdown";
-            settings = { foreground = "#888888"; };
+          {
+            scope = [
+              "markup.underline.link.markdown"
+              "markup.underline.link"
+              "meta.link.inline.markdown markup.underline.link.markdown"
+              "meta.link.inline.markdown markup.underline.link"
+              "meta.paragraph.markdown markup.underline.link.markdown"
+              "markup.list.unnumbered.markdown markup.underline.link.markdown"
+              "text.html.markdown markup.underline.link.markdown"
+            ];
+            settings = {
+              foreground = "#888888";
+            };
           }
         ];
+      };
+
+      tokenColorCustomizations = {
+        "markup.underline.link" = "#888888";
+        "markup.underline.link.markdown" = "#888888";
+        "[Night Owl (No Italics)]" = {
+          "markup.underline.link" = "#888888";
+          "markup.underline.link.markdown" = "#888888";
+        };
       };
 
       # EXTENSION SETTINGS
