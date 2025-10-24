@@ -39,6 +39,27 @@ in
 
       github.copilot.enable.markdown = false;
 
+      # Set markdown link text
+      tokenColorCustomizations = {
+        textMateRules = [
+          # text of link title
+          { scope = "string.other.link.title.markdown";
+            settings = { foreground = "#C5E478"; };
+          }
+          # { scope = "punctuation.definition.string.begin.markdown, punctuation.definition.string.end.markdown";
+          #   settings = { foreground = "#C5E478"; };
+          # }
+          # text of parens and brackets in links
+          { scope = "punctuation.definition.metadata.markdown";
+            settings = { foreground = "#ffffff"; };
+          }
+          # text of url
+          { scope = "markup.underline.link.markdown";
+            settings = { foreground = "#888888"; };
+          }
+        ];
+      };
+
       # EXTENSION SETTINGS
 
       # satokaz.vscode-markdown-header-coloring
