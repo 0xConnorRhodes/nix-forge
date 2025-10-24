@@ -8,7 +8,7 @@ in
 
     # extensions from nixpgks
     extensions = with pkgs.vscode-extensions; [
-      vscodevim.vim
+      # vscodevim.vim
       jnoortheen.nix-ide
       formulahendry.code-runner
       shopify.ruby-lsp
@@ -40,6 +40,7 @@ in
     # format: user.extension-name (.downcase)
     (with marketplace-extensions; [
       sgtsquiggs.vscode-active-file-status # show open file in status bar
+      auiworks.amvim # better performance
       # google.geminicodeassist
       #github.copilot
       #github.copilot-chat

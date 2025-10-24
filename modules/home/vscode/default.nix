@@ -12,7 +12,7 @@ in
     ./keybindings.nix
     ./extensions-list.nix
     ./extensions-settings.nix
-    ./vim.nix
+    # ./vim.nix
     ./snippets.nix
     ./tasks
     ./lang
