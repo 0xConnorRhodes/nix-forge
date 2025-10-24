@@ -3,10 +3,10 @@ let
   nix-vscode-extensions = inputs.nix-vscode-extensions.extensions.${pkgs.system};
   marketplace-extensions = nix-vscode-extensions.vscode-marketplace;
 
-  # Markdown link color variables
+  # Markdown link color override variables
   link_text_color = "#C5E478";
-  link_symbols_color = "#ffffff";
-  link_url_color = "#888888";
+  link_symbols_color = "#D7DBE0";
+  link_url_color = "#637777";
 in
 {
   programs.vscode.profiles.default = {
