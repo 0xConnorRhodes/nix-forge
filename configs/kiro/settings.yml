@@ -2,6 +2,95 @@ kiroAgent:
   trustedCommands: ['*']
 workbench:
   preferredHighContrastColorTheme: Kiro Dark
+  startupEditor: "none"  # don't show startup screen
+  trustedDomains:
+    promptInTrustedWorkspace: false
+  sideBar:
+    location: "left"
+  activityBar:
+    location: "hidden"
+  # hide things
+  statusBar:
+    visible: true
+  showTabs: false
+  editor:
+    showTabs: "none"
+    empty:
+      hint: "hidden"
 explorer:
   confirmDragAndDrop: false
   confirmDelete: false
+
+window:
+  newWindowDimensions: "inherit"
+  autoDetectHighContrast: false
+  title: "${rootName}"  # window title = project dir
+  # disable vscode title bar and replace with OS native bar (smaller)
+  titleBarStyle: "native"
+  customTitleBarVisibility: "never"
+  zoomLevel: 2  # default zoom level, set in home.nix
+
+editor:
+  empty:
+    hint: "hidden"  # don't show hint on empty editor
+  scrollbar:
+    verticalScrollbarSize: 6
+    horizontalScrollbarSize: 5
+  # fontFamily: "'JetBrainsMono Nerd Font', 'monospace', monospace"
+  fontFamily: "'JetBrainsMono Nerd Font', Monaco, 'Courier New', monospace"
+  fontSize: 16
+  tabSize: 2
+  guides:
+    indentation: true
+    bracketPairs: true
+    bracketPairsHorizontal: true
+  bracketPairColorization:
+    enable: true
+    independentColorPoolPerBracketType: true
+  # reduce gutter (left margin padding) size
+  glyphMargin: false
+  showFoldingControls: "never"
+  formatOnSave: true
+  copyWithSyntaxHighlighting: false  # copy as plain text
+  defaultFormatter: "null"
+  emptySelectionClipboard: false  # don't copy current line if C-c pressed with no selection
+  snippetSuggestions: "top"  # snippet suggestions first in autocomplete list
+  stickyScroll:
+    enabled: false
+  enablePreview: false  # open new files in main buffer, not preview buffer
+  minimap:
+    enabled: false
+  renderIndentGuides: true
+  lineNumbers: "on"
+
+diffEditor:
+  ignoreTrimWhitespace: true  # don't count whitespace as a difference in diff view
+
+files:
+  autoSave: "afterDelay"
+  insertFinalNewline: true
+  trimFinalNewlines: true  # trim trailing newlines (apart from the 1 added above)
+  trimTrailingWhitespace: true  # trim trailing whitespace at the end of a line
+  # hotExit: "off"  # don't preserve unsaved changes across editor restarts
+  simpleDialog:
+    enable: true  # use vscode file picker, not OS native
+  # if the file on disk is newer than the buffer, overwrite with buffer instead of prompting with:
+  # Failed to save 'settings.json': The content of the file is newer. Please compare your version
+  # with the file contents or overwrite the content of the file with your changes.
+  saveConflictResolution: "overwriteFileOnDisk"
+  dialog:
+    defaultPath: "$HOME/code"
+
+breadcrumbs:
+  enabled: false
+
+update:
+  mode: "none"
+
+security:
+  workspace:
+    trust:
+      emptyWindow: true
+
+git:
+  openRepositoryInParentFolders: "never"
