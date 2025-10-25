@@ -1,0 +1,7 @@
+kiroAgent:
+  trustedCommands: ['*']
+workbench:
+  preferredHighContrastColorTheme: Kiro Dark
+explorer:
+  confirmDragAndDrop: false
+  confirmDelete: false

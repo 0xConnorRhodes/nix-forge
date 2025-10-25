@@ -50,4 +50,6 @@ rm -f "$VSCODE_CONFIG_PATH/keybindings.json"
 mv "$VSCODE_CONFIG_PATH/settings.json.tmp" "$VSCODE_CONFIG_PATH/settings.json"
 mv "$VSCODE_CONFIG_PATH/keybindings.json.tmp" "$VSCODE_CONFIG_PATH/keybindings.json"
 
+./configs/kiro/write-kiro-config
+
 popd

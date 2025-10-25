@@ -1,0 +1,103 @@
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#   "pyyaml"
+# ]
+# ///
+"""
+Script Requirements:
+- As a user, I want to read a settings YAML file from '$HOME/code/nix-forge/configs/kiro/settings.yml'.
+- As a user, I want to flatten the nested YAML structure into a single-level dictionary with dot-separated keys.
+- As a user, I want to read a keybindings YAML file from '$HOME/code/nix-forge/configs/kiro/keybindings.yml'.
+- As a user, I want to determine the correct output directory for 'Kiro' configuration based on my OS.
+- As a user, I want the output directory to be '/Users/connor.rhodes/Library/Application Support/Kiro/User' if the platform is 'darwin'.
+- As a user, I want the output directory to be '~/.config/Kiro/User' for all other platforms.
+- As a user, I want to write the flattened settings data to 'settings.json' in the platform-specific config directory.
+- As a user, I want to write the (non-flattened) keybindings data to 'keybindings.json' in the platform-specific config directory.
+- As a user, I want the script to create the output directory if it doesn't exist.
+- As a user, I want the script to print a success message to stdout when a file is written.
+- As a user, I want the script to print errors to stderr if they occur.
+"""
+
+import json
+import sys
+import yaml
+from pathlib import Path
+from typing import Any, Dict, MutableMapping
+
+
+def flatten_dict(
+    d: MutableMapping[str, Any], parent_key: str = "", sep: str = "."
+) -> Dict[str, Any]:
+    """Flattens a nested dictionary into a single-level dictionary."""
+    items = []
+    for k, v in d.items():
+        new_key = f"{parent_key}{sep}{k}" if parent_key else k
+        if isinstance(v, MutableMapping):
+            items.extend(flatten_dict(v, new_key, sep=sep).items())
+        else:
+            items.append((new_key, v))
+    return dict(items)
+
+
+def get_output_dir() -> Path:
+    """Determines the correct config output directory based on the platform."""
+    if sys.platform == "darwin":
+        return Path("/Users/connor.rhodes/Library/Application Support/Kiro/User")
+    
+    return Path.home() / ".config" / "Kiro" / "User"
+
+
+def process_file(
+    input_path: Path, output_path: Path, flatten: bool = False
+) -> None:
+    """Reads a YAML file, processes it, and writes it to a JSON file."""
+    with open(input_path, "r") as f:
+        data = yaml.safe_load(f)
+
+    if flatten:
+        processed_data = flatten_dict(data)
+    else:
+        processed_data = data
+
+    with open(output_path, "w") as f:
+        json.dump(processed_data, f, indent=4)
+    
+    print(f"Successfully wrote Kiro config to: {output_path}")
+
+
+def main():
+    try:
+        home_dir = Path.home()
+        base_input_dir = home_dir / "code" / "nix-forge" / "configs" / "kiro"
+        output_dir = get_output_dir()
+
+        output_dir.mkdir(parents=True, exist_ok=True)
+
+        settings_yaml_path = base_input_dir / "settings.yml"
+        settings_json_path = output_dir / "settings.json"
+        
+        keybindings_yaml_path = base_input_dir / "keybindings.yml"
+        keybindings_json_path = output_dir / "keybindings.json"
+
+        # Process settings.json (with flattening)
+        process_file(settings_yaml_path, settings_json_path, flatten=True)
+
+        # Process keybindings.json (no flattening)
+        process_file(keybindings_yaml_path, keybindings_json_path, flatten=False)
+
+    except FileNotFoundError as e:
+        print(f"Error: Input file not found. {e}", file=sys.stderr)
+        sys.exit(1)
+    except PermissionError as e:
+        print(f"Error: Permission denied. {e}", file=sys.stderr)
+        sys.exit(1)
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}", file=sys.stderr)
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()
+
