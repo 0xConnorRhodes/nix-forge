@@ -4,19 +4,21 @@
 {
   programs.vscode.profiles.default.userSettings.amVim = {
     useSystemClipboard = true;
+    vimStyleNavigationInListView = false;
   };
 
   programs.vscode.profiles.default.keybindings = [
-    {
-      key = "j";
-      command = "cursorDown";
-      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
-    }
-    {
-      key = "k";
-      command = "cursorUp";
-      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
-    }
+    # enabling these allows j and k to move past folds, but horizontal spacing is not preserved
+    # {
+    #   key = "j";
+    #   command = "cursorDown";
+    #   when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    # }
+    # {
+    #   key = "k";
+    #   command = "cursorUp";
+    #   when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    # }
     {
       key = "enter";
       command = "editor.toggleFold";
@@ -24,7 +26,7 @@
     }
     {
       # note, the cursorUndo command only works as expected if you pause before Y
-      # there appears to be a timeout before vscode registors the cursor position
+      # there appears to be a timeout before vscode registers the cursor position
       key = "shift+y";
       command = "runCommands";
       args = {
@@ -47,11 +49,6 @@
       when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
     }
     {
-      key = "k j";
-      command = "amVim.escape";
-      when = "editorTextFocus && amVim.mode == 'INSERT'";
-    }
-    {
       key = "space b d";
       command = "workbench.action.closeActiveEditor";
       when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
@@ -64,6 +61,129 @@
     {
       key = "g g";
       command = "cursorTop";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+    {
+      key = "space e";
+      command = "workbench.action.toggleSidebarVisibility";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+    {
+      key = "space s g";
+      command = "workbench.action.findInFiles";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+    {
+      key = "space f f";
+      command = "workbench.action.quickOpen";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+    {
+      key = "space f d";
+      command = "workbench.action.quickOpen";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+    # {
+    #   key = "space j";
+    #   command = "workbench.action.previousEditor";
+    #   when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    # }
+    # {
+    #   key = "space k";
+    #   command = "workbench.action.showCommands";
+    #   when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    # }
+    {
+      key = "space o";
+      command = "workbench.action.quickOpen";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+    {
+      key = "space b e";
+      command = "workbench.view.explorer";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+    {
+      key = "space shift+\\";
+      command = "workbench.action.splitEditor";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+    {
+      key = "space -";
+      command = "workbench.action.splitEditorDown";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+    {
+      key = "' '";
+      command = "cursorUndo";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+    # {
+    #   key = ">";
+    #   command = "editor.action.indentLines";
+    #   when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    # }
+    # {
+    #   key = "<";
+    #   command = "editor.action.outdentLines";
+    #   when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    # }
+    # {
+    #   key = ">";
+    #   command = "editor.action.indentLines";
+    #   when = "editorTextFocus && amVim.mode == 'VISUAL LINE'";
+    # }
+    # {
+    #   key = "<";
+    #   command = "editor.action.outdentLines";
+    #   when = "editorTextFocus && amVim.mode == 'VISUAL LINE'";
+    # }
+    {
+      key = "ctrl+d";
+      command = "runCommands";
+      args = {
+        commands = [
+          "cursorDown"
+          "cursorDown"
+          "cursorDown"
+          "cursorDown"
+          "cursorDown"
+          "cursorDown"
+          "cursorDown"
+          "cursorDown"
+          "cursorDown"
+          "cursorDown"
+          "cursorDown"
+          "cursorDown"
+          "cursorDown"
+          "cursorDown"
+          "cursorDown"
+        ];
+      };
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+    {
+      key = "ctrl+u";
+      command = "runCommands";
+      args = {
+        commands = [
+          "cursorUp"
+          "cursorUp"
+          "cursorUp"
+          "cursorUp"
+          "cursorUp"
+          "cursorUp"
+          "cursorUp"
+          "cursorUp"
+          "cursorUp"
+          "cursorUp"
+          "cursorUp"
+          "cursorUp"
+          "cursorUp"
+          "cursorUp"
+          "cursorUp"
+        ];
+      };
       when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
     }
   ];
