@@ -17,5 +17,10 @@
       command = "cursorUp";
       when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
     }
+    {
+      key = "enter";
+      command = "editor.toggleFold";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
   ];
 }
