@@ -20,7 +20,7 @@
     normalModeKeyBindingsNonRecursive = [
       { before = ["Y"];
         after = ["y" "$"]; }
-
+       
       { before = ["leader" "e"];
         commands = ["workbench.action.toggleSidebarVisibility"]; }
 

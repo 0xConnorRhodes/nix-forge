@@ -46,5 +46,30 @@
       };
       when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
     }
+    {
+      key = "g h";
+      command = "cursorHome";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+    {
+      key = "g l";
+      command = "cursorEnd";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+    {
+      key = "k j";
+      command = "amVim.exit";
+      when = "editorTextFocus && amVim.mode == 'INSERT'";
+    }
+    {
+      key = "space b d";
+      command = "workbench.action.closeActiveEditor";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+    {
+      key = "space space";
+      command = "workbench.action.showAllEditors";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
   ];
 }
