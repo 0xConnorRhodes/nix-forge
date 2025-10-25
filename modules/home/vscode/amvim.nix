@@ -9,16 +9,16 @@
 
   programs.vscode.profiles.default.keybindings = [
     # enabling these allows j and k to move past folds, but horizontal spacing is not preserved
-    # {
-    #   key = "j";
-    #   command = "cursorDown";
-    #   when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
-    # }
-    # {
-    #   key = "k";
-    #   command = "cursorUp";
-    #   when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
-    # }
+    {
+      key = "g j";
+      command = "cursorDown";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+    {
+      key = "g kkk";
+      command = "cursorUp";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
     {
       key = "enter";
       command = "editor.toggleFold";
