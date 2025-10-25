@@ -30,8 +30,6 @@ in
     tealdeer
     htop
     gotop
-    # rclone
-    # android-tools # provides adb
     bluesnooze # must launch once and choose "launch at login" from menu bar icon
     scrcpy
     wezterm
