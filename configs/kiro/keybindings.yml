@@ -6,3 +6,285 @@
 - key: "ctrl+`"
   command: "-workbench.action.terminal.toggleTerminal"
   when: "terminal.active"
+
+# Converted from keybindings.nix
+- key: "cmd+j"
+  command: "workbench.action.terminal.focus"
+  when: "!terminalFocus"
+- key: "cmd+j"
+  command: "workbench.action.togglePanel"
+  when: "terminalFocus"
+
+# toggle right-side panel (chat/other custom elements)
+- key: "cmd+,"
+  command: "workbench.action.toggleAuxiliaryBar"
+
+# toggle bar
+- key: "cmd+b"
+  command: "workbench.action.toggleSidebarVisibility"
+
+# hack to bounce focus to panel and back to allow toggling panel when terminal is focused
+- key: "cmd+b"
+  command: "runCommands"
+  when: "terminalFocus"
+  args:
+    commands:
+      - "workbench.action.focusActiveEditorGroup"
+      - "workbench.action.toggleSidebarVisibility"
+      - "workbench.action.terminal.focus"
+
+# same as previous task, but re-maximizes terminal if it was previously maximized
+- key: "cmd+b"
+  command: "runCommands"
+  when: "terminalFocus && panelMaximized"
+  args:
+    commands:
+      - "workbench.action.focusActiveEditorGroup"
+      - "workbench.action.toggleSidebarVisibility"
+      - "workbench.action.terminal.focus"
+      - "workbench.action.toggleMaximizedPanel"
+
+- key: "cmd+e"
+  command: "workbench.action.toggleMaximizeEditorGroup"
+  when: "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
+- key: "cmd+e"
+  command: "workbench.action.toggleMaximizedPanel"
+  when: "panelVisible && panelFocus"
+
+- key: "ctrl+i"
+  command: "workbench.action.toggleMaximizeEditorGroup"
+  when: "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
+- key: "ctrl+i"
+  command: "workbench.action.toggleMaximizedPanel"
+  when: "panelVisible && panelFocus"
+
+- key: "cmd+w"
+  command: "workbench.action.closeActiveEditor"
+
+- key: "cmd+k k"
+  command: "workbench.action.showCommands"
+- key: "cmd+k cmd+k"
+  command: "workbench.action.showCommands"
+
+- key: "cmd+k cmd+e"
+  command: "workbench.files.action.focusFilesExplorer"
+- key: "cmd+k e"
+  command: "workbench.files.action.focusFilesExplorer"
+
+- key: "cmd+u"
+  command: "workbench.action.previousEditor"
+- key: "shift+cmd+u"
+  command: "workbench.action.nextEditor"
+
+- key: "cmd+k o"
+  command: "workbench.action.quickOpen"
+- key: "cmd+k cmd+o"
+  command: "workbench.action.quickOpen"
+
+- key: "cmd+k i"
+  command: "workbench.action.tasks.runTask"
+- key: "cmd+k cmd+i"
+  command: "workbench.action.tasks.runTask"
+
+- key: "cmd+i j"
+  command: "workbench.action.tasks.runTask"
+  args: "Open Daily Note"
+- key: "cmd+i cmd+j"
+  command: "workbench.action.tasks.runTask"
+  args: "Open Daily Note"
+
+- key: "cmd+i w"
+  command: "workbench.action.tasks.runTask"
+  args: "Open Weekly Note"
+- key: "cmd+i cmd+w"
+  command: "workbench.action.tasks.runTask"
+  args: "Open Weekly Note"
+
+- key: "cmd+i i"
+  command: "workbench.action.tasks.runTask"
+  args: "Create New Draft"
+- key: "cmd+i cmd+i"
+  command: "workbench.action.tasks.runTask"
+  args: "Create New Draft"
+
+- key: "cmd+i u"
+  command: "workbench.action.tasks.runTask"
+  args: "Open Last Draft"
+- key: "cmd+i cmd+u"
+  command: "workbench.action.tasks.runTask"
+  args: "Open Last Draft"
+
+- key: "cmd+k cmd+l"
+  command: "workbench.action.splitEditor"
+- key: "cmd+k l"
+  command: "workbench.action.splitEditor"
+
+- key: "cmd+k j"
+  command: "workbench.action.splitEditorDown"
+- key: "cmd+k cmd+j"
+  command: "workbench.action.splitEditorDown"
+
+- key: "cmd+k x"
+  command: "workbench.action.closeEditorsAndGroup"
+- key: "cmd+k cmd+x"
+  command: "workbench.action.closeEditorsAndGroup"
+
+# cycle through file options in the quickOpen buffer (similar to C-p, C-p in default config)
+- key: "cmd+o"
+  command: "workbench.action.quickOpenNavigateNextInFilePicker"
+  when: "inFilesPicker && inQuickOpen"
+
+- key: "cmd+k f"
+  command: "workbench.action.files.openFolder"
+
+# vim-style split navigation
+- key: "ctrl+l"
+  command: "workbench.action.focusRightGroup"
+- key: "ctrl+h"
+  command: "workbench.action.focusLeftGroup"
+- key: "ctrl+j"
+  command: "workbench.action.focusBelowGroup"
+- key: "ctrl+k"
+  command: "workbench.action.focusAboveGroup"
+
+- key: "ctrl+k"
+  command: "workbench.action.focusActiveEditorGroup"
+  when: "panelVisible && panelFocus"
+
+- key: "cmd+k n"
+  command: "inlineChat.start"
+- key: "cmd+k cmd+n"
+  command: "inlineChat.start"
+
+- key: "cmd+k v f"
+  command: "workbench.view.explorer"
+- key: "cmd+k v e"
+  command: "workbench.view.extensions"
+- key: "cmd+k v k"
+  command: "workbench.action.openGlobalKeybindings"
+- key: "cmd+k v s"
+  command: "workbench.action.openSettings2"
+
+- key: "cmd+k s"
+  command: "workbench.action.toggleFullScreen"
+
+- key: "cmd+k r"
+  command: "opensshremotes.openEmptyWindow"
+
+# Go to definition with Alt+Enter
+- key: "alt+enter"
+  command: "editor.action.revealDefinition"
+  when: "editorHasDefinitionProvider && editorTextFocus"
+
+# Disable F12 for go to definition
+- key: "f12"
+  command: "-editor.action.revealDefinition"
+  when: "editorHasDefinitionProvider && editorTextFocus"
+
+# amVim keybindings converted from amvim.nix
+# enabling these allows j and k to move past folds, but horizontal spacing is not preserved
+- key: "g j"
+  command: "cursorDown"
+  when: "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+- key: "g k"
+  command: "cursorUp"
+  when: "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+- key: "enter"
+  command: "editor.toggleFold"
+  when: "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+
+# note, the cursorUndo command only works as expected if you pause before Y
+# there appears to be a timeout before vscode registers the cursor position
+- key: "shift+y"
+  command: "runCommands"
+  args:
+    commands:
+      - "cursorEndSelect"
+      - "editor.action.clipboardCopyAction"
+      - "cursorUndo"
+  when: "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+
+- key: "g h"
+  command: "cursorHome"
+  when: "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+- key: "g l"
+  command: "cursorEnd"
+  when: "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+- key: "space b d"
+  command: "workbench.action.closeActiveEditor"
+  when: "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+- key: "space space"
+  command: "workbench.action.showAllEditors"
+  when: "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+- key: "g g"
+  command: "cursorTop"
+  when: "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+- key: "space e"
+  command: "workbench.action.toggleSidebarVisibility"
+  when: "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+- key: "space s g"
+  command: "workbench.action.findInFiles"
+  when: "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+- key: "space f f"
+  command: "workbench.action.quickOpen"
+  when: "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+- key: "space f d"
+  command: "workbench.action.quickOpen"
+  when: "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+- key: "space o"
+  command: "workbench.action.quickOpen"
+  when: "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+- key: "space b e"
+  command: "workbench.view.explorer"
+  when: "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+- key: "space shift+\\"
+  command: "workbench.action.splitEditor"
+  when: "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+- key: "space -"
+  command: "workbench.action.splitEditorDown"
+  when: "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+- key: "' '"
+  command: "cursorUndo"
+  when: "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+
+- key: "ctrl+d"
+  command: "runCommands"
+  args:
+    commands:
+      - "cursorDown"
+      - "cursorDown"
+      - "cursorDown"
+      - "cursorDown"
+      - "cursorDown"
+      - "cursorDown"
+      - "cursorDown"
+      - "cursorDown"
+      - "cursorDown"
+      - "cursorDown"
+      - "cursorDown"
+      - "cursorDown"
+      - "cursorDown"
+      - "cursorDown"
+      - "cursorDown"
+  when: "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+
+- key: "ctrl+u"
+  command: "runCommands"
+  args:
+    commands:
+      - "cursorUp"
+      - "cursorUp"
+      - "cursorUp"
+      - "cursorUp"
+      - "cursorUp"
+      - "cursorUp"
+      - "cursorUp"
+      - "cursorUp"
+      - "cursorUp"
+      - "cursorUp"
+      - "cursorUp"
+      - "cursorUp"
+      - "cursorUp"
+      - "cursorUp"
+      - "cursorUp"
+  when: "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"

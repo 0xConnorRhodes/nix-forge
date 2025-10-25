@@ -15,7 +15,7 @@
       when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
     }
     {
-      key = "g kkk";
+      key = "g k";
       command = "cursorUp";
       when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
     }

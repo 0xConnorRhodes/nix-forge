@@ -32,14 +32,6 @@
         SetEnv TERM=xterm-256color
         ProxyJump m
 
-      Host s
-        Hostname ${secrets.ssh.config.pve.ip}
-        Port ${secrets.ssh.config.pve.port}
-        User ${secrets.ssh.config.pve.user}
-        ServerAliveInterval 60
-        ServerAliveCountMax 10
-        SetEnv TERM=xterm-256color
-
       Host ph
         Hostname ${secrets.ssh.config.phone.ip}
         User ${secrets.ssh.config.phone.user}
