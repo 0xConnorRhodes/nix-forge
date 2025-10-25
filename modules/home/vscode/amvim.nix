@@ -13,16 +13,6 @@
       when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
     }
     {
-      key = "w";
-      command = "cursorWordRight";
-      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
-    }
-    {
-      key = "b";
-      command = "cursorWordLeft";
-      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
-    }
-    {
       key = "k";
       command = "cursorUp";
       when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
@@ -58,7 +48,7 @@
     }
     {
       key = "k j";
-      command = "amVim.exit";
+      command = "amVim.escape";
       when = "editorTextFocus && amVim.mode == 'INSERT'";
     }
     {
@@ -69,6 +59,11 @@
     {
       key = "space space";
       command = "workbench.action.showAllEditors";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+    {
+      key = "g g";
+      command = "cursorTop";
       when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
     }
   ];
