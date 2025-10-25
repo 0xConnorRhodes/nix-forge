@@ -7,6 +7,10 @@
 # ///
 """
 Script Requirements:
+- As a user, I want to maintain a user-editable list of Kiro extensions at the top of the file to specify which extensions should be installed.
+- As a user, I want the script to install each extension in the list by running 'kiro --install-extension EXTENSION_NAME' for each item.
+- As a user, I want to see success messages when extensions are installed successfully.
+- As a user, I want to see error messages if extension installation fails or if the 'kiro' command is not found.
 - As a user, I want to read a settings YAML file from '$HOME/code/nix-forge/configs/kiro/settings.yml'.
 - As a user, I want to flatten the nested YAML structure into a single-level dictionary with dot-separated keys.
 - As a user, I want to read a keybindings YAML file from '$HOME/code/nix-forge/configs/kiro/keybindings.yml'.
@@ -21,10 +25,16 @@ Script Requirements:
 """
 
 import json
+import subprocess
 import sys
 import yaml
 from pathlib import Path
 from typing import Any, Dict, MutableMapping
+
+# User-editable list of Kiro extensions to install
+EXTENSIONS = [
+    "auiworks.amvim",
+]
 
 
 def flatten_dict(
@@ -41,11 +51,29 @@ def flatten_dict(
     return dict(items)
 
 
+def install_extensions() -> None:
+    """Installs Kiro extensions from the EXTENSIONS list."""
+    for extension in EXTENSIONS:
+        try:
+            subprocess.run(
+                ["kiro", "--install-extension", extension],
+                check=True,
+                capture_output=True,
+                text=True
+            )
+            print(f"Successfully installed Kiro extension: {extension}")
+        except subprocess.CalledProcessError as e:
+            print(f"Error installing extension {extension}: {e.stderr}", file=sys.stderr)
+        except FileNotFoundError:
+            print("Error: 'kiro' command not found. Please ensure Kiro is installed and in your PATH.", file=sys.stderr)
+            break
+
+
 def get_output_dir() -> Path:
     """Determines the correct config output directory based on the platform."""
     if sys.platform == "darwin":
         return Path("/Users/connor.rhodes/Library/Application Support/Kiro/User")
-    
+
     return Path.home() / ".config" / "Kiro" / "User"
 
 
@@ -63,7 +91,7 @@ def process_file(
 
     with open(output_path, "w") as f:
         json.dump(processed_data, f, indent=4)
-    
+
     print(f"Successfully wrote Kiro config to: {output_path}")
 
 
@@ -77,7 +105,7 @@ def main():
 
         settings_yaml_path = base_input_dir / "settings.yml"
         settings_json_path = output_dir / "settings.json"
-        
+
         keybindings_yaml_path = base_input_dir / "keybindings.yml"
         keybindings_json_path = output_dir / "keybindings.json"
 
@@ -86,6 +114,9 @@ def main():
 
         # Process keybindings.json (no flattening)
         process_file(keybindings_yaml_path, keybindings_json_path, flatten=False)
+
+        # Install Kiro extensions
+        install_extensions()
 
     except FileNotFoundError as e:
         print(f"Error: Input file not found. {e}", file=sys.stderr)
@@ -100,4 +131,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
