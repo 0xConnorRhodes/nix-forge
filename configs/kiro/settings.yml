@@ -17,6 +17,11 @@ workbench:
     showTabs: "none"
     empty:
       hint: "hidden"
+
+terminal:
+  integrated:
+    fontSize: 16
+
 explorer:
   confirmDragAndDrop: false
   confirmDelete: false
