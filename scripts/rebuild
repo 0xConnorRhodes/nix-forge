@@ -23,23 +23,17 @@ yq -o=json secrets.yml > .secrets.json
 export NIXPKGS_ALLOW_UNFREE=1
 
 if [ "$(uname)" = "Darwin" ]; then
-  #rm -f "$HOME/Library/Application Support/Code/User/settings.json"
-  #rm -f "$HOME/Library/Application Support/Code/User/settings.json.bak"
   #sudo darwin-rebuild switch --flake .#traveller
   # -E and --impure needed to see the NIXPKGS_ALLOW_UNFREE env var
   sudo -E darwin-rebuild switch --impure --flake .#traveller
-  #brew upgrade
-  #move-aside "$HOME/Library/Application Support/Code/User/settings.json"
+  brew upgrade
 #elif [ "$(hostname)" = "mpro" ]; then
 #  nh os switch .
 else
   #sudo nixos-rebuild switch --flake .
   #sudo nixos-rebuild switch --flake . |& nom
   sudo -E nixos-rebuild switch --impure --flake .
-  #rm -f "$HOME/.config/Code/User/settings.json"
-  #rm -f "$HOME/.config/Code/User/settings.json.bak"
   # nh os switch .
-  #move-aside "$HOME/.config/Code/User/settings.json"
   #nh os switch . -- --impure
 fi
 
@@ -50,6 +44,8 @@ rm -f "$VSCODE_CONFIG_PATH/keybindings.json"
 mv "$VSCODE_CONFIG_PATH/settings.json.tmp" "$VSCODE_CONFIG_PATH/settings.json"
 mv "$VSCODE_CONFIG_PATH/keybindings.json.tmp" "$VSCODE_CONFIG_PATH/keybindings.json"
 
-./configs/kiro/write-kiro-config
+if command -v kiro >/dev/null 2>&1; then
+  ./configs/kiro/write-kiro-config
+fi
 
 popd
