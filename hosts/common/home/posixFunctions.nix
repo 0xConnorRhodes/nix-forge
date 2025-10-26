@@ -122,4 +122,13 @@ gd() {
     git diff --quiet && git diff --cached || git diff
   fi
 }
+
+lsp() {
+  current_dir=$(pwd)
+  if [ "$current_dir" = "/" ]; then
+    echo "/$1"
+  else
+    echo "$current_dir/$1"
+  fi
+}
 ''
