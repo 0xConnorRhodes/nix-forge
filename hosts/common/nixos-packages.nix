@@ -55,10 +55,6 @@ in
     ]))
 
     # nonfree
-    obsidian
-    #vscode
     pkgsUnstable.warp-terminal
-    pkgsUnstable.code-cursor
-    pkgsUnstable.windsurf
   ];
 }
