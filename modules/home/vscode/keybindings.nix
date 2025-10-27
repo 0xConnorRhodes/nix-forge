@@ -180,6 +180,10 @@ in
     { key = "${modAlt}+k r";
       command = "opensshremotes.openEmptyWindow"; }
 
+    { key = "${modAlt}+k g";
+      command = "editor.action.openLink";
+      when = "editorTextFocus"; }
+
     # Go to definition with Alt+Enter
     { key = "alt+enter";
       command = "editor.action.revealDefinition";
