@@ -183,6 +183,9 @@ in
     { key = "${modAlt}+k g";
       command = "editor.action.openLink";
       when = "editorTextFocus"; }
+    { key = "${modAlt}+k ${modAlt}+g";
+      command = "editor.action.openLink";
+      when = "editorTextFocus"; }
 
     # Go to definition with Alt+Enter
     { key = "alt+enter";

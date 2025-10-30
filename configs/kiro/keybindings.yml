@@ -90,6 +90,10 @@
   command: "editor.action.openLink"
   when: "editorTextFocus"
 
+- key: "cmd+k cmd+g"
+  command: "editor.action.openLink"
+  when: "editorTextFocus"
+
 - key: "cmd+i j"
   command: "workbench.action.tasks.runTask"
   args: "Open Daily Note"
