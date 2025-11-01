@@ -12,9 +12,9 @@ workbench:
   # hide things
   statusBar:
     visible: true
-  showTabs: false
   editor:
     showTabs: "none"
+    enablePreview: false
     empty:
       hint: "hidden"
 
@@ -36,8 +36,6 @@ window:
   zoomLevel: 2  # default zoom level, set in home.nix
 
 editor:
-  empty:
-    hint: "hidden"  # don't show hint on empty editor
   scrollbar:
     verticalScrollbarSize: 6
     horizontalScrollbarSize: 5
@@ -62,7 +60,6 @@ editor:
   snippetSuggestions: "top"  # snippet suggestions first in autocomplete list
   stickyScroll:
     enabled: false
-  enablePreview: false  # open new files in main buffer, not preview buffer
   minimap:
     enabled: false
   renderIndentGuides: true
