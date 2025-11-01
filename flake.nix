@@ -54,7 +54,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nixos-generators, pinned-hugo, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, nixos-generators, ... }@inputs:
   let
     secrets = builtins.fromJSON (builtins.readFile ./.secrets.json);
   in
