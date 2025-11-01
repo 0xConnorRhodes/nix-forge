@@ -12,7 +12,9 @@ Script Requirements:
 - As a user, I want to see success messages when extensions are installed successfully.
 - As a user, I want to see error messages if extension installation fails or if the 'kiro' command is not found.
 - As a user, I want to read a settings YAML file from '$HOME/code/nix-forge/configs/kiro/settings.yml'.
+- As a user, I want environment variables (like $HOME, ${HOME}, etc.) in string values to be automatically expanded to their actual values.
 - As a user, I want to flatten the nested YAML structure into a single-level dictionary with dot-separated keys.
+- As a user, I want language-specific settings (keys that start with '[' and end with ']') to be preserved as nested objects during flattening, not converted to dot notation.
 - As a user, I want to read a keybindings YAML file from '$HOME/code/nix-forge/configs/kiro/keybindings.yml'.
 - As a user, I want to determine the correct output directory for 'Kiro' configuration based on my OS.
 - As a user, I want the output directory to be '/Users/connor.rhodes/Library/Application Support/Kiro/User' if the platform is 'darwin'.
