@@ -25,6 +25,8 @@ Script Requirements:
 """
 
 import json
+import os
+import re
 import subprocess
 import sys
 import yaml
@@ -35,6 +37,19 @@ from typing import Any, Dict, MutableMapping
 EXTENSIONS = [
     "auiworks.amvim",
 ]
+
+
+def expand_env_vars(data: Any) -> Any:
+    """Recursively expand environment variables in string values."""
+    if isinstance(data, str):
+        # Expand environment variables like $HOME, ${HOME}, etc.
+        return os.path.expandvars(data)
+    elif isinstance(data, dict):
+        return {k: expand_env_vars(v) for k, v in data.items()}
+    elif isinstance(data, list):
+        return [expand_env_vars(item) for item in data]
+    else:
+        return data
 
 
 def flatten_dict(
@@ -84,6 +99,9 @@ def process_file(
     """Reads a YAML file, processes it, and writes it to a JSON file."""
     with open(input_path, "r") as f:
         data = yaml.safe_load(f)
+
+    # Expand environment variables in the data
+    data = expand_env_vars(data)
 
     if flatten:
         processed_data = flatten_dict(data)
