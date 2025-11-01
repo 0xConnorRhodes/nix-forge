@@ -3,17 +3,19 @@
 {
   programs.lf = {
     enable = true;
-    
+
     # options normally set with `set option value`
     settings = { };
 
     keybindings = {
       "." = "set hidden!";
       "<backspace2>" = "trash";
+      "E" = "code";
     };
 
     commands = {
       trash = "\$${osConfig.myConfig.trashcli} \"$fx\"";
+      code = "&code \"$f\"";
     };
 
     previewer.source = pkgs.writeShellScript "preview.sh" ''
