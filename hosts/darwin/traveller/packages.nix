@@ -11,6 +11,12 @@ let
     }
   );
 
+  # Hugo pinned to v0.105.0 from specific nixpkgs commit
+  pkgsHugo105 = import inputs.nixpkgs-hugo-105 {
+    inherit (pkgs.stdenv.hostPlatform) system;
+    inherit (config.nixpkgs) config;
+  };
+
   ruby = pkgs.ruby_3_4;
   myGems = pkgs.bundlerEnv {
     name = "myGems";
@@ -62,6 +68,7 @@ in
     piper-tts
     gemini-cli
     gh
+    pkgsHugo105.hugo # Hugo v0.105.0 from pinned nixpkgs
 
     # GUI
     utm

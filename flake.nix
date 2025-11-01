@@ -48,9 +48,14 @@
       url = "github:sempruijs/json2nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Pin Hugo to specific version v0.105.0
+    nixpkgs-hugo-105 = {
+      url = "github:nixos/nixpkgs/3c66daa779d7cca11d3ee15d8da9b4bb76ed60ee";
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nixos-generators, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, nixos-generators, nixpkgs-hugo-105, ... }@inputs:
   let
     secrets = builtins.fromJSON (builtins.readFile ./.secrets.json);
   in

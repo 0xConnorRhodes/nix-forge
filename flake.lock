@@ -293,6 +293,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-hugo-105": {
+      "locked": {
+        "lastModified": 1666963207,
+        "narHash": "sha256-r77cTDlhUHrAXpmsVj7eDFAztogjeLWMyW8zkJMLnv8=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "3c66daa779d7cca11d3ee15d8da9b4bb76ed60ee",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "3c66daa779d7cca11d3ee15d8da9b4bb76ed60ee",
+        "type": "github"
+      }
+    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1720292194,
@@ -378,6 +394,7 @@
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-hugo-105": "nixpkgs-hugo-105",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nur": "nur",
         "plasma-manager": "plasma-manager"

@@ -1,4 +1,11 @@
 { config, lib, pkgs, inputs, pkgsUnstable, secrets, ... }:
+let
+  # Hugo pinned to v0.105.0 from specific nixpkgs commit
+  pkgsHugo105 = import inputs.nixpkgs-hugo-105 {
+    inherit (pkgs.stdenv.hostPlatform) system;
+    inherit (config.nixpkgs) config;
+  };
+in
 {
     # from: https://discourse.nixos.org/t/mixing-stable-and-unstable-packages-on-flake-based-nixos-system/50351/4
     # this allows you to access `pkgsUnstable` anywhere in your config
@@ -32,6 +39,7 @@
       podman-desktop
       pkgsUnstable.ramalama
       gpu-screen-recorder
+      pkgsHugo105.hugo # Hugo v0.105.0 from pinned nixpkgs
 
       # GUI
       calibre
