@@ -1,11 +1,4 @@
 { config, lib, pkgs, inputs, secrets, ... }:
-let
-  # Hugo pinned to v0.105.0 from specific nixpkgs commit
-  pkgsHugo105 = import inputs.nixpkgs-hugo-105 {
-    inherit (pkgs.stdenv.hostPlatform) system;
-    inherit (config.nixpkgs) config;
-  };
-in
 
 {
   # make pkgsUnstable available to all modules
@@ -34,6 +27,5 @@ in
     nh
     just
     uv
-    pkgsHugo105.hugo # Hugo v0.105.0 from pinned nixpkgs
   ];
 }

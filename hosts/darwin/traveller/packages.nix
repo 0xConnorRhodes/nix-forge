@@ -12,7 +12,7 @@ let
   );
 
   # Hugo pinned to v0.105.0 from specific nixpkgs commit
-  pkgsHugo105 = import inputs.nixpkgs-hugo-105 {
+  pkgsHugo105 = import inputs.pinned-hugo {
     inherit (pkgs.stdenv.hostPlatform) system;
     inherit (config.nixpkgs) config;
   };
