@@ -1,7 +1,6 @@
 { config, lib, pkgs, inputs, pkgsUnstable, secrets, ... }:
 let
-  # Hugo pinned to v0.105.0 from specific nixpkgs commit
-  pkgsHugo105 = import inputs.pinned-hugo {
+  pinnedHugo = import inputs.pinned-hugo {
     inherit (pkgs.stdenv.hostPlatform) system;
     inherit (config.nixpkgs) config;
   };
@@ -39,7 +38,7 @@ in
       podman-desktop
       pkgsUnstable.ramalama
       gpu-screen-recorder
-      pkgsHugo105.hugo # Hugo v0.105.0 from pinned nixpkgs
+      pinnedHugo.hugo
 
       # GUI
       calibre

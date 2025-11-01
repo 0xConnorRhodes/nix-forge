@@ -5,8 +5,7 @@ let
       inherit (inputs)
       json2nix; };
 
-  # Hugo pinned to v0.105.0 from specific nixpkgs commit
-  pkgsHugo105 = import inputs.pinned-hugo {
+  pinnedHugo = import inputs.pinned-hugo {
     inherit (pkgs.stdenv.hostPlatform) system;
     inherit (config.nixpkgs) config;
   };
@@ -54,7 +53,7 @@ in
     sshpass # needed for ansible
     auto-editor
     pipx
-    pkgsHugo105.hugo # Hugo v0.105.0 from pinned nixpkgs
+    pinnedHugo.hugo
 
     # gui programs
     calibre
