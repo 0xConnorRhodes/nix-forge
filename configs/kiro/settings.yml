@@ -50,7 +50,7 @@ editor:
     bracketPairs: true
     bracketPairsHorizontal: true
   bracketPairColorization:
-    enable: true
+    enabled: true
     independentColorPoolPerBracketType: true
   # reduce gutter (left margin padding) size
   glyphMargin: false
@@ -99,3 +99,11 @@ security:
 
 git:
   openRepositoryInParentFolders: "never"
+
+# Language-specific settings
+"[markdown]":
+  "editor.bracketPairColorization.enabled": false
+  "editor.guides.bracketPairs": false
+  "editor.guides.bracketPairsHorizontal": false
+  "editor.lightbulb.enabled": "off"
+  "editor.matchBrackets": "never"

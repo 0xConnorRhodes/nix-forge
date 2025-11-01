@@ -40,11 +40,12 @@ EXTENSIONS = [
 def flatten_dict(
     d: MutableMapping[str, Any], parent_key: str = "", sep: str = "."
 ) -> Dict[str, Any]:
-    """Flattens a nested dictionary into a single-level dictionary."""
+    """Flattens a nested dictionary into a single-level dictionary, but preserves language-specific settings."""
     items = []
     for k, v in d.items():
         new_key = f"{parent_key}{sep}{k}" if parent_key else k
-        if isinstance(v, MutableMapping):
+        # Preserve language-specific settings (keys that start with [ and end with ])
+        if isinstance(v, MutableMapping) and not (k.startswith('[') and k.endswith(']')):
             items.extend(flatten_dict(v, new_key, sep=sep).items())
         else:
             items.append((new_key, v))
