@@ -31,7 +31,10 @@
         editor.enableCodeActions = true; # icon to modify/review with copilot on text selection
         advanced.authPermissions = "Grant"; # grant advanced auth permissions for Copilot
       };
-      chat.tools.global.autoApprove = true; # auto-approve chat tools for agent mode
+      chat = {
+        tools.global.autoApprove = true; # auto-approve chat tools for agent mode
+        agent.maxRequests = 100; # default 25
+      };
 
       # sumneko.lua
       Lua = {
