@@ -87,39 +87,6 @@ in
     { key = "${modAlt}+k ${modAlt}+o";
       command = "workbench.action.quickOpen"; }
 
-    { key = "${modAlt}+k i";
-      command = "workbench.action.tasks.runTask"; }
-    { key = "${modAlt}+k ${modAlt}+i";
-      command = "workbench.action.tasks.runTask"; }
-
-    { key = "${modAlt}+i j";
-      command = "workbench.action.tasks.runTask";
-      args = "Open Daily Note"; }
-    { key = "${modAlt}+i ${modAlt}+j";
-      command = "workbench.action.tasks.runTask";
-      args = "Open Daily Note"; }
-
-    { key = "${modAlt}+i w";
-      command = "workbench.action.tasks.runTask";
-      args = "Open Weekly Note"; }
-    { key = "${modAlt}+i ${modAlt}+w";
-      command = "workbench.action.tasks.runTask";
-      args = "Open Weekly Note"; }
-
-    { key = "${modAlt}+i i";
-      command = "workbench.action.tasks.runTask";
-      args = "Create New Draft"; }
-    { key = "${modAlt}+i ${modAlt}+i";
-      command = "workbench.action.tasks.runTask";
-      args = "Create New Draft"; }
-
-    { key = "${modAlt}+i u";
-      command = "workbench.action.tasks.runTask";
-      args = "Open Last Draft"; }
-    { key = "${modAlt}+i ${modAlt}+u";
-      command = "workbench.action.tasks.runTask";
-      args = "Open Last Draft"; }
-
     { key = "${modAlt}+k ${modAlt}+l";
       command = "workbench.action.splitEditor"; }
     { key = "${modAlt}+k l";
@@ -196,5 +163,43 @@ in
     { key = "f12";
       command = "-editor.action.revealDefinition";
       when = "editorHasDefinitionProvider && editorTextFocus"; }
+
+    # PKM tasks
+    { key = "${modAlt}+k i";
+      command = "workbench.action.tasks.runTask"; }
+    { key = "${modAlt}+k ${modAlt}+i";
+      command = "workbench.action.tasks.runTask"; }
+
+    { key = "${modAlt}+i j";
+      command = "workbench.action.tasks.runTask";
+      args = "Open Daily Note"; }
+    { key = "${modAlt}+i ${modAlt}+j";
+      command = "workbench.action.tasks.runTask";
+      args = "Open Daily Note"; }
+
+    { key = "${modAlt}+i w";
+      command = "workbench.action.tasks.runTask";
+      args = "Open Weekly Note"; }
+    { key = "${modAlt}+i ${modAlt}+w";
+      command = "workbench.action.tasks.runTask";
+      args = "Open Weekly Note"; }
+
+    { key = "${modAlt}+i i";
+      command = "workbench.action.tasks.runTask";
+      args = "Create New Draft"; }
+    { key = "${modAlt}+i ${modAlt}+i";
+      command = "workbench.action.tasks.runTask";
+      args = "Create New Draft"; }
+
+    { key = "${modAlt}+i u";
+      command = "workbench.action.tasks.runTask";
+      args = "Open Last Draft"; }
+    { key = "${modAlt}+i ${modAlt}+u";
+      command = "workbench.action.tasks.runTask";
+      args = "Open Last Draft"; }
+
+    { key = "${modAlt}+i c";
+      command = "workbench.action.tasks.runTask";
+      args = "Open Cal Budget"; }
   ];
 }

@@ -84,6 +84,25 @@ in
         };
       }
       {
+        label = "Open Cal Budget";
+        type = "shell";
+        command = "uv";
+        args = [ "run" "--script" "${scriptsDir}/pkm/open-cal-budget" ];
+        group = "pkm";
+        presentation = {
+          echo = false;
+          reveal = "silent";
+          focus = false;
+          panel = "shared";
+          showReuseMessage = false;
+          clear = true;
+        };
+        problemMatcher = [];
+        runOptions = {
+          runOn = "default";
+        };
+      }
+      {
         label = "Create New Draft";
         type = "shell";
         command = "uv";
