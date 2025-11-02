@@ -38,6 +38,7 @@ from typing import Any, Dict, MutableMapping
 # User-editable list of Kiro extensions to install
 EXTENSIONS = [
     "auiworks.amvim",
+    "yzhang.markdown-all-in-one",
 ]
 
 

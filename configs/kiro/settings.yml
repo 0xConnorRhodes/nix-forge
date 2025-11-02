@@ -104,3 +104,11 @@ git:
   "editor.guides.bracketPairsHorizontal": false
   "editor.lightbulb.enabled": "off"
   "editor.matchBrackets": "never"
+
+# EXTENSION SETTINGS
+
+# yzhang.markdown-all-in-one
+markdown:
+  extension:
+    math:
+      enabled: false
