@@ -49,16 +49,6 @@
       when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
     }
     {
-      key = "space b d";
-      command = "workbench.action.closeActiveEditor";
-      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
-    }
-    {
-      key = "space space";
-      command = "workbench.action.showAllEditors";
-      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
-    }
-    {
       key = "g g";
       command = "cursorTop";
       when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
@@ -184,6 +174,44 @@
           "cursorUp"
         ];
       };
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+
+    {
+      key = "g d";
+      command = "editor.action.revealDefinition";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+
+    # SPACEMACS-STYLE KEYBINDINGS
+    {
+      key = "space space";
+      # command = "workbench.action.showAllEditors";
+      command = "workbench.action.showCommands";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+
+    # buffers
+    {
+      key = "space b b";
+      command = "workbench.action.showAllEditors";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+    {
+      key = "space b d";
+      command = "workbench.action.closeActiveEditor";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+
+    # files
+    {
+      key = "space f n";
+      command = "workbench.action.files.newUntitledFile";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+    {
+      key = "space f s";
+      command = "workbench.action.files.save";
       when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
     }
   ];
