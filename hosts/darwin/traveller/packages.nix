@@ -68,6 +68,7 @@ in
     gemini-cli
     gh
     pinnedHugo.hugo
+    cht-sh
 
     # GUI
     utm
