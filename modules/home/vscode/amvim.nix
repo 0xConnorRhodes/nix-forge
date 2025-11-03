@@ -63,16 +63,6 @@
       command = "workbench.action.findInFiles";
       when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
     }
-    {
-      key = "space f f";
-      command = "workbench.action.quickOpen";
-      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
-    }
-    {
-      key = "space f d";
-      command = "workbench.action.quickOpen";
-      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
-    }
     # {
     #   key = "space j";
     #   command = "workbench.action.previousEditor";
@@ -205,9 +195,20 @@
 
     # files
     {
+      key = "space f f";
+      command = "workbench.action.quickOpen";
+      # this when works both when the editor is open and closed
+      when = "(editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput) || (!editorIsOpen && amVim.mode == 'NORMAL' && !amVim.waitingForInput)";
+    }
+    {
+      key = "space f d";
+      command = "workbench.action.quickOpen";
+      when = "(editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput) || (!editorIsOpen && amVim.mode == 'NORMAL' && !amVim.waitingForInput)";
+    }
+    {
       key = "space f n";
       command = "workbench.action.files.newUntitledFile";
-      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+      when = "(editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput) || (!editorIsOpen && amVim.mode == 'NORMAL' && !amVim.waitingForInput)";
     }
     {
       key = "space f s";

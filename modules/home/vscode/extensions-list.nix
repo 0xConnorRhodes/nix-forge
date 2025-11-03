@@ -41,6 +41,7 @@ in
     (with marketplace-extensions; [
       sgtsquiggs.vscode-active-file-status # show open file in status bar
       auiworks.amvim # better performance
+      sleistner.vscode-fileutils
       # google.geminicodeassist
       #github.copilot
       #github.copilot-chat
