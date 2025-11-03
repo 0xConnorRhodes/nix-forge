@@ -27,6 +27,25 @@ in
         };
       }
       {
+        label = "Open Walk Note";
+        type = "shell";
+        command = "uv";
+        args = [ "run" "--script" "${scriptsDir}/pkm/open-walk-note" ];
+        group = "pkm";
+        presentation = {
+          echo = false;
+          reveal = "silent";
+          focus = false;
+          panel = "shared";
+          showReuseMessage = false;
+          clear = true;
+        };
+        problemMatcher = [];
+        runOptions = {
+          runOn = "default";
+        };
+      }
+      {
         label = "Build FP Note";
         type = "shell";
         command = "uv";

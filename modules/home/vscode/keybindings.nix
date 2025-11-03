@@ -177,9 +177,13 @@ in
       command = "workbench.action.tasks.runTask";
       args = "Open Daily Note"; }
 
-    { key = "${modAlt}+i w";
+    { key = "${modAlt}+i q";
       command = "workbench.action.tasks.runTask";
       args = "Open Weekly Note"; }
+    { key = "${modAlt}+i w";
+      command = "workbench.action.tasks.runTask";
+      args = "Open Walk Note"; }
+
     { key = "${modAlt}+i ${modAlt}+w";
       command = "workbench.action.tasks.runTask";
       args = "Open Weekly Note"; }

@@ -188,8 +188,18 @@
       when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
     }
     {
+      key = "space ,";
+      command = "workbench.action.showEditorsInActiveGroup";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+    {
       key = "space b d";
       command = "workbench.action.closeActiveEditor";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+    {
+      key = "space b shift+d";
+      command = "workbench.action.closeOtherEditors";
       when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
     }
 
