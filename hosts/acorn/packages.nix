@@ -27,5 +27,6 @@
     nh
     just
     uv
+    duf
   ];
 }
