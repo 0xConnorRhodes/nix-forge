@@ -8,7 +8,7 @@
   };
 
   programs.vscode.profiles.default.keybindings = [
-    # enabling these allows j and k to move past folds, but horizontal spacing is not preserved
+    # enabling these allows g j and g k to move past folds, but horizontal spacing is not preserved
     {
       key = "g j";
       command = "cursorDown";
@@ -178,7 +178,7 @@
       key = "space space";
       # command = "workbench.action.showAllEditors";
       command = "workbench.action.showCommands";
-      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+      when = "(editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput) || (!editorIsOpen && !inputFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput)";
     }
 
     # buffers
@@ -208,17 +208,17 @@
       key = "space f f";
       command = "workbench.action.quickOpen";
       # this when works both when the editor is open and closed
-      when = "(editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput) || (!editorIsOpen && amVim.mode == 'NORMAL' && !amVim.waitingForInput)";
+      when = "(editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput) || (!editorIsOpen && !inputFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput)";
     }
     {
       key = "space f d";
       command = "workbench.action.quickOpen";
-      when = "(editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput) || (!editorIsOpen && amVim.mode == 'NORMAL' && !amVim.waitingForInput)";
+      when = "(editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput) || (!editorIsOpen && !inputFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput)";
     }
     {
       key = "space f n";
       command = "workbench.action.files.newUntitledFile";
-      when = "(editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput) || (!editorIsOpen && amVim.mode == 'NORMAL' && !amVim.waitingForInput)";
+      when = "(editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput) || (!editorIsOpen && !inputFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput)";
     }
     {
       key = "space f s";
