@@ -27,8 +27,6 @@
     py = "python3";
     cat = "bat --style=plain";
     ipy = "ipython";
-    cb = "ruby $HOME/code/food-log/add_entry.rb";
-    reb = "$HOME/code/nix-forge/scripts/rebuild";
     lf = "lfcd";
     ari = "aria2c";
     bk = "buku";
@@ -41,5 +39,9 @@
     # connections
     mm = "et -p 63104 m"; # "mosh m"
     sm = "ssh m";
+
+    # scripts
+    merge-meetings = "python3 ~/code/note-refactor-scripts/expand_meetings.py";
+    reb = "$HOME/code/nix-forge/scripts/rebuild";
   };
 }
