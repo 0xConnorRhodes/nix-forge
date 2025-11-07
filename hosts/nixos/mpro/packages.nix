@@ -55,6 +55,11 @@ in
     pipx
     pinnedHugo.hugo
 
+    # python packages
+    (python3.withPackages (python-pkgs: with python-pkgs; [
+      eyed3
+    ]))
+
     # gui programs
     calibre
     audacious
