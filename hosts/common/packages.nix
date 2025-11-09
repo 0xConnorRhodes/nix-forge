@@ -27,4 +27,5 @@ with pkgs; [
   alejandra
   doppler
   lazysql
+  duf
 ]
