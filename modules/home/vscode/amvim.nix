@@ -1,6 +1,9 @@
 # settings for the amVim extension
-{ config, ... }:
-
+{ config, osConfig, ... }:
+let
+  modAlt = osConfig.myConfig.modAlt;
+  modCtrl = osConfig.myConfig.modCtrl;
+in
 {
   programs.vscode.profiles.default.userSettings.amVim = {
     useSystemClipboard = true;
@@ -8,6 +11,12 @@
   };
 
   programs.vscode.profiles.default.keybindings = [
+    {
+      key = "Shift+${modAlt}+j";
+      command = "editor.action.insertCursorBelow";
+      when = "editorTextFocus";
+    }
+
     # enabling these allows g j and g k to move past folds, but horizontal spacing is not preserved
     {
       key = "g j";
@@ -183,13 +192,23 @@
 
     # buffers
     {
+      key = "space ,";
+      command = "workbench.action.showEditorsInActiveGroup";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+    {
       key = "space b b";
       command = "workbench.action.showAllEditors";
       when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
     }
     {
-      key = "space ,";
-      command = "workbench.action.showEditorsInActiveGroup";
+      key = "space b n";
+      command = "workbench.action.nextEditor";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+    {
+      key = "space b p";
+      command = "workbench.action.previousEditor";
       when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
     }
     {
@@ -200,6 +219,11 @@
     {
       key = "space b shift+d";
       command = "workbench.action.closeOtherEditors";
+      when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
+    }
+    {
+      key = "space b shift+q";
+      command = "workbench.action.closeAllGroups";
       when = "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput";
     }
 

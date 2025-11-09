@@ -22,7 +22,7 @@
       #!/bin/sh
 
       case "$1" in
-        *.md) ${pkgs.bat}/bin/bat --style=plain --color=always --language=markdown --terminal-width=53 --wrap=character "$1";;
+        *.md) ${pkgs.bat}/bin/bat --style=plain --color=always --language=markdown --terminal-width=52 --wrap=character "$1";;
         *) ${pkgs.bat}/bin/bat --style=plain --color=always "$1";;
       esac
     '';
