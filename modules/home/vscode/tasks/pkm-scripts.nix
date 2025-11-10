@@ -29,8 +29,8 @@ in
       {
         label = "Open Walk Note";
         type = "shell";
-        command = "uv";
-        args = [ "run" "--script" "${scriptsDir}/pkm/open-walk-note" ];
+        command = "zsh";
+        args = [ "${scriptsDir}/pkm/open-walk-note" ];
         group = "pkm";
         presentation = {
           echo = false;
