@@ -135,6 +135,9 @@ in
     { key = "${modAlt}+k v e"; # view, extensions
       command = "workbench.view.extensions"; }
 
+    { key = "${modAlt}+k v s"; # show search in sidebar
+      command = "workbench.view.search"; }
+
     { key = "${modAlt}+k v k"; # view, keybinds
       command = "workbench.action.openGlobalKeybindings"; }
 
