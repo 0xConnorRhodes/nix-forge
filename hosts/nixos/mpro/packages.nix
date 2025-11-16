@@ -37,7 +37,7 @@ in
     comma
     tealdeer
     rclone
-    lima
+    #lima
     minikube
     kubectl
     gcc # needed for test nvim configs

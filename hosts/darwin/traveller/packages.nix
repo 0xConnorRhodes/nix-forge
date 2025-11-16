@@ -62,7 +62,7 @@ in
     unixtools.watch
     unixtools.ping
     emacs-macport
-    lima
+    #lima
     mpv
     piper-tts
     gemini-cli
