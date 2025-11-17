@@ -1,46 +1,41 @@
 { config, lib, pkgs, pkgsUnstable, ... }:
 
 {
-  # services.immich = {
-  #   enable = true;
-  #   package = pkgsUnstable.immich;
-  #   host = "127.0.0.1";
-  #   port = 4312;
-  #   user = config.myConfig.username;
-  # };
+  services.immich = {
+    enable = true;
+    # Network configuration
+    host = "0.0.0.0";  # Listen on all interfaces
+    port = 2283;       # Default port
+    openFirewall = true;
 
-  systemd.timers."immich-backup-docker" = {
-    wantedBy = [ "timers.target" ];
-    timerConfig = {
-      OnCalendar = "daily"; # Examples: daily, weekly, hourly, *-*-* 03:00:00
-      Persistent = true; # Run missed jobs on next boot
-      Unit = "immich-backup-docker.service";
+    # Media storage location
+    mediaLocation = "/var/lib/immich";
+
+    # Enable database (PostgreSQL with required extensions)
+    database = {
+      enable = true;
+      createDB = true;
+      name = "immich";
+      user = "immich";
+      host = "/run/postgresql";  # Use Unix socket for better security
+      enableVectorChord = true;  # Enable for full-text search
+      enableVectors = true;      # Keep pgvecto.rs for compatibility
     };
-  };
 
-  systemd.services."immich-backup-docker" = {
-    path = with pkgs; [
-      docker
-      gnutar
-      gzip
-      coreutils
-      rclone
-    ];
-    script = ''
-      set -e
-      PATH="/run/wrappers/bin:$PATH"
-      BACKUP_FILE="$(date +%y%m%d)-immich-db-backup.tar.gz"
+    # Enable Redis cache
+    redis = {
+      enable = true;
+    };
 
-      docker compose -f /home/connor/code/infra/immich/compose.yml down
-      sudo tar -czpf /tmp/$BACKUP_FILE -C /home/connor/.local/docker_data immich
-      sudo chown connor:users /tmp/$BACKUP_FILE
-      mv /tmp/$BACKUP_FILE /zstore/data/records/db_backups/immich
-      rclone copy /zstore/data/records/db_backups/immich dropbox_enc:db_backups/immich --ignore-existing
-      docker compose -f /home/connor/code/infra/immich/compose.yml up -d
-    '';
-    serviceConfig = {
-      Type = "oneshot";
-      User = "${config.myConfig.username}";
+    # Enable machine learning for face detection and object search
+    machine-learning = {
+      enable = true;
+    };
+
+    # Basic environment configuration
+    environment = {
+      # Set log level for debugging if needed
+      # IMMICH_LOG_LEVEL = "verbose";
     };
   };
 }

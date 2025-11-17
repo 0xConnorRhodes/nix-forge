@@ -31,6 +31,12 @@
     options = ["nofail"];
   };
 
+  fileSystems."/zstore/immich_library_bak" = {
+    device = "zstore/immich_library_bak";
+    fsType = "zfs";
+    options = ["nofail"];
+  };
+
   fileSystems."/zstore/media" = {
     device = "zstore/media";
     fsType = "zfs";
