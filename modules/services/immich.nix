@@ -15,7 +15,6 @@
       user = "immich";
       host = "/run/postgresql";
       enableVectorChord = true;
-      enableVectors = true; # Keep pgvecto.rs for compatibility
     };
 
     redis = {
