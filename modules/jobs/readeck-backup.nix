@@ -22,7 +22,7 @@
       CONTAINER_BACKUP_PATH="/readeck/export.zip"
       HOST_BACKUP_FILENAME="$(date +%y%m%d)-readeck.zip"
       LOCAL_BACKUP_DIR="/zstore/data/records/db_backups/readeck"
-      RCLONE_REMOTE="dropbox_enc:db_backups/readeck"
+      RCLONE_REMOTE="gdrive_enc:db_backups/readeck"
       # ---------------------
 
       docker exec "$CONTAINER_NAME" readeck export -config /readeck/config.toml "$CONTAINER_BACKUP_PATH"

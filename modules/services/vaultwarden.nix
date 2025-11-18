@@ -15,7 +15,7 @@ let
     tar -czpf "$BACKUP_FILE" -C /var/lib vaultwarden
     cp "$BACKUP_FILE" "$ZSTORE_PATH/"
     chown 1000:100 "$ZSTORE_PATH/$BACKUP_FILENAME"
-    sudo -u ${config.myConfig.username} rclone copy "$ZSTORE_PATH/$BACKUP_FILENAME" dropbox_enc:db_backups/vaultwarden
+    sudo -u ${config.myConfig.username} rclone copy "$ZSTORE_PATH/$BACKUP_FILENAME" gdrive_enc:db_backups/vaultwarden
     rm "$BACKUP_FILE"
   '';
 in

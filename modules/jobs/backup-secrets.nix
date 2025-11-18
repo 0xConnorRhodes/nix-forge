@@ -38,7 +38,7 @@
         fi
       done
 
-      rclone copy "$SOURCE_DIR" dropbox_enc:db_backups/secrets --ignore-existing
+      rclone copy "$SOURCE_DIR" gdrive_enc:db_backups/secrets --ignore-existing
 
       echo "Backup operation completed."
     '';
