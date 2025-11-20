@@ -54,7 +54,8 @@ in
       User = "root";
       ExecStartPre = "${pkgs.systemd}/bin/systemctl stop vaultwarden.service";
       ExecStart = "${backupScript}";
-      ExecStartPost = "${pkgs.systemd}/bin/systemctl start vaultwarden.service";
+      # - prefix to ignore any backup service errors and restart vaultwarden anyway
+      ExecStartPost = "-${pkgs.systemd}/bin/systemctl start vaultwarden.service";
     };
   };
 }
