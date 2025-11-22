@@ -36,6 +36,13 @@
       mineffect = "scale"; # minimize effect
     };
 
+    system.defaults.dock.persistent-apps = [
+      # { app = "/Applications/Safari.app"; }
+      # { folder = "/System/Applications/Utilities"; }
+      # { file = "/Users/connor.rhodes/Downloads/test.csv"; }
+      # { spacer = { small = true; }; }
+    ];
+
     # not working as of 2511
     # system.defaults.universalaccess = {
     #   reduceMotion = true;
