@@ -1,7 +1,7 @@
 { config, lib, pkgs, osConfig, hostPaths ? [], secrets, ... }:
 let
   shellAliases = import ./shellAliases.nix;
-  myPaths = import ./pathDirs.nix;
+  myPaths = import ./pathDirs.nix { inherit pkgs; };
   posixFunctions = import ./posixFunctions.nix;
 
   # Combine common paths with host-specific paths

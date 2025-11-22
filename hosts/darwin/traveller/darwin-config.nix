@@ -50,16 +50,6 @@
       nerd-fonts.jetbrains-mono
     ];
 
-    # nix-homebrew options install homebrew, homebrew options below install packages with homebrew
-    nix-homebrew = {
-      enable = true;
-      # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
-      enableRosetta = false;
-
-      # User owning the Homebrew prefix
-      user = config.myConfig.username;
-    };
-
     # shells that will be accessible from chsh
     environment.shells = [ pkgs.zsh ];
     users.users.${config.myConfig.username} = {

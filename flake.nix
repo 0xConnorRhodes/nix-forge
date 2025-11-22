@@ -13,9 +13,6 @@
 
     nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    homebrew-core = { url = "github:homebrew/homebrew-core"; flake = false; };
-    homebrew-cask = { url = "github:homebrew/homebrew-cask"; flake = false; };
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
@@ -123,7 +120,6 @@
         modules = [
           ./hosts/darwin/traveller/darwin-config.nix
           inputs.home-manager.darwinModules.home-manager
-          inputs.nix-homebrew.darwinModules.nix-homebrew
         ];
       };
     }; # end darwinConfigurations

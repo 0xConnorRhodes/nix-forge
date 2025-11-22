@@ -1,7 +1,7 @@
 { config, lib, pkgs, secrets, ... }:
 let
   shellAliases = import ./shellAliases.nix;
-  myPaths = import ./pathDirs.nix;
+  myPaths = import ./pathDirs.nix { inherit pkgs; };
 in
 {
   programs.bash = {
