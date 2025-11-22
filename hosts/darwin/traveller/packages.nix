@@ -37,7 +37,6 @@ in
     gotop
     bluesnooze # must launch once and choose "launch at login" from menu bar icon
     scrcpy
-    wezterm
     #imagemagickBig # includes ghostscript
     poppler_utils # provides pdftoppm file.pdf -png
     minikube
@@ -45,7 +44,6 @@ in
     gcc # needed for neovim plugins
     pkgsUnstable.neovim
     wget
-    buku
     caligula
     doppler
     ansible
@@ -64,7 +62,6 @@ in
     emacs-macport
     #lima
     mpv
-    piper-tts
     gemini-cli
     gh
     pinnedHugo.hugo
@@ -90,7 +87,6 @@ in
     (ruby.withPackages (ruby-pkgs: with ruby-pkgs; [
       pry
       dotenv
-      highline
       myGems # local ruby gem packages
       ruby-lsp # for vscode ruby lsp
     ]))

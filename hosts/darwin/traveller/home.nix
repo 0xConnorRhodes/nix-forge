@@ -33,7 +33,7 @@
   };
 
   programs.wezterm = {
-    enable = true;
+    enable = false; # install from homebrew
     enableZshIntegration = true;
     enableBashIntegration = true;
   };
