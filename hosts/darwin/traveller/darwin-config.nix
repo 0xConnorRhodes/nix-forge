@@ -32,7 +32,15 @@
     system.defaults.dock = {
       autohide = true;
       appswitcher-all-displays = true; # show alt-tab on all monitors
+      launchanim = false; # disable launch animation
+      mineffect = "scale"; # minimize effect
     };
+
+    # not working as of 2511
+    # system.defaults.universalaccess = {
+    #   reduceMotion = true;
+    #   reduceTransparency = true;
+    # };
 
     system.keyboard = {
       enableKeyMapping = true;
@@ -43,6 +51,17 @@
       InitialKeyRepeat = 10;
       KeyRepeat = 3;
       ApplePressAndHoldEnabled = false;
+      AppleInterfaceStyle = "Dark";
+      AppleEnableMouseSwipeNavigateWithScrolls = false;
+      AppleScrollerPagingBehavior = true;
+      AppleShowAllExtensions = true;
+      NSAutomaticCapitalizationEnabled = false;
+      NSAutomaticInlinePredictionEnabled = false;
+      NSAutomaticWindowAnimationsEnabled = false;
+      NSUseAnimatedFocusRing = false;
+      NSWindowResizeTime = 1.0;
+      NSWindowShouldDragOnGesture = true;
+      _HIHideMenuBar = true; # auto-hide menu bar
     };
 
     fonts.packages = with pkgs; [
