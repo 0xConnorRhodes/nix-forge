@@ -61,7 +61,7 @@
       NSUseAnimatedFocusRing = false;
       NSWindowResizeTime = 1.0;
       NSWindowShouldDragOnGesture = true;
-      _HIHideMenuBar = true; # auto-hide menu bar
+      _HIHideMenuBar = false; # auto-hide menu bar
     };
 
     fonts.packages = with pkgs; [
