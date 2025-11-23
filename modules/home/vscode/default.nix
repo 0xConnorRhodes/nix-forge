@@ -53,6 +53,9 @@ in
           # zoomLevel = 0; # default zoom level, set in home.nix
         };
 
+        # no left-side indicators of line git status
+        scm.diffDecorations = "none";
+
         editor = {
           empty.hint = "hidden"; # don't show hint on empty editor
           scrollbar.verticalScrollbarSize = 6;
@@ -74,8 +77,6 @@ in
           # reduce gutter (left margin padding) size
           glyphMargin = false;
           showFoldingControls = "never";
-
-          scm.diffDecorations = "none";
 
           formatOnSave = true;
           copyWithSyntaxHighlighting = false; # copy as plain text
