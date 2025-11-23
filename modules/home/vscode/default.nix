@@ -75,6 +75,8 @@ in
           glyphMargin = false;
           showFoldingControls = "never";
 
+          scm.diffDecorations = "none";
+
           formatOnSave = true;
           copyWithSyntaxHighlighting = false; # copy as plain text
           defaultFormatter = "null";
