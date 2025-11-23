@@ -17,6 +17,7 @@ in
     autosuggestion.enable = true; # fish-like past command suggestions
     envExtra = ''
       export PATH="${lib.concatStringsSep ":" allPaths}:$PATH"
+      export IPYTHONDIR="${osConfig.myConfig.homeDir}/.config/ipython"
     '';
     # zsh prompt
     enableCompletion = true;
