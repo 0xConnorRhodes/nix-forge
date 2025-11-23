@@ -18,6 +18,7 @@
     ../../../configs/wezterm/wezterm-common.nix
     ../../../modules/home/vscode
     ../../../modules/home/uv.nix
+    ../../../modules/home/ipython.nix
   ];
 
   home.sessionVariables = {
