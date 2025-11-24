@@ -92,6 +92,14 @@ in
           & "$env:HOME/code/nix-forge/scripts/rebuild" $args
       }
 
+      function g {
+          if ($args.Count -eq 0) {
+              git status --short
+          } else {
+              git $args
+          }
+      }
+
       # Additional PowerShell-specific configuration
       # Set PowerShell to use UTF-8 encoding
       [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
