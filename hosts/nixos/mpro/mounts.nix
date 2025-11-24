@@ -37,6 +37,12 @@
     options = ["nofail"];
   };
 
+  fileSystems."/zstore/photos" = {
+    device = "zstore/photos";
+    fsType = "zfs";
+    options = ["nofail"];
+  };
+
   fileSystems."/zstore/media" = {
     device = "zstore/media";
     fsType = "zfs";
