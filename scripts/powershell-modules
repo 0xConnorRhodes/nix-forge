@@ -1,3 +1,4 @@
 #!/usr/bin/env pwsh
 
-Install-Module PSImmich -Scope CurrentUser -Force
+Install-Module -Name PSImmich -Scope CurrentUser -Force
+Install-Module -Name verkadaModule -Scope CurrentUser -Force
