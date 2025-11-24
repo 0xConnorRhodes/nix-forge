@@ -58,7 +58,7 @@
 
   xdg.configFile = {
     # "skhd/skhdrc".source = ./config/skhdrc;
-    "ghostty/config".source = ./config/ghostty;
+    # "ghostty/config".source = ./config/ghostty;
     "screen/screenrc".source = ../../common/home/config/screenrc;
   };
 
