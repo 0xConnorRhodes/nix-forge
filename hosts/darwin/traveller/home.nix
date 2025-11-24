@@ -8,6 +8,7 @@
     ../../common/home/git.nix
     ../../common/home/bash.nix
     ../../common/home/zsh.nix
+    ../../common/home/powershell.nix
     ../../common/home/ripgrep.nix
     ../../common/home/zoxide.nix
     ../../common/home/starship.nix

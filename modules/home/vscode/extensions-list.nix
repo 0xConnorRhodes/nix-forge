@@ -22,7 +22,6 @@ in
       ms-python.python
       ms-python.vscode-pylance
       ms-python.debugpy
-      ms-vscode.powershell
       # bmalehorn.vscode-fish
       # ms-vscode.live-server # live webapp in pane
       sdras.night-owl # theme
@@ -42,6 +41,7 @@ in
       sgtsquiggs.vscode-active-file-status # show open file in status bar
       auiworks.amvim # better performance
       sleistner.vscode-fileutils
+      ms-vscode.powershell
       # google.geminicodeassist
       #github.copilot
       #github.copilot-chat
