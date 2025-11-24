@@ -63,6 +63,9 @@
     "screen/screenrc".source = ../../common/home/config/screenrc;
   };
 
+  # top level file must be here so that fnox can automatically combine with files lower in FHS
+  home.file."fnox.toml".source = ../../common/home/config/fnox.toml;
+
   # Don't show the "Last login" message for every new terminal.
   home.file.".hushlogin" = { text = ""; };
 }

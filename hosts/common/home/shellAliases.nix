@@ -35,6 +35,7 @@
     sl = "systemctl";
     ssl = "sudo systemctl";
     cht = "cht.sh";
+    fn = "fnox";
 
     # connections
     mm = "et -p 63104 m"; # "mosh m"

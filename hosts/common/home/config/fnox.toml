@@ -1,0 +1,5 @@
+default_provider = "bitwarden"
+
+[providers.bitwarden]
+type = "bitwarden"
+backend = "rbw"

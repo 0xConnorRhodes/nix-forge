@@ -2,6 +2,7 @@
 
 with pkgs; [
   git-crypt
+  age
   bashInteractive
   chezmoi
   fish
@@ -25,7 +26,7 @@ with pkgs; [
   jq
   yq-go
   alejandra
-  doppler
   lazysql
   duf
+  rbw
 ]

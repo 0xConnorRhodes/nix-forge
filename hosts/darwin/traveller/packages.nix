@@ -45,7 +45,6 @@ in
     pkgsUnstable.neovim
     wget
     caligula
-    doppler
     ansible
     sshpass # needed by ansible
     lazysql
