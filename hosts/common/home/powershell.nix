@@ -98,12 +98,6 @@ in
       [Console]::InputEncoding = [System.Text.Encoding]::UTF8
       $OutputEncoding = [System.Text.Encoding]::UTF8
 
-      # Enable command prediction (PowerShell 7.2+)
-      if ($PSVersionTable.PSVersion.Major -ge 7 -and $PSVersionTable.PSVersion.Minor -ge 2) {
-          Set-PSReadLineOption -PredictionSource History
-          Set-PSReadLineOption -PredictionViewStyle ListView
-      }
-
       # Better error formatting
       $ErrorView = 'ConciseView'
     '';
