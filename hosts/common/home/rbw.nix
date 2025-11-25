@@ -1,0 +1,14 @@
+{ config, lib, pkgs, ... }:
+
+{
+  programs.rbw = {
+    enable = true;
+    settings = {
+      email = "connor@rhodes.contact";
+      base_url = "https://pass.connorrhodes.com";
+      lock_timeout = 3600;
+      sync_interval = 3600;
+      pinentry = pkgs.pinentry.curses;
+    };
+  };
+}
