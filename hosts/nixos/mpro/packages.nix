@@ -54,6 +54,7 @@ in
     auto-editor
     pipx
     pinnedHugo.hugo
+    atomicparsley
 
     # python packages
     (python3.withPackages (python-pkgs: with python-pkgs; [
