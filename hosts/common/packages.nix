@@ -29,4 +29,5 @@ with pkgs; [
   lazysql
   duf
   rbw
+  termdown
 ]
