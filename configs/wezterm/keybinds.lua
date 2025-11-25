@@ -7,8 +7,8 @@ local modCtrl = host_cfg.modCtrl
 
 local M = {}
 
-local pane_split_mod = modAlt..'|SHIFT'
-local pane_switch_mod = modAlt..'|'..modWin
+local pane_split_mod = modAlt..'|'..modWin
+local pane_switch_mod = modAlt..'|SHIFT' 
 
 M.keys = {
   -- Pane splitting
