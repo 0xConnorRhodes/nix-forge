@@ -4,7 +4,7 @@
   systemd.timers."move-phone-voice-recordings" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
-      OnCalendar = "hourly"; # Examples: daily, weekly, hourly, *-*-* 03:00:00
+      OnCalendar = "*:0/5"; # Run every 5 minutes
       Persistent = true; # Run missed jobs on next boot
       Unit = "move-phone-voice-recordings.service";
     };
