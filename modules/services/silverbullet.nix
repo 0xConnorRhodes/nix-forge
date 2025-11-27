@@ -3,7 +3,7 @@
 {
   services.silverbullet = {
     enable = true;
-    package = pkgs.silverbullet;
+    package = pkgsUnstable.silverbullet;
     user = config.myConfig.username;
     group = "users";
     spaceDir = "${config.myConfig.homeDir}/.local/notes/silverbullet";
