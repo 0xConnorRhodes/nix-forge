@@ -20,9 +20,6 @@
       ../../../modules/nixos/caddy.nix
       ../../../modules/nixos/dashy
       ../../../modules/nixos/authelia.nix
-      ../../../modules/services/pairdrop.nix
-      ../../../modules/services/copyparty.nix
-      ../../../modules/services/shiori.nix
       ../../../modules/nixos/kvm.nix
       #../../../modules/nixos/incus.nix
       ../../../modules/nixos/tailscale.nix
@@ -35,6 +32,9 @@
       ../../../modules/services/web-print.nix
       ../../../modules/services/vaultwarden.nix
       ../../../modules/services/immich.nix
+      ../../../modules/services/pairdrop.nix
+      ../../../modules/services/copyparty.nix
+      ../../../modules/services/silverbullet.nix
 
       # jobs
       ../../../modules/jobs/sync-notes.nix
