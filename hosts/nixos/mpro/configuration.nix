@@ -34,7 +34,7 @@
       ../../../modules/services/immich.nix
       ../../../modules/services/pairdrop.nix
       ../../../modules/services/copyparty.nix
-      ../../../modules/services/silverbullet.nix
+      #../../../modules/services/silverbullet.nix
 
       # jobs
       ../../../modules/jobs/sync-notes.nix
