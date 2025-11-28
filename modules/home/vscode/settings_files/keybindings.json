@@ -1,0 +1,464 @@
+[
+  {
+    "command": "workbench.action.terminal.focus",
+    "key": "cmd+j",
+    "when": "!terminalFocus"
+  },
+  {
+    "command": "workbench.action.togglePanel",
+    "key": "cmd+j",
+    "when": "terminalFocus"
+  },
+  {
+    "command": "workbench.action.toggleAuxiliaryBar",
+    "key": "cmd+,"
+  },
+  {
+    "command": "workbench.action.toggleSidebarVisibility",
+    "key": "cmd+b"
+  },
+  {
+    "args": {
+      "commands": [
+        "workbench.action.focusActiveEditorGroup",
+        "workbench.action.toggleSidebarVisibility",
+        "workbench.action.terminal.focus"
+      ]
+    },
+    "command": "runCommands",
+    "key": "cmd+b",
+    "when": "terminalFocus"
+  },
+  {
+    "args": {
+      "commands": [
+        "workbench.action.focusActiveEditorGroup",
+        "workbench.action.toggleSidebarVisibility",
+        "workbench.action.terminal.focus",
+        "workbench.action.toggleMaximizedPanel"
+      ]
+    },
+    "command": "runCommands",
+    "key": "cmd+b",
+    "when": "terminalFocus && panelMaximized"
+  },
+  {
+    "command": "workbench.action.toggleMaximizeEditorGroup",
+    "key": "cmd+e",
+    "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
+  },
+  {
+    "command": "workbench.action.toggleMaximizedPanel",
+    "key": "cmd+e",
+    "when": "panelVisible && panelFocus"
+  },
+  {
+    "command": "workbench.action.toggleMaximizeEditorGroup",
+    "key": "ctrl+i",
+    "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
+  },
+  {
+    "command": "workbench.action.toggleMaximizedPanel",
+    "key": "ctrl+i",
+    "when": "panelVisible && panelFocus"
+  },
+  {
+    "command": "workbench.action.closeActiveEditor",
+    "key": "cmd+w"
+  },
+  {
+    "command": "workbench.action.showCommands",
+    "key": "cmd+k k"
+  },
+  {
+    "command": "workbench.action.showCommands",
+    "key": "cmd+k cmd+k"
+  },
+  {
+    "command": "workbench.files.action.focusFilesExplorer",
+    "key": "cmd+k cmd+e"
+  },
+  {
+    "command": "workbench.files.action.focusFilesExplorer",
+    "key": "cmd+k e"
+  },
+  {
+    "command": "workbench.action.previousEditor",
+    "key": "cmd+u"
+  },
+  {
+    "command": "workbench.action.nextEditor",
+    "key": "Shift+cmd+u"
+  },
+  {
+    "command": "workbench.action.quickOpen",
+    "key": "cmd+k o"
+  },
+  {
+    "command": "workbench.action.quickOpen",
+    "key": "cmd+k cmd+o"
+  },
+  {
+    "command": "workbench.action.splitEditor",
+    "key": "cmd+k cmd+l"
+  },
+  {
+    "command": "workbench.action.splitEditor",
+    "key": "cmd+k l"
+  },
+  {
+    "command": "workbench.action.splitEditorDown",
+    "key": "cmd+k j"
+  },
+  {
+    "command": "workbench.action.splitEditorDown",
+    "key": "cmd+k cmd+j"
+  },
+  {
+    "command": "workbench.action.closeEditorsAndGroup",
+    "key": "cmd+k x"
+  },
+  {
+    "command": "workbench.action.closeEditorsAndGroup",
+    "key": "cmd+k cmd+x"
+  },
+  {
+    "command": "workbench.action.quickOpenNavigateNextInFilePicker",
+    "key": "cmd+o",
+    "when": "inFilesPicker && inQuickOpen"
+  },
+  {
+    "command": "workbench.action.files.openFolder",
+    "key": "cmd+k f"
+  },
+  {
+    "command": "workbench.action.focusRightGroup",
+    "key": "ctrl+l"
+  },
+  {
+    "command": "workbench.action.focusLeftGroup",
+    "key": "ctrl+h"
+  },
+  {
+    "command": "workbench.action.focusBelowGroup",
+    "key": "ctrl+j"
+  },
+  {
+    "command": "workbench.action.focusAboveGroup",
+    "key": "ctrl+k"
+  },
+  {
+    "command": "workbench.action.focusActiveEditorGroup",
+    "key": "ctrl+k",
+    "when": "panelVisible && panelFocus"
+  },
+  {
+    "command": "inlineChat.start",
+    "key": "cmd+k n"
+  },
+  {
+    "command": "inlineChat.start",
+    "key": "cmd+k cmd+n"
+  },
+  {
+    "command": "workbench.view.explorer",
+    "key": "cmd+k v f"
+  },
+  {
+    "command": "workbench.view.extensions",
+    "key": "cmd+k v e"
+  },
+  {
+    "command": "workbench.view.search",
+    "key": "cmd+k v s"
+  },
+  {
+    "command": "workbench.action.openGlobalKeybindings",
+    "key": "cmd+k v k"
+  },
+  {
+    "command": "workbench.action.openSettings2",
+    "key": "cmd+k v s"
+  },
+  {
+    "command": "workbench.action.toggleFullScreen",
+    "key": "cmd+k s"
+  },
+  {
+    "command": "opensshremotes.openEmptyWindow",
+    "key": "cmd+k r"
+  },
+  {
+    "command": "editor.action.openLink",
+    "key": "cmd+k g",
+    "when": "editorTextFocus"
+  },
+  {
+    "command": "editor.action.openLink",
+    "key": "cmd+k cmd+g",
+    "when": "editorTextFocus"
+  },
+  {
+    "command": "editor.action.revealDefinition",
+    "key": "alt+enter",
+    "when": "editorHasDefinitionProvider && editorTextFocus"
+  },
+  {
+    "command": "-editor.action.revealDefinition",
+    "key": "f12",
+    "when": "editorHasDefinitionProvider && editorTextFocus"
+  },
+  {
+    "command": "workbench.action.tasks.runTask",
+    "key": "cmd+k i"
+  },
+  {
+    "command": "workbench.action.tasks.runTask",
+    "key": "cmd+k cmd+i"
+  },
+  {
+    "args": "Open Daily Note",
+    "command": "workbench.action.tasks.runTask",
+    "key": "cmd+i j"
+  },
+  {
+    "args": "Open Daily Note",
+    "command": "workbench.action.tasks.runTask",
+    "key": "cmd+i cmd+j"
+  },
+  {
+    "args": "Open Weekly Note",
+    "command": "workbench.action.tasks.runTask",
+    "key": "cmd+i q"
+  },
+  {
+    "args": "Open Walk Note",
+    "command": "workbench.action.tasks.runTask",
+    "key": "cmd+i w"
+  },
+  {
+    "args": "Open Weekly Note",
+    "command": "workbench.action.tasks.runTask",
+    "key": "cmd+i cmd+w"
+  },
+  {
+    "args": "Create New Draft",
+    "command": "workbench.action.tasks.runTask",
+    "key": "cmd+i i"
+  },
+  {
+    "args": "Create New Draft",
+    "command": "workbench.action.tasks.runTask",
+    "key": "cmd+i cmd+i"
+  },
+  {
+    "args": "Open Last Draft",
+    "command": "workbench.action.tasks.runTask",
+    "key": "cmd+i u"
+  },
+  {
+    "args": "Open Last Draft",
+    "command": "workbench.action.tasks.runTask",
+    "key": "cmd+i cmd+u"
+  },
+  {
+    "args": "Open Cal Budget",
+    "command": "workbench.action.tasks.runTask",
+    "key": "cmd+i c"
+  },
+  {
+    "command": "editor.action.insertCursorBelow",
+    "key": "Shift+cmd+j",
+    "when": "editorTextFocus"
+  },
+  {
+    "command": "cursorDown",
+    "key": "g j",
+    "when": "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+  },
+  {
+    "command": "cursorUp",
+    "key": "g k",
+    "when": "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+  },
+  {
+    "command": "editor.toggleFold",
+    "key": "enter",
+    "when": "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+  },
+  {
+    "args": {
+      "commands": [
+        "cursorEndSelect",
+        "editor.action.clipboardCopyAction",
+        "cursorUndo"
+      ]
+    },
+    "command": "runCommands",
+    "key": "shift+y",
+    "when": "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+  },
+  {
+    "command": "cursorHome",
+    "key": "g h",
+    "when": "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+  },
+  {
+    "command": "cursorEnd",
+    "key": "g l",
+    "when": "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+  },
+  {
+    "command": "cursorTop",
+    "key": "g g",
+    "when": "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+  },
+  {
+    "command": "workbench.action.toggleSidebarVisibility",
+    "key": "space e",
+    "when": "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+  },
+  {
+    "command": "workbench.action.findInFiles",
+    "key": "space s g",
+    "when": "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+  },
+  {
+    "command": "workbench.action.quickOpen",
+    "key": "space o",
+    "when": "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+  },
+  {
+    "command": "workbench.view.explorer",
+    "key": "space b e",
+    "when": "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+  },
+  {
+    "command": "workbench.action.splitEditor",
+    "key": "space shift+\\",
+    "when": "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+  },
+  {
+    "command": "workbench.action.splitEditorDown",
+    "key": "space -",
+    "when": "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+  },
+  {
+    "command": "cursorUndo",
+    "key": "' '",
+    "when": "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+  },
+  {
+    "args": {
+      "commands": [
+        "cursorDown",
+        "cursorDown",
+        "cursorDown",
+        "cursorDown",
+        "cursorDown",
+        "cursorDown",
+        "cursorDown",
+        "cursorDown",
+        "cursorDown",
+        "cursorDown",
+        "cursorDown",
+        "cursorDown",
+        "cursorDown",
+        "cursorDown",
+        "cursorDown"
+      ]
+    },
+    "command": "runCommands",
+    "key": "ctrl+d",
+    "when": "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+  },
+  {
+    "args": {
+      "commands": [
+        "cursorUp",
+        "cursorUp",
+        "cursorUp",
+        "cursorUp",
+        "cursorUp",
+        "cursorUp",
+        "cursorUp",
+        "cursorUp",
+        "cursorUp",
+        "cursorUp",
+        "cursorUp",
+        "cursorUp",
+        "cursorUp",
+        "cursorUp",
+        "cursorUp"
+      ]
+    },
+    "command": "runCommands",
+    "key": "ctrl+u",
+    "when": "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+  },
+  {
+    "command": "editor.action.revealDefinition",
+    "key": "g d",
+    "when": "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+  },
+  {
+    "command": "workbench.action.showCommands",
+    "key": "space space",
+    "when": "(editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput) || (!editorIsOpen && !inputFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput)"
+  },
+  {
+    "command": "workbench.action.showEditorsInActiveGroup",
+    "key": "space ,",
+    "when": "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+  },
+  {
+    "command": "workbench.action.showAllEditors",
+    "key": "space b b",
+    "when": "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+  },
+  {
+    "command": "workbench.action.nextEditor",
+    "key": "space b n",
+    "when": "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+  },
+  {
+    "command": "workbench.action.previousEditor",
+    "key": "space b p",
+    "when": "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+  },
+  {
+    "command": "workbench.action.closeActiveEditor",
+    "key": "space b d",
+    "when": "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+  },
+  {
+    "command": "workbench.action.closeOtherEditors",
+    "key": "space b shift+d",
+    "when": "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+  },
+  {
+    "command": "workbench.action.closeAllGroups",
+    "key": "space b shift+q",
+    "when": "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+  },
+  {
+    "command": "workbench.action.quickOpen",
+    "key": "space f f",
+    "when": "(editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput) || (!editorIsOpen && !inputFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput)"
+  },
+  {
+    "command": "workbench.action.quickOpen",
+    "key": "space f d",
+    "when": "(editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput) || (!editorIsOpen && !inputFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput)"
+  },
+  {
+    "command": "workbench.action.files.newUntitledFile",
+    "key": "space f n",
+    "when": "(editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput) || (!editorIsOpen && !inputFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput)"
+  },
+  {
+    "command": "workbench.action.files.save",
+    "key": "space f s",
+    "when": "editorTextFocus && amVim.mode == 'NORMAL' && !amVim.waitingForInput"
+  }
+]

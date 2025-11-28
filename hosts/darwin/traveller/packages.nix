@@ -87,7 +87,7 @@ in
       pry
       dotenv
       myGems # local ruby gem packages
-      ruby-lsp # for vscode ruby lsp
+      # ruby-lsp # for vscode ruby lsp - commented out since VSCode is disabled
     ]))
   ]
   ++ (import ../../common/packages.nix { pkgs = pkgs; })

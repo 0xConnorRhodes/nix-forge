@@ -1,6 +1,9 @@
 { config, pkgs, inputs, secrets, osConfig, ... }:
 
 {
+  # nixpkgs.config was previously set by the vscode module
+  nixpkgs.config.allowUnfree = true;
+
   imports = [
     ./packages.nix
     ./comma.nix
@@ -18,7 +21,7 @@
     ../../../modules/home/mpv.nix
     ../../../pkgs/cursedtag.nix
     ../../../configs/wezterm/wezterm-common.nix
-    ../../../modules/home/vscode
+    #../../../modules/home/vscode
     ../../../modules/home/uv.nix
     ../../../modules/home/ipython.nix
   ];
@@ -41,14 +44,15 @@
     enableBashIntegration = true;
   };
 
-  programs.vscode.profiles.default = {
-    userSettings = {
-      editor.fontSize = 14; # 19 with zoom 0
-      terminal.integrated.fontSize = 14; # 20 with no zoom
-      chat.editor.fontSize = 13;
-      window.zoomLevel = 2;
-    };
-  };
+  # VSCode configuration commented out since module is not imported
+  # programs.vscode.profiles.default = {
+  #   userSettings = {
+  #     editor.fontSize = 14; # 19 with zoom 0
+  #     terminal.integrated.fontSize = 14; # 20 with no zoom
+  #     chat.editor.fontSize = 13;
+  #     window.zoomLevel = 2;
+  #   };
+  # };
 
   programs.zsh = {
     dirHashes= {

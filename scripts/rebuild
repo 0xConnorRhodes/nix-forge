@@ -4,17 +4,7 @@ set -e
 
 pushd ~/code/nix-forge
 
-# Set VS Code config path based on OS
-if [ "$(uname)" = "Darwin" ]; then
-  VSCODE_CONFIG_PATH="/Users/connor.rhodes/Library/Application Support/Code/User"
-else
-  VSCODE_CONFIG_PATH="$HOME/.config/Code/User"
-fi
-
 [ -f ~/code/nix-forge/rc2nix.nix ] && rm ~/code/nix-forge/rc2nix.nix
-
-rm -f "$VSCODE_CONFIG_PATH/settings.json.bak"
-rm -f "$VSCODE_CONFIG_PATH/keybindings.json.bak"
 
 find . -type f -name "*.nix" -exec git add {} +
 
@@ -35,17 +25,6 @@ else
   sudo -E nixos-rebuild switch --impure --flake .
   # nh os switch .
   #nh os switch . -- --impure
-fi
-
-cp "$VSCODE_CONFIG_PATH/settings.json" "$VSCODE_CONFIG_PATH/settings.json.tmp"
-cp "$VSCODE_CONFIG_PATH/keybindings.json" "$VSCODE_CONFIG_PATH/keybindings.json.tmp"
-rm -f "$VSCODE_CONFIG_PATH/settings.json"
-rm -f "$VSCODE_CONFIG_PATH/keybindings.json"
-mv "$VSCODE_CONFIG_PATH/settings.json.tmp" "$VSCODE_CONFIG_PATH/settings.json"
-mv "$VSCODE_CONFIG_PATH/keybindings.json.tmp" "$VSCODE_CONFIG_PATH/keybindings.json"
-
-if command -v kiro >/dev/null 2>&1; then
-  ./configs/kiro/write-kiro-config
 fi
 
 popd

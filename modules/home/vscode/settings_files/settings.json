@@ -1,0 +1,322 @@
+{
+  "Lua": {
+    "window": {
+      "statusBar": false
+    }
+  },
+  "[markdown]": {
+    "editor": {
+      "bracketPairColorization": {
+        "enabled": false
+      },
+      "guides": {
+        "bracketPairs": false,
+        "bracketPairsHorizontal": false
+      },
+      "lightbulb": {
+        "enabled": "off"
+      },
+      "matchBrackets": false
+    },
+    "editor.matchBrackets": "never"
+  },
+  "[python]": {
+    "editor": {
+      "guides": {
+        "bracketPairs": false,
+        "bracketPairsHorizontal": false,
+        "indentation": true
+      },
+      "renderWhitespace": "boundary",
+      "tabSize": 4
+    }
+  },
+  "[yaml]": {
+    "editor": {
+      "guides": {
+        "bracketPairs": false,
+        "bracketPairsHorizontal": false,
+        "indentation": false
+      }
+    }
+  },
+  "amVim": {
+    "useSystemClipboard": true,
+    "vimStyleNavigationInListView": false
+  },
+  "breadcrumbs": {
+    "enabled": false
+  },
+  "chat": {
+    "agent": {
+      "maxRequests": 100
+    },
+    "editor": {
+      "fontSize": 13
+    },
+    "tools": {
+      "global": {
+        "autoApprove": true
+      }
+    }
+  },
+  "diffEditor": {
+    "ignoreTrimWhitespace": true
+  },
+  "editor": {
+    "bracketPairColorization": {
+      "enable": true,
+      "independentColorPoolPerBracketType": true
+    },
+    "copyWithSyntaxHighlighting": false,
+    "defaultFormatter": "null",
+    "empty": {
+      "hint": "hidden"
+    },
+    "emptySelectionClipboard": false,
+    "enablePreview": false,
+    "fontFamily": "'JetBrainsMono Nerd Font', 'monospace', monospace",
+    "fontSize": 14,
+    "formatOnSave": true,
+    "glyphMargin": false,
+    "guides": {
+      "bracketPairs": true,
+      "bracketPairsHorizontal": true,
+      "indentation": true
+    },
+    "lineNumbers": "on",
+    "minimap": {
+      "enabled": false
+    },
+    "renderIndentGuides": true,
+    "scrollbar": {
+      "horizontalScrollbarSize": 5,
+      "verticalScrollbarSize": 6
+    },
+    "showFoldingControls": "never",
+    "snippetSuggestions": "top",
+    "stickyScroll": {
+      "enabled": false
+    },
+    "tabSize": 2,
+    "tokenColorCustomizations": {
+      "textMateRules": [
+        {
+          "scope": [
+            "markup.underline.link.markdown",
+            "markup.underline.link",
+            "meta.link.inline.markdown markup.underline.link.markdown",
+            "meta.link.inline.markdown markup.underline.link",
+            "meta.paragraph.markdown markup.underline.link.markdown",
+            "markup.list.unnumbered.markdown markup.underline.link.markdown",
+            "text.html.markdown markup.underline.link.markdown"
+          ],
+          "settings": {
+            "foreground": "#637777"
+          }
+        },
+        {
+          "scope": [
+            "string.other.link.title.markdown"
+          ],
+          "settings": {
+            "foreground": "#C5E478"
+          }
+        },
+        {
+          "scope": [
+            "punctuation.definition.link.title.begin.markdown",
+            "punctuation.definition.link.title.end.markdown",
+            "punctuation.definition.wiki-link",
+            "punctuation.definition.metadata.markdown"
+          ],
+          "settings": {
+            "foreground": "#D6DEEB"
+          }
+        }
+      ]
+    }
+  },
+  "explorer": {
+    "confirmDelete": false,
+    "confirmDragAndDrop": false
+  },
+  "extensions": {
+    "autoCheckUpdates": false
+  },
+  "extensions.autoCheckUpdates": false,
+  "files": {
+    "autoSave": "afterDelay",
+    "dialog": {
+      "defaultPath": "/Users/connor.rhodes/code"
+    },
+    "insertFinalNewline": true,
+    "saveConflictResolution": "overwriteFileOnDisk",
+    "simpleDialog": {
+      "enable": true
+    },
+    "trimFinalNewlines": true,
+    "trimTrailingWhitespace": true
+  },
+  "git": {
+    "openRepositoryInParentFolders": "never"
+  },
+  "github": {
+    "copilot": {
+      "advanced": {
+        "authPermissions": "Grant"
+      },
+      "editor": {
+        "enableCodeActions": true
+      },
+      "enable": {
+        "*": true,
+        "markdown": false
+      }
+    }
+  },
+  "markdown": {
+    "extension": {
+      "math": {
+        "enabled": false
+      }
+    }
+  },
+  "markdown-header-coloring": {
+    "backgroundColor": false,
+    "userDefinedHeaderColor": {
+      "Header_1": {
+        "color": "#78DCE8"
+      },
+      "Header_2": {
+        "color": "#82AAFF"
+      },
+      "Header_3": {
+        "color": "#C792EA"
+      },
+      "Header_4": {
+        "color": "#FFCB6B"
+      },
+      "Header_5": {
+        "color": "#FF5370"
+      },
+      "Header_6": {
+        "color": "#C3E88D"
+      },
+      "enabled": true
+    }
+  },
+  "python": {
+    "defaultInterpreterPath": "/run/current-system/sw/bin/python"
+  },
+  "redhat": {
+    "telemetry": {
+      "enabled": true
+    }
+  },
+  "scm": {
+    "diffDecorations": "none"
+  },
+  "security": {
+    "workspace": {
+      "trust": {
+        "emptyWindow": true
+      }
+    }
+  },
+  "simple-project-switcher": {
+    "directory": "/Users/connor.rhodes/code"
+  },
+  "terminal": {
+    "integrated": {
+      "defaultProfile": {
+        "linux": "myZsh",
+        "osx": "myZsh"
+      },
+      "fontSize": 14,
+      "profiles": {
+        "osx": {
+          "myZsh": {
+            "args": [
+              "-l"
+            ],
+            "path": "zsh"
+          }
+        }
+      }
+    }
+  },
+  "todohighlight": {
+    "include": [
+      "**/*.html",
+      "**/*.css",
+      "**/*.rb",
+      "**/*.md",
+      "**/*.yml",
+      "**/*.lua"
+    ]
+  },
+  "tokenColorCustomizations": {
+    "[Night Owl (No Italics)]": {
+      "markup.underline.link": "#637777",
+      "markup.underline.link.markdown": "#637777",
+      "string.other.link.title.markdown": "#C5E478"
+    },
+    "markup.underline.link": "#637777",
+    "markup.underline.link.markdown": "#637777",
+    "string.other.link.title.markdown": "#C5E478"
+  },
+  "update": {
+    "mode": "none"
+  },
+  "update.mode": "none",
+  "vim": {
+    "normalModeKeyBindingsNonRecursive": [
+      {
+        "before": [
+          "<Space>",
+          "v",
+          "p"
+        ],
+        "commands": [
+          "markdown.showPreviewToSide"
+        ],
+        "when": "editorLangId == markdown"
+      }
+    ]
+  },
+  "vscodeWikiLinks": {
+    "workspaceFilenameConvention": "relativePaths"
+  },
+  "window": {
+    "autoDetectHighContrast": false,
+    "customTitleBarVisibility": "never",
+    "newWindowDimensions": "inherit",
+    "title": "${rootName}",
+    "titleBarStyle": "native",
+    "zoomLevel": 2
+  },
+  "workbench": {
+    "activityBar": {
+      "location": "hidden"
+    },
+    "colorTheme": "Night Owl (No Italics)",
+    "editor": {
+      "empty": {
+        "hint": "hidden"
+      },
+      "showTabs": "none"
+    },
+    "showTabs": false,
+    "sideBar": {
+      "location": "left"
+    },
+    "startupEditor": "none",
+    "statusBar": {
+      "visible": true
+    },
+    "trustedDomains": {
+      "promptInTrustedWorkspace": false
+    }
+  }
+}

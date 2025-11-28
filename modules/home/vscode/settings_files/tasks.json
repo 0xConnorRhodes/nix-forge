@@ -1,0 +1,187 @@
+{
+  "tasks": [
+    {
+      "args": [
+        "run",
+        "--script",
+        "/Users/connor.rhodes/code/scripts/pkm/open-daily-note"
+      ],
+      "command": "uv",
+      "group": "pkm",
+      "label": "Open Daily Note",
+      "presentation": {
+        "clear": true,
+        "echo": false,
+        "focus": false,
+        "panel": "shared",
+        "reveal": "silent",
+        "showReuseMessage": false
+      },
+      "problemMatcher": [],
+      "runOptions": {
+        "runOn": "default"
+      },
+      "type": "shell"
+    },
+    {
+      "args": [
+        "/Users/connor.rhodes/code/scripts/pkm/open-walk-note"
+      ],
+      "command": "zsh",
+      "group": "pkm",
+      "label": "Open Walk Note",
+      "presentation": {
+        "clear": true,
+        "echo": false,
+        "focus": false,
+        "panel": "shared",
+        "reveal": "silent",
+        "showReuseMessage": false
+      },
+      "problemMatcher": [],
+      "runOptions": {
+        "runOn": "default"
+      },
+      "type": "shell"
+    },
+    {
+      "args": [
+        "run",
+        "--script",
+        "/Users/connor.rhodes/code/scripts/pkm/build-fp-note"
+      ],
+      "command": "uv",
+      "group": "pkm",
+      "label": "Build FP Note",
+      "presentation": {
+        "clear": true,
+        "echo": false,
+        "focus": false,
+        "panel": "shared",
+        "reveal": "silent",
+        "showReuseMessage": false
+      },
+      "problemMatcher": [],
+      "runOptions": {
+        "runOn": "default"
+      },
+      "type": "shell"
+    },
+    {
+      "args": [
+        "run",
+        "--script",
+        "/Users/connor.rhodes/code/scripts/pkm/update-zk"
+      ],
+      "command": "uv",
+      "group": "pkm",
+      "label": "Update ZK",
+      "presentation": {
+        "clear": true,
+        "echo": false,
+        "focus": false,
+        "panel": "shared",
+        "reveal": "silent",
+        "showReuseMessage": false
+      },
+      "problemMatcher": [],
+      "runOptions": {
+        "runOn": "default"
+      },
+      "type": "shell"
+    },
+    {
+      "args": [
+        "run",
+        "--script",
+        "/Users/connor.rhodes/code/scripts/pkm/open-weekly-note"
+      ],
+      "command": "uv",
+      "group": "pkm",
+      "label": "Open Weekly Note",
+      "presentation": {
+        "clear": true,
+        "echo": false,
+        "focus": false,
+        "panel": "shared",
+        "reveal": "silent",
+        "showReuseMessage": false
+      },
+      "problemMatcher": [],
+      "runOptions": {
+        "runOn": "default"
+      },
+      "type": "shell"
+    },
+    {
+      "args": [
+        "run",
+        "--script",
+        "/Users/connor.rhodes/code/scripts/pkm/open-cal-budget"
+      ],
+      "command": "uv",
+      "group": "pkm",
+      "label": "Open Cal Budget",
+      "presentation": {
+        "clear": true,
+        "echo": false,
+        "focus": false,
+        "panel": "shared",
+        "reveal": "silent",
+        "showReuseMessage": false
+      },
+      "problemMatcher": [],
+      "runOptions": {
+        "runOn": "default"
+      },
+      "type": "shell"
+    },
+    {
+      "args": [
+        "run",
+        "--script",
+        "/Users/connor.rhodes/code/scripts/pkm/create-new-draft"
+      ],
+      "command": "uv",
+      "group": "pkm",
+      "label": "Create New Draft",
+      "presentation": {
+        "clear": true,
+        "echo": false,
+        "focus": false,
+        "panel": "shared",
+        "reveal": "silent",
+        "showReuseMessage": false
+      },
+      "problemMatcher": [],
+      "runOptions": {
+        "runOn": "default"
+      },
+      "type": "shell"
+    },
+    {
+      "args": [
+        "run",
+        "--script",
+        "/Users/connor.rhodes/code/scripts/pkm/open-last-draft"
+      ],
+      "command": "uv",
+      "group": "pkm",
+      "label": "Open Last Draft",
+      "presentation": {
+        "clear": true,
+        "echo": false,
+        "focus": false,
+        "panel": "shared",
+        "reveal": "silent",
+        "showReuseMessage": false
+      },
+      "problemMatcher": [],
+      "runOptions": {
+        "runOn": "default"
+      },
+      "type": "shell"
+    }
+  ],
+  "version": "2.0.0"
+}
