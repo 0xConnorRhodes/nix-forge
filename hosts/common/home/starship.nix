@@ -37,6 +37,13 @@
         style = "bright-blue";
       };
 
+      direnv = {
+        disabled = false;
+        format = "[$symbol]($style)";
+        symbol = "∆ ";
+        style = "white";
+      };
+
       cmd_duration = {
         min_time = 4000; # time in milliseconds
         format = "[$duration]($style) ";

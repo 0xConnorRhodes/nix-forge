@@ -29,6 +29,7 @@ in
       export EDITOR="nvim"
 
       eval "$(rbw gen-completions zsh)"
+      eval "$(direnv hook zsh)"
     ''
     + # concatenate case-insensitive matching string since it contains '' which breaks the multiline string.
     "\nzstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'";

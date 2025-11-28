@@ -30,4 +30,6 @@ with pkgs; [
   duf
   rbw
   termdown
+  direnv
+  nix-direnv
 ]
