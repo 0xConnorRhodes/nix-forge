@@ -106,6 +106,12 @@
       extraOptions = ''
         experimental-features = nix-command flakes
       '';
+      optimise.automatic = true;
+      # run automization 2x daily for laptop
+      optimise.interval = [
+        { Hour = 12; Minute = 0; }
+        { Hour = 18; Minute = 0; }
+      ];
     };
 
     # Used for backwards compatibility, please read the changelog before changing.

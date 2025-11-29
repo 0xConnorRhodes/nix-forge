@@ -1,7 +1,6 @@
 { config, pkgs, inputs, secrets, osConfig, ... }:
 
 {
-  # nixpkgs.config was previously set by the vscode module
   nixpkgs.config.allowUnfree = true;
 
   imports = [
@@ -12,7 +11,6 @@
     ../../common/home/bash.nix
     ../../common/home/zsh.nix
     ../../common/home/powershell.nix
-    ../../common/home/direnv.nix
     ../../common/home/ripgrep.nix
     ../../common/home/zoxide.nix
     ../../common/home/starship.nix
