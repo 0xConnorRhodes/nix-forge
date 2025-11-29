@@ -25,7 +25,7 @@
     x = "exit";
     rb = "ruby";
     py = "python3";
-    bat = "bat --style=plain";
+    cat = "bat --style=plain --no-pager";
     ipy = "ipython";
     lf = "lfcd";
     ari = "aria2c";
