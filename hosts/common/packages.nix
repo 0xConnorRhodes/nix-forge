@@ -32,4 +32,5 @@ with pkgs; [
   termdown
   direnv
   nix-direnv
+  sc-im
 ]
