@@ -13,6 +13,9 @@
     gco = "git checkout";
     gmm = "git add . && git commit -m 'u' && git rebase --continue && git push";
 
+    sudo = "sudo "; # ensures commands after sudo are also checked for aliases
+    systemctl = "systemctl --no-pager";
+
     e = "nvim";
     chx = "chmod +x";
     xargs = "xargs -I __";

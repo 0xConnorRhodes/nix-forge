@@ -95,4 +95,40 @@ in
       User = user;
       WorkingDirectory = "/home/connor/code/scripts/cron";
       Environment = "PATH=${pkgs.ripgrep}/bin:$PATH"; }; };
+
+# link notes
+  systemd.timers."link-notes" = {
+    wantedBy = [ "timers.target" ];
+      timerConfig = {
+        OnCalendar = "*:*:00";
+        Persistent = true;
+        Unit = "link-notes.service"; }; };
+  systemd.services."link-notes" = {
+    script = ''
+      set -eu
+      export PATH="/home/${user}/.nix-profile/bin:$PATH"
+      /home/${user}/code/scripts/pkm/link-notes
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = user;
+      WorkingDirectory = "/home/${user}/code/scripts/pkm"; }; };
+
+# update zk
+  systemd.timers."update-zk" = {
+    wantedBy = [ "timers.target" ];
+      timerConfig = {
+        OnCalendar = "01:00:00";
+        Persistent = true;
+        Unit = "update-zk.service"; }; };
+  systemd.services."update-zk" = {
+    script = ''
+      set -eu
+      export PATH="/home/${user}/.nix-profile/bin:$PATH"
+      /home/${user}/code/scripts/pkm/update-zk
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = user;
+      WorkingDirectory = "/home/${user}/code/scripts/pkm"; }; };
 }
