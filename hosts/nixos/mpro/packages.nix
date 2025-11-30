@@ -55,6 +55,8 @@ in
     pipx
     pinnedHugo.hugo
     atomicparsley
+    pkgsUnstable.gemini-cli
+    pkgsUnstable.claude-code
 
     # python packages
     (python3.withPackages (python-pkgs: with python-pkgs; [
