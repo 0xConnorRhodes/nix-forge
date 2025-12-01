@@ -11,7 +11,7 @@ in
   programs.zsh = {
     enable = true;
     shellAliases = shellAliases.myAliases;
-    dotDir = ".config/zsh"; # relative to the users home directory.
+    dotDir = "${osConfig.myConfig.homeDir}/.config/zsh";
     history.path = "$ZDOTDIR/.zsh_history";
     autocd = true; # cd into directory with path only
     autosuggestion.enable = true; # fish-like past command suggestions

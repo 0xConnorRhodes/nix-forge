@@ -5,8 +5,7 @@
   # and posixFunctions.nix for g() function
   programs.git = {
     enable = true;
-    userName = "Connor Rhodes";
-    userEmail = secrets.userInfo.email;
+
     ignores = [
       ".DS_Store"
       ".env"
@@ -14,7 +13,12 @@
       "*.py[oc]"
       "__pycache__/"
     ];
-    extraConfig = {
+
+    settings = {
+      user = {
+        name = "Connor Rhodes";
+        email = secrets.userInfo.email;
+      };
       core = {
         compression = 9; # trade cpu for disks space and network bandwidth
         preloadIndex = true; # cache the index in memory

@@ -19,3 +19,6 @@ rc2nix:
 
 build-media:
   nix build .#packages.aarch64-linux.media-image
+
+update-inputs:
+  nix flake update

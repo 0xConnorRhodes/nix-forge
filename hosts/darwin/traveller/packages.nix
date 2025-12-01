@@ -38,7 +38,7 @@ in
     bluesnooze # must launch once and choose "launch at login" from menu bar icon
     scrcpy
     #imagemagickBig # includes ghostscript
-    poppler_utils # provides pdftoppm file.pdf -png
+    poppler-utils # provides pdftoppm file.pdf -png
     minikube
     kubectl
     gcc # needed for neovim plugins
