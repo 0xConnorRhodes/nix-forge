@@ -18,6 +18,7 @@
       service = {
         interface = lib.mkForce "127.0.0.1:15177";
         timezone = "America/Chicago";
+        enableregistration = false;
       };
       auth = {
         local.enabled = true;
