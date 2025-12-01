@@ -57,6 +57,7 @@ in
     atomicparsley
     pkgsUnstable.gemini-cli
     pkgsUnstable.claude-code
+    lsof
 
     # python packages
     (python3.withPackages (python-pkgs: with python-pkgs; [
