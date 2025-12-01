@@ -5,6 +5,8 @@
 
   systemd.services.authelia = {
     enable = true;
+    after = [ "redis-authelia.service" ];
+    wants = [ "redis-authelia.service" ];
     serviceConfig = {
       ExecStart = "${pkgs.authelia}/bin/authelia --config /home/connor/code/infra/authelia/authelia-conf.yml";
       Restart = "always";

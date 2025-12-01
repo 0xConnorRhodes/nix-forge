@@ -18,7 +18,7 @@
 
       DefaultTheme = "Catppuccin Macchiato";
       CoverArtPriority = "embedded"; # pull cover art from embedded file data
-      DefaultUIVolume = 10; # out of 100
+      DefaultUIVolume = 80; # out of 100
       Scanner.PurgeMissing = "always";
 
       EnableCoverAnimation = false;
