@@ -48,6 +48,7 @@ in
     ansible
     sshpass # needed by ansible
     lazysql
+    posting
 
     # mac-specific
     blueutil
