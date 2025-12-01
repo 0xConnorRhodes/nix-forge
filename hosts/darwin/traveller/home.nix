@@ -18,6 +18,7 @@
     ../../common/home/lf.nix
     ../../common/home/rbw.nix
     ../../../modules/home/mpv.nix
+    ../../../modules/home/posting.nix
     ../../../pkgs/cursedtag.nix
     ../../../configs/wezterm/wezterm-common.nix
     #../../../modules/home/vscode
