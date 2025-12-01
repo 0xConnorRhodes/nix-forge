@@ -170,9 +170,9 @@
       ];
     };
 
-    services.logind.extraConfig = ''
-      HandleLidSwitchExternalPower=ignore
-    '';
+    services.logind.settings.Login = {
+      HandleLidSwitchExternalPower = "ignore";
+    };
 
     # services
     programs.mosh.enable = true;

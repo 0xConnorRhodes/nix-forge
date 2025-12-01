@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 let
   pkgsUnstable = import inputs.nixpkgs-unstable {
     inherit (pkgs.stdenv.hostPlatform) system;
@@ -23,6 +23,8 @@ in
   };
 
   programs.zsh = {
+    dotDir = lib.mkForce "${config.home.homeDirectory}/.config/zsh";
+    history.path = "$ZDOTDIR/.zsh_history";
     initContent = import ../../common/home/posixFunctions.nix;
   };
 

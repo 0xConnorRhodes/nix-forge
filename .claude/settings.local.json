@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(wezterm:*)",
-      "Bash(lua:*)"
+      "Bash(lua:*)",
+      "Bash(./scripts/rebuild:*)",
+      "Bash(echo:*)"
     ],
     "deny": [],
     "ask": []
