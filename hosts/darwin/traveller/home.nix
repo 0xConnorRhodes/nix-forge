@@ -36,6 +36,7 @@
 
   programs.zsh.shellAliases = {
     yo = "open -a yoink";
+    cl = "pbcopy";
   };
 
   programs.wezterm = {
