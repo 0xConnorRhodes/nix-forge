@@ -35,6 +35,7 @@
       ../../../modules/services/pairdrop.nix
       ../../../modules/services/copyparty.nix
       ../../../modules/services/silverbullet.nix
+      ../../../modules/services/vikunja.nix
 
       # jobs
       ../../../modules/jobs/sync-notes.nix
