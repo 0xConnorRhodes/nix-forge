@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, secrets, ... }:
+{ config, lib, pkgs, pkgsUnstable, inputs, secrets, ... }:
 
 {
   # make pkgsUnstable available to all modules
@@ -8,6 +8,7 @@
   };
 
   programs.nix-index-database.comma.enable = true;
+  nixpkgs.config.allowUnfree = true;
 
   # Include common CLI packages but no GUI packages
   environment.systemPackages = with pkgs; [
@@ -21,9 +22,10 @@
     trashy
     yq-go
     git-crypt
-    magic-wormhole
     zip
     fd
     screen
+    croc
+    pkgsUnstable.claude-code
   ];
 }
