@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, secrets, ... }:
+{ config, lib, pkgs, pkgsUnstable, inputs, secrets, ... }:
 
 {
   # make pkgsUnstable available to all modules
