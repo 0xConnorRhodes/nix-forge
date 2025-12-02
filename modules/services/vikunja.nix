@@ -1,7 +1,6 @@
+{ lib, secrets, ... }:
+
 {
-  lib,
-  ...
-}: {
   services.vikunja = {
     enable = true;
     frontendHostname = "tasks.connorrhodes.com";
@@ -19,6 +18,8 @@
         interface = lib.mkForce "127.0.0.1:15177";
         timezone = "America/Chicago";
         enableregistration = false;
+        JWTSecret = secrets.vikunja.JWTSecret;
+        jwtttl = secrets.vikunja.jwtttl;
       };
       auth = {
         local.enabled = true;
