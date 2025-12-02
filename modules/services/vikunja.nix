@@ -20,13 +20,11 @@
         enableregistration = false;
         JWTSecret = secrets.vikunja.JWTSecret;
         jwtttl = secrets.vikunja.jwtttl;
+        jwtttllong = secrets.vikunja.jwtttllong;
       };
       auth = {
         local.enabled = true;
       };
     };
   };
-
-  # Configure firewall manually since there's no openFirewall option
-  # networking.firewall.allowedTCPPorts = [ 15177 ];
 }
