@@ -8,6 +8,7 @@
   };
 
   programs.nix-index-database.comma.enable = true;
+  nixpkgs.config.allowUnfree = true;
 
   # Include common CLI packages but no GUI packages
   environment.systemPackages = with pkgs; [
