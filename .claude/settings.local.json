@@ -4,7 +4,9 @@
       "Bash(wezterm:*)",
       "Bash(lua:*)",
       "Bash(./scripts/rebuild:*)",
-      "Bash(echo:*)"
+      "Bash(echo:*)",
+      "Bash(systemctl status:*)",
+      "Bash(getent:*)"
     ],
     "deny": [],
     "ask": []

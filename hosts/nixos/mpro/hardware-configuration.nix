@@ -11,6 +11,7 @@
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "uas" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
+  boot.extraModprobeConfig = "options kvm_intel nested=1";
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
