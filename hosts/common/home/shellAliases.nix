@@ -28,7 +28,7 @@
     x = "exit";
     rb = "ruby";
     py = "python3";
-    cat = "bat --style=plain --no-pager";
+    cat = "bat --style=plain --no-pager --theme=base16"; # theme needed for gnu screen compatibility
     ipy = "ipython";
     lf = "lfcd";
     ari = "aria2c";
