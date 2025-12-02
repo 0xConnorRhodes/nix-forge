@@ -17,6 +17,7 @@
     ../../common/home/bat.nix
     ../../common/home/lf.nix
     ../../common/home/rbw.nix
+    ../../common/home/vja.nix
     ../../../modules/home/mpv.nix
     ../../../modules/home/posting.nix
     ../../../pkgs/cursedtag.nix

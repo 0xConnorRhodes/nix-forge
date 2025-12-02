@@ -1,0 +1,9 @@
+#!/usr/bin/env -S uv run --script
+import subprocess
+
+tools = [
+    "vja",
+]
+
+for tool in tools:
+    subprocess.run(["uv", "tool", "install", tool])

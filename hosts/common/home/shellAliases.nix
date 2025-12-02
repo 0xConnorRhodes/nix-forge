@@ -34,6 +34,7 @@
     ari = "aria2c";
     bk = "buku";
     be = "bat --style=plain \"$(fzf)\"";
+    cla = "claude";
     dup = "docker compose up -d";
     sl = "systemctl";
     ssl = "sudo systemctl";
