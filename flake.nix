@@ -109,6 +109,19 @@
           }
         ];
       };
+
+      testvm = nixpkgs.lib.nixosSystem rec {
+        specialArgs = { inherit inputs; inherit secrets; };
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/nixos/testvm/configuration.nix
+          inputs.home-manager.nixosModules.default
+          inputs.nix-index-database.nixosModules.nix-index
+          {
+            home-manager.extraSpecialArgs = specialArgs; # needed to access inputs in home.nix
+          }
+        ];
+      };
     }; # end nixosConfigurations
 
     darwinConfigurations = {
