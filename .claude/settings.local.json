@@ -6,7 +6,9 @@
       "Bash(./scripts/rebuild:*)",
       "Bash(echo:*)",
       "Bash(systemctl status:*)",
-      "Bash(getent:*)"
+      "Bash(getent:*)",
+      "Bash(tree:*)",
+      "Bash(mkdir:*)"
     ],
     "deny": [],
     "ask": []
