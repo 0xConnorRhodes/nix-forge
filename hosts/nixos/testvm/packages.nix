@@ -21,9 +21,10 @@
     trashy
     yq-go
     git-crypt
-    magic-wormhole
     zip
     fd
     screen
+    croc
+    pkgsUnstable.claude-code
   ];
 }
