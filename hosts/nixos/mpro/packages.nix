@@ -72,6 +72,7 @@ in
     vlc
     handbrake
     bitwarden-desktop
+    picard
 
     # KDE apps
     kdePackages.krdc # remote desktop client
