@@ -26,6 +26,7 @@
     fd
     screen
     croc
+    ripgrep
     pkgsUnstable.claude-code
   ];
 }
