@@ -17,20 +17,6 @@ mcd() {
   mkdir -p "$1" && cd "$1";
 }
 
-pyvenv() {
-    local venv_name="''${1:-.venv}"
-    venv_path="$PWD/$venv_name"
-    activate_script="$venv_path/bin/activate"
-
-    if [ -f "$activate_script" ]; then
-        . "$activate_script"
-    else
-        echo "Creating new virtual environment at $venv_path"
-            python3 -m venv "$venv_path"
-        . "$activate_script"
-    fi
-}
-
 mkr() {
   # mkrepo
   # mkr <name> (will create inside ~/code)
