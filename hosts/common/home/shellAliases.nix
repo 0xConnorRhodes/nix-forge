@@ -34,13 +34,14 @@
     ari = "aria2c";
     bk = "buku";
     be = "bat --style=plain \"$(fzf)\"";
-    cla = "claude";
     dup = "docker compose up -d";
     sl = "systemctl";
     ssl = "sudo systemctl";
     cht = "cht.sh";
     fn = "fnox";
     sc = "sc-im";
+    cld = "claude";
+    cldy = "claude --dangerously-skip-permissions";
 
     # connections
     mm = "et -p 63104 m"; # "mosh m"

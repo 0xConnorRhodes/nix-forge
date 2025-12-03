@@ -8,7 +8,11 @@
       "Bash(systemctl status:*)",
       "Bash(getent:*)",
       "Bash(tree:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(journalctl:*)",
+      "Bash(systemctl:*)",
+      "Bash(sudo:*)",
+      "Bash(sudo systemctl start:*)"
     ],
     "deny": [],
     "ask": []

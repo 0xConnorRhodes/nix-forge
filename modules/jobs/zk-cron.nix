@@ -132,21 +132,4 @@ in
       User = user;
       WorkingDirectory = "/home/${user}/code/scripts/pkm"; }; };
 
-# transcode music library
-  systemd.timers."transcode-musiclibrary" = {
-    wantedBy = [ "timers.target" ];
-      timerConfig = {
-        OnCalendar = "02:00:00";
-        Persistent = true;
-        Unit = "transcode-musiclibrary.service"; }; };
-  systemd.services."transcode-musiclibrary" = {
-    script = ''
-      set -eu
-      export PATH="${pkgs.uv}/bin:$PATH"
-      /home/connor/code/scripts/cron/transcode-musiclibrary
-    '';
-    serviceConfig = {
-      Type = "oneshot";
-      User = user;
-      WorkingDirectory = "/home/connor/code/scripts/cron"; }; };
 }
