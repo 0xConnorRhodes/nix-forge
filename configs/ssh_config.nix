@@ -17,11 +17,12 @@
         SetEnv TERM=xterm-256color
         ProxyJump m
 
-      Host acorn
-        Hostname ${secrets.ssh.config.acorn.ip}
-        User ${secrets.ssh.config.acorn.user}
-        Port ${secrets.ssh.config.acorn.port}
+      Host ubs
+        Hostname 10.93.82.25
+        Port 22
+        User ubuntu
         SetEnv TERM=xterm-256color
+        ProxyJump m
 
       Host tp
         Hostname thinkpad
