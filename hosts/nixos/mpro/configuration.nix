@@ -178,6 +178,7 @@
 
     # services
     programs.mosh.enable = true;
+    programs.steam.enable = true;
 
     services.eternal-terminal.enable = true;
     networking.firewall.allowedTCPPorts = [ 2022 ]; # et port
