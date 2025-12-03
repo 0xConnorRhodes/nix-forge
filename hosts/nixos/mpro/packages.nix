@@ -58,6 +58,7 @@ in
     pkgsUnstable.gemini-cli
     pkgsUnstable.claude-code
     lsof
+    unrar
 
     # python packages
     (python3.withPackages (python-pkgs: with python-pkgs; [

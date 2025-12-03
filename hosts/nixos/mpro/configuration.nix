@@ -21,7 +21,7 @@
       ../../../modules/nixos/dashy
       ../../../modules/nixos/authelia.nix
       ../../../modules/nixos/kvm.nix
-      #../../../modules/nixos/incus.nix
+      ../../../modules/nixos/incus.nix
       ../../../modules/nixos/tailscale.nix
 
       # services
