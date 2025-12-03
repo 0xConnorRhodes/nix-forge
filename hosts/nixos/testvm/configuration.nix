@@ -18,6 +18,8 @@
     networking.hostName = "testvm";
     networking.networkmanager.enable = true;
 
+    security.sudo.wheelNeedsPassword = false;
+
     users.users.${config.myConfig.username} = {
       isNormalUser = true;
       description = "Connor Rhodes";
