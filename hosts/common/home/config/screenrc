@@ -8,7 +8,7 @@ defscrollback 300000
 term screen-256color
 
 hardstatus alwaysfirstline
-hardstatus string '%{yk}%-Lw%{= yk}%n%f* %t%{-}%+Lw'
+hardstatus string '%{= .W}%-w%{= .W}%n** %t%{-}%+w'
 
 # Window numbering starts at 1, not 0.
 bind c screen 1
