@@ -48,7 +48,6 @@
     sm = "ssh m";
 
     # scripts
-    merge-meetings = "python3 ~/code/note-refactor-scripts/expand_meetings.py";
     reb = "$HOME/code/nix-forge/scripts/rebuild";
   };
 }

@@ -107,6 +107,12 @@ M.keys = {
      mods = modCtrl,
      action=wezterm.action{SendKey={key="v", mods="CTRL"}},
   },
+  -- Shift+Enter to send newline escape sequence. allows S-enter alternative to `\` in shell and claude code
+  {
+    key = "Enter",
+    mods = "SHIFT",
+    action = wezterm.action{SendString="\x1b\r"}
+  },
 }
 
 -- Add conditional keybinds for hosts where alt is remapped to ctrl
