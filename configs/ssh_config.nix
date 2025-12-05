@@ -18,7 +18,7 @@
         ProxyJump m
 
       Host ubs
-        Hostname 10.93.82.25
+        Hostname 10.93.82.191
         Port 22
         User ubuntu
         SetEnv TERM=xterm-256color
