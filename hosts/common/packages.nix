@@ -34,4 +34,5 @@ with pkgs; [
   nix-direnv
   sc-im
   pinentry-curses
+  xh
 ]
