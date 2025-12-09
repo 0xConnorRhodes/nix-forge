@@ -138,7 +138,7 @@
     users.users.${config.myConfig.username} = {
       isNormalUser = true;
       description = "Connor Rhodes";
-      extraGroups = [ "networkmanager" "wheel" "docker"];
+      extraGroups = [ "networkmanager" "wheel" "docker" "audiobookshelf"];
       shell = pkgs.zsh;
       openssh = {
         authorizedKeys.keys = [
