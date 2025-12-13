@@ -42,6 +42,7 @@
     sc = "sc-im";
     cld = "claude";
     cldy = "claude --dangerously-skip-permissions";
+    js = "just";
 
     # connections
     mm = "et -p 63104 m"; # "mosh m"
