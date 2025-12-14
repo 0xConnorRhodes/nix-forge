@@ -124,7 +124,7 @@ in
   systemd.services."update-zk" = {
     script = ''
       set -eu
-      export PATH="/home/${user}/.nix-profile/bin:$PATH"
+      export PATH="/home/${user}/.nix-profile/bin:/run/current-system/sw/bin:$PATH"
       /home/${user}/code/scripts/pkm/update-zk
     '';
     serviceConfig = {
