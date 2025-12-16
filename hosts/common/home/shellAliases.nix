@@ -40,8 +40,9 @@
     cht = "cht.sh";
     fn = "fnox";
     sc = "sc-im";
-    cd = "claude";
-    cy = "claude --dangerously-skip-permissions";
+    cld = "claude";
+    cdy = "claude --dangerously-skip-permissions";
+    cldy = "claude --dangerously-skip-permissions";
     js = "just";
 
     # connections
