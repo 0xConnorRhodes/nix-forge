@@ -49,6 +49,8 @@ in
     sshpass # needed by ansible
     lazysql
     posting
+    pandoc
+    texlive.combined.scheme-full # needed for pandoc pdf conversion
 
     # mac-specific
     blueutil
