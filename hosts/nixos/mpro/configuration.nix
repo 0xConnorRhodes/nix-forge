@@ -36,6 +36,7 @@
       ../../../modules/services/copyparty.nix
       ../../../modules/services/silverbullet.nix
       ../../../modules/services/vikunja.nix
+      ../../../modules/services/open-webui.nix
 
       # jobs
       ../../../modules/jobs/sync-notes.nix
