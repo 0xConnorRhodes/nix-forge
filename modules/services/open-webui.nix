@@ -9,17 +9,17 @@
       DEFAULT_PROMPT_SUGGESTIONS = builtins.toJSON [
         {
           title = [
-            "Help me write"
-            "a professional email"
+            "_"
+            "_"
           ];
-          content = "Can you help me write a professional email for...";
+          content = "Write a python function that prints Hello World.";
         }
         {
           title = [
-            "Explain"
-            "complex concepts"
+            "_"
+            "_"
           ];
-          content = "Explain this concept to me like I'm five...";
+          content = "Write a humerous limerick about frogs.";
         }
       ];
     };
