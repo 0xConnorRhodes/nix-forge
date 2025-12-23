@@ -6,6 +6,7 @@
     host = "127.0.0.1";
     port = 58139;
     environment = {
+      # set nonsense prompt suggestions to hide element
       DEFAULT_PROMPT_SUGGESTIONS = builtins.toJSON [
         {
           title = [
