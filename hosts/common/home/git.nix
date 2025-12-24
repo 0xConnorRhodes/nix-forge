@@ -14,6 +14,7 @@
       "__pycache__"
       "__marimo__"
       "tasks"
+      "tasks.md"
     ];
 
     settings = {
