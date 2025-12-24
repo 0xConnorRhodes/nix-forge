@@ -45,6 +45,10 @@
     cldy = "claude --dangerously-skip-permissions";
     js = "just";
 
+    # notifications for woof
+    nt="export NOTIFICATIONS=true && echo 'notifications on'";
+    ntof="export NOTIFICATIONS=false && echo 'notifications off'";
+
     # connections
     mm = "et -p 63104 m"; # "mosh m"
     sm = "ssh m";
