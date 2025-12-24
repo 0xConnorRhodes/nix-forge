@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, secrets, ... }:
 let
   pkgsUnstable = import inputs.nixpkgs-unstable {
     inherit (pkgs.stdenv.hostPlatform) system;
@@ -8,6 +8,7 @@ in
 {
   # make pkgsUnstable available to all modules
   _module.args.pkgsUnstable = pkgsUnstable;
+  _module.args.secrets = secrets;
   imports = [
     ../../common/home/git.nix
     ../../common/home/bash.nix
@@ -23,6 +24,7 @@ in
     ../../../modules/home/mpv.nix
     ../../../modules/home/firefox
     ../../../modules/home/uv.nix
+    ../../../modules/home/pushcli.nix
   ];
 
   home.sessionVariables = {

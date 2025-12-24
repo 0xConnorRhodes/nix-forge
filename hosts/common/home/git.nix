@@ -11,7 +11,9 @@
       ".env"
       ".venv"
       "*.py[oc]"
-      "__pycache__/"
+      "__pycache__"
+      "__marimo__"
+      "tasks"
     ];
 
     settings = {
