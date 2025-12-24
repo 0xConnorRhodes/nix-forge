@@ -117,4 +117,15 @@ lsp() {
     echo "$current_dir/$1"
   fi
 }
+
+cld() {
+  if [ -z "$NOTIFICATIONS" ]; then
+    export NOTIFICATIONS=true
+  fi
+  if [ "$1" = "--noyo" ]; then
+    claude
+  else
+    claude --dangerously-skip-permissions
+  fi
+}
 ''

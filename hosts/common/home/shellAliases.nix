@@ -40,9 +40,6 @@
     cht = "cht.sh";
     fn = "fnox";
     sc = "sc-im";
-    cld = "claude";
-    cdy = "claude --dangerously-skip-permissions";
-    cldy = "claude --dangerously-skip-permissions";
     js = "just";
 
     # notifications for woof
