@@ -33,7 +33,7 @@
     lf = "lfcd";
     ari = "aria2c";
     bk = "buku";
-    be = "bat --style=plain \"$(fzf)\"";
+    be = "bat --style=plain --theme=base16 \"$(fzf)\"";
     dup = "docker compose up -d";
     sl = "systemctl";
     ssl = "sudo systemctl";

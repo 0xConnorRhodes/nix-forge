@@ -1,5 +1,6 @@
 { config, lib, pkgs, inputs, ... }:
 let
+  user = config.myConfig.username;
   cronRuby = pkgs.ruby.withPackages (ruby-pkgs: with ruby-pkgs; [
     dotenv
   ]);
@@ -16,11 +17,12 @@ in
   systemd.services."sync-notes" = {
     script = ''
       set -eu
-      ${cronRuby}/bin/ruby /home/connor/code/scripts/bin/ns
+      export PATH="/home/${user}/.nix-profile/bin:/run/current-system/sw/bin:$PATH"
+      ${cronRuby}/bin/ruby /home/${user}/code/scripts/bin/ns
     '';
     serviceConfig = {
       Type = "oneshot";
-      User = "connor";
-      WorkingDirectory = "/home/connor/code/scripts";
+      User = "${user}";
+      WorkingDirectory = "/home/${user}/code/scripts";
       Environment = "PATH=${pkgs.iputils}/bin:${pkgs.git}/bin:${pkgs.openssh}/bin:$PATH"; }; };
 }
