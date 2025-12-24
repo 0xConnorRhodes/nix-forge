@@ -4,8 +4,8 @@
   services.nextcloud = {
     enable = true;
     package = pkgs.nextcloud32;
-    hostName = "localhost";
-    https = false;
+    hostName = "nc.connorrhodes.com";
+    https = true;
 
     # Use SQLite database
     config = {
@@ -15,8 +15,10 @@
     };
 
     settings = {
-      overwrite.cli.url = "http://127.0.0.1:51352";
+      overwrite.cli.url = "https://nc.connorrhodes.com";
+      overwriteprotocol = "https";
       default_phone_region = "US";
+      trusted_proxies = [ "127.0.0.1" "::1" ];
     };
 
     phpOptions = {
@@ -27,8 +29,8 @@
     appstoreEnable = false;
   };
 
-  # Configure nginx to listen on 127.0.0.1:51352
-  services.nginx.virtualHosts."localhost" = lib.mkForce {
+  # Configure nginx to listen on localhost only (for Caddy reverse proxy)
+  services.nginx.virtualHosts."nc.connorrhodes.com" = lib.mkForce {
     listen = [
       { addr = "127.0.0.1"; port = 51352; }
     ];
@@ -96,7 +98,7 @@
           try_files $fastcgi_script_name =404;
           fastcgi_param PATH_INFO $path_info;
           fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-          fastcgi_param HTTPS off;
+          fastcgi_param HTTPS on;
           fastcgi_param modHeadersAvailable true;
           fastcgi_param front_controller_active true;
           fastcgi_pass unix:${config.services.phpfpm.pools.nextcloud.socket};
