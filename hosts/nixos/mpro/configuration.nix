@@ -37,6 +37,7 @@
       ../../../modules/services/silverbullet.nix
       ../../../modules/services/vikunja.nix
       ../../../modules/services/nextcloud.nix
+      ../../../modules/services/fastapi.nix
       #../../../modules/services/open-webui.nix
 
       # jobs
