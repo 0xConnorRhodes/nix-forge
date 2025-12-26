@@ -18,6 +18,7 @@ in
     envExtra = ''
       export PATH="${lib.concatStringsSep ":" allPaths}:$PATH"
       export IPYTHONDIR="${osConfig.myConfig.homeDir}/.config/ipython"
+      export API_SERVER_KEY=${secrets.apiServerKey}
       export SYSTEMD_PAGER=cat
     '';
     # zsh prompt
