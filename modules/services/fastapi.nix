@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, secrets, ... }:
 let
   user = config.myConfig.username;
 in
@@ -24,6 +24,7 @@ in
       WorkingDirectory = "/home/${user}/code/api-connorrhodes-com";
       Restart = "always";
       RestartSec = "10";
+      Environment = "API_SERVER_KEY=${secrets.apiServerKey}";
     };
   };
 }
