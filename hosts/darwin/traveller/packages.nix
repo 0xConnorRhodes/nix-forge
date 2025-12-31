@@ -85,6 +85,7 @@ in
       ipython
       httpx
       requests
+      pyaml
     ]))
 
     # ruby packages

@@ -1,8 +1,12 @@
 { lib, pkgs, osConfig, secrets, allPaths }:
 let
+  pythonPaths = [
+    "$CODE/vikunja-dev/module"
+    "$CODE/camdb/module"
+  ];
   paths = ''
     export PATH="${lib.concatStringsSep ":" allPaths}:$PATH"
-    export PYTHONPATH="$CODE/vikunja-dev/module"
+    export PYTHONPATH="${lib.concatStringsSep ":" pythonPaths}"
   '';
 
   configDirs = ''

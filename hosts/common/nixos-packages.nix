@@ -52,6 +52,7 @@ in
       jinja2
       pyaml
       ipython
+      httpx
     ]))
 
     # nonfree
