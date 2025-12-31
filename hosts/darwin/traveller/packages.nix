@@ -83,6 +83,8 @@ in
     # python packages
     (python3.withPackages (python-pkgs: with python-pkgs; [
       ipython
+      httpx
+      requests
     ]))
 
     # ruby packages

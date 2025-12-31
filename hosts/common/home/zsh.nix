@@ -3,6 +3,7 @@ let
   shellAliases = import ./shellAliases.nix;
   myPaths = import ./pathDirs.nix { inherit pkgs; };
   posixFunctions = import ./posixFunctions.nix;
+  shellEnv = import ./shellEnv.nix { inherit lib pkgs osConfig secrets allPaths; };
 
   # Combine common paths with host-specific paths
   allPaths = osConfig.myConfig.hostPaths ++ myPaths.extraPaths;
@@ -15,12 +16,7 @@ in
     history.path = "$ZDOTDIR/.zsh_history";
     autocd = true; # cd into directory with path only
     autosuggestion.enable = true; # fish-like past command suggestions
-    envExtra = ''
-      export PATH="${lib.concatStringsSep ":" allPaths}:$PATH"
-      export IPYTHONDIR="${osConfig.myConfig.homeDir}/.config/ipython"
-      export API_SERVER_KEY=${secrets.apiServerKey}
-      export SYSTEMD_PAGER=cat
-    '';
+    envExtra = shellEnv;
     # zsh prompt
     enableCompletion = true;
     completionInit = "autoload -Uz compinit && compinit";
