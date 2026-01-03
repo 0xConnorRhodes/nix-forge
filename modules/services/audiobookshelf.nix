@@ -3,7 +3,7 @@
 {
   services.audiobookshelf = {
     enable = true;
-    package = pkgsUnstable.audiobookshelf;
+    package = pkgs.audiobookshelf;
     host = "127.0.0.1";
     port = 61793;
   };

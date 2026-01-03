@@ -55,7 +55,7 @@ in
     pipx
     pinnedHugo.hugo
     atomicparsley
-    pkgsUnstable.gemini-cli
+    pkgs.gemini-cli
     pkgsUnstable.claude-code
     lsof
     unrar
