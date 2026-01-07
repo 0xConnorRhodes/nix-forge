@@ -3,6 +3,7 @@ let
   pythonPaths = [
     "$CODE/vikunja-dev/module"
     "$CODE/camdb/module"
+    "$CODE/serial_gemini_web/module"
   ];
   paths = ''
     export PATH="${lib.concatStringsSep ":" allPaths}:$PATH"
