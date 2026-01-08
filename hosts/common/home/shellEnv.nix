@@ -4,6 +4,7 @@ let
     "$CODE/vikunja-dev/module"
     "$CODE/camdb/module"
     "$CODE/serial_gemini_web/module"
+    "$CODE/audiobookshelf_client/module"
   ];
   paths = ''
     export PATH="${lib.concatStringsSep ":" allPaths}:$PATH"
