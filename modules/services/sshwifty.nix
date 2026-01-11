@@ -40,8 +40,9 @@
             User = "connor";
             Encoding = "utf-8";
             Authentication = "Private Key";
-            PrivateKey = secrets.sshwifty.privateKey;
             Fingerprint = secrets.sshwifty.fingerprint;
+          } // {
+            "Private Key" = lib.replaceStrings ["\\n"] ["\n"] secrets.sshwifty.privateKey;
           };
         }
       ];
