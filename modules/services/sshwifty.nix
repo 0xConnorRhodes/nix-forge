@@ -35,7 +35,7 @@
           Title = "mpro";
           Type = "SSH";
           Host = "127.0.0.1:31583";
-          TabColor = "2E7D32";
+          #TabColor = "2E7D32";
           Meta = {
             User = "connor";
             Encoding = "utf-8";
