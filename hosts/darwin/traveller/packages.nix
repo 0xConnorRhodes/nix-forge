@@ -68,6 +68,7 @@ in
     gh
     pinnedHugo.hugo
     cht-sh
+    podman
 
     # GUI
     utm
