@@ -10,7 +10,7 @@
       ./mounts.nix
       ./secret.nix
       ./backup-cron.nix
-      ./syncthing.nix
+      #./syncthing.nix
       ./nfs.nix
       # ./llm.nix
       ../../common/host-options.nix
@@ -43,12 +43,12 @@
       # jobs
       ../../../modules/jobs/sync-notes.nix
       ../../../modules/jobs/monitor_podcasts.nix
-      ../../../modules/jobs/zk-cron.nix
+      # ../../../modules/jobs/zk-cron.nix
       ../../../modules/jobs/transcode-musiclibrary.nix
       ../../../modules/jobs/db-backup.nix
       ../../../modules/jobs/readeck-backup.nix
       ../../../modules/jobs/backup-secrets.nix
-      ../../../modules/jobs/rclone-jobs.nix
+      # ../../../modules/jobs/rclone-jobs.nix
       inputs.home-manager.nixosModules.default
       inputs.nix-index-database.nixosModules.nix-index
     ];
@@ -140,7 +140,10 @@
 
     # Android debugging
     programs.adb.enable = true;
-
+    services.udev.extraRules = ''
+      SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0666", GROUP="adbusers", TAG+="uaccess"
+      SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", MODE="0666", GROUP="adbusers", TAG+="uaccess"
+    '';
 
     users.users.${config.myConfig.username} = {
       isNormalUser = true;
