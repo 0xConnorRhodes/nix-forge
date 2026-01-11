@@ -15,6 +15,7 @@
 
     sudo = "sudo "; # ensures commands after sudo are also checked for aliases
     systemctl = "systemctl --no-pager";
+    cl = "clear";
 
     e = "nvim";
     chx = "chmod +x";

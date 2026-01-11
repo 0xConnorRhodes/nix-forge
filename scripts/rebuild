@@ -27,4 +27,6 @@ else
   #nh os switch . -- --impure
 fi
 
+woof "nix rebuild finished"
+
 popd
