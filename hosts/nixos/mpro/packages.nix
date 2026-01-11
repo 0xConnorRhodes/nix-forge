@@ -59,6 +59,7 @@ in
     pkgsUnstable.claude-code
     lsof
     unrar
+    android-tools
 
     # python packages
     (python3.withPackages (python-pkgs: with python-pkgs; [

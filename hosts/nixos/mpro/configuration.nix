@@ -138,10 +138,14 @@
       enable = true;
     };
 
+    # Android debugging
+    programs.adb.enable = true;
+
+
     users.users.${config.myConfig.username} = {
       isNormalUser = true;
       description = "Connor Rhodes";
-      extraGroups = [ "networkmanager" "wheel" "docker" "audiobookshelf"];
+      extraGroups = [ "networkmanager" "wheel" "docker" "audiobookshelf" "adbusers"];
       shell = pkgs.zsh;
       openssh = {
         authorizedKeys.keys = [
@@ -158,6 +162,20 @@
       hostPaths = config.myConfig.hostPaths;
     };
     nixpkgs.config.allowUnfree = true;
+
+
+    # AppImage support
+    programs.appimage = {
+      enable = true;
+      binfmt = true;
+    };
+    # needed for tasker permissions appimage
+    nixpkgs.config.packageOverrides = pkgs: {
+      appimage-run = pkgs.appimage-run.override {
+        extraPkgs = pkgs: [ pkgs.xorg.libxshmfence ];
+      };
+    };
+
     home-manager.users.${config.myConfig.username} = { pkgs, ... }: {
       home.stateVersion = "24.11";
       imports = [
