@@ -35,7 +35,6 @@ in
     tealdeer
     htop
     gotop
-    bluesnooze # must launch once and choose "launch at login" from menu bar icon
     scrcpy
     #imagemagickBig # includes ghostscript
     poppler-utils # provides pdftoppm file.pdf -png
