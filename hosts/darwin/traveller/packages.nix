@@ -36,7 +36,7 @@ in
     htop
     gotop
     scrcpy
-    #imagemagickBig # includes ghostscript
+    imagemagickBig # includes ghostscript
     poppler-utils # provides pdftoppm file.pdf -png
     minikube
     kubectl
