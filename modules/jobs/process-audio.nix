@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }:
 let
   user = config.myConfig.username;
+  pythonEnv = pkgs.python3.withPackages (p: [ p.pyyaml ]);
 in
 {
 # transcode music library
@@ -32,10 +33,10 @@ in
     script = ''
       set -eu
       export PATH="/run/current-system/sw/bin:$PATH"
-      ${pkgs.python3}/bin/python3 /home/${user}/code/scripts/cron/auto-process-audio.py
+      ${pythonEnv}/bin/python3 /home/${user}/code/process-audio/auto-process-audio.py
     '';
     serviceConfig = {
       Type = "oneshot";
       User = user;
-      WorkingDirectory = "/home/${user}/code/scripts/cron"; }; };
+      WorkingDirectory = "/home/${user}/code/process-audio"; }; };
 }
