@@ -20,4 +20,22 @@ in
       Type = "oneshot";
       User = user;
       WorkingDirectory = "/home/${user}/code/scripts/cron"; }; };
+
+# auto process audio
+  systemd.timers."auto-process-audio" = {
+    wantedBy = [ "timers.target" ];
+      timerConfig = {
+        OnCalendar = "02:00:00";
+        Persistent = true;
+        Unit = "auto-process-audio.service"; }; };
+  systemd.services."auto-process-audio" = {
+    script = ''
+      set -eu
+      export PATH="/run/current-system/sw/bin:$PATH"
+      ${pkgs.python3}/bin/python3 /home/${user}/code/scripts/cron/auto-process-audio.py
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = user;
+      WorkingDirectory = "/home/${user}/code/scripts/cron"; }; };
 }
