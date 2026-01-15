@@ -19,5 +19,8 @@ let
   apiKeys = ''
     export API_SERVER_KEY=${secrets.apiServerKey}
   '';
+
+  misc = ''
+  '';
 in
-  paths + configDirs + apiKeys
+  paths + configDirs + apiKeys + misc

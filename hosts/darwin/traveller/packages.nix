@@ -50,6 +50,7 @@ in
     posting
     pandoc
     texlive.combined.scheme-full # needed for pandoc pdf conversion
+    silverbullet
 
     # mac-specific
     blueutil
@@ -61,7 +62,7 @@ in
     unixtools.watch
     unixtools.ping
     emacs-macport
-    #lima
+    lima
     mpv
     gemini-cli
     gh

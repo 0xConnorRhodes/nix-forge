@@ -3,10 +3,10 @@ let
   shellAliases = import ./shellAliases.nix;
   myPaths = import ./pathDirs.nix { inherit pkgs; };
   posixFunctions = import ./posixFunctions.nix;
-  shellEnv = import ./shellEnv.nix { inherit lib pkgs osConfig secrets allPaths; };
 
   # Combine common paths with host-specific paths
   allPaths = osConfig.myConfig.hostPaths ++ myPaths.extraPaths;
+  shellEnv = import ./shellEnv.nix { inherit lib pkgs osConfig secrets allPaths; };
 in
 {
   programs.zsh = {

@@ -42,6 +42,7 @@
     fn = "fnox";
     sc = "sc-im";
     js = "just";
+    sb = "silverbullet $HOME/notes";
 
     # notifications for woof
     nt="export NOTIFICATIONS=true && echo 'notifications on'";
