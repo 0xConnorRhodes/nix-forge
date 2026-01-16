@@ -32,7 +32,7 @@ in
   systemd.services."auto-process-audio" = {
     script = ''
       set -eu
-      export PATH="/run/current-system/sw/bin:$PATH"
+      export PATH="/home/${user}/.local/bin:/run/current-system/sw/bin:$PATH"
       ${pythonEnv}/bin/python3 /home/${user}/code/process-audio/auto-process-audio.py
     '';
     serviceConfig = {
