@@ -1,6 +1,7 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, pkgsUnstable, ... }:
 
 {
+  services.navidrome.package = pkgsUnstable.navidrome;
   services.navidrome = {
     enable = true;
     openFirewall = true;
