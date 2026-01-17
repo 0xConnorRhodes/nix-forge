@@ -51,6 +51,7 @@ in
     pandoc
     texlive.combined.scheme-full # needed for pandoc pdf conversion
     silverbullet
+    bun
 
     # mac-specific
     blueutil
