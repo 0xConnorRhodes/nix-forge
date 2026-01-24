@@ -60,4 +60,9 @@
     fsType = "zfs";
     options = ["nofail"];
   };
+  fileSystems."/zstore/2sort" = {
+    device = "zstore/2sort";
+    fsType = "zfs";
+    options = ["nofail"];
+  };
 }
