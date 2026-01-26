@@ -14,7 +14,7 @@
     ../../../modules/nixos/kvm.nix
     ../../../modules/nixos/profile-sync-daemon.nix
     #../../../modules/nixos/incus.nix
-    ../../../modules/nixos/tailscale.nix
+    #../../../modules/nixos/tailscale.nix
     ../../../modules/jobs/sync-notes.nix
     ../../../configs/ssh_config.nix
     inputs.home-manager.nixosModules.default
