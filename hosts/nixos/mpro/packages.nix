@@ -55,8 +55,6 @@ in
     pipx
     pinnedHugo.hugo
     atomicparsley
-    pkgs.gemini-cli
-    pkgsUnstable.claude-code
     lsof
     unrar
     android-tools
