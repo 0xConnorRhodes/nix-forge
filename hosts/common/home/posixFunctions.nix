@@ -119,13 +119,15 @@ lsp() {
 }
 
 cld() {
+  export CLAUDE_CODE_DISABLE_TERMINAL_TITLE=1
   if [ -z "$NOTIFICATIONS" ]; then
     export NOTIFICATIONS=true
   fi
   if [ "$1" = "--noyo" ]; then
-    claude
+    claude --permission-mode plan
   else
-    claude --dangerously-skip-permissions
+    # start in plan mode, with permissions bypassed
+    claude --dangerously-skip-permissions "/plan"
   fi
 }
 ''

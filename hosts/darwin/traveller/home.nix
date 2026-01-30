@@ -18,6 +18,7 @@
     ../../common/home/lf.nix
     ../../common/home/rbw.nix
     ../../common/home/vja.nix
+    ../../common/home/btca.nix
     ../../../modules/home/mpv.nix
     ../../../modules/home/posting.nix
     ../../../pkgs/cursedtag.nix
