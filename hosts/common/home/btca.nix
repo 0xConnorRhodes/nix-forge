@@ -28,6 +28,12 @@
         path = "${config.home.homeDirectory}/code/vikunja-dev";
         searchPath = "module/vikunja";
       }
+      {
+        type = "git";
+        name = "verkadaModule";
+        url = "https://github.com/bepsoccer/verkadaModule";
+        branch = "master";
+      }
     ];
   };
 }
