@@ -17,6 +17,26 @@ mcd() {
   mkdir -p "$1" && cd "$1";
 }
 
+newpg() {
+  local name dir_name
+
+  printf "playground name: "
+  read -r name
+
+  if [ -z "$name" ]; then
+    echo "No name provided"
+    return 1
+  fi
+
+  # Replace spaces with underscores
+  name=$(printf '%s' "$name" | tr ' ' '_')
+
+  # Create directory with date prefix
+  dir_name="/Users/connor.rhodes/code/playground/$(date +%y%m%d)_$name"
+  mkdir -p "$dir_name" || return 1
+  cd "$dir_name" || return 1
+}
+
 mkr() {
   # mkrepo
   # mkr <name> (will create inside ~/code)

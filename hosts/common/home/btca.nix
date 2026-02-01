@@ -34,6 +34,13 @@
         url = "https://github.com/bepsoccer/verkadaModule";
         branch = "master";
       }
+      {
+        type = "git";
+        name = "silverbullet";
+        url = "https://github.com/silverbulletmd/silverbullet";
+        branch = "main";
+        specialNotes = "Prioritize searching inside the website/ directory. this is where the documentation lives. However, not everything in this project is documented, so you may search the source code outside of the website/ directory if you can't find an answer within that directory.";
+      }
     ];
   };
 }
