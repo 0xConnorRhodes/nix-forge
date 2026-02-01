@@ -47,6 +47,12 @@
         url = "https://github.com/anthropics/anthropic-sdk-python";
         branch = "main";
       }
+      {
+        type = "git";
+        name = "claude-agent-sdk-python";
+        url = "https://github.com/anthropics/claude-agent-sdk-python";
+        branch = "main";
+      }
     ];
   };
 }
