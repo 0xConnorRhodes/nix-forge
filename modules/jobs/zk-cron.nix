@@ -59,4 +59,21 @@ in
       Type = "oneshot";
       User = user;
       WorkingDirectory = "/home/connor/code/scripts/cron"; }; };
+
+# note automations nightly cleanup
+  systemd.timers."note-automations-cron" = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = "02:00:00";
+      Persistent = true;
+      Unit = "note-automations-cron.service"; }; };
+  systemd.services."note-automations-cron" = {
+    script = ''
+      set -eu
+      ${pkgs.python3}/bin/python3 /home/connor/code/note_automations/scripts/cron.py
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = user;
+      WorkingDirectory = "/home/connor/code/note_automations/scripts"; }; };
 }
