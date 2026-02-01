@@ -41,6 +41,12 @@
         branch = "main";
         specialNotes = "Prioritize searching inside the website/ directory. this is where the documentation lives. However, not everything in this project is documented, so you may search the source code outside of the website/ directory if you can't find an answer within that directory.";
       }
+      {
+        type = "git";
+        name = "anthropic-sdk-python";
+        url = "https://github.com/anthropics/anthropic-sdk-python";
+        branch = "main";
+      }
     ];
   };
 }
