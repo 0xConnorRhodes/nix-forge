@@ -43,6 +43,7 @@
     sc = "sc-im";
     js = "just";
     sb = "silverbullet $HOME/notes";
+    clr = "claude --dangerously-skip-permissions -r";
 
     # notifications for woof
     nt="export NOTIFICATIONS=true && echo 'notifications on'";
