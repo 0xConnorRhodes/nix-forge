@@ -147,6 +147,8 @@ cld() {
     claude --dangerously-skip-permissions -p "$2"
   elif [ "$1" = "-r" ]; then
     claude --dangerously-skip-permissions -r
+  elif [ "$1" = "-np" ]; then
+    claude --dangerously-skip-permissions
   elif [ "$1" = "--noyo" ]; then
     claude --permission-mode plan
   else
