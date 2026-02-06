@@ -19,6 +19,7 @@ in
     ../../common/home/bat.nix
     ../../common/home/lf.nix
     ../../common/home/wezterm.nix
+    ../../common/home/btca.nix
     ../../../modules/home/ipython.nix
     ../../../modules/home/vscode
     ../../../modules/home/mpv.nix
