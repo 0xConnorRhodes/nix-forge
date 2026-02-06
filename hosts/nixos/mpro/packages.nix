@@ -58,6 +58,7 @@ in
     lsof
     unrar
     android-tools
+    cargo
 
     # python packages
     (python3.withPackages (python-pkgs: with python-pkgs; [
