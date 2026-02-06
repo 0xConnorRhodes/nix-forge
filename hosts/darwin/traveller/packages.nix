@@ -70,6 +70,7 @@ in
     pinnedHugo.hugo
     cht-sh
     podman
+    podman-compose
 
     # GUI
     utm
