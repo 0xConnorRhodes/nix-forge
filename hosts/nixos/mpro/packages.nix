@@ -71,7 +71,8 @@ in
     lsof
     unrar
     android-tools
-    cargo
+
+    # custom rust packages
     hazelnut
     claude-chill
 
