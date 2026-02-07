@@ -1,0 +1,32 @@
+# ln -s $HOME/code/nix-forge/hosts/nixos/mpro/config/hazelnut.toml $HOME/.config/hazelnut/config.toml
+
+# ─────────────────────────────────────────────────────────────
+# General Settings
+# ─────────────────────────────────────────────────────────────
+[general]
+log_level = "info"
+theme = "dracula"
+
+# ─────────────────────────────────────────────────────────────
+# Watch Folders
+# ─────────────────────────────────────────────────────────────
+[[watch]]
+path = "/scary/files/share/drop"
+recursive = false
+rules = ["mobile-notes-to-inbox"]
+
+# ─────────────────────────────────────────────────────────────
+# Rules
+# ─────────────────────────────────────────────────────────────
+[[rule]]
+name = "mobile-notes-to-inbox"
+enabled = true
+
+[rule.condition]
+# Matches Google Recorder text export format: Jan+23+at+12-09+PM.txt
+# Pattern: Month+Day+at+Hour-Minute+AM/PM.txt
+name_regex = "^[A-Z][a-z]{2}\\+\\d{1,2}\\+at\\+\\d{1,2}-\\d{2}\\+[AP]M\\.txt$"
+
+[rule.action]
+type = "move"
+destination = "/zstore/data/records/archived_notes/inbox"

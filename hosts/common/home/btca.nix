@@ -53,6 +53,12 @@
         url = "https://github.com/anthropics/claude-agent-sdk-python";
         branch = "main";
       }
+      {
+        type = "git";
+        name = "hazelnut";
+        url = "https://github.com/ricardodantas/hazelnut";
+        branch = "main";
+      }
     ];
   };
 }
