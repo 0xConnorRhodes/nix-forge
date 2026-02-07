@@ -9,6 +9,19 @@ let
     inherit (pkgs.stdenv.hostPlatform) system;
     inherit (config.nixpkgs) config;
   };
+
+  # Rust 1.93 toolchain for hazelnut
+  rustToolchain = pkgs.rust-bin.stable.latest.default.override {
+    extensions = [ "rust-src" ];
+  };
+
+  hazelnut = import ../../../pkgs/rust/hazelnut {
+    inherit pkgs rustToolchain;
+  };
+
+  claude-chill = import ../../../pkgs/rust/claude-chill {
+    inherit pkgs rustToolchain;
+  };
 in
 
 {
@@ -59,6 +72,8 @@ in
     unrar
     android-tools
     cargo
+    hazelnut
+    claude-chill
 
     # python packages
     (python3.withPackages (python-pkgs: with python-pkgs; [

@@ -49,6 +49,11 @@
     pinned-hugo = { # v0.105.0
       url = "github:nixos/nixpkgs/3c66daa779d7cca11d3ee15d8da9b4bb76ed60ee";
     };
+
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, nixos-generators, ... }@inputs:
@@ -67,6 +72,9 @@
           {
             home-manager.extraSpecialArgs = specialArgs; # needed to access inputs in home.nix
             home-manager.sharedModules = [ inputs.plasma-manager.homeModules.plasma-manager ];
+          }
+          {
+            nixpkgs.overlays = [ inputs.rust-overlay.overlays.default ];
           }
         ];
       };
