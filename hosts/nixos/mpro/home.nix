@@ -55,5 +55,6 @@ in
 
   xdg.configFile = {
     "screen/screenrc".source = ../../common/home/config/screenrc;
+    "hazelnut/config.toml".source = ./config/hazelnut.toml;
   };
 }
