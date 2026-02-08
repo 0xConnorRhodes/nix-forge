@@ -3,6 +3,7 @@ let
   pkgsUnstable = import inputs.nixpkgs-unstable {
     inherit (pkgs.stdenv.hostPlatform) system;
     inherit (config.nixpkgs) config;
+    overlays = [ inputs.rust-overlay.overlays.default ];
   };
 
   flakePackages = (builtins.mapAttrs ( name: value: value.packages.${pkgs.system}.default) {
@@ -21,6 +22,19 @@ let
     name = "myGems";
     ruby = ruby;
     gemdir = ../../../pkgs/ruby/myGems;
+  };
+
+  # Rust toolchain for custom packages - use unstable to match rust-overlay
+  rustToolchain = pkgsUnstable.rust-bin.stable.latest.default.override {
+    extensions = [ "rust-src" ];
+  };
+
+  hazelnut = import ../../../pkgs/rust/hazelnut {
+    inherit pkgs rustToolchain;
+  };
+
+  claude-chill = import ../../../pkgs/rust/claude-chill {
+    inherit pkgs rustToolchain;
   };
 in
 {
@@ -76,6 +90,10 @@ in
     utm
     rectangle
     neovide
+
+    # custom rust packages
+    hazelnut
+    claude-chill
 
     # LATER
     # lua
