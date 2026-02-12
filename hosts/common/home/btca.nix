@@ -59,6 +59,12 @@
         url = "https://github.com/ricardodantas/hazelnut";
         branch = "main";
       }
+      {
+        type = "git";
+        name = "pykada";
+        url = "https://github.com/ryanmalley101/pykada.git";
+        branch = "master";
+      }
     ];
   };
 }
