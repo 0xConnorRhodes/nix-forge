@@ -7,6 +7,7 @@
     "$HOME/.bun/bin"
     "$HOME/code/scripts/work/bin"
     "$HOME/code/scripts/pkm"
+    "$HOME/.antigravity/antigravity/bin"
     #"$HOME/.cargo/bin"
   ] ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [
     "/opt/homebrew/bin"
