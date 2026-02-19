@@ -138,4 +138,5 @@ lsp() {
   fi
 }
 
-'' + (import ./launch_claude.nix)
+'' 
++ (import ./launch_claude.nix)
