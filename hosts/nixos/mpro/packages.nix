@@ -90,6 +90,7 @@ in
     handbrake
     bitwarden-desktop
     picard
+    pkgsUnstable.antigravity-fhs
 
     # KDE apps
     kdePackages.krdc # remote desktop client

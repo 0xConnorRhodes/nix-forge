@@ -76,4 +76,21 @@ in
       Type = "oneshot";
       User = user;
       WorkingDirectory = "/home/connor/code/note_automations/scripts"; }; };
+
+# attachments to s2 sync
+  systemd.timers."attachments-to-s2" = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = "02:10:00";
+      Persistent = true;
+      Unit = "attachments-to-s2.service"; }; };
+  systemd.services."attachments-to-s2" = {
+    script = ''
+      set -eu
+      ${pkgs.python3}/bin/python3 /home/connor/code/note_automations/scripts/attachments_to_s2.py
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = user;
+      WorkingDirectory = "/home/connor/code/note_automations/scripts"; }; };
 }
