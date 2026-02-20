@@ -33,9 +33,6 @@ let
     inherit pkgs rustToolchain;
   };
 
-  claude-chill = import ../../../pkgs/rust/claude-chill {
-    inherit pkgs rustToolchain;
-  };
 in
 {
   # make pkgsUnstable available to all modules
@@ -93,7 +90,6 @@ in
 
     # custom rust packages
     hazelnut
-    claude-chill
 
     # LATER
     # lua

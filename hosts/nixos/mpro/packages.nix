@@ -19,9 +19,6 @@ let
     inherit pkgs rustToolchain;
   };
 
-  claude-chill = import ../../../pkgs/rust/claude-chill {
-    inherit pkgs rustToolchain;
-  };
 in
 
 {
@@ -74,7 +71,6 @@ in
 
     # custom rust packages
     hazelnut
-    claude-chill
 
     # python packages
     (python3.withPackages (python-pkgs: with python-pkgs; [
