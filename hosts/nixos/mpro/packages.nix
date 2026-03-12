@@ -19,6 +19,10 @@ let
     inherit pkgs rustToolchain;
   };
 
+  rtk = import ../../../pkgs/rust/rtk {
+    inherit pkgs rustToolchain;
+  };
+
 in
 
 {
@@ -71,6 +75,7 @@ in
 
     # custom rust packages
     hazelnut
+    rtk
 
     # python packages
     (python3.withPackages (python-pkgs: with python-pkgs; [
