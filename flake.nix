@@ -40,6 +40,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    rtk-src = {
+      url = "github:rtk-ai/rtk";
+      flake = false;
+    };
+
     # flakePackages
     json2nix = {
       url = "github:sempruijs/json2nix";

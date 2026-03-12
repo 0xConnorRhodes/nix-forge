@@ -21,6 +21,7 @@ let
 
   rtk = import ../../../pkgs/rust/rtk {
     inherit pkgs rustToolchain;
+    src = inputs.rtk-src;
   };
 
 in

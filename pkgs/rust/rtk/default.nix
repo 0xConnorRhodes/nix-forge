@@ -1,17 +1,12 @@
-{ pkgs, rustToolchain }:
+{ pkgs, rustToolchain, src }:
 
-pkgs.rustPlatform.buildRustPackage rec {
+pkgs.rustPlatform.buildRustPackage {
   pname = "rtk";
-  version = "0.29.0";
+  version = (builtins.fromTOML (builtins.readFile "${src}/Cargo.toml")).package.version;
 
-  src = pkgs.fetchFromGitHub {
-    owner = "rtk-ai";
-    repo = "rtk";
-    rev = "v${version}";
-    hash = "sha256-QGHCa8rO4YBFXdrz78FhWKFxY7DmRxCXM8iYQv4yTYE=";
-  };
+  inherit src;
 
-  cargoHash = "sha256-gNJjtQah7NFSgFVYJftK19dECzDvLCi2E33na2PtKmc=";
+  cargoLock.lockFile = "${src}/Cargo.lock";
 
   doCheck = false;
 
