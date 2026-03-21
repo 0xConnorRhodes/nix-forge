@@ -309,7 +309,7 @@ in
         extraConfig = ''
           tls /etc/caddy/certs/search.connorrhodes.com_certificate.pem /etc/caddy/certs/search.connorrhodes.com_key.pem
           ${robotsTxt}
-          root * /home/connor/code/my-unduck/dist
+          root * /var/www/search
           file_server
           @static {
             path *.js *.css *.svg
@@ -422,6 +422,10 @@ in
   };
   fileSystems."/var/www/dashy" = {
     device = "/home/connor/.local/share/dashy";
+    options = [ "bind" "X-nosuid" "X-nodev" "X-noexec" ];
+  };
+  fileSystems."/var/www/search" = {
+    device = "/home/connor/code/my-unduck/dist";
     options = [ "bind" "X-nosuid" "X-nodev" "X-noexec" ];
   };
 
