@@ -37,7 +37,7 @@
       ../../../modules/services/copyparty.nix
       ../../../modules/services/silverbullet.nix
       ../../../modules/services/vikunja.nix
-      ../../../modules/services/nextcloud.nix
+      #../../../modules/services/nextcloud.nix
       ../../../modules/services/fastapi.nix
       ../../../modules/services/dumbterm.nix
       #../../../modules/services/sshwifty.nix
