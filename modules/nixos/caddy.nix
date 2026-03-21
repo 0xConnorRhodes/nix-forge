@@ -55,7 +55,7 @@ in
           tls /etc/caddy/certs/home.connorrhodes.com_certificate.pem /etc/caddy/certs/home.connorrhodes.com_key.pem
           ${autheliaSSO}
           ${robotsTxt}
-          root * /home/connor/.local/share/dashy
+          root * /var/www/dashy
           file_server
         '';
       };
@@ -418,6 +418,10 @@ in
   };
   fileSystems."/var/www/web_tools" = {
     device = "/home/connor/code/web_tools";
+    options = [ "bind" "X-nosuid" "X-nodev" "X-noexec" ];
+  };
+  fileSystems."/var/www/dashy" = {
+    device = "/home/connor/.local/share/dashy";
     options = [ "bind" "X-nosuid" "X-nodev" "X-noexec" ];
   };
 
