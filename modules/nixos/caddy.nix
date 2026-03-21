@@ -407,21 +407,20 @@ in
     };
   };
 
-  # Add caddy to users group for reading 0750 directories
-  users.groups.users.members = [ "caddy" ];
-
-  # Create directories with proper permissions for caddy to read
-  systemd.tmpfiles.rules = [
-    "d /var/www/demo_notes 0750 connor users - -"
-    "d /var/www/web_tools 0750 connor users - -"
-    "d /var/www/bootstrap 0750 connor users - -"
-  ];
-
-  # Bind mount bootstrap scripts to /var/www for caddy access
+  # Bind mount folders to /var/www for caddy access
   fileSystems."/var/www/bootstrap" = {
     device = "/home/connor/code/scripts/bootstrap";
     options = [ "bind" "X-nosuid" "X-nodev" "X-noexec" ];
   };
+  fileSystems."/var/www/demo_notes" = {
+    device = "/home/connor/code/demo-notes-connor-engineer/build";
+    options = [ "bind" "X-nosuid" "X-nodev" "X-noexec" ];
+  };
+  fileSystems."/var/www/web_tools" = {
+    device = "/home/connor/code/web_tools";
+    options = [ "bind" "X-nosuid" "X-nodev" "X-noexec" ];
+  };
 
+  users.groups.users.members = [ "caddy" ];
   networking.firewall.allowedTCPPorts = [ 80 443 ];
 }
