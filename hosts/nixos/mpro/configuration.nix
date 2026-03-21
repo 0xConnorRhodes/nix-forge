@@ -33,6 +33,7 @@
       ../../../modules/services/vaultwarden.nix
       ../../../modules/services/immich.nix
       ../../../modules/services/pairdrop.nix
+      ../../../modules/services/radicale.nix
       ../../../modules/services/copyparty.nix
       ../../../modules/services/silverbullet.nix
       ../../../modules/services/vikunja.nix
