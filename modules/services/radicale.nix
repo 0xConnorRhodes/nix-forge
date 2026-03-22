@@ -16,11 +16,6 @@
       };
     };
     rights = {
-      public = {
-        user = ".*";
-        collection = "connor/public";
-        permissions = "r";
-      };
       root = {
         user = ".+";
         collection = "";

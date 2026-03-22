@@ -282,14 +282,14 @@ in
       "cc.connorrhodes.com" = {
         extraConfig = ''
           ${robotsTxt}
-          handle /connor/${secrets.radicale.public_path}* {
-            uri replace /connor/${secrets.radicale.public_path} /connor/public
+          handle_path /${secrets.radicale.public_path}/* {
+            reverse_proxy 127.0.0.1:5232 {
+              header_up Authorization "Basic ${secrets.radicale.basic_auth}"
+            }
+          }
+          handle {
             reverse_proxy 127.0.0.1:5232
           }
-          handle /connor/* {
-            respond 404
-          }
-          reverse_proxy 127.0.0.1:5232
         '';
       };
 
