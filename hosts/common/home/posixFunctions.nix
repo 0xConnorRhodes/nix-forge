@@ -32,7 +32,7 @@ newpg() {
   name=$(printf '%s' "$name" | tr ' ' '_')
 
   # Create directory with date prefix
-  dir_name="/Users/connor.rhodes/code/playground/$(date +%y%m%d)_$name"
+  dir_name="$HOME/code/playground/$(date +%y%m%d)_$name"
   mkdir -p "$dir_name" || return 1
   cd "$dir_name" || return 1
 }
