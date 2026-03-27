@@ -46,6 +46,13 @@
         User ${secrets.ssh.config.freeside.user}
         SetEnv TERM=xterm-256color
         ProxyJump m
+
+      Host lib
+        Hostname ${secrets.ssh.config.lib.ip}
+        Port ${secrets.ssh.config.lib.port}
+        User ${secrets.ssh.config.lib.user}
+        SetEnv TERM=xterm-256color
+        ProxyJump m
     '';
   };
 }
