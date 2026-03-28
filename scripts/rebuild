@@ -8,8 +8,6 @@ pushd ~/code/nix-forge
 
 find . -type f -name "*.nix" -exec git add {} +
 
-yq -o=json secrets.yml > .secrets.json
-
 export NIXPKGS_ALLOW_UNFREE=1
 
 if [ "$(uname)" = "Darwin" ]; then

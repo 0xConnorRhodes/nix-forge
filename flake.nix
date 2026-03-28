@@ -63,7 +63,7 @@
 
   outputs = { self, nixpkgs, nixpkgs-unstable, nixos-generators, ... }@inputs:
   let
-    secrets = builtins.fromJSON (builtins.readFile ./.secrets.json);
+    secrets = builtins.fromJSON (builtins.readFile ./secrets.json);
   in
   {
     nixosConfigurations = {
