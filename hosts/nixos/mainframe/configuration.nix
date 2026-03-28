@@ -39,7 +39,6 @@
       #../../../modules/services/nextcloud.nix
       ../../../modules/services/fastapi.nix
       ../../../modules/services/dumbterm.nix
-      #../../../modules/services/open-webui.nix
 
       # jobs
       ../../../modules/jobs/sync-notes.nix
