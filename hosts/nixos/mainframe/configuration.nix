@@ -10,7 +10,6 @@
       ./mounts.nix
       ./secret.nix
       ./backup-cron.nix
-      #./syncthing.nix
       ./nfs.nix
       # ./llm.nix
       ../../common/host-options.nix
