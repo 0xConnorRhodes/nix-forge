@@ -138,5 +138,10 @@ lsp() {
   fi
 }
 
+newpycli() {
+  local dir
+  dir="$(command newpycli "$@")" && [ -n "$dir" ] && cd "$dir"
+}
+
 '' 
 + (import ./launch_claude.nix)
