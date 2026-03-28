@@ -4,7 +4,7 @@ local hostname = wezterm.hostname()
 
 local host_cfg = {}
 
-if hostname == 'mpro' then
+if hostname == 'mainframe' then
   host_cfg.font_size = 18
   host_cfg.modAlt = 'CTRL'
   host_cfg.modWin = 'WIN'

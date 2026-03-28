@@ -3,9 +3,9 @@
   home-manager.users.${config.myConfig.username} = {
     home.file.".ssh/config".text = ''
       Host m
-        Hostname ${secrets.ssh.config.mpro.ip}
-        Port ${secrets.ssh.config.mpro.port}
-        User ${secrets.ssh.config.mpro.user}
+        Hostname ${secrets.ssh.config.mainframe.ip}
+        Port ${secrets.ssh.config.mainframe.port}
+        User ${secrets.ssh.config.mainframe.user}
         ServerAliveInterval 60
         ServerAliveCountMax 10
         SetEnv TERM=xterm-256color

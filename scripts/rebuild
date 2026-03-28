@@ -17,7 +17,7 @@ if [ "$(uname)" = "Darwin" ]; then
   # -E and --impure needed to see the NIXPKGS_ALLOW_UNFREE env var
   sudo -E darwin-rebuild switch --impure --flake .#traveller
   brew upgrade
-#elif [ "$(hostname)" = "mpro" ]; then
+#elif [ "$(hostname)" = "mainframe" ]; then
 #  nh os switch .
 else
   #sudo nixos-rebuild switch --flake .

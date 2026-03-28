@@ -59,7 +59,7 @@
 
   options = {
     myConfig = {
-      hostname = lib.mkOption { type = lib.types.str; default = "mpro";};
+      hostname = lib.mkOption { type = lib.types.str; default = "mainframe";};
       tailscaleIp = lib.mkOption { type = lib.types.str; default = "127.0.0.1";};
     };
   };

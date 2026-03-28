@@ -32,7 +32,7 @@
       ];
       Presets = [
         {
-          Title = "mpro";
+          Title = "mainframe";
           Type = "SSH";
           Host = "127.0.0.1:31583";
           #TabColor = "2E7D32";
