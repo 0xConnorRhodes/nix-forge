@@ -89,27 +89,6 @@ in
         '';
       };
 
-      # "nc.connorrhodes.com" = {
-      #   extraConfig = ''
-      #     @robots path /robots.txt
-      #     handle @robots {
-      #       respond 200 {
-      #         body "User-agent: *\nDisallow: /"
-      #       }
-      #     }
-      #     reverse_proxy 127.0.0.1:11000 {
-      #       header_up Host {host}
-      #       header_up X-Real-IP {remote_host}
-      #       header_up X-Forwarded-For {remote_host}
-      #       header_up X-Forwarded-Host {host}
-      #       header_up X-Forwarded-Proto https
-      #     }
-      #     request_body {
-      #       max_size 512MB
-      #     }
-      #   '';
-      # };
-
       "md.connorrhodes.com" = {
         extraConfig = ''
           ${autheliaSSO}
