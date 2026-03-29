@@ -3,7 +3,7 @@
 {
   imports = [
     ./konsole.nix
-    ../../common/plasma-common.nix
+    ../common/plasma-common.nix
   ];
 
   hardware.bluetooth.enable = true;

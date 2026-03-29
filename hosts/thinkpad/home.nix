@@ -9,21 +9,21 @@ in
   # make pkgsUnstable available to all modules
   _module.args.pkgsUnstable = pkgsUnstable;
   imports = [
-    ../../common/home/git.nix
-    ../../common/home/zsh.nix
-    ../../common/home/zoxide.nix
-    ../../common/home/git.nix
-    ../../common/home/bash.nix
-    ../../common/home/zsh.nix
-    ../../common/home/ripgrep.nix
-    ../../common/home/starship.nix
-    ../../common/home/bat.nix
-    ../../common/home/lf.nix
-    ../../common/home/wezterm.nix
-    ../../../modules/home/vscode
-    ../../../modules/home/firefox
-    ../../../modules/home/mpv.nix
-    ../../../modules/home/uv.nix
+    ../common/home/git.nix
+    ../common/home/zsh.nix
+    ../common/home/zoxide.nix
+    ../common/home/git.nix
+    ../common/home/bash.nix
+    ../common/home/zsh.nix
+    ../common/home/ripgrep.nix
+    ../common/home/starship.nix
+    ../common/home/bat.nix
+    ../common/home/lf.nix
+    ../common/home/wezterm.nix
+    ../../modules/home/vscode
+    ../../modules/home/firefox
+    ../../modules/home/mpv.nix
+    ../../modules/home/uv.nix
   ];
 
   home.sessionVariables = {
@@ -39,7 +39,7 @@ in
       dwn = "$HOME/Downloads";
       docs = "$HOME/Documents";
     };
-    initContent = import ../../common/home/posixFunctions.nix;
+    initContent = import ../common/home/posixFunctions.nix;
   };
 
   programs.vscode.profiles.default = {
@@ -53,6 +53,6 @@ in
   };
 
   xdg.configFile = {
-    "screen/screenrc".source = ../../common/home/config/screenrc;
+    "screen/screenrc".source = ../common/home/config/screenrc;
   };
 }

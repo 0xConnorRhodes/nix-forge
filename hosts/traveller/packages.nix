@@ -21,7 +21,7 @@ let
   myGems = pkgs.bundlerEnv {
     name = "myGems";
     ruby = ruby;
-    gemdir = ../../../pkgs/ruby/myGems;
+    gemdir = ../../pkgs/ruby/myGems;
   };
 
   # Rust toolchain for custom packages - use unstable to match rust-overlay
@@ -29,7 +29,7 @@ let
     extensions = [ "rust-src" ];
   };
 
-  hazelnut = import ../../../pkgs/rust/hazelnut {
+  hazelnut = import ../../pkgs/rust/hazelnut {
     inherit pkgs rustToolchain;
   };
 
@@ -113,6 +113,6 @@ in
       # ruby-lsp # for vscode ruby lsp - commented out since VSCode is disabled
     ]))
   ]
-  ++ (import ../../common/packages.nix { pkgs = pkgs; })
+  ++ (import ../common/packages.nix { pkgs = pkgs; })
   ++ pkgs.lib.attrValues flakePackages;
 }

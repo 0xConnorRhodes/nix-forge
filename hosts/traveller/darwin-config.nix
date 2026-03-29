@@ -4,8 +4,8 @@
   imports = [
     ./darwin-secret.nix
     ./launchd.nix
-    ../../common/host-options.nix
-    ../../../configs/ssh_config.nix
+    ../common/host-options.nix
+    ../../configs/ssh_config.nix
   ];
 
   config = {

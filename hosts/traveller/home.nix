@@ -7,26 +7,26 @@
     ./packages.nix
     ./comma.nix
     ./home-secret.nix
-    ../../common/home/git.nix
-    ../../common/home/bash.nix
-    ../../common/home/zsh.nix
-    ../../common/home/powershell.nix
-    ../../common/home/ripgrep.nix
-    ../../common/home/zoxide.nix
-    ../../common/home/starship.nix
-    ../../common/home/bat.nix
-    ../../common/home/lf.nix
-    ../../common/home/rbw.nix
-    ../../common/home/vja.nix
-    ../../common/home/btca.nix
-    ../../../modules/home/mpv.nix
-    ../../../modules/home/posting.nix
-    ../../../pkgs/cursedtag.nix
-    ../../../configs/wezterm/wezterm-common.nix
-    #../../../modules/home/vscode
-    ../../../modules/home/uv.nix
-    ../../../modules/home/ipython.nix
-    ../../../modules/home/pushcli.nix
+    ../common/home/git.nix
+    ../common/home/bash.nix
+    ../common/home/zsh.nix
+    ../common/home/powershell.nix
+    ../common/home/ripgrep.nix
+    ../common/home/zoxide.nix
+    ../common/home/starship.nix
+    ../common/home/bat.nix
+    ../common/home/lf.nix
+    ../common/home/rbw.nix
+    ../common/home/vja.nix
+    ../common/home/btca.nix
+    ../../modules/home/mpv.nix
+    ../../modules/home/posting.nix
+    ../../pkgs/cursedtag.nix
+    ../../configs/wezterm/wezterm-common.nix
+    #../../modules/home/vscode
+    ../../modules/home/uv.nix
+    ../../modules/home/ipython.nix
+    ../../modules/home/pushcli.nix
   ];
 
   home.sessionVariables = {
@@ -63,17 +63,17 @@
       dwn = "$HOME/Downloads";
       docs = "$HOME/Documents";
     };
-    initContent = import ../../common/home/posixFunctions.nix;
+    initContent = import ../common/home/posixFunctions.nix;
   };
 
   xdg.configFile = {
     # "skhd/skhdrc".source = ./config/skhdrc;
     # "ghostty/config".source = ./config/ghostty;
-    "screen/screenrc".source = ../../common/home/config/screenrc;
+    "screen/screenrc".source = ../common/home/config/screenrc;
   };
 
   # top level file must be here so that fnox can automatically combine with files lower in FHS
-  home.file."code/fnox.toml".source = ../../common/home/config/fnox.toml;
+  home.file."code/fnox.toml".source = ../common/home/config/fnox.toml;
 
   # Don't show the "Last login" message for every new terminal.
   home.file.".hushlogin" = { text = ""; };

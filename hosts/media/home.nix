@@ -9,13 +9,13 @@ in
   # make pkgsUnstable available to all modules
   _module.args.pkgsUnstable = pkgsUnstable;
   imports = [
-    ../../common/home/git.nix
-    ../../common/home/bash.nix
-    ../../common/home/zsh.nix
-    ../../common/home/ripgrep.nix
-    ../../common/home/zoxide.nix
-    ../../common/home/starship.nix
-    ../../common/home/bat.nix
+    ../common/home/git.nix
+    ../common/home/bash.nix
+    ../common/home/zsh.nix
+    ../common/home/ripgrep.nix
+    ../common/home/zoxide.nix
+    ../common/home/starship.nix
+    ../common/home/bat.nix
   ];
 
   home.sessionVariables = {
@@ -26,6 +26,6 @@ in
     dirHashes = {
       docs = "$HOME/Documents";
     };
-    initContent = import ../../common/home/posixFunctions.nix;
+    initContent = import ../common/home/posixFunctions.nix;
   };
 }

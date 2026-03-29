@@ -72,7 +72,7 @@
         specialArgs = { inherit inputs; inherit secrets; };
         system = "x86_64-linux";
         modules = [
-          ./hosts/nixos/mainframe/configuration.nix
+          ./hosts/mainframe/configuration.nix
 	        inputs.home-manager.nixosModules.default
           {
             home-manager.extraSpecialArgs = specialArgs; # needed to access inputs in home.nix
@@ -88,7 +88,7 @@
         specialArgs = { inherit inputs; inherit secrets; };
         system = "x86_64-linux";
         modules = [
-          ./hosts/nixos/thinkpad/configuration.nix
+          ./hosts/thinkpad/configuration.nix
 	        inputs.home-manager.nixosModules.default
           {
             home-manager.extraSpecialArgs = specialArgs; # needed to access inputs in home.nix
@@ -114,7 +114,7 @@
         specialArgs = { inherit inputs; inherit secrets; };
         system = "aarch64-linux";
         modules = [
-          ./hosts/nixos/media/configuration.nix
+          ./hosts/media/configuration.nix
           inputs.home-manager.nixosModules.default
           {
             home-manager.extraSpecialArgs = specialArgs; # needed to access inputs in home.nix
@@ -127,7 +127,7 @@
         specialArgs = { inherit inputs; inherit secrets; };
         system = "x86_64-linux";
         modules = [
-          ./hosts/nixos/testvm/configuration.nix
+          ./hosts/testvm/configuration.nix
           inputs.home-manager.nixosModules.default
           inputs.nix-index-database.nixosModules.nix-index
           {
@@ -144,7 +144,7 @@
         # needed to install nonfree licensed software with home-manager
         pkgs = import inputs.nixpkgs { system = system; config.allowUnfree = true;};
         modules = [
-          ./hosts/darwin/traveller/darwin-config.nix
+          ./hosts/traveller/darwin-config.nix
           inputs.home-manager.darwinModules.home-manager
         ];
       };
@@ -156,7 +156,7 @@
       system = "aarch64-linux";
       specialArgs = { inherit inputs; inherit secrets; };
       modules = [
-        ./hosts/nixos/media/configuration.nix
+        ./hosts/media/configuration.nix
         inputs.home-manager.nixosModules.default
         {
           home-manager.extraSpecialArgs = { inherit inputs; inherit secrets; };

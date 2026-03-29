@@ -4,8 +4,8 @@
   imports = [
     ./hardware-configuration.nix
     ./packages.nix
-    ../../common/host-options.nix
-    ../../common/nixos-common.nix
+    ../common/host-options.nix
+    ../common/nixos-common.nix
   ];
 
   config = {

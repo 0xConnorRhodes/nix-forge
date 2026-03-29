@@ -4,7 +4,7 @@ let
 in
 {
   imports = [
-    ../../common/gnome-common.nix
+    ../common/gnome-common.nix
   ];
 
   # Enable the X11 windowing system.

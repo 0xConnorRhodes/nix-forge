@@ -12,42 +12,42 @@
       ./backup-cron.nix
       ./nfs.nix
       # ./llm.nix
-      ../../common/host-options.nix
-      ../../common/nixos-common.nix
-      ../../common/nixos-packages.nix
-      ../../../modules/nixos/profile-sync-daemon.nix
-      ../../../modules/nixos/caddy.nix
-      ../../../modules/nixos/dashy
-      ../../../modules/nixos/authelia.nix
-      ../../../modules/nixos/kvm.nix
-      ../../../modules/nixos/incus.nix
-      ../../../modules/nixos/tailscale.nix
+      ../common/host-options.nix
+      ../common/nixos-common.nix
+      ../common/nixos-packages.nix
+      ../../modules/nixos/profile-sync-daemon.nix
+      ../../modules/nixos/caddy.nix
+      ../../modules/nixos/dashy
+      ../../modules/nixos/authelia.nix
+      ../../modules/nixos/kvm.nix
+      ../../modules/nixos/incus.nix
+      ../../modules/nixos/tailscale.nix
 
       # services
-      ../../../configs/ssh_config.nix
-      ../../../modules/nixos/jellyfin.nix
-      ../../../modules/services/navidrome.nix
-      ../../../modules/services/audiobookshelf.nix
-      ../../../modules/services/web-print.nix
-      ../../../modules/services/vaultwarden.nix
-      ../../../modules/services/immich.nix
-      ../../../modules/services/pairdrop.nix
-      ../../../modules/services/radicale.nix
-      ../../../modules/services/copyparty.nix
-      ../../../modules/services/silverbullet.nix
-      ../../../modules/services/vikunja.nix
-      ../../../modules/services/fastapi.nix
+      ../../configs/ssh_config.nix
+      ../../modules/nixos/jellyfin.nix
+      ../../modules/services/navidrome.nix
+      ../../modules/services/audiobookshelf.nix
+      ../../modules/services/web-print.nix
+      ../../modules/services/vaultwarden.nix
+      ../../modules/services/immich.nix
+      ../../modules/services/pairdrop.nix
+      ../../modules/services/radicale.nix
+      ../../modules/services/copyparty.nix
+      ../../modules/services/silverbullet.nix
+      ../../modules/services/vikunja.nix
+      ../../modules/services/fastapi.nix
 
       # jobs
-      ../../../modules/jobs/sync-notes.nix
-      ../../../modules/jobs/monitor_podcasts.nix
-      ../../../modules/jobs/zk-cron.nix
-      ../../../modules/jobs/process-audio.nix
-      ../../../modules/jobs/db-backup.nix
-      ../../../modules/jobs/readeck-backup.nix
-      ../../../modules/jobs/backup-secrets.nix
-      ../../../modules/jobs/hazelnutd.nix
-      # ../../../modules/jobs/rclone-jobs.nix
+      ../../modules/jobs/sync-notes.nix
+      ../../modules/jobs/monitor_podcasts.nix
+      ../../modules/jobs/zk-cron.nix
+      ../../modules/jobs/process-audio.nix
+      ../../modules/jobs/db-backup.nix
+      ../../modules/jobs/readeck-backup.nix
+      ../../modules/jobs/backup-secrets.nix
+      ../../modules/jobs/hazelnutd.nix
+      # ../../modules/jobs/rclone-jobs.nix
       inputs.home-manager.nixosModules.default
       inputs.nix-index-database.nixosModules.nix-index
     ];
@@ -184,7 +184,7 @@
         ./home.nix
         #./gnome-dconf.nix
         #./gnome-always-on.nix
-        #../../common/gnome-dconf-common.nix
+        #../common/gnome-dconf-common.nix
       ];
     };
 

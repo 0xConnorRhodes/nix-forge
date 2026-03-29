@@ -55,5 +55,5 @@ in
         pry
         dotenv
       ]))
-    ]++ (import ../../common/packages.nix { pkgs = pkgs; });
+    ]++ (import ../common/packages.nix { pkgs = pkgs; });
 }

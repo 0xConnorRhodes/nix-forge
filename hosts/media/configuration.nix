@@ -5,11 +5,11 @@
     ./hardware-configuration.nix
     ./packages.nix
     ./secret.nix
-    ../../common/host-options.nix
-    ../../common/nixos-common.nix
-    # ../../common/nixos-packages.nix
-    ../../../configs/ssh_config.nix
-    ../../../modules/nixos/tailscale.nix
+    ../common/host-options.nix
+    ../common/nixos-common.nix
+    # ../common/nixos-packages.nix
+    ../../configs/ssh_config.nix
+    ../../modules/nixos/tailscale.nix
     inputs.nixos-hardware.nixosModules.raspberry-pi-4
     inputs.nix-index-database.nixosModules.nix-index
   ];

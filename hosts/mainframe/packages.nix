@@ -15,11 +15,11 @@ let
     extensions = [ "rust-src" ];
   };
 
-  hazelnut = import ../../../pkgs/rust/hazelnut {
+  hazelnut = import ../../pkgs/rust/hazelnut {
     inherit pkgs rustToolchain;
   };
 
-  rtk = import ../../../pkgs/rust/rtk {
+  rtk = import ../../pkgs/rust/rtk {
     inherit pkgs rustToolchain;
     src = inputs.rtk-src;
   };
@@ -100,6 +100,6 @@ in
     kdePackages.k3b # cd/dvd tool
     kdePackages.kdenlive
   ]
-  ++ (import ../../common/packages.nix { pkgs = pkgs; })
+  ++ (import ../common/packages.nix { pkgs = pkgs; })
   ++ pkgs.lib.attrValues flakePackages;
 }

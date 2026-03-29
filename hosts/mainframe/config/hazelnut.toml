@@ -1,4 +1,4 @@
-# ln -s $HOME/code/nix-forge/hosts/nixos/mainframe/config/hazelnut.toml $HOME/.config/hazelnut/config.toml
+# ln -s $HOME/code/nix-forge/hosts/mainframe/config/hazelnut.toml $HOME/.config/hazelnut/config.toml
 
 # ─────────────────────────────────────────────────────────────
 # General Settings
