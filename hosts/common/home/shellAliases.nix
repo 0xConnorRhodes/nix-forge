@@ -1,3 +1,4 @@
+{ secrets }:
 {
   myAliases = {
 
@@ -51,6 +52,7 @@
 
     # connections
     mm = "et -p 63104 m"; # "mosh m"
+    ml = "et -p 63104 m -c \"et ${secrets.ssh.config.lib.user}@${secrets.ssh.config.lib.ip}\"";
     sm = "ssh m";
 
     # scripts
