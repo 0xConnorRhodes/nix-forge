@@ -15,17 +15,17 @@
       ../common/host-options.nix
       ../common/nixos-common.nix
       ../common/nixos-packages.nix
-      ../../modules/nixos/profile-sync-daemon.nix
-      ../../modules/nixos/caddy.nix
-      ../../modules/nixos/dashy
-      ../../modules/nixos/authelia.nix
-      ../../modules/nixos/kvm.nix
-      ../../modules/nixos/incus.nix
-      ../../modules/nixos/tailscale.nix
+      ../../modules/services/profile-sync-daemon.nix
+      ../../modules/services/caddy.nix
+      ../../modules/services/dashy
+      ../../modules/services/authelia.nix
+      ../../modules/services/kvm.nix
+      ../../modules/services/incus.nix
+      ../../modules/services/tailscale.nix
 
       # services
       ../../configs/ssh_config.nix
-      ../../modules/nixos/jellyfin.nix
+      ../../modules/services/jellyfin.nix
       ../../modules/services/navidrome.nix
       ../../modules/services/audiobookshelf.nix
       ../../modules/services/web-print.nix

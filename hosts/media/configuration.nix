@@ -9,7 +9,7 @@
     ../common/nixos-common.nix
     # ../common/nixos-packages.nix
     ../../configs/ssh_config.nix
-    ../../modules/nixos/tailscale.nix
+    ../../modules/services/tailscale.nix
     inputs.nixos-hardware.nixosModules.raspberry-pi-4
     inputs.nix-index-database.nixosModules.nix-index
   ];

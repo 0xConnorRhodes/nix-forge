@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../modules/nixos/ulauncher.nix
+    ../../modules/services/ulauncher.nix
   ]
 
   # Enable the X11 windowing system.

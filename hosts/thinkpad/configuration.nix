@@ -11,10 +11,10 @@
     ../common/nixos-common.nix
     ../common/nixos-packages.nix
     ../common/plasma-common.nix
-    ../../modules/nixos/kvm.nix
-    ../../modules/nixos/profile-sync-daemon.nix
-    #../../modules/nixos/incus.nix
-    #../../modules/nixos/tailscale.nix
+    ../../modules/services/kvm.nix
+    ../../modules/services/profile-sync-daemon.nix
+    #../../modules/services/incus.nix
+    #../../modules/services/tailscale.nix
     ../../modules/jobs/sync-notes.nix
     ../../configs/ssh_config.nix
     inputs.home-manager.nixosModules.default
