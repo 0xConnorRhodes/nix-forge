@@ -315,6 +315,13 @@ in
         '';
       };
 
+      "git.connorrhodes.com" = {
+        extraConfig = ''
+          ${robotsTxt}
+          reverse_proxy 127.0.0.1:3200
+        '';
+      };
+
       "jf.connorrhodes.com" = {
         extraConfig = ''
           ${robotsTxt}
