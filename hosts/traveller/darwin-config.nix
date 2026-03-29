@@ -85,6 +85,7 @@
 
     home-manager = {
       backupFileExtension = "bak"; # append existing non hm files with this on rebuild
+      sharedModules = [ inputs.sops-nix.homeManagerModules.sops ];
       # useUserPackages = true; # if true install home-manager packages in /etc/profiles. Needed for nixos-rebuild build-vm.
       extraSpecialArgs = {
         inherit inputs;

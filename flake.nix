@@ -59,6 +59,11 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, nixos-generators, ... }@inputs:
@@ -76,7 +81,10 @@
 	        inputs.home-manager.nixosModules.default
           {
             home-manager.extraSpecialArgs = specialArgs; # needed to access inputs in home.nix
-            home-manager.sharedModules = [ inputs.plasma-manager.homeModules.plasma-manager ];
+            home-manager.sharedModules = [
+              inputs.plasma-manager.homeModules.plasma-manager
+              inputs.sops-nix.homeManagerModules.sops
+            ];
           }
           {
             nixpkgs.overlays = [ inputs.rust-overlay.overlays.default ];
