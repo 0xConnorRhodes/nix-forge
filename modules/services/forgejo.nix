@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  services.gitea = {
+  services.forgejo = {
     enable = true;
     database.type = "sqlite3";
     settings = {
