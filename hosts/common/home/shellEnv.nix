@@ -21,6 +21,7 @@ let
   '';
 
   misc = ''
+    export SOPS_AGE_KEY_FILE="${osConfig.myConfig.homeDir}/.config/sops/age/keys.txt"
   '';
 in
   paths + configDirs + apiKeys + misc

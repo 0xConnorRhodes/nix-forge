@@ -35,4 +35,5 @@ with pkgs; [
   sc-im
   pinentry-curses
   xh
+  sops
 ]
