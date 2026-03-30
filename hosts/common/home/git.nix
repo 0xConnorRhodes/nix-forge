@@ -60,6 +60,9 @@
         "git@github.com:" = {
           insteadOf = "gh:";
         };
+        "git@git.connorrhodes.com:" = {
+          insteadOf = "fj:";
+        };
       };
     };
   };

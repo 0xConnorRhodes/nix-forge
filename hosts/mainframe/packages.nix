@@ -64,6 +64,7 @@ in
     shiori
     sqlite
     gh
+    forgejo-cli
     ansible
     sshpass # needed for ansible
     auto-editor

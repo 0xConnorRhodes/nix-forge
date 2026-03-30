@@ -16,6 +16,8 @@
         DISABLE_REGISTRATION = true;
         DEFAULT_ALLOW_CREATE_ORGANIZATION = false;
         DEFAULT_ENABLE_TIMETRACKING = false;
+        DEFAULT_PRIVATE = "private";
+        FORCE_PRIVATE = true;
       };
     };
   };
