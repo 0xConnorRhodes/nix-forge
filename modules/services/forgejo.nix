@@ -5,6 +5,9 @@
     enable = true;
     database.type = "sqlite3";
     settings = {
+      repository = {
+        DEFAULT_BRANCH = "main";
+      };
       server = {
         HTTP_ADDR = "127.0.0.1";
         HTTP_PORT = 3200;
