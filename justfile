@@ -22,3 +22,6 @@ build-media:
 
 update-inputs:
   nix flake update
+
+edit-secrets:
+  sops secrets.yaml
