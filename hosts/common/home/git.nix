@@ -60,7 +60,7 @@
         "git@github.com:" = {
           insteadOf = "gh:";
         };
-        "git@git.connorrhodes.com:" = {
+        "forgejo@git.connorrhodes.com:" = {
           insteadOf = "fj:";
         };
       };
