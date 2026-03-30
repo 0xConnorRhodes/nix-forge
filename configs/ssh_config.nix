@@ -1,11 +1,32 @@
-{ config, pkgs, secrets, ... }:
+{ config, secrets, ... }:
+
+let
+  sopsFile = ./../secrets.yaml;
+in
 {
-  home-manager.users.${config.myConfig.username} = {
-    home.file.".ssh/config".text = ''
+  sops.secrets."ssh/mainframe/ip" = { inherit sopsFile; };
+  sops.secrets."ssh/mainframe/port" = { inherit sopsFile; };
+  sops.secrets."ssh/mainframe/user" = { inherit sopsFile; };
+  sops.secrets."ssh/mainframe/et_port" = { inherit sopsFile; };
+  sops.secrets."ssh/freeside/ip" = { inherit sopsFile; };
+  sops.secrets."ssh/freeside/port" = { inherit sopsFile; };
+  sops.secrets."ssh/freeside/user" = { inherit sopsFile; };
+  sops.secrets."ssh/lib/ip" = { inherit sopsFile; };
+  sops.secrets."ssh/lib/port" = { inherit sopsFile; };
+  sops.secrets."ssh/lib/user" = { inherit sopsFile; };
+  sops.secrets."ssh/forgejo/port" = { inherit sopsFile; };
+  sops.secrets."ssh/forgejo/user" = { inherit sopsFile; };
+
+  sops.templates."ssh_config" = {
+    content = ''
+      Host git.connorrhodes.com
+        Port ${config.sops.placeholder."ssh/forgejo/port"}
+        User ${config.sops.placeholder."ssh/forgejo/user"}
+
       Host m
-        Hostname ${secrets.ssh.config.mainframe.ip}
-        Port ${secrets.ssh.config.mainframe.port}
-        User ${secrets.ssh.config.mainframe.user}
+        Hostname ${config.sops.placeholder."ssh/mainframe/ip"}
+        Port ${config.sops.placeholder."ssh/mainframe/port"}
+        User ${config.sops.placeholder."ssh/mainframe/user"}
         ServerAliveInterval 60
         ServerAliveCountMax 10
         SetEnv TERM=xterm-256color
@@ -14,13 +35,6 @@
         Hostname 192.168.86.189
         Port 22
         User media
-        SetEnv TERM=xterm-256color
-        ProxyJump m
-
-      Host ubs
-        Hostname 10.93.82.34
-        Port 22
-        User ubuntu
         SetEnv TERM=xterm-256color
         ProxyJump m
 
@@ -33,26 +47,28 @@
         SetEnv TERM=xterm-256color
         ProxyJump m
 
-      Host ph
-        Hostname ${secrets.ssh.config.phone.ip}
-        User ${secrets.ssh.config.phone.user}
-        Port ${secrets.ssh.config.phone.port}
-        SetEnv TERM=xterm-256color
-        ProxyJump m
-
       Host freeside
-        Hostname ${secrets.ssh.config.freeside.ip}
-        Port ${secrets.ssh.config.freeside.port}
-        User ${secrets.ssh.config.freeside.user}
+        Hostname ${config.sops.placeholder."ssh/freeside/ip"}
+        Port ${config.sops.placeholder."ssh/freeside/port"}
+        User ${config.sops.placeholder."ssh/freeside/user"}
         SetEnv TERM=xterm-256color
         ProxyJump m
 
       Host lib
-        Hostname ${secrets.ssh.config.lib.ip}
-        Port ${secrets.ssh.config.lib.port}
-        User ${secrets.ssh.config.lib.user}
+        Hostname ${config.sops.placeholder."ssh/lib/ip"}
+        Port ${config.sops.placeholder."ssh/lib/port"}
+        User ${config.sops.placeholder."ssh/lib/user"}
         SetEnv TERM=xterm-256color
         ProxyJump m
     '';
+    path = "${config.home.homeDirectory}/.ssh/config";
+  };
+
+  sops.templates."ssh_aliases" = {
+    content = ''
+      alias mm='et -p ${config.sops.placeholder."ssh/mainframe/et_port"} m'
+      alias ml='et -p ${config.sops.placeholder."ssh/mainframe/et_port"} m -c "et ${config.sops.placeholder."ssh/lib/user"}@${config.sops.placeholder."ssh/lib/ip"}"'
+    '';
+    path = "${config.home.homeDirectory}/.config/sops/ssh_aliases.sh";
   };
 }

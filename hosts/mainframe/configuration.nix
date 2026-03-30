@@ -24,7 +24,6 @@
       ../../modules/services/tailscale.nix
 
       # services
-      ../../configs/ssh_config.nix
       ../../modules/services/jellyfin.nix
       ../../modules/services/navidrome.nix
       ../../modules/services/audiobookshelf.nix

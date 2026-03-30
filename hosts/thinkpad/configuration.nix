@@ -16,7 +16,6 @@
     #../../modules/services/incus.nix
     #../../modules/services/tailscale.nix
     ../../modules/jobs/sync-notes.nix
-    ../../configs/ssh_config.nix
     inputs.home-manager.nixosModules.default
     inputs.nix-index-database.nixosModules.nix-index
   ];

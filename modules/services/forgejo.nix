@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
+
   services.forgejo = {
     enable = true;
     database.type = "sqlite3";
@@ -11,6 +12,8 @@
       server = {
         HTTP_ADDR = "127.0.0.1";
         HTTP_PORT = 3200;
+        SSH_PORT = 45390;
+        SSH_USER = "forgejo";
         DOMAIN = "git.connorrhodes.com";
         ROOT_URL = "https://git.connorrhodes.com";
         OFFLINE_MODE = true;

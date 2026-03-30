@@ -5,7 +5,6 @@
     ./darwin-secret.nix
     ./launchd.nix
     ../common/host-options.nix
-    ../../configs/ssh_config.nix
   ];
 
   config = {

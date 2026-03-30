@@ -100,7 +100,10 @@
 	        inputs.home-manager.nixosModules.default
           {
             home-manager.extraSpecialArgs = specialArgs; # needed to access inputs in home.nix
-            home-manager.sharedModules = [ inputs.plasma-manager.homeModules.plasma-manager ];
+            home-manager.sharedModules = [
+              inputs.plasma-manager.homeModules.plasma-manager
+              inputs.sops-nix.homeManagerModules.sops
+            ];
           }
         ];
       };
@@ -126,7 +129,10 @@
           inputs.home-manager.nixosModules.default
           {
             home-manager.extraSpecialArgs = specialArgs; # needed to access inputs in home.nix
-            home-manager.sharedModules = [ inputs.plasma-manager.homeModules.plasma-manager ];
+            home-manager.sharedModules = [
+              inputs.plasma-manager.homeModules.plasma-manager
+              inputs.sops-nix.homeManagerModules.sops
+            ];
           }
         ];
       };

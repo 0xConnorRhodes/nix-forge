@@ -1,6 +1,6 @@
 { config, lib, pkgs, osConfig, hostPaths ? [], secrets, ... }:
 let
-  shellAliases = import ./shellAliases.nix { inherit secrets; };
+  shellAliases = import ./shellAliases.nix { };
   myPaths = import ./pathDirs.nix { inherit pkgs; };
   posixFunctions = import ./posixFunctions.nix;
 
@@ -28,6 +28,11 @@ in
 
       eval "$(rbw gen-completions zsh)"
       eval "$(direnv hook zsh)"
+
+      # Source sops-managed SSH aliases
+      if [ -f "$HOME/.config/sops/ssh_aliases.sh" ]; then
+        source "$HOME/.config/sops/ssh_aliases.sh"
+      fi
     ''
     + # concatenate case-insensitive matching string since it contains '' which breaks the multiline string.
     "\nzstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'";

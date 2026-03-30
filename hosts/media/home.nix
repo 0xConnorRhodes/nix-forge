@@ -8,6 +8,7 @@ in
 {
   # make pkgsUnstable available to all modules
   _module.args.pkgsUnstable = pkgsUnstable;
+  sops.age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
   imports = [
     ../common/home/git.nix
     ../common/home/bash.nix
@@ -16,6 +17,7 @@ in
     ../common/home/zoxide.nix
     ../common/home/starship.nix
     ../common/home/bat.nix
+    ../../configs/ssh_config.nix
   ];
 
   home.sessionVariables = {

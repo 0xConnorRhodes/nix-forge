@@ -1,6 +1,6 @@
 { config, lib, pkgs, osConfig, secrets, ... }:
 let
-  shellAliases = import ./shellAliases.nix { inherit secrets; };
+  shellAliases = import ./shellAliases.nix { };
   myPaths = import ./pathDirs.nix { inherit pkgs; };
 
   # PowerShell aliases that need functions instead of simple aliases

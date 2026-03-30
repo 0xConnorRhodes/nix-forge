@@ -27,6 +27,7 @@
     ../../modules/home/uv.nix
     ../../modules/home/ipython.nix
     ../../modules/home/pushover-cli.nix
+    ../../configs/ssh_config.nix
   ];
 
   home.sessionVariables = {
