@@ -26,7 +26,7 @@
     #../../modules/home/vscode
     ../../modules/home/uv.nix
     ../../modules/home/ipython.nix
-    ../../modules/home/pushcli.nix
+    ../../modules/home/pushover-cli.nix
   ];
 
   home.sessionVariables = {

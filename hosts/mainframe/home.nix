@@ -25,7 +25,7 @@ in
     ../../modules/home/mpv.nix
     ../../modules/home/firefox
     ../../modules/home/uv.nix
-    ../../modules/home/pushcli.nix
+    ../../modules/home/pushover-cli.nix
   ];
 
   home.sessionVariables = {
