@@ -25,6 +25,6 @@ else
   #nh os switch . -- --impure
 fi
 
-woof "nix rebuild finished"
+pushcli -c "$HOME/.config/pushcli/pushcli.conf" "nix rebuild finished"
 
 popd

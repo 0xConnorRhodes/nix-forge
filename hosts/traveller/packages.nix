@@ -78,6 +78,7 @@ in
     mpv
     gemini-cli
     gh
+    forgejo-cli
     pinnedHugo.hugo
     cht-sh
     podman
