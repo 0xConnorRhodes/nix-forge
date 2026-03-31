@@ -18,4 +18,8 @@ cld() {
     claude --allow-dangerously-skip-permissions --permission-mode plan
   fi
 }
+
+clc() {
+  claude --dangerously-skip-permissions --continue
+}
 ''
