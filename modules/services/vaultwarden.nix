@@ -15,14 +15,18 @@ let
         return 0
       fi
 
-      # Try to stop the service with timeout
-      if timeout 10 systemctl stop vaultwarden.service; then
-        echo "vaultwarden.service stopped successfully"
-        return 0
-      else
-        echo "Failed to stop vaultwarden.service within timeout"
-        return 1
-      fi
+      # Try to stop the service with retries
+      for i in 1 2 3; do
+        if timeout 10 systemctl stop vaultwarden.service; then
+          echo "vaultwarden.service stopped successfully"
+          return 0
+        fi
+        echo "Attempt $i failed, retrying in 5 seconds..."
+        sleep 5
+      done
+
+      echo "Failed to stop vaultwarden.service after 3 attempts"
+      return 1
     }
 
     # Function to safely start vaultwarden
