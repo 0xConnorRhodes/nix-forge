@@ -24,6 +24,8 @@ let
     src = inputs.rtk-src;
   };
 
+  bun = import ../../pkgs/bun { inherit pkgs; };
+
 in
 
 {
@@ -78,6 +80,9 @@ in
     # custom rust packages
     hazelnut
     rtk
+
+    # custom packages
+    bun
 
     # python packages
     (python3.withPackages (python-pkgs: with python-pkgs; [
