@@ -1,6 +1,7 @@
-{ config, pkgs, secrets, ... }:
+{ config, pkgs, ... }:
 
 let
+  sopsFile = ./../../secrets.yaml;
   backupScript = pkgs.writeText "forgejo-backup.py" ''
     #!/usr/bin/env python3
     import json, os, subprocess
@@ -44,6 +45,12 @@ let
   '';
 in
 {
+  sops.age.keyFile = "/home/connor/.config/sops/age/keys.txt";
+  sops.secrets."forgejo/apiToken" = {
+    inherit sopsFile;
+    owner = config.myConfig.username;
+  };
+
   systemd.timers."forgejo-backup" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
@@ -63,7 +70,8 @@ in
     script = ''
       set -eu
       BACKUP_DIR="/zstore/data/records/forgejo/repos"
-      FORGEJO_TOKEN="${secrets.forgejo.apiToken}" ${pkgs.python3}/bin/python3 ${backupScript}
+      export FORGEJO_TOKEN="$(cat ${config.sops.secrets."forgejo/apiToken".path})"
+      ${pkgs.python3}/bin/python3 ${backupScript}
       rclone sync "$BACKUP_DIR" gdrive_enc:forgejo/repos
     '';
     serviceConfig = {

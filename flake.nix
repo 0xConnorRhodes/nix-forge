@@ -78,6 +78,7 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/mainframe/configuration.nix
+          inputs.sops-nix.nixosModules.sops
 	        inputs.home-manager.nixosModules.default
           {
             home-manager.extraSpecialArgs = specialArgs; # needed to access inputs in home.nix
