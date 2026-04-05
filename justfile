@@ -4,6 +4,9 @@ rebuild:
 dbuild:
   darwin-rebuild switch --flake .#traveller
 
+update:
+  scripts/update-inputs
+
 # darwin stuff
 initial-darwin-build:
   nix --extra-experimental-features "nix-command flakes" build .#darwinConfigurations.traveller.system

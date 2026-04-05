@@ -93,7 +93,9 @@
             ];
           }
           {
-            nixpkgs.overlays = [ inputs.rust-overlay.overlays.default ];
+            nixpkgs.overlays = [
+              inputs.rust-overlay.overlays.default
+            ];
           }
         ];
       };

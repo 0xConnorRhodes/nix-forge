@@ -6,8 +6,7 @@ with pkgs; [
   bashInteractive
   chezmoi
   fish
-  fzf
-  fd
+  fzf fd
   just
   screen
   magic-wormhole

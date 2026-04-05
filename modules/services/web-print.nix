@@ -4,7 +4,7 @@ let
 
   printWebFormPython = pkgs.python3.withPackages (pythonPackages: with pythonPackages; [
     flask
-    pypdf2
+    pypdf
     werkzeug
   ]);
 in

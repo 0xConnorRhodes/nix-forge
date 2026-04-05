@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Inputs that should NOT be updated (add more as needed)
+PINNED_INPUTS=(btca-src)
+
+# Get all top-level inputs from flake lock
+# Filters out "follows" inputs (array values) since they track their followed input automatically
+inputs=$(nix flake metadata --json | jq -r '.locks.nodes.root.inputs | to_entries[] | select(.value | type == "string") | .key')
+
+for input in $inputs; do
+  if [[ " ${PINNED_INPUTS[*]} " =~ " ${input} " ]]; then
+    echo "Skipping pinned input: $input"
+    continue
+  fi
+  echo "Updating: $input"
+  nix flake update "$input"
+done

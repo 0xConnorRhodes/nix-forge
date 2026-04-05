@@ -17,7 +17,7 @@
       ../common/nixos-packages.nix
       ../../modules/services/profile-sync-daemon.nix
       ../../modules/services/caddy.nix
-      ../../modules/services/dashy
+      #../../modules/services/dashy
       ../../modules/services/authelia.nix
       ../../modules/services/kvm.nix
       ../../modules/services/incus.nix

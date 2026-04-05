@@ -78,6 +78,7 @@ in
     lsof
     unrar
     android-tools
+    pkgsUnstable.opencode
 
     # custom rust packages
     hazelnut
