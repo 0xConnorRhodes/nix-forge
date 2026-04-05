@@ -10,4 +10,7 @@
     listenAddress = "127.0.0.1";
     listenPort = 38157;
   };
+
+  systemd.services.silverbullet.serviceConfig.Environment =
+    [ "SB_SPACE_IGNORE=Inbox/voice_notes" ];
 }
