@@ -33,6 +33,8 @@ let
     inherit pkgs rustToolchain;
   };
 
+  btca = import ../../pkgs/btca { inherit pkgs; bun = pkgs.bun; src = inputs.btca-src; };
+
 in
 {
   # make pkgsUnstable available to all modules
@@ -63,6 +65,7 @@ in
     texlive.combined.scheme-full # needed for pandoc pdf conversion
     silverbullet
     bun
+    btca
 
     # mac-specific
     blueutil

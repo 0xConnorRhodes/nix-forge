@@ -3,4 +3,4 @@
 - when editing secrets, edit `secrets.json` directly. It is encrypted with git-crypt.
 
 # btca
-available resources: hazelnut
+available resources: hazelnut, silverbullet

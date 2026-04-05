@@ -26,6 +26,8 @@ let
 
   bun = import ../../pkgs/bun { inherit pkgs; };
 
+  btca = import ../../pkgs/btca { inherit pkgs bun; src = inputs.btca-src; };
+
 in
 
 {
@@ -83,6 +85,7 @@ in
 
     # custom packages
     bun
+    btca
 
     # python packages
     (python3.withPackages (python-pkgs: with python-pkgs; [

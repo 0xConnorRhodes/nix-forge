@@ -9,7 +9,7 @@ pkgs.stdenv.mkDerivation rec {
     hash = "sha256-q+NG9jQUVHzfazW3pkmkkMcouT0AYiYVaSORioTA5Zs=";
   };
 
-  nativeBuildInputs = [ pkgs.unzip ];
+  nativeBuildInputs = [ pkgs.unzip pkgs.autoPatchelfHook ];
 
   installPhase = ''
     mkdir -p $out/bin
