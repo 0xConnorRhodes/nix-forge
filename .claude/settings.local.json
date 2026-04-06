@@ -12,7 +12,8 @@
       "Bash(journalctl:*)",
       "Bash(systemctl:*)",
       "Bash(sudo:*)",
-      "Bash(sudo systemctl start:*)"
+      "Bash(sudo systemctl start:*)",
+      "Bash(scripts/rebuild:*)"
     ],
     "deny": [],
     "ask": []
