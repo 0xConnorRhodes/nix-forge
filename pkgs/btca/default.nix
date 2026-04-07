@@ -23,6 +23,11 @@ let
   outputName = outputMap.${pkgs.stdenv.hostPlatform.system}
     or (throw "btca: unsupported system ${pkgs.stdenv.hostPlatform.system}");
 
+  hashMap = {
+    "x86_64-linux" = "sha256-5IaInIq8/wFGxmmOR+P9SVumefNRlloukuZ9Md2kbt8=";
+    "aarch64-darwin" = "sha256-1IIjwer4l4Rrs/3+i0dgdS7sBkBSOBZ/lVEeWMTGPyI=";
+  };
+
   # FOD: build from source (has network access for bun install)
   # patchelf strips store references so FOD output is valid
   btca-unwrapped = pkgs.stdenv.mkDerivation {
@@ -43,15 +48,14 @@ let
       cp apps/cli/dist/tree-sitter-worker.js $out/
       cp apps/cli/dist/tree-sitter.js $out/
       cp apps/cli/dist/tree-sitter.wasm $out/
-      # Strip nix store references from binary so FOD is valid
-      # nix-ld provides the dynamic linker at runtime
       patchelf --set-interpreter /lib64/ld-linux-x86-64.so.2 $out/btca || true
       patchelf --remove-rpath $out/btca || true
     '';
 
     outputHashAlgo = "sha256";
     outputHashMode = "recursive";
-    outputHash = "sha256-1IIjwer4l4Rrs/3+i0dgdS7sBkBSOBZ/lVEeWMTGPyI=";
+    outputHash = hashMap.${pkgs.stdenv.hostPlatform.system}
+      or (throw "btca: no hash for system ${pkgs.stdenv.hostPlatform.system}");
   };
 
 in
