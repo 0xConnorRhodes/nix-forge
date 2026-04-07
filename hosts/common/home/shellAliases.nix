@@ -46,6 +46,7 @@
     sb = "silverbullet $HOME/notes";
     clr = "claude --dangerously-skip-permissions -r";
     fj = "fj --host git.connorrhodes.com";
+    oc = "opencode";
 
     # notifications for woof
     nt="export NOTIFICATIONS=true && echo 'notifications on'";
