@@ -30,6 +30,8 @@ let
 
   opencode = import ../../pkgs/opencode { inherit pkgs pkgsUnstable bun; };
 
+  openwork = import ../../pkgs/openwork { inherit pkgs opencode; };
+
 in
 
 {
@@ -81,6 +83,7 @@ in
     unrar
     android-tools
     opencode
+    openwork
 
     # custom rust packages
     hazelnut
