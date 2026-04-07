@@ -166,6 +166,8 @@ in
       #   '';
       # };
 
+      # Files must be readable by the caddy user (member of the users group).
+      # Run: chmod 640 /zstore/static_files/s2_files/*
       "s2.connorrhodes.com" = {
         extraConfig = ''
           ${autheliaSSO}
