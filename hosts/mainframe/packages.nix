@@ -28,6 +28,8 @@ let
 
   btca = import ../../pkgs/btca { inherit pkgs bun; src = inputs.btca-src; };
 
+  opencode = import ../../pkgs/opencode { inherit pkgs pkgsUnstable bun; };
+
 in
 
 {
@@ -78,7 +80,7 @@ in
     lsof
     unrar
     android-tools
-    pkgsUnstable.opencode
+    opencode
 
     # custom rust packages
     hazelnut
