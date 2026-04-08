@@ -1,4 +1,4 @@
-# ln -s $HOME/code/nix-forge/hosts/mainframe/config/hazelnut.toml $HOME/.config/hazelnut/config.toml
+# NOTE rebuild is required to update the config file
 
 # ─────────────────────────────────────────────────────────────
 # General Settings
@@ -13,13 +13,13 @@ theme = "dracula"
 [[watch]]
 path = "/scary/files/share/drop"
 recursive = false
-rules = ["mobile-notes-to-inbox"]
+rules = ["recordings-to-inbox"]
 
 # ─────────────────────────────────────────────────────────────
 # Rules
 # ─────────────────────────────────────────────────────────────
 [[rule]]
-name = "mobile-notes-to-inbox"
+name = "recordings-to-inbox"
 enabled = true
 
 [rule.condition]
@@ -29,5 +29,5 @@ name_regex = "^[A-Z][a-z]{2}\\+\\d{1,2}\\+at\\+\\d{1,2}-\\d{2}\\+[AP]M\\.txt$"
 
 [rule.action]
 type = "run"
-command = "/run/current-system/sw/bin/python3"
-args = ["/home/connor/code/dictation_sort/sort_dictation_files.py"]
+command = "/home/connor/.nix-profile/bin/uv"
+args = ["run", "/home/connor/code/tools/cron/dictation_sort/main.py"]
