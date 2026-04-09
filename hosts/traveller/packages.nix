@@ -66,6 +66,7 @@ in
     silverbullet
     bun
     btca
+    rsync
 
     # mac-specific
     blueutil
