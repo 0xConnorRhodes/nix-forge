@@ -47,6 +47,7 @@
     clr = "claude --dangerously-skip-permissions -r";
     fj = "fj --host git.connorrhodes.com";
     oc = "opencode";
+    v = "vik";
 
     # notifications for woof
     nt="export NOTIFICATIONS=true && echo 'notifications on'";
