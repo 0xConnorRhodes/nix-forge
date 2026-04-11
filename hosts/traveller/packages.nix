@@ -79,7 +79,7 @@ in
     unixtools.ping
     emacs-macport
     pkgsUnstable.lima
-    mpv
+
     gemini-cli
     gh
     forgejo-cli

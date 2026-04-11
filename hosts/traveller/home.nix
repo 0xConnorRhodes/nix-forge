@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, secrets, osConfig, ... }:
+{ config, pkgs, inputs, lib, secrets, osConfig, ... }:
 
 {
   nixpkgs.config.allowUnfree = true;
@@ -29,6 +29,8 @@
     ../../modules/home/pushover-cli.nix
     ../../configs/ssh_config.nix
   ];
+
+  programs.mpv.enable = lib.mkForce false;
 
   home.sessionVariables = {
     EDITOR = "nvim";

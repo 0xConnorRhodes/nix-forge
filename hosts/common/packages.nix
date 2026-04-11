@@ -29,7 +29,7 @@ with pkgs; [
   duf
   rbw
   termdown
-  direnv
+  (direnv.overrideAttrs (_: { doCheck = false; }))
   nix-direnv
   sc-im
   pinentry-curses

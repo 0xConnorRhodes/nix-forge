@@ -164,7 +164,15 @@
         specialArgs = { inherit inputs; inherit secrets; };
         system = "aarch64-darwin";
         # needed to install nonfree licensed software with home-manager
-        pkgs = import inputs.nixpkgs { system = system; config.allowUnfree = true;};
+        pkgs = import inputs.nixpkgs {
+          system = system;
+          config.allowUnfree = true;
+          overlays = [
+            (self: super: {
+              direnv = super.direnv.overrideAttrs (_: { doCheck = false; });
+            })
+          ];
+        };
         modules = [
           ./hosts/traveller/darwin-config.nix
           inputs.home-manager.darwinModules.home-manager
