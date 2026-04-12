@@ -28,6 +28,7 @@ in
 
       eval "$(rbw gen-completions zsh)"
       eval "$(direnv hook zsh)"
+      eval "$(${osConfig.myConfig.homeDir}/.local/share/uv/tools/pud/bin/register-python-argcomplete pud)"
 
       # Source sops-managed SSH aliases
       if [ -f "$HOME/.config/sops/ssh_aliases.sh" ]; then

@@ -37,4 +37,19 @@
       WorkingDirectory = "/home/connor/code/scripts/cron/backups";
       Environment = "PATH=${pkgs.rclone}/bin:${pkgs.rsync}/bin:$PATH"; }; };
 
+  systemd.timers."nix-collect-garbage" = {
+    wantedBy = [ "timers.target" ];
+      timerConfig = {
+        OnCalendar = "Thu *-*-* 00:00:00";
+        Persistent = true;
+        Unit = "nix-collect-garbage.service"; }; };
+  systemd.services."nix-collect-garbage" = {
+    script = ''
+      set -eu
+      ${pkgs.nix}/bin/nix-collect-garbage -d
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = "root"; }; };
+
 }
