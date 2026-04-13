@@ -234,7 +234,8 @@
     nix = {
       settings.auto-optimise-store = true;
       optimise.automatic = true;
-      # Default schedule is 4:15 AM on Sunday (Weekday = 7)
+      gc.automatic = true;
+      gc.options = "--delete-older-than 7d";
     };
 
     system.stateVersion = "24.11";
