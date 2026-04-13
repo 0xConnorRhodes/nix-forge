@@ -77,6 +77,22 @@ in
       User = user;
       WorkingDirectory = "/home/connor/code/note_automations/scripts"; }; };
 
+# dsort llm nightly
+  systemd.timers."dsort-llm" = {
+    wantedBy = [ "timers.target" ];
+      timerConfig = {
+        OnCalendar = "02:00:00";
+        Persistent = true;
+        Unit = "dsort-llm.service"; }; };
+  systemd.services."dsort-llm" = {
+    script = ''
+      set -eu
+      /home/connor/.local/bin/dsort llm
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = user; }; };
+
 # attachments to s2 sync
   systemd.timers."attachments-to-s2" = {
     wantedBy = [ "timers.target" ];

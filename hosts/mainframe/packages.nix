@@ -61,27 +61,20 @@ in
     tealdeer
     rclone
     #lima
-    minikube
-    kubectl
     gcc # needed for test nvim configs
     pkgsUnstable.neovim
     wget
-    buku
     cfssl # copyparty dependency
     usbutils
-    shiori
     sqlite
-    gh
     forgejo-cli
     ansible
     sshpass # needed for ansible
     auto-editor
     pipx
-    pinnedHugo.hugo
     atomicparsley
     lsof
     unrar
-    android-tools
     opencode
     openwork
 
@@ -100,17 +93,13 @@ in
 
     # gui programs
     calibre
-    audacious
     smplayer
     tageditor
     vlc
-    handbrake
     bitwarden-desktop
     picard
-    pkgsUnstable.antigravity-fhs
 
     # KDE apps
-    kdePackages.krdc # remote desktop client
     kdePackages.partitionmanager # kparted
     kdePackages.k3b # cd/dvd tool
     kdePackages.kdenlive
