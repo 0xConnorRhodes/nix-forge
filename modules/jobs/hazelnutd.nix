@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 let
   hazelnut = import ../../pkgs/rust/hazelnut {
     inherit pkgs;
@@ -6,6 +6,7 @@ let
       extensions = [ "rust-src" ];
     };
   };
+  configFile = ../../hosts/mainframe/config/hazelnut.toml;
 in
 {
   systemd.user.services."hazelnutd" = {
@@ -18,6 +19,13 @@ in
       Restart = "on-failure";
       RestartSec = 5;
       Type = "simple";
+    };
+  };
+
+  home-manager.users.${config.myConfig.username} = {
+    xdg.configFile."hazelnut/config.toml" = {
+      source = configFile;
+      onChange = "${pkgs.systemd}/bin/systemctl --user restart hazelnutd";
     };
   };
 }

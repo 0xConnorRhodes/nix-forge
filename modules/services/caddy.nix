@@ -337,6 +337,13 @@ in
         '';
       };
 
+      "pod.connorrhodes.com" = {
+        extraConfig = ''
+          ${robotsTxt}
+          reverse_proxy 127.0.0.1:8080
+        '';
+      };
+
       # "pods.connorrhodes.com" = {
       #   extraConfig = ''
       #     ${robotsTxt}
