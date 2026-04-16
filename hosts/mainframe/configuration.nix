@@ -37,6 +37,7 @@
       ../../modules/services/vikunja.nix
       ../../modules/services/forgejo.nix
       ../../modules/services/fastapi.nix
+      ../../modules/services/docdb.nix
 
       # jobs
       ../../modules/jobs/sync-notes.nix
