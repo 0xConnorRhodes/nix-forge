@@ -37,6 +37,24 @@ newpg() {
   cd "$dir_name" || return 1
 }
 
+mkdata() {
+  local desc dir_name
+
+  printf "data analysis description: "
+  read -r desc
+
+  if [ -z "$desc" ]; then
+    echo "No description provided"
+    return 1
+  fi
+
+  desc=$(printf '%s' "$desc" | tr ' ' '-')
+
+  dir_name="$HOME/code/vdata-analysis/$(date +%y%m%d)-$desc"
+  mkdir -p "$dir_name" || return 1
+  cd "$dir_name" || return 1
+}
+
 mkr() {
   # mkrepo
   # mkr <name> (will create inside ~/code)
