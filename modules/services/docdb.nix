@@ -1,8 +1,103 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 let
   sopsFile = ./../../secrets.yaml;
   dataDir = "/var/lib/ferretdb";
+  backupDir = "/zstore/data/records/docdb_backups";
+  debounceSeconds = 60;
+
+  backupScript = pkgs.writeScript "docdb-backup.py" ''
+    #!/usr/bin/env python3
+    import sys
+    import subprocess
+    import hashlib
+    from pathlib import Path
+    sys.stdout.reconfigure(line_buffering=True)
+    sys.stderr.reconfigure(line_buffering=True)
+    from datetime import datetime
+    from threading import Timer
+
+    pending = {}
+
+
+    def hash_file(path):
+        h = hashlib.sha256()
+        with open(path, "rb") as f:
+            for chunk in iter(lambda: f.read(8192), b""):
+                h.update(chunk)
+        return h.hexdigest()
+
+
+    def do_backup(db_name, watch_dir, backup_dir):
+        source = Path(watch_dir) / f"{db_name}.sqlite"
+        if not source.exists():
+            return
+
+        ts = datetime.now().strftime("%y%m%d-%H%M%S")
+        db_backup_dir = Path(backup_dir) / db_name
+        db_backup_dir.mkdir(parents=True, exist_ok=True)
+
+        dest = db_backup_dir / f"{ts}_{db_name}.sqlite"
+
+        result = subprocess.run(
+            ["sqlite3", str(source), f".backup {dest}"],
+            capture_output=True,
+            text=True,
+        )
+
+        if result.returncode != 0:
+            print(f"Backup failed for {db_name}: {result.stderr}", file=sys.stderr)
+            if dest.exists():
+                dest.unlink()
+            return
+
+        backups = sorted(db_backup_dir.glob(f"*_{db_name}.sqlite"))
+        if len(backups) >= 2:
+            prev_hash = hash_file(backups[-2])
+            new_hash = hash_file(backups[-1])
+            if prev_hash == new_hash:
+                backups[-1].unlink()
+                return
+
+        print(f"Backed up {db_name} -> {dest}")
+
+
+    def schedule_backup(db_name, watch_dir, backup_dir, debounce):
+        if db_name in pending:
+            pending[db_name].cancel()
+        pending[db_name] = Timer(
+            debounce, do_backup, args=(db_name, watch_dir, backup_dir)
+        )
+        pending[db_name].daemon = True
+        pending[db_name].start()
+
+
+    def main():
+        watch_dir = sys.argv[1]
+        backup_dir = sys.argv[2]
+        debounce = int(sys.argv[3])
+
+        for f in Path(watch_dir).glob("*.sqlite"):
+            if f.name.endswith("-wal") or f.name.endswith("-shm"):
+                continue
+            db_name = f.stem
+            schedule_backup(db_name, watch_dir, backup_dir, debounce)
+
+        for line in sys.stdin:
+            filename = line.strip()
+            if not filename:
+                continue
+            if filename.endswith(".sqlite-wal"):
+                db_name = filename[: -len(".sqlite-wal")]
+                schedule_backup(db_name, watch_dir, backup_dir, debounce)
+            elif filename.endswith(".sqlite") and not filename.endswith(("-wal", "-shm")):
+                db_name = filename[: -len(".sqlite")]
+                schedule_backup(db_name, watch_dir, backup_dir, debounce)
+
+
+    if __name__ == "__main__":
+        main()
+  '';
 in
 {
   sops.secrets."mongodb/rootPassword" = {
@@ -68,6 +163,37 @@ in
       RemainAfterExit = true;
     };
   };
+
+  systemd.services.docdb-backup = {
+    description = "Event-driven FerretDB SQLite backup daemon";
+    wantedBy = [ "multi-user.target" ];
+    requires = [ "ferretdb.service" ];
+    after = [ "ferretdb.service" ];
+
+    path = with pkgs; [
+      sqlite
+      inotify-tools
+      python3
+    ];
+
+    environment.TZ = "America/Chicago";
+
+    script = ''
+      exec inotifywait -m -e modify -e create --format '%f' ${dataDir} | \
+        ${pkgs.python3}/bin/python3 ${backupScript} ${dataDir} ${backupDir} ${toString debounceSeconds}
+    '';
+
+    serviceConfig = {
+      Type = "simple";
+      Restart = "on-failure";
+      RestartSec = "10";
+      User = "root";
+    };
+  };
+
+  systemd.tmpfiles.rules = [
+    "d ${backupDir} 0755 root root -"
+  ];
 
   virtualisation.oci-containers.backend = "docker";
   virtualisation.oci-containers.containers.mongo-express = {
