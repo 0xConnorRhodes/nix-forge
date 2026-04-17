@@ -22,7 +22,6 @@
     ../../modules/home/mpv.nix
     ../../modules/home/posting.nix
     ../../pkgs/cursedtag.nix
-    ../../configs/wezterm/wezterm-common.nix
     #../../modules/home/vscode
     ../../modules/home/uv.nix
     ../../modules/home/ipython.nix
@@ -43,12 +42,6 @@
   programs.zsh.shellAliases = {
     yo = "open -a yoink";
     cb = "pbcopy";
-  };
-
-  programs.wezterm = {
-    enable = false; # install from homebrew
-    enableZshIntegration = true;
-    enableBashIntegration = true;
   };
 
   # VSCode configuration commented out since module is not imported
