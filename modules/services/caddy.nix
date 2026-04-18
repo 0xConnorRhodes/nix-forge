@@ -236,13 +236,6 @@ in
         '';
       };
 
-      "shiori.connorrhodes.com" = {
-        extraConfig = ''
-          ${robotsTxt}
-          reverse_proxy 127.0.0.1:54699
-        '';
-      };
-
       # "picard.connorrhodes.com" = {
       #   extraConfig = ''
       #     ${autheliaSSO}
@@ -366,13 +359,6 @@ in
           reverse_proxy 127.0.0.1:29379
         '';
       };
-
-      # "pods.connorrhodes.com" = {
-      #   extraConfig = ''
-      #     ${robotsTxt}
-      #     reverse_proxy 127.0.0.1:29379
-      #   '';
-      # };
 
       # "sync.connorrhodes.com" = {
       #   extraConfig = ''
