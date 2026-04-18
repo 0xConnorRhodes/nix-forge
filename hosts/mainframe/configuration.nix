@@ -38,6 +38,7 @@
       ../../modules/services/forgejo.nix
       ../../modules/services/fastapi.nix
       ../../modules/services/docdb.nix
+      ../../modules/services/opodsync.nix
 
       # jobs
       ../../modules/jobs/sync-notes.nix
