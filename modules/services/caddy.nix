@@ -349,7 +349,7 @@ in
       "pod.connorrhodes.com" = {
         extraConfig = ''
           ${robotsTxt}
-          reverse_proxy 127.0.0.1:8080
+          reverse_proxy 127.0.0.1:34678
         '';
       };
 

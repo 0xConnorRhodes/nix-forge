@@ -40,6 +40,7 @@
       ../../modules/services/docdb.nix
       ../../modules/services/opodsync.nix
       ../../modules/services/podplay-web.nix
+      ../../modules/services/podserve.nix
 
       # jobs
       ../../modules/jobs/sync-notes.nix
