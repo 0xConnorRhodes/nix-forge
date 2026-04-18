@@ -39,6 +39,7 @@
       ../../modules/services/fastapi.nix
       ../../modules/services/docdb.nix
       ../../modules/services/opodsync.nix
+      ../../modules/services/podplay-web.nix
 
       # jobs
       ../../modules/jobs/sync-notes.nix
