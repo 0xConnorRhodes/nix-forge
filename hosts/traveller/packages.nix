@@ -80,7 +80,6 @@ in
     emacs-macport
     pkgsUnstable.lima
 
-    gemini-cli
     gh
     forgejo-cli
     pinnedHugo.hugo
@@ -108,6 +107,7 @@ in
       httpx
       requests
       pyaml
+      pymongo
     ]))
 
     # ruby packages
