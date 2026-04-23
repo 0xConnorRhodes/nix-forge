@@ -34,6 +34,7 @@
       ../../modules/services/radicale.nix
       ../../modules/services/copyparty.nix
       ../../modules/services/silverbullet.nix
+      ../../modules/services/study-notes.nix
       ../../modules/services/vikunja.nix
       ../../modules/services/forgejo.nix
       ../../modules/services/fastapi.nix

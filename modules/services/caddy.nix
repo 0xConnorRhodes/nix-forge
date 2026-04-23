@@ -96,6 +96,14 @@ in
         '';
       };
 
+      "study-notes.connorrhodes.com" = {
+        extraConfig = ''
+          ${autheliaSSO}
+          ${robotsTxt}
+          reverse_proxy 127.0.0.1:38158
+        '';
+      };
+
       "term.connorrhodes.com" = {
         extraConfig = ''
           ${robotsTxt}
