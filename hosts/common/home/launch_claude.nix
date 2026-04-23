@@ -15,7 +15,8 @@ cld() {
   else
     # start in plan mode, with permissions bypassed
     # claude --dangerously-skip-permissions "/plan"
-    claude --allow-dangerously-skip-permissions --permission-mode plan
+    #claude --allow-dangerously-skip-permissions --permission-mode plan
+    claude --dangerously-skip-permissions
   fi
 }
 
