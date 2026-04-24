@@ -27,7 +27,7 @@
       ../../modules/services/jellyfin.nix
       ../../modules/services/navidrome.nix
       ../../modules/services/audiobookshelf.nix
-      ../../modules/services/web-print.nix
+
       ../../modules/services/vaultwarden.nix
       ../../modules/services/immich.nix
       ../../modules/services/pairdrop.nix

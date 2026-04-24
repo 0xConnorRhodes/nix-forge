@@ -10,6 +10,7 @@ in
 
     path = with pkgs; [
       uv
+      cups
     ];
 
     script = ''
