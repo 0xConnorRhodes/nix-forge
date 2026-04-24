@@ -161,5 +161,10 @@ newpycli() {
   dir="$(command newpycli "$@")" && [ -n "$dir" ] && cd "$dir"
 }
 
+newflaskapp() {
+  local dir
+  dir="$(command newflaskapp "$@")" && [ -n "$dir" ] && cd "$dir"
+}
+
 '' 
 + (import ./launch_claude.nix)
