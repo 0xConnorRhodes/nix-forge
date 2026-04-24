@@ -185,13 +185,11 @@ in
         '';
       };
 
-      # Content stored in /var/www/web_tools with symlink at ~/code/web_tools. Permissions: 0750 connor:users (caddy in users group)
       "tools.connorrhodes.com" = {
         extraConfig = ''
           ${autheliaSSO}
           ${robotsTxt}
-          root * /var/www/web_tools
-          file_server
+          reverse_proxy 127.0.0.1:4419
         '';
       };
 

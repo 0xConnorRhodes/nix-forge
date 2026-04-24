@@ -42,6 +42,7 @@
       ../../modules/services/opodsync.nix
       ../../modules/services/podplay-web.nix
       ../../modules/services/podserve.nix
+      ../../modules/services/web-tools.nix
 
       # jobs
       ../../modules/jobs/sync-notes.nix
