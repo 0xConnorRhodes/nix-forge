@@ -43,10 +43,7 @@ in
 
       "print.connorrhodes.com" = {
         extraConfig = ''
-          tls /etc/caddy/certs/print.connorrhodes.com_certificate.pem /etc/caddy/certs/print.connorrhodes.com_key.pem
-          ${autheliaSSO}
-          ${robotsTxt}
-          reverse_proxy 127.0.0.1:57928
+          redir https://tools.connorrhodes.com/home/print/{uri}
         '';
       };
 
