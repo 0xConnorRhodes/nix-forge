@@ -46,16 +46,12 @@ in
     ffmpeg-full
     zfs_2_3
     htop
-    gotop
-    btop-rocm # TODO: configure for smaller screen: https://github.com/aristocratos/btop?tab=readme-ov-file#configurability
     powershell
     mediainfo
     aria2
-    nh # https://github.com/nix-community/nh
     comma
     tealdeer
     rclone
-    #lima
     gcc # needed for test nvim configs
     pkgsUnstable.neovim
     wget
@@ -65,9 +61,7 @@ in
     forgejo-cli
     ansible
     sshpass # needed for ansible
-    auto-editor
     pipx
-    atomicparsley
     lsof
     unrar
     opencode
@@ -81,23 +75,12 @@ in
     bun
     btca
 
-    # python packages
-    (python3.withPackages (python-pkgs: with python-pkgs; [
-      eyed3
-    ]))
-
     # gui programs
     calibre
-    smplayer
-    tageditor
-    vlc
-    bitwarden-desktop
-    picard
 
     # KDE apps
-    kdePackages.partitionmanager # kparted
+    #kdePackages.partitionmanager # kparted
     kdePackages.k3b # cd/dvd tool
-    kdePackages.kdenlive
   ]
   ++ (import ../common/packages.nix { pkgs = pkgs; })
   ++ pkgs.lib.attrValues flakePackages;
