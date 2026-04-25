@@ -11,3 +11,4 @@ modules/home/firefox/bookmarks.nix filter=git-crypt diff=git-crypt
 modules/home/firefox/extensions.nix filter=git-crypt diff=git-crypt
 hosts/traveller/Brewfile filter=git-crypt diff=git-crypt
 modules/services/authelia.nix filter=git-crypt diff=git-crypt
+hosts/mainframe/syncthing.nix filter=git-crypt diff=git-crypt

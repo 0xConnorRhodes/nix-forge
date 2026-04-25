@@ -43,6 +43,7 @@
       ../../modules/services/podplay-web.nix
       ../../modules/services/podserve.nix
       ../../modules/services/web-tools.nix
+      ./syncthing.nix
 
       # jobs
       ../../modules/jobs/sync-notes.nix

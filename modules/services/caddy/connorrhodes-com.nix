@@ -234,6 +234,14 @@
       '';
     };
 
+    "sync.connorrhodes.com" = {
+      extraConfig = ''
+        ${autheliaSSO}
+        ${robotsTxt}
+        reverse_proxy 127.0.0.1:42631
+      '';
+    };
+
     "podsync.connorrhodes.com" = {
       extraConfig = ''
         ${robotsTxt}
