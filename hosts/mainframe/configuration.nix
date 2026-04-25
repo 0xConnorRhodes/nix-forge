@@ -21,7 +21,7 @@
       ../../modules/services/authelia.nix
       ../../modules/services/kvm.nix
       ../../modules/services/incus.nix
-      ../../modules/services/tailscale.nix
+      #../../modules/services/tailscale.nix
 
       # services
       ../../modules/services/jellyfin.nix
@@ -30,7 +30,7 @@
 
       ../../modules/services/vaultwarden.nix
       ../../modules/services/immich.nix
-      ../../modules/services/pairdrop.nix
+      #../../modules/services/pairdrop.nix
       ../../modules/services/radicale.nix
       ../../modules/services/copyparty.nix
       ../../modules/services/silverbullet.nix
