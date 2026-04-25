@@ -12,11 +12,6 @@ let
     }
   );
 
-  pinnedHugo = import inputs.pinned-hugo {
-    inherit (pkgs.stdenv.hostPlatform) system;
-    inherit (config.nixpkgs) config;
-  };
-
   ruby = pkgs.ruby_3_4;
   myGems = pkgs.bundlerEnv {
     name = "myGems";
@@ -82,7 +77,6 @@ in
 
     gh
     forgejo-cli
-    pinnedHugo.hugo
     cht-sh
     podman
     podman-compose

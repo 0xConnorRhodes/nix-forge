@@ -291,22 +291,6 @@
         "type": "github"
       }
     },
-    "pinned-hugo": {
-      "locked": {
-        "lastModified": 1666963207,
-        "narHash": "sha256-r77cTDlhUHrAXpmsVj7eDFAztogjeLWMyW8zkJMLnv8=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "3c66daa779d7cca11d3ee15d8da9b4bb76ed60ee",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "3c66daa779d7cca11d3ee15d8da9b4bb76ed60ee",
-        "type": "github"
-      }
-    },
     "plasma-manager": {
       "inputs": {
         "home-manager": [
@@ -343,7 +327,6 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nur": "nur",
-        "pinned-hugo": "pinned-hugo",
         "plasma-manager": "plasma-manager",
         "rtk-src": "rtk-src",
         "rust-overlay": "rust-overlay",

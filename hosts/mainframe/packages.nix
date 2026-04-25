@@ -5,11 +5,6 @@ let
       inherit (inputs)
       json2nix; };
 
-  pinnedHugo = import inputs.pinned-hugo {
-    inherit (pkgs.stdenv.hostPlatform) system;
-    inherit (config.nixpkgs) config;
-  };
-
   # Rust 1.93 toolchain for hazelnut
   rustToolchain = pkgs.rust-bin.stable.latest.default.override {
     extensions = [ "rust-src" ];
