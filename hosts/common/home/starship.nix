@@ -63,6 +63,9 @@
       package.disabled = true;
       golang.disabled = true;
       bun.disabled = true;
+      gradle.disabled = true;
+      java.disabled = true;
+      kotlin.disabled = true;
     };
   };
 }
