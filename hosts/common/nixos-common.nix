@@ -1,4 +1,4 @@
-{ inputs, config, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   i18n.defaultLocale = "en_US.UTF-8";
@@ -18,4 +18,13 @@
 
   services.bpftune.enable = true;
   programs.nix-ld.enable = true; # allows non nixos precompiled binaries that depend on FHS to work
+  programs.nix-ld.libraries = with pkgs; [
+    xorg.libxcb
+    xorg.libX11
+    xorg.libXext
+    xorg.libSM
+    xorg.libICE
+    libGL
+    glib
+  ];
 }
