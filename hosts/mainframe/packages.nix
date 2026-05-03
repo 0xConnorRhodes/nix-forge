@@ -21,8 +21,6 @@ let
 
   bun = import ../../pkgs/bun { inherit pkgs; };
 
-  btca = import ../../pkgs/btca { inherit pkgs bun; src = inputs.btca-src; };
-
   opencode = import ../../pkgs/opencode { inherit pkgs pkgsUnstable bun; };
 
   openwork = import ../../pkgs/openwork { inherit pkgs opencode; };
@@ -73,7 +71,6 @@ in
 
     # custom packages
     bun
-    btca
 
     # gui programs
     calibre

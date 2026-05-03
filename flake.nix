@@ -45,11 +45,6 @@
       flake = false;
     };
 
-    btca-src = {
-      url = "github:davis7dotsh/better-context";
-      flake = false;
-    };
-
     # flakePackages
     json2nix = {
       url = "github:sempruijs/json2nix";

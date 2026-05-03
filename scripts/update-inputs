@@ -3,7 +3,7 @@
 set -euo pipefail
 
 # Inputs that should NOT be updated (add more as needed)
-PINNED_INPUTS=(btca-src)
+PINNED_INPUTS=()
 
 # Get all top-level inputs from flake lock
 # Filters out "follows" inputs (array values) since they track their followed input automatically

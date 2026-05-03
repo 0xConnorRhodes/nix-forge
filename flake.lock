@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "btca-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1774839947,
-        "narHash": "sha256-0G8mDzSXzqFPHAz6x3HjIzFZ+RTZ2sRoDUGM2+XMwzs=",
-        "owner": "davis7dotsh",
-        "repo": "better-context",
-        "rev": "786067b69132674e7e828c9f6c19a1a31590cad3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "davis7dotsh",
-        "repo": "better-context",
-        "type": "github"
-      }
-    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": "nixpkgs-lib"
@@ -316,7 +300,6 @@
     },
     "root": {
       "inputs": {
-        "btca-src": "btca-src",
         "home-manager": "home-manager",
         "json2nix": "json2nix",
         "nix-darwin": "nix-darwin",
