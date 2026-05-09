@@ -63,7 +63,7 @@ in
     lsof
     unrar
     opencode
-    openwork
+    deno
 
     # custom rust packages
     hazelnut

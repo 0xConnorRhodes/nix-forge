@@ -40,7 +40,6 @@
       ../../modules/services/fastapi.nix
       ../../modules/services/docdb.nix
       ../../modules/services/opodsync.nix
-      ../../modules/services/podplay-web.nix
       ../../modules/services/podserve.nix
       ../../modules/services/web-tools.nix
       ./syncthing.nix
