@@ -41,6 +41,7 @@
   programs.zsh.shellAliases = {
     yo = "open -a yoink";
     cb = "pbcopy";
+    pbc = "pbcopy";
   };
 
   # VSCode configuration commented out since module is not imported
