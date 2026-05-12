@@ -106,8 +106,19 @@ in
   sops.secrets."mongodb/port" = {
     inherit sopsFile;
   };
+  sops.secrets."mongodb/tlsCaCert" = {
+    inherit sopsFile;
+  };
+  sops.secrets."mongodb/tlsServerCert" = {
+    inherit sopsFile;
+  };
+  sops.secrets."mongodb/tlsServerKey" = {
+    inherit sopsFile;
+    mode = "0400";
+  };
 
   networking.firewall.allowedTCPPorts = [ 44162 ];
+  networking.firewall.interfaces.docker0.allowedTCPPorts = [ 27017 ];
 
   systemd.services.ferretdb = {
     description = "FerretDB (MongoDB-compatible document database)";
@@ -121,12 +132,18 @@ in
       mkdir -p ${dataDir}
     '';
 
+    # Two listeners for the same backend:
+    #   27017 (plain TCP, docker bridge only) — for mongo-express which can't do TLS with ferretdb v1.24
+    #   44162 (TLS, all interfaces) — for external/remote connections requiring encryption
     script = ''
       PASSWORD=$(cat ${config.sops.secrets."mongodb/rootPassword".path})
       PORT=$(cat ${config.sops.secrets."mongodb/port".path})
       exec ferretdb \
         --handler=sqlite \
-        --listen-addr=0.0.0.0:"$PORT" \
+        --listen-addr=172.17.0.1:27017 \
+        --listen-tls=0.0.0.0:"$PORT" \
+        --listen-tls-cert-file=${config.sops.secrets."mongodb/tlsServerCert".path} \
+        --listen-tls-key-file=${config.sops.secrets."mongodb/tlsServerKey".path} \
         --sqlite-url=file:${dataDir}/ \
         --test-enable-new-auth \
         --setup-database=admin \
@@ -154,7 +171,7 @@ in
       PASSWORD=$(cat ${config.sops.secrets."mongodb/rootPassword".path})
       PORT=$(cat ${config.sops.secrets."mongodb/port".path})
       cat > /var/lib/mongo-express/env <<EOF
-      ME_CONFIG_MONGODB_URL=mongodb://root:$PASSWORD@host.docker.internal:$PORT/admin
+      ME_CONFIG_MONGODB_URL=mongodb://root:$PASSWORD@host.docker.internal:27017/admin
       EOF
     '';
 
@@ -203,6 +220,8 @@ in
       ME_CONFIG_BASICAUTH = "false";
     };
     environmentFiles = [ "/var/lib/mongo-express/env" ];
-    extraOptions = [ "--add-host=host.docker.internal:host-gateway" ];
+    extraOptions = [
+      "--add-host=host.docker.internal:host-gateway"
+    ];
   };
 }
