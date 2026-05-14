@@ -1,12 +1,12 @@
 { config, lib, pkgs, osConfig, hostPaths ? [], secrets, ... }:
 let
-  shellAliases = import ./shellAliases.nix { };
-  myPaths = import ./pathDirs.nix { inherit pkgs; };
-  posixFunctions = import ./posixFunctions.nix;
+  shellAliases = import ../shellAliases.nix { };
+  myPaths = import ../pathDirs.nix { inherit pkgs; };
+  posixFunctions = import ../posixFunctions.nix;
 
   # Combine common paths with host-specific paths
   allPaths = osConfig.myConfig.hostPaths ++ myPaths.extraPaths;
-  shellEnv = import ./shellEnv.nix { inherit lib pkgs osConfig secrets allPaths; };
+  shellEnv = import ../shellEnv.nix { inherit lib pkgs osConfig secrets allPaths; };
 in
 {
   programs.zsh = {
@@ -35,6 +35,9 @@ in
       if [ -f "$HOME/.config/sops/ssh_aliases.sh" ]; then
         source "$HOME/.config/sops/ssh_aliases.sh"
       fi
+
+      # Per-directory history
+      ${builtins.readFile ./per-directory-history.zsh}
     ''
     + # concatenate case-insensitive matching string since it contains '' which breaks the multiline string.
     "\nzstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'";

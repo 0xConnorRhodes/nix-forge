@@ -11,11 +11,11 @@ in
   sops.age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
   imports = [
     ../common/home/git.nix
-    ../common/home/zsh.nix
+    ../common/home/zsh
     ../common/home/zoxide.nix
     ../common/home/git.nix
     ../common/home/bash.nix
-    ../common/home/zsh.nix
+    ../common/home/zsh
     ../common/home/ripgrep.nix
     ../common/home/starship.nix
     ../common/home/bat.nix

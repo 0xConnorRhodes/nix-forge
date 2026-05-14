@@ -10,7 +10,7 @@ in
   _module.args.pkgsUnstable = pkgsUnstable;
   imports = [
     ../common/home/bash.nix
-    ../common/home/zsh.nix
+    ../common/home/zsh
     ../common/home/ripgrep.nix
     ../common/home/zoxide.nix
     # ../common/home/starship.nix
